@@ -1,4 +1,4 @@
-# PROJETO FORUM METROCAMP
+# PROJETO FORUM METROCAMP - Desenvolvimento Web, prof. João Ronaldo Cunha
 ## Equipe MACROHARD: Aliciri, Pedro, Richard, Daniel, Eduardo
 ### O nosso projeto, consiste em criar um forum para a faculdade, com finalidade, ter uma plataforma para ter a comunicação entre: Faculdade x Alunos; Alunos x Alunos.
 
