@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body {
+    
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+h1 {
+    color:olivedrab;
+}
+
+p {
+    color: black;
+}
