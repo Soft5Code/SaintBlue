@@ -18,7 +18,7 @@
 - [ ] Atividade 07
 - [ ] Atividade 08
 - [ ] Atividade 09
-- [ ] Atividade 10
+
 
 
 
