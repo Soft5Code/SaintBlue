@@ -1,0 +1,10 @@
+##Ideias para o projeto
+- Mapeamento da faculdade
+- Campo para avaliação dos professores
+- Postagens em video, texto e imagem
+- Modo claro e escuro(Temas)
+- Campo de noticias
+- Campo de comunidades
+- Campo para projetos
+
+
