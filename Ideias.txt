@@ -12,4 +12,4 @@
 - Politicas de restricao
 - Contribuicao de ajuda para a comunidade (caso sobre tempo)
 - Sistema de usuario e senha sem email ou telefone.
-
+-tata
