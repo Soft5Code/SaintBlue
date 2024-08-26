@@ -1,15 +1,2 @@
-##Ideias para o projeto
-- Mapeamento da faculdade (Nao necessario, caso sobre tempo)
-- Campo para avaliação dos professores individual
-  - Sistema de classificacao com ranking de acordo como o desempenho em areas
-- Postagens em video, texto e imagem
-- Modo claro e escuro(Temas)
-- Campo de noticias
-- Campo de comunidades (Tecnologia)
-- Rankeamento de projetos mais bem avaliados
-- Remover campo direito e incluir dois campos customizaveis
-- Comunidade com interacao entre usuarios e tambem entre grupos
-- Politicas de restricao
-- Contribuicao de ajuda para a comunidade (caso sobre tempo)
-- Sistema de usuario e senha sem email ou telefone.
--tata
+##Estruturas do site
+- 
