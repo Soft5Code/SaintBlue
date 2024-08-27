@@ -1,0 +1,9 @@
+Sistema de Estoque
+Tela de sign up/login.
+Tela de dashboard (graficos e metricas).
+Tela de perfil (alteração de dados).
+Tela de cadastro, edição e consulta de produtos.
+Tela de cadastro, edição e consulta de colaboradores.
+Tela de cadastro, edição e consulta de fornecedores.
+Tela de historico de vendas de colaboradores.
+Tela de vendas do estoque todo.
