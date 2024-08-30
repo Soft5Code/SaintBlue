@@ -1,5 +1,5 @@
 # PROJETO FORUM METROCAMP - Desenvolvimento Web, prof. João Ronaldo Cunha
-## Equipe Soft5Code: Aliciri, Daniel, Eduardo, Gabriel, Pedro e Richard
+## Equipe Soft5Code:Daniel, Eduardo, Gabriel, Pedro e Richard
 ### O nosso projeto, 
 
 #### O que iremos utilizar no nosso site (sujeito a mudanças):
