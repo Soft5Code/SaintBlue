@@ -7,15 +7,19 @@
 </head>
 <body>
     <h1><img src="Imagens utilizadas/logo saint.png" alt="Logo Saint Blue"></h1>
-    <p>Email 
-        <input type="email" name="email" id="email"></p>
+    <form action="dashboard.html" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Login</legend>
+            <p><label for="email">Email:*</label>
+                <input type="email" name="email" id="email" size="25" required autocomplete="email"></p>
     
-    <p>Senha 
-        <input type="password" name="senha" id="senha"></p>
-
-    <h2><a href="dashboard.html" target="_self" rel="next"><input type="submit" value="Entrar"></a></h2>
-
-    <p>Ja possui uma conta? <a href="cadastro.html" target="_self" rel="next">Criar conta</a></p>
+            <p><label for="senha">Senha:*</label>
+                <input type="password" name="senha" id="senha" size="25" required autocomplete="current-password"></p>
+        </fieldset>
+            <button type="submit">Criar Conta</button>
+    </form>
+    
+    <p>Já possui uma conta? <a href="cadastro.html" target="_self" rel="next">Criar conta</a></p>
 
 </body>
 </html>
