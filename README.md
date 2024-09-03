@@ -12,7 +12,7 @@
 #### Check-List das atividades:
 - [x] Atividade 01
 - [x] Atividade 02
-- [ ] Atividade 03
+- [x] Atividade 03
 - [ ] Atividade 04
 - [ ] Atividade 05
 - [ ] Atividade 06
