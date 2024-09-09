@@ -3,42 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Saint Blue</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1><img src="Imagens utilizadas/logo saint.png" alt="Logo Saint Blue"></h1>
-    <h2>Cadastre-se</h2>
-    <form action="https://webhook.site/c4228bb2-7f1b-4e11-b52b-d70b5ec55654" method="post" autocomplete="on">
-        <fieldset>
-            <legend>Dados pessoais</legend>
-            <p><label for="nome">Nome:*</label>
-                <input type="text" name="nome" id="nome" placeholder="Ex: Pedro" size="25" required minlength="4" maxlength="15" autocomplete="name"></p>
-    
-            <p><label for="sobrenome">Sobrenome:*</label>
-                <input type="text" name="sobrenome" id="sobrenome" placeholder="Ex: Pereira" size="25" required minlength="4" maxlength="15" autocomplete="additional-name"></p>
-    
-            <p><label for="email">E-mail:*</label>
-                <input type="email" name="email" id="email" placeholder="Ex: Pedropereira@gmail.com" size="30" required minlength="3" maxlength="30" autocomplete="email"></p>
-    
-            <p><img src="Imagens utilizadas/brasil.jpeg" alt="Bandeira do Brasil">
-                <label for="telefone">+55*</label>
-                <input type="tel" name="telefone" id="telefone" size="25" placeholder="Ex: 19 4002-8922" required  autocomplete="tel-national"></p>
-    
-            <p><label for="senha">Senha:*</label>
-                <input type="password" name="senha" id="senha" placeholder="Ex: awc#5678" required minlength="8" maxlength="20" autocomplete="new-password"></p>
-    
-            <p><label for="confirmarsenha">Confirmar senha:*</label>
-                <input type="password" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme sua senha" required minlength="8" maxlength="20" autocomplete="current-password"></p></p>
+<body>  
         
-        </fieldset>          
-            <button type="submit">Criar Conta</button>
+        <div class="container">
+            
+            
+            
+            <div class="form">
+                <form action="https://webhook.site/c4228bb2-7f1b-4e11-b52b-d70b5ec55654" method="post" autocomplete="on">               
+                
+                <div class="imglogo">
+                        <img src="s.png" alt="Logo Saint Blue">
+                </div>
         
-    </form>
+                 <div class="imgnumber">
+                        <img src="brasil.jpeg" alt="Bandeira do Brasil">
+                </div>
+                
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div> 
+                
+
+
+                <div class="input-group">    
+
+                    <div class="input-box">
+                        <label for="nome">Nome:*</label>
+                        <input type="text" name="nome" id="nome" placeholder="Ex: Pedro" size="25" required minlength="4" maxlength="15" autocomplete="name">
+                    </div>
+            
+                    <div class="input-box">
+                        <label for="sobrenome">Sobrenome:*</label>
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Ex: Pereira" size="25" required minlength="4" maxlength="15" autocomplete="additional-name">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail:*</label>
+                        <input type="email" name="email" id="email" placeholder="Ex: Pedropereira@gmail.com" size="30" required minlength="3" maxlength="30" autocomplete="email">
+                    </div>
+                
+                    <div class="input-box">
+                        <label for="telefone">+55:*</label>
+                        <input type="tel" name="telefone" id="telefone" size="25" placeholder="Ex: 19 4002-8922" required  autocomplete="tel-national">
+                    </div>
+            
+                    <div class="input-box">
+                        <label for="senha">Senha:*</label>
+                        <input type="password" name="senha" id="senha" placeholder="Ex: awc#5678" required minlength="8" maxlength="20" autocomplete="new-password">
+                    </div>
+            
+                    <div class="input-box">
+                        <label for="confirmarsenha">Confirmar senha:*</label>
+                        <input type="password" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme sua senha" required minlength="8" maxlength="20" autocomplete="current-password">     
+                    </div>
+            
+                    <div class="login-button">
+                        <button type="submit">CRIAR CONTA</button>
+                    </div>
+
+                </div>
+
+                <div class="login">
+                <p>Já possui uma conta? <a href="index.html" target="_self" rel="prev" class= "fl">Fazer login</a></p>
+                </div>
+            </div>
+                
+                
+            </div>
+        
+        </div> 
+        
+        
+           
+            </form>
     
-       <!-- <h2><a href="dashboard.html"><input type="submit" value="Criar conta"></a></h2>-->
-        <p>Já possui uma conta? <a href="index.html" target="_self" rel="prev">Fazer login</a></p>
+    
          
     
 
 </body>
 </html>
+
