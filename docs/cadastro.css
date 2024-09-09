@@ -10,7 +10,7 @@
 
 
 body {
-    background-image: url(Imagensutilizadas/fotofundo.jpg);
+    background-image: url(imagensutilizadas1/fotofundo.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -40,15 +40,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* A largura do contêiner */
-    height: 150px; /* Aumente a altura do contêiner */
+    width: 100%; 
+    height: 150px; 
     padding-top: 7.5rem;
 }
 
 .imglogo img {
-    width: 80%; /* Aumenta a largura da imagem dentro do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: contain; /* Garante que a imagem não seja distorcida */
+    width: 80%; 
+    height: auto; 
+    object-fit: contain; 
     
 }
 
