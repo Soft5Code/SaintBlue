@@ -40,15 +40,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* A largura do contêiner */
-    height: 150px; /* Aumente a altura do contêiner */
+    width: 100%; 
+    height: 150px; 
     padding-top: 7.5rem;
 }
 
 .imglogo img {
-    width: 80%; /* Aumenta a largura da imagem dentro do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: contain; /* Garante que a imagem não seja distorcida */
+    width: 80%; 
+    height: auto; 
+    object-fit: contain; 
     
 }
 
@@ -167,16 +167,4 @@ a.fl:visited {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2;
     
-}
-
-@media screen and (max-width: 1330px) {
-    .background-image {
-        display: none;
-    }
-
-    .container{
-        width: 50%
-    }
-
-
 }
