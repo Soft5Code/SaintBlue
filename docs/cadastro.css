@@ -22,8 +22,8 @@ body {
 
 .container {
     background-color: white;
-    width: 30rem; 
-    height: 85vh; 
+    width: 500px;
+    height: 85vh;
     padding: 10px;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
     border: 2px solid #2D5D5F;
@@ -31,6 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .imglogo {
@@ -38,12 +39,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px; 
-    padding-top: 7.5rem; 
+    height: 150px;
+    padding-top: 7.5rem;
 }
 
 .imglogo img {
-    width: 80%; 
+    width: 80%;
     height: auto;
     object-fit: contain;
 }
@@ -145,67 +146,71 @@ a.fl:visited {
 }
 
 
-@media screen and (max-width: 1330px) {
+@media screen and (max-width: 1366px) {
     .container {
-        width: 50%;
+        width: 70%;
+        height: 80vh;
     }
-    .form {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
-    }
-    .input-group{
-        flex-direction: column;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-        max-height: 10rem;
-        padding-right: 5rem;
-    }
-
-}
-
-
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 70%; 
-        height: auto;
-    }
-
+    
     .imglogo {
-        padding-top: -4rem;
+        padding-top: 6rem;
+    }
+
+    .login-button button {
+        font-size: 0.9rem;
     }
 
     .form-header {
-        font-size: 1.2rem;
+        padding: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 80%;
+        height: 75vh;
+    }
+
+    .imglogo {
+        padding-top: 4rem;
+    }
+
+    .login-button button {
+        font-size: 0.85rem;
+    }
+
+    .form-header {
+        padding: 1.5rem;
     }
 }
 
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 50%; 
+        width: 90%;
+        height: auto; 
+        padding: 1rem;
     }
 
     .form-header {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .login-button button {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+    }
+
+    .login {
+        font-size: 0.75rem;
     }
 }
 
 
 @media screen and (max-width: 480px) {
     .container {
-        width: 50%; 
+        width: 95%;
         padding: 20px;
-        height: auto;
     }
 
     .form-header {
