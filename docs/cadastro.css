@@ -22,7 +22,7 @@ body {
 
 .container {
     background-color: white;
-    width: 500px; 
+    width: 30rem; 
     height: 85vh; 
     padding: 10px;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
@@ -145,9 +145,35 @@ a.fl:visited {
 }
 
 
+@media screen and (max-width: 1330px) {
+    .container {
+        width: 50%;
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 10rem;
+        padding-right: 5rem;
+    }
+
+}
+
+
 @media screen and (max-width: 1024px) {
     .container {
-        width: 70%; 
+        width: 90%; 
+        height: auto;
     }
 
     .imglogo {
@@ -184,4 +210,6 @@ a.fl:visited {
 
     .form-header {
         font
+}
+
 }
