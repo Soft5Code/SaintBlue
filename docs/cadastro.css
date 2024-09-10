@@ -172,12 +172,12 @@ a.fl:visited {
 
 @media screen and (max-width: 1024px) {
     .container {
-        width: 90%; 
+        width: 70%; 
         height: auto;
     }
 
     .imglogo {
-        padding-top: 4rem;
+        padding-top: -4rem;
     }
 
     .form-header {
@@ -188,7 +188,7 @@ a.fl:visited {
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 90%; 
+        width: 50%; 
     }
 
     .form-header {
@@ -203,13 +203,20 @@ a.fl:visited {
 
 @media screen and (max-width: 480px) {
     .container {
-        width: 100%; 
+        width: 50%; 
         padding: 20px;
         height: auto;
     }
 
     .form-header {
-        font
-}
+        font-size: 1.1rem;
+    }
 
+    .login-button button {
+        font-size: 0.75rem;
+    }
+
+    .login {
+        font-size: 0.7rem;
+    }
 }
