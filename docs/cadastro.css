@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url(imagensutilizadas1/fotofundo.jpg);
+    background-image: url(fotofundo.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+
 }
 
 .imglogo {
@@ -46,7 +46,7 @@ body {
 .imglogo img {
     width: 80%;
     height: auto;
-    object-fit: contain;
+    
 }
 
 .form input, .form textarea, .form select {
@@ -158,6 +158,7 @@ a.fl:visited {
 
     .login-button button {
         font-size: 0.9rem;
+        
     }
 
     .form-header {
@@ -168,17 +169,22 @@ a.fl:visited {
 
 @media screen and (max-width: 1440px) {
     .container {
-        width: 80%; /* Ajuste conforme necessário */
-        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        width: 28%;
+        height: 95vh;
+        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
         overflow: hidden;
-        padding: 1rem; /* Adiciona espaçamento interno */
     }
 
     .imglogo {
         max-width: 200px; /* Define um tamanho máximo para a imagem */
         height: auto; /* Mantém a proporção da imagem */
-        padding-top: 2.5rem; /* Espaço superior */
-        margin: 0 auto; /* Centraliza horizontalmente */
+        padding-top: 3rem; /* Espaço superior, se necessário */
+        display: block; /* Garante que a imagem seja tratada como um bloco */
+        position: relative;
+        left: 2.8rem;
+        width: 100%;
+        height: 150px;
+        padding-top: 2.5rem;
     }
 
     .login-button button {
@@ -188,31 +194,11 @@ a.fl:visited {
 
     .form-header {
         padding: 1.5rem;
-        font-size: 1rem; /* Ajusta o tamanho da fonte conforme necessário */
     }
 
     .login {
-        font-size: 0.9rem;
-    }
-}
-
     
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 80%;
-        height: 75vh;
-    }
-
-    .imglogo {
-        padding-top: 4rem;
-    }
-
-    .login-button button {
-        font-size: 0.85rem;
-    }
-
-    .form-header {
-        padding: 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
