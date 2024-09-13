@@ -186,6 +186,12 @@ a.fl:visited {
         height: 150px;
         padding-top: 2.5rem;
     }
+      
+    .imgnumber {
+        position: relative;
+        top: 17rem;
+        left :3rem;
+    }
 
     .login-button button {
         font-size: 0.85rem;
