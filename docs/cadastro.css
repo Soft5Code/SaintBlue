@@ -148,22 +148,42 @@ a.fl:visited {
 
 @media screen and (max-width: 1366px) {
     .container {
-        width: 70%;
+        width: 28%;
         height: 80vh;
+        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
+        overflow: hidden;
     }
-    
+
     .imglogo {
-        padding-top: 6rem;
+        max-width: 200px; /* Define um tamanho máximo para a imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        padding-top: 3rem; /* Espaço superior, se necessário */
+        display: block; /* Garante que a imagem seja tratada como um bloco */
+        position: relative;
+        left: 3rem;
+        width: 100%;
+        height: 150px;
+        padding-top: 2.5rem;
+    }
+      
+    .imgnumber {
+        position: relative;
+        top: 17rem;
+        left :3rem;
     }
 
     .login-button button {
-        font-size: 0.9rem;
-        
+        font-size: 0.85rem;
+        margin-top: 1.9rem;
     }
 
     .form-header {
-        padding: 2rem;
-        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    .login {
+    
+        font-size: 0.9rem;
     }
 }
 
@@ -205,27 +225,6 @@ a.fl:visited {
     .login {
     
         font-size: 0.9rem;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-        height: auto; 
-        padding: 1rem;
-    }
-
-    .form-header {
-        font-size: 1.2rem;
-    }
-
-    .login-button button {
-        font-size: 0.8rem;
-    }
-
-    .login {
-        font-size: 0.75rem;
     }
 }
 
