@@ -29,6 +29,7 @@ body {
     border: 2px solid #2D5D5F;
     border-radius: 30px;
     display: flex;
+    flex-direction: column; /* Para permitir rolar o conteúdo se necessário */
     justify-content: center;
     align-items: center;
 
@@ -138,6 +139,7 @@ a.fl:visited {
     display: flex;
     flex-direction: column;
     margin-bottom: 0rem;
+   
 }
 
 .input-box input {
@@ -159,7 +161,7 @@ a.fl:visited {
         padding-top: 3rem; /* Espaço superior, se necessário */
         display: block; /* Garante que a imagem seja tratada como um bloco */
         position: relative;
-        left: 3rem;
+        left: 2.7rem;
         width: 100%;
         height: 150px;
         padding-top: 2.5rem;
@@ -187,33 +189,65 @@ a.fl:visited {
 }
 
 @media screen and (max-width: 1366px) {
+    body {
+        overflow-y: scroll;
+    }
+    
     .container {
-        width: 25rem;
-        height: 48rem;
-        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
-        overflow: hidden;
+        width: 28%;
+        height: 95vh;
+        overflow: hidden; /* Permite rolar o contêiner se necessário */
+    
     }
 
     .imglogo {
+        width: 85%;
+        height: auto; /* Mantém a proporção da imagem */
+        display: block; /* Garante que a imagem seja tratada como um bloco */
+        position: relative;
+        left: 2.6rem;
+        height: 150px;
+        padding-top: 4.6rem;
+    }
+    
+    .form input, .form textarea, .form select {
+        width: 100%;
+        border: 2px solid #2D5D5F;
+        border-radius: 8px;
+        outline: none;
+        padding: 0.4rem;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
+        margin-bottom: 0.2rem;
+    }
+    
+    .input-box {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%; 
-        height: 150px; 
-        padding-top: 7.5rem;
+        flex-direction: column;
+        margin-bottom: 0rem;
+        position: relative;
+        
+    }
+
+    .input-group {
+        display: flex;
+        padding: 1.5rem 0rem;
+        flex-direction: column;
+        position: relative;
+        top: -4rem;
+        font-size: 0.9rem;
     }
       
     .imgnumber {
         position: relative;
-        top: 20.2rem;
-        left: 3rem;
+        top: 16.1rem;
+        left: 2.5rem;
     }
 
     .login-button button {
         width: 100%;
-        margin-top: 2.5rem;
+        margin-top: 2.1rem;
         background-color:#2D5D5F;
-        padding: 1rem;
+        padding: 0.8rem 0.8rem;
         border-radius: 30px;
         cursor: pointer;
         color: white;
@@ -222,20 +256,30 @@ a.fl:visited {
         position: relative;
         top:-1.5rem;
         border: none;
-        box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
+        box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
     }
 
     .form-header {
-        padding: 1.5rem;
+        position: relative;
+        top: 0.3rem;
+        font-size: 0.5rem;
     }
 
     .login {
         position: relative;
-        top:-5rem;
+        top:-6.5rem;
         text-align: center;
         font-size: 0.8rem;
     }
+
+    .form label {
+        display: block;
+        position: relative;
+        top: 0.4rem ; /* Ajusta a margem abaixo das labels */
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte das labels */
+    }
 }
+
 
 
 
@@ -257,3 +301,5 @@ a.fl:visited {
         font-size: 0.7rem;
     }
 }
+
+
