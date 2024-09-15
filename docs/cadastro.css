@@ -22,16 +22,15 @@ body {
 
 .container {
     background-color: white;
-    width: 21.5rem;
-    height: 87vh;
-    padding: 1rem 1rem;
+    width: 500px;
+    height: 85vh;
+    padding: 10px;
     box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
     border: 2px solid #2D5D5F;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
 }
 
@@ -41,11 +40,11 @@ body {
     align-items: center;
     width: 100%;
     height: 150px;
-    padding-top: 6.5rem;
+    padding-top: 7.5rem;
 }
 
 .imglogo img {
-    width: 65%;
+    width: 80%;
     height: auto;
     
 }
@@ -55,7 +54,7 @@ body {
     border: 2px solid #2D5D5F;
     border-radius: 8px;
     outline: none;
-    padding: 0.5rem 0.5rem;
+    padding: 10px;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
     margin-bottom: 1rem;
 }
@@ -63,7 +62,7 @@ body {
 .form-header {
     width: 100%;
     justify-content: space-between;
-    font-size: 8px;
+    font-size: 9px;
     text-align: center;
     padding: 3rem;
     position: relative;
@@ -78,9 +77,9 @@ body {
 
 .login-button button {
     width: 100%;
-    margin-top: 1.7rem;
+    margin-top: 2.5rem;
     background-color: #2D5D5F;
-    padding: 0.8rem 0.5rem;
+    padding: 1rem;
     border-radius: 30px;
     cursor: pointer;
     color: white;
@@ -146,3 +145,105 @@ a.fl:visited {
     padding: 0.8rem 1.2;
 }
 
+@media screen and (max-width: 1440px) {
+    .container {
+        width: 28%;
+        height: 95vh;
+        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
+        overflow: hidden;
+    }
+
+    .imglogo {
+        max-width: 200px; /* Define um tamanho máximo para a imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        padding-top: 3rem; /* Espaço superior, se necessário */
+        display: block; /* Garante que a imagem seja tratada como um bloco */
+        position: relative;
+        left: 3rem;
+        width: 100%;
+        height: 150px;
+        padding-top: 2.5rem;
+    }
+      
+    .imgnumber {
+        position: relative;
+        top: 17rem;
+        left :3rem;
+    }
+
+    .login-button button {
+        font-size: 0.85rem;
+        margin-top: 1.9rem;
+    }
+
+    .form-header {
+        padding: 1.5rem;
+    }
+
+    .login {
+    
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .container {
+        width: 27%;
+        height: 98vh;
+        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
+        overflow: hidden;
+    }
+
+    .imglogo {
+        max-width: 200px; /* Define um tamanho máximo para a imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        padding-top: 3rem; /* Espaço superior, se necessário */
+        display: block; /* Garante que a imagem seja tratada como um bloco */
+        position: relative;
+        left: 3rem;
+        width: 100%;
+        height: 150px;
+        padding-top: 2.5rem;
+    }
+      
+    .imgnumber {
+        position: relative;
+        top: 17rem;
+        left :3rem;
+    }
+
+    .login-button button {
+        font-size: 0.85rem;
+        margin-top: 1.9rem;
+    }
+
+    .form-header {
+        padding: 1.5rem;
+    }
+
+    .login {
+    
+        font-size: 0.9rem;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form-header {
+        font-size: 1.1rem;
+    }
+
+    .login-button button {
+        font-size: 0.75rem;
+    }
+
+    .login {
+        font-size: 0.7rem;
+    }
+}
