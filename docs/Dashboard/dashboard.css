@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Aleo", serif;
+    font-family: "sans-serif";
 }
 
 body{
@@ -60,11 +60,6 @@ body{
     width: 100%;
     display: flex;
     background-color: var(--color-main);
-}
-
-@font-face {
-    font-family: 'sans-serif';
-    font-weight: normal;
 }
 
 /*------------------------->Menu*/
