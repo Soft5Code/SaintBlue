@@ -9,8 +9,8 @@
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #f5f3f3f1;
     
-    --color-boton: #00000072;
-    --color-boton-texto: #2d5d5f;
+    --color-boton: #000000d7;
+    --color-boton-texto: #ffffff;
 
     --color-linha: #b4b4b4;
 
@@ -21,19 +21,20 @@
     --color-scroll-hover: #868686;
 
     --color-main:#eceaea;
+    --color-main-texto:#000000;
 }
 
 .dark_mode{
     --color-barra-lateral: #2c2d31;
 
     --color-texto: #ffffff;
-    --color-texto-menu: #c7c7c9;
+    --color-texto-menu: #c4c4c5;
 
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #eeeeee;
     
-    --color-boton: #ffffff;
-    --color-boton-texto: #000000;
+    --color-boton: #2d5d5f;
+    --color-boton-texto: #ffffff;
 
     --color-linha: #5a5a5a;
 
@@ -41,7 +42,10 @@
     --color-switch-circulo: #ffffff;
 
     --color-scroll: #44454a;
-    --color-scroll-hover: #555555;
+    --color-scroll-hover: #44454a;
+
+    --color-main:#2c2d31;
+    --color-main-texto:#ffffff;
 }
 
 *{
@@ -76,7 +80,8 @@ body{
     align-items: center;
     border-radius: 50%;
     background-color: var(--color-boton);
-    color: var(--color-barra-lateral);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-boton-texto);
     right: 15px;
     top: 15px;
     z-index: 100;
@@ -124,19 +129,32 @@ body{
     color: var(--color-texto);
     margin-bottom: 40px;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding-left: 4px;
+
 }
-.barra-lateral .nome-pagina .bi-box{
-    min-width: 50px;
-    font-size: 40px;
+.barra-lateral .nome-pagina img{
+    min-width: 4rem;
+    height: 4rem;
+    display: flex;
+    margin-left: 0.5rem;
+    margin-top: 0.6rem;
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
 .barra-lateral .nome-pagina span{
     font-size: 25px;
     margin-left: 5px;
     opacity: 1;
     transition: opacity 0.6s ease;
+}
+.barra-lateral .nome-pagina .txt_logo{
+    margin-left: 3.2rem;
+    font-size: 2rem;
 }
 .barra-lateral .nome-pagina span.oculto{
     opacity: 0;
@@ -185,6 +203,10 @@ body{
     min-width: 40px;
     font-size: 22px;
 }
+
+/*------------------------->Menu de Navegacao = INDIVIDUAL PARA CADA PAGINA*/
+
+
 
 /*------------------------->Menu de Navegacao = Linha*/
 .barra-lateral .linha{
@@ -284,11 +306,16 @@ body{
 /*---------------------------------------Main*/
 main{
     margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.5s ease;
+    padding: 2rem;
+    background-color: var(--color-main);
+    color: var(--color-main-texto);
+    width: calc(100% - 250px);
+    transition: margin-left 0.5s ease, width 0.5s ease;
 }
-main.min_main{
+main.min_main {
     margin-left: 80px;
+    width: calc(100% - 80px);
+    transition: margin-left 0.5s ease, width 0.5s ease;
 }
 .aba{
     display: flex;
@@ -296,13 +323,20 @@ main.min_main{
     align-items: center;
     font-size: 2.8rem;
     height: 100%;
+    z-index: 2;
 }
 
 .welcome{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5rem;
     position: relative;
-    font-size: 2rem;
-    top: -2rem;
-    left: 3rem;
+    padding: 10px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%; 
 }
 
 /*------------------------->Main = Linha*/
@@ -315,15 +349,7 @@ main.min_main{
     var(--color-linha);
 }
 
-.dashtemporario {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -2rem;
-}
-/*---------------------------------------Responsivo*/
+/*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
         margin-bottom: 5px;
@@ -331,7 +357,7 @@ main.min_main{
     .barra-lateral .modo_escuro{
         margin-bottom: 3px;
     }
-}
+}   
 @media (max-width: 600px){
     .barra-lateral{
         position: fixed;
@@ -342,12 +368,14 @@ main.min_main{
     }
     .menu{
         display: flex;
+        background-color: var(--color-boton);
     }
     .menu i:nth-child(2){
         display: none;
     }
     main{
         margin-left: 0;
+        width: 100%;
     }
     main.min_main{
         margin-left: 0;
@@ -357,6 +385,6 @@ main.min_main{
 /* Media query para telas menores que 768px */
 @media (max-width: 768px) {
     .main .container {
-      flex-basis: 100%; /* Faz com que cada item ocupe 100% da largura */
+      flex-basis: 100%;
     }
   }
