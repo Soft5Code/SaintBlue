@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Aleo", 'sans-serif';
+    font-family: 'sans-serif';
 }
 
 body {
@@ -146,8 +146,7 @@ a.fl:visited {
     padding: 0.8rem 1.2;
 }
 
-.title{
-    font-family: 'Aleo';
+
 
 @media screen and (max-width: 1440px) {
     .container {
