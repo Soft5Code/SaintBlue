@@ -1,4 +1,4 @@
-const cloud = document.getElementById("cloud");
+const menuIcon = document.getElementById("menu_icon");
 const barraLateral = document.querySelector(".barra-lateral");
 const spans = document.querySelectorAll(".barra-lateral span");
 const palanca = document.querySelector(".switch");
@@ -18,7 +18,7 @@ menu.addEventListener("click",()=>{
     }
     if(window.innerWidth<=320){
         barraLateral.classList.add("mini_barra_lateral");
-        main.classList.add("min-main");
+        main.classList.add("min_main");
         spans.forEach((span)=>{
             span.classList.add("oculto");
         })
@@ -31,10 +31,38 @@ palanca.addEventListener("click",() => {
     circulo.classList.toggle("prendido");
 });
 
-cloud.addEventListener("click",() => {
+menuIcon.addEventListener("click",() => {
     barraLateral.classList.toggle("mini_barra_lateral");
     main.classList.toggle("min_main");
     spans.forEach((span)=>{
         span.classList.toggle("oculto");
     })
 });
+
+
+
+
+
+
+
+
+
+
+var data = [{
+    type: "pie",
+    values: [2, 3, 4, 4],
+    labels: ["RAM", "SSD", "MONITOR 29", "GTX-550"],
+    textinfo: "label+percent",
+    textposition: "outside",
+    automargin: true
+  }]
+  
+  var layout = {
+    height: 350,
+    width: 350,
+    paper_bgcolor: 'rgba(0,0,0,0)', 
+    margin: {"t": 0, "b": 0, "l": 0, "r": 0},
+    showlegend: false
+    }
+  
+  Plotly.newPlot('myDiv', data, layout)
