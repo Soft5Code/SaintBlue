@@ -6,64 +6,58 @@
     <title>Saint Blue/Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src='https://cdn.plot.ly/plotly-2.35.2.min.js'></script>
 </head>
 <body>
-
-
     <div class="menu">
         <i class="bi bi-list"></i>
         <i class="bi bi-x-lg"></i>
     </div>
-
-
-
     <div class="barra-lateral">
         <div>
             <div class="nome-pagina">
-                <i class="bi bi-box" id="cloud"></i>
-                <span>SaintBlue</span>
+                <img src="./SITE_ESTOQUE/Imagens/saint_500.png" alt="Menu_Toggle" id="menu_icon">
+                <span class="txt_logo">SaintBlue</span>
             </div>
         </div>
-
         <nav class="navegacao">
             <ul>
                 <li>
-                    <a href="dashboard.html" rel="prev" target="_self">
+                    <a href="./dashboard.html" rel="prev" target="_self">
                         <i class="bi bi-clipboard2-data"></i>
                         <span class="txtNavegacao">Dashboard</span>
                     </a>
                 </li>
                 <br>
                 <li>
-                    <a href="../Estoque/estoque.html" rel="next" target="_self">
+                    <a href="./estoque.html" rel="next" target="_self">
                         <i class="bi bi-boxes"></i>
                         <span class="txtNavegacao">Estoque</span>
                     </a>
                 </li>
                 <br>
                 <li>
-                    <a href="../Vendas/vendas.html" rel="next" target="_self">
+                    <a href="./vendas.html" rel="next" target="_self">
                         <i class="bi bi-graph-up-arrow"></i>
                         <span class="txtNavegacao">Vendas</span>
                     </a>
                 </li>
                 <br>
                 <li>
-                    <a href="../Fornecedores/fornecedores.html" rel="next" target="_self">
+                    <a href="./fornecedores.html" rel="next" target="_self">
                         <i class="bi bi-person-workspace"></i>
                         <span class="txtNavegacao">Fornecedores</span>
                     </a>
                 </li>
                 <br>
                 <li>
-                    <a href="../Colaboradores/colaboradores.html" rel="next" target="_self">
+                    <a href="./colaboradores.html" rel="next" target="_self">
                         <i class="bi bi-file-earmark-person"></i>
                         <span class="txtNavegacao">Colaboradores</span>
                     </a>
                 </li>
             </ul>
         </nav>
-
         <div>
             <div class="linha"></div>
         </div>
@@ -79,9 +73,8 @@
                 </div>
             </div>
         </div>
-
         <div class="usuario">
-            <img src="imagensutilizadas/263457215_5031922253486891_358383527080523036_n.jpg" alt="perfil_usuario">
+            <img src="./SITE_ESTOQUE/Imagens/263457215_5031922253486891_358383527080523036_n.jpg" alt="perfil_usuario">
             <div class="info-usuario">
                 <div class="nome_telefone">
                     <span class="nome">Richard Gois</span>
@@ -91,23 +84,24 @@
             </div>
         </div>
     </div>
-
-
-    <main> 
-        
+    <main>        
         <br>
         <br>
         <div class="container">
-            <h1 class="aba">Dashboard</h1>
-            <h2 class="welcome">Bem vindo, Richard</h2>
+            <h1 class="welcome">Bem vindo, Richard</h1>
+            <h2 class="aba">Dashboard</h2>
+            
         </div>
         <br>
         <div>
             <div class="linha_main"></div>
         </div>
-        <br>
-        <br>
-        <img class="dashtemporario" src="imagensutilizadas/Dash temporario.jpg" alt="Graficos">
+        
+
+
+        <div id='myDiv'></div>
+
+        
     </main>
     <script src="script.js"></script>
     <script src="./PLUGINS/bootstrap/js/bootstrap.min.js"></script>
