@@ -8,6 +8,10 @@
 
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #f5f3f3f1;
+
+    --color-main-fundo: #2d5d5f;
+    --color-main-fundo-btn: #ffffff;
+    --color-main-fundo-texto: #000000;
     
     --color-boton: #000000d7;
     --color-boton-texto: #ffffff;
@@ -32,6 +36,10 @@
 
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #eeeeee;
+
+    --color-main-fundo: #c4c4c5;
+    --color-main-fundo-btn: #2d5d5f;
+    --color-main-fundo-texto: #ffffff;
     
     --color-boton: #2d5d5f;
     --color-boton-texto: #ffffff;
@@ -86,8 +94,6 @@ body{
     top: 15px;
     z-index: 100;
 }
-
-
 /*------------------------->Barra Lateral*/
 .barra-lateral{
     position: fixed;
@@ -205,7 +211,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_dashboard a.active {
+.barra-lateral .navegacao .fixe_fornecedores a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -352,10 +358,43 @@ main.min_main {
     height: 2px;
     border-radius: 12px;
     margin-top: 5px;
-    background-color:
-    var(--color-linha);
+    margin-bottom: 6px;
+    background-color:var(--color-linha);
 }
 
+/*-------------------------------------------MAIN = BOTAO Dropdown */
+.atualiza_export {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-main-fundo);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    height: 40px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 10px;
+}
+
+button {
+    border-radius: 8px;
+    background-color: var(--color-main-fundo-btn);
+    color: var(--color-main-fundo-texto);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 1.5rem;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.button_atuliza{
+    width: 8rem;
+}
+
+.button_export{
+    width: 8rem;
+}
 /*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{

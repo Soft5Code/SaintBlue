@@ -205,7 +205,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_dashboard a.active {
+.barra-lateral .navegacao .fixe_vendas a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
