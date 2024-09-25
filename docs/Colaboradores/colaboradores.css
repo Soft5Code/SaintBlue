@@ -360,6 +360,7 @@ main.min_main {
 
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
+    gap: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-main);
@@ -372,7 +373,7 @@ main.min_main {
 }
 
 .search_box{
-    background: linear-gradient(to right, #2d5d5f, #449194, #66d2d6);
+    background: linear-gradient(to left, #2d5d5f, #449194, #66d2d6);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
     color: var(--color-main);
     border-radius: 30px;
@@ -427,7 +428,7 @@ i#filter{
     cursor: pointer;
 }
 i#filter:hover{
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
 }
 
 .filtro{
@@ -462,19 +463,21 @@ i#filter:hover{
     text-align: center;
 }
 .filtro a.selected {
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color: var(--color-menu-houver-texto);
   }
 
 .filtro a:hover{
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color:var(--color-menu-houver-texto)
 }
 
 /*-------------------------------------------MAIN = BOTOES FIXOS*/
 .atualiza_export {
+    max-width: 100%;
+    gap: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-main-fundo);
@@ -502,6 +505,64 @@ button {
 .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
     width: 5rem;
 }
+/* COMEÇO DO CODIGO */
+.container {
+    padding: 0 10px;
+    padding-bottom: 5%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column; /* Exibe os crachás em coluna (um abaixo do outro) */
+    gap: 20px; /* Espaçamento entre os crachás */
+    align-items: center; /* Centraliza os crachás horizontalmente */
+}
+.cracha {
+    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 10px;
+    display: flex; /* Para colocar as informações e a imagem lado a lado */
+    padding-right:  10px;
+    align-items: center; /* Alinhar verticalmente */
+    border: 2px solid #ddd; /* Borda do crachá */
+    border-radius: 20px; /* Borda arredondada */
+    height: 200px;
+    max-width: 100%;
+    background-color: #ebebeb; /* Cor de fundo do crachá */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra */
+}
+
+.cracha:hover{
+    transform: scale(1.05);
+}
+
+/* Informações à esquerda */
+.cracha .info {
+    flex-direction: column; /* Exibir o conteúdo em uma coluna */
+}
+
+/* Tamanho da imagem */
+.cracha .imagem img {
+    margin-top: 10px;
+    height: 120px;
+    max-width: 120px; /* Largura máxima da imagem */
+    border-radius: 20px; /* Deixar a imagem redonda */
+}
+
+.cracha h2 {
+    margin: 5px;
+    font-size: 12px;
+    color: #666;
+    border-bottom: 1px solid #070707; /* Linha abaixo de cada parágrafo */
+    padding-bottom: 5px; /* Espaço entre o texto e a linha */
+    font-family: 'Brush Script MT', cursive;
+}
+
+.cracha h2 span {
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+    font-size: 9px;
+    color: #000;
+}
+
 /*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
@@ -540,4 +601,151 @@ button {
     .main .container {
       flex-basis: 100%;
     }
-  }
+}
+@media (min-width: 768px){
+    
+    /* COMEÇO DO CODIGO */
+    br{
+        display: none;
+    }
+    .container {
+        padding-bottom: 1%;
+        max-height: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row; /* Exibe os crachás em coluna (um abaixo do outro) */
+        gap: 20px; /* Espaçamento entre os crachás */
+        align-items: center; /* Centraliza os crachás horizontalmente */
+    }
+    .cracha {
+        gap: 20px;
+        max-height: 100%;
+        max-width: 100%; /* Largura máxima do crachá */
+        padding: 10px 10px;
+        margin-top: 10px;
+        display: flex; /* Para colocar as informações e a imagem lado a lado */
+        align-items: center; /* Alinhar verticalmente */
+        border: 2px solid #ddd; /* Borda do crachá */
+        border-radius: 20px; /* Borda arredondada */
+        height: 200px;
+        background-color: #ebebeb; /* Cor de fundo do crachá */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra */
+    }
+
+    .cracha:hover{
+        transform: scale(1.05);
+    }
+
+    /* Informações à esquerda */
+    .cracha .info {
+        flex-direction: column; /* Exibir o conteúdo em uma coluna */
+    }
+
+    /* Tamanho da imagem */
+    .cracha .imagem img {
+        height: 100px;
+        width: 120px; 
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 20px; 
+    }
+
+    .cracha h2 {
+        margin: 5px;
+        font-size: 10px;
+        color: #666;
+        border-bottom: 1px solid #070707; /* Linha abaixo de cada parágrafo */
+        padding-bottom: 5px; /* Espaço entre o texto e a linha */
+        font-family: 'Brush Script MT', cursive;
+    }
+
+    .cracha h2 span {
+        font-family: 'Brush Script MT', cursive;
+        font-weight: bold;
+        font-size: 9px;
+        color: #000;
+    }
+}
+@media (min-width: 900px){
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+        button {
+            border-radius: 12px;
+            font-size: 1.2rem;
+            height: 2rem;
+            padding: 3px;
+        }
+        .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+            width: 8rem;
+        }
+}
+@media (min-width: 800px) and (max-width: 899px) {
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    button {
+        border-radius: 12px;
+        font-size: 1.1rem;
+        height: 2rem;
+        padding: 3px;
+    }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        width: 8rem;
+    }
+}

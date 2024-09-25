@@ -372,7 +372,7 @@ main.min_main {
 }
 
 .search_box{
-    background: linear-gradient(to right, #2d5d5f, #449194, #66d2d6);
+    background: linear-gradient(to left, #2d5d5f, #449194, #66d2d6);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
     color: var(--color-main);
     border-radius: 30px;
@@ -427,7 +427,7 @@ i#filter{
     cursor: pointer;
 }
 i#filter:hover{
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
 }
 
 .filtro{
@@ -462,13 +462,13 @@ i#filter:hover{
     text-align: center;
 }
 .filtro a.selected {
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color: var(--color-menu-houver-texto);
   }
 
 .filtro a:hover{
-    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color:var(--color-menu-houver-texto)
 }
@@ -540,4 +540,87 @@ button {
     .main .container {
       flex-basis: 100%;
     }
-  }
+}
+@media (min-width: 900px){
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+        button {
+            border-radius: 12px;
+            font-size: 1.2rem;
+            height: 2rem;
+            padding: 3px;
+        }
+        .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+            width: 8rem;
+        }
+}
+@media (min-width: 800px) and (max-width: 899px) {
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    button {
+        border-radius: 12px;
+        font-size: 1.1rem;
+        height: 2rem;
+        padding: 3px;
+    }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        width: 8rem;
+    }
+}
