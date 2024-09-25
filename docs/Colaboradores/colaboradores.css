@@ -8,6 +8,10 @@
 
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #f5f3f3f1;
+
+    --color-main-fundo: #2d5d5f;
+    --color-main-fundo-btn: #ffffff;
+    --color-main-fundo-texto: #000000;
     
     --color-boton: #000000d7;
     --color-boton-texto: #ffffff;
@@ -32,6 +36,10 @@
 
     --color-menu-houver: #2d5d5f;
     --color-menu-houver-texto: #eeeeee;
+
+    --color-main-fundo: #c4c4c5;
+    --color-main-fundo-btn: #2d5d5f;
+    --color-main-fundo-texto: #ffffff;
     
     --color-boton: #2d5d5f;
     --color-boton-texto: #ffffff;
@@ -86,8 +94,6 @@ body{
     top: 15px;
     z-index: 100;
 }
-
-
 /*------------------------->Barra Lateral*/
 .barra-lateral{
     position: fixed;
@@ -183,7 +189,6 @@ body{
     display: flex;
     margin-bottom: 5px;
 }
-
 .barra-lateral .navegacao a{
     width: 98%;
     height: 50px;
@@ -206,15 +211,11 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_colaboradores a.active {
+.barra-lateral .navegacao .fixe_fornecedores a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
 }
-
-/*------------------------->Menu de Navegacao = INDIVIDUAL PARA CADA PAGINA*/
-
-
 
 /*------------------------->Menu de Navegacao = Linha*/
 .barra-lateral .linha{
@@ -314,7 +315,7 @@ body{
 /*---------------------------------------Main*/
 main{
     margin-left: 250px;
-    padding: 2rem;
+    padding: 0.6rem;
     background-color: var(--color-main);
     color: var(--color-main-texto);
     width: calc(100% - 250px);
@@ -341,9 +342,9 @@ main.min_main {
     font-weight: bold; 
     font-size: 1.5rem;
     position: relative;
-    padding: 10px;
+    padding: 0.5rem;
     z-index: 1;
-    margin-top: -4rem;
+    margin-top: -3rem;
     width: 100%; 
 }
 
@@ -351,12 +352,156 @@ main.min_main {
 .linha_main{
     width: 100%;
     height: 2px;
-    border-radius: 12px;
-    margin-top: 5px;
-    background-color:
-    var(--color-linha);
+    border-radius: 15px;
+    margin-top: 1px;
+    margin-bottom: 6px;
+    background-color:var(--color-linha);
 }
 
+/*-------------------------------------------MAIN = BUSCA RAPIDA*/
+.buscar{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-main);
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 8px;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 5px;
+}
+
+.search_box{
+    background: linear-gradient(to right, #2d5d5f, #449194, #66d2d6);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
+    color: var(--color-main);
+    border-radius: 30px;
+    height: 35px;
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.search_txt::placeholder {
+    color: #0a0a0a;
+    opacity: 1;
+}
+
+.search_btn{
+    color: rgb(43, 41, 41);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_txt{
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    transition: 0.5s;
+    line-height: 30px;
+    color: var(--color-main-texto);
+    flex: 1;
+    margin-right: 10px;
+}
+
+/*-------------------------------------------MAIN = FILTRO*/
+i#filter{
+    background-color: #2d5d5fe7;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 2.3rem;
+    width: 5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+i#filter:hover{
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+}
+
+.filtro{
+    position: relative;
+    background: var(--color-main);
+    border-radius: 1rem;
+    display: block;
+}
+
+.menu_filtro{
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10; 
+}
+.filtro ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.filtro a{
+    color: #0a0a0a;
+    display: block;
+    padding: 0.1rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    text-align: center;
+}
+.filtro a.selected {
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    border-radius: 1rem;
+    color: var(--color-menu-houver-texto);
+  }
+
+.filtro a:hover{
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
+    border-radius: 1rem;
+    color:var(--color-menu-houver-texto)
+}
+
+/*-------------------------------------------MAIN = BOTOES FIXOS*/
+.atualiza_export {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-main-fundo);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    height: 40px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 10px;
+}
+
+button {
+    border-radius: 8px;
+    background-color: var(--color-main-fundo-btn);
+    color: var(--color-main-fundo-texto);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 1.5rem;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+    width: 5rem;
+}
 /*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
