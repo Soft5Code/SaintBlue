@@ -211,7 +211,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_fornecedores a.active {
+.barra-lateral .navegacao .fixe_colaboradores a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -387,7 +387,7 @@ main.min_main {
 }
 
 .search_txt::placeholder {
-    color: #0a0a0a;
+    color: #0a0a0abe;
     opacity: 1;
 }
 

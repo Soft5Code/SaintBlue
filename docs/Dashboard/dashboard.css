@@ -211,9 +211,6 @@ body{
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/*------------------------->Menu de Navegacao = INDIVIDUAL PARA CADA PAGINA*/
-
-
 
 /*------------------------->Menu de Navegacao = Linha*/
 .barra-lateral .linha{

@@ -6,7 +6,7 @@ const circulo = document.querySelector(".circulo");
 const menu = document.querySelector(".menu");
 const main = document.querySelector("main");
 
-
+// Ajuste na barra lateral para pequena ou grande
 menu.addEventListener("click",()=>{
     barraLateral.classList.toggle("max_barra_lateral");
     if(barraLateral.classList.contains("max_barra_lateral")){
@@ -23,9 +23,7 @@ menu.addEventListener("click",()=>{
         spans.forEach((span)=>{
             span.classList.add("oculto");
         })
-    }
-
-    
+    }  
 });
 
 
@@ -83,7 +81,7 @@ window.addEventListener("load", () => {
 
 
 
-
+// Grafico em Dashboard
 var data = [{
     type: "pie",
     values: [2, 3, 4, 4],
@@ -105,7 +103,7 @@ var data = [{
 
 
 
-
+// Para aparecer as opcoes do menu suspenso de filtro no main
   function clickMenu(){
     if (menuFiltro.style.display == 'block'){
         menuFiltro.style.display = 'none'
@@ -114,15 +112,12 @@ var data = [{
     }
   }
 
+  
+  // Para clicar no menu filtro e ficar visivel a opcao selecionada em main
   function selectOption(optionElement) {
     optionElement.classList.toggle('selected');
-
-    // Aqui você pode adicionar a lógica para filtrar os dados com base nas opções selecionadas
     const selectedOptions = document.querySelectorAll('.filtro a.selected');
     const selectedFilters = Array.from(selectedOptions).map(option => option.id);
-
-    // Exemplo de filtragem (substitua pela sua lógica):
-    // Filtrar dados com base nos filtros selecionados:
     filterData(selectedFilters);
   }
 

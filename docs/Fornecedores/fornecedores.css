@@ -387,7 +387,7 @@ main.min_main {
 }
 
 .search_txt::placeholder {
-    color: #0a0a0a;
+    color: #0a0a0abe;
     opacity: 1;
 }
 

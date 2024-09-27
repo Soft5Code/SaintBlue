@@ -26,6 +26,10 @@
 
     --color-main:#eceaea;
     --color-main-texto:#000000;
+
+    --color-linhas-produtoImpares:#a2a2a2b2;
+    --color-linhas-produtoPares:#c2c2c292;
+    --color-texto-produto:#000000;
 }
 
 .dark_mode{
@@ -54,6 +58,10 @@
 
     --color-main:#2c2d31;
     --color-main-texto:#ffffff;
+
+    --color-linhas-produtoImpares:#ffffffb2;
+    --color-linhas-produtoPares:#ffffff92;
+    --color-texto-produto:#000000;
 }
 
 *{
@@ -211,7 +219,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_fornecedores a.active {
+.barra-lateral .navegacao .fixe_vendas a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -234,10 +242,10 @@ body{
     display: flex;
     justify-content: space-between;
     padding-right: 10px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .barra-lateral .modo_escuro * {
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 .barra-lateral .modo_escuro .info{
     width: 150px;
@@ -360,6 +368,7 @@ main.min_main {
 
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
+    gap: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-main);
@@ -372,7 +381,7 @@ main.min_main {
 }
 
 .search_box{
-    background: linear-gradient(to left, #2d5d5f, #449194, #66d2d6);
+    background: linear-gradient(to right, #66d2d6, #449194, #2d5d5f);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
     color: var(--color-main);
     border-radius: 30px;
@@ -386,7 +395,7 @@ main.min_main {
 }
 
 .search_txt::placeholder {
-    color: #0a0a0a;
+    color: #0a0a0abe;
     opacity: 1;
 }
 
@@ -427,7 +436,7 @@ i#filter{
     cursor: pointer;
 }
 i#filter:hover{
-    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
 }
 
 .filtro{
@@ -462,13 +471,13 @@ i#filter:hover{
     text-align: center;
 }
 .filtro a.selected {
-    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color: var(--color-menu-houver-texto);
   }
 
 .filtro a:hover{
-    background: linear-gradient(to left, #2d5d5f, #397a7c, #54adb0);
+    background: linear-gradient(to right, #2d5d5f, #397a7c, #54adb0);
     border-radius: 1rem;
     color:var(--color-menu-houver-texto)
 }
@@ -502,6 +511,80 @@ button {
 .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
     width: 5rem;
 }
+
+/*--------------------------------------TABELAS*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    text-align: left;
+}
+tbody td {
+    border: black;
+    color: var(--color-texto-produto);
+    height: 1.7rem;
+}
+
+/* Ajuste de tamanho para cada Coluna*/
+.codigo{
+    width: 10%;
+}
+.produto{
+    width: 40%;
+}
+.vendedor{
+    width: 15%;
+}
+.data{
+    width: 15%;
+}
+.quantidade{
+    width: 10%;
+}
+.valor{
+    width: 10%;
+}
+
+
+
+
+/* Linha de separacao entre colunas*/
+tbody td:not(:first-child) {
+    border-left: 2px solid #7b7b7b;
+    box-shadow: -2px 0 3px rgba(0, 0, 0, 0.112), 2px 0 3px rgba(0, 0, 0, 0.112);
+}
+
+/* Manter os cantos arredondados apenas nos cantos especificados */
+tbody tr td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+tbody tr td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+/* Alternância de cores para linhas pares e ímpares */
+tr:nth-child(even) {
+    background-color: var(--color-linhas-produtoPares); /* Cor de fundo para linhas pares */
+}
+tr:nth-child(odd) {
+    background-color: var(--color-linhas-produtoImpares); /* Cor de fundo para linhas ímpares */
+}
+
+/* Titulo */
+thead th {
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: var(--color-main);
+    border: none;
+  }
+
+
 /*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
@@ -551,7 +634,7 @@ button {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem;
     }
     .filtro{
         margin-right: 12rem;
@@ -622,5 +705,47 @@ button {
     }
     .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
         width: 8rem;
+    }
+}
+
+@media (max-width: 768px){
+    thead th {
+        font-size: 1rem;
+        border: none;
+    }
+
+    table{
+        width: 100%;
+    }
+    .codigo{
+        width: 10%;
+        font-size: 12px;
+    }
+    .produto{
+        width: 40%;
+        font-size: 12px;
+    }
+    .vendedor{
+        width: 15%;
+        font-size: 12px;
+    }
+    .data{
+        width: 15%;
+        font-size: 12px;
+    }
+    .quantidade{
+        width: 10%;
+        font-size: 12px;
+    }
+    .valor{
+        width: 10%;
+        font-size: 12px;
+    }
+
+}
+@media (min-width: 800px) and (max-width: 899px) {
+    thead th {
+        font-size: 1.2rem;
+        border: none;
     }
 }

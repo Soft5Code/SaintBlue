@@ -26,6 +26,10 @@
 
     --color-main:#eceaea;
     --color-main-texto:#000000;
+
+    --color-linhas-produtoImpares:#a2a2a2b2;
+    --color-linhas-produtoPares:#c2c2c292;
+    --color-texto-produto:#000000;
 }
 
 .dark_mode{
@@ -54,6 +58,10 @@
 
     --color-main:#2c2d31;
     --color-main-texto:#ffffff;
+
+    --color-linhas-produtoImpares:#ffffffb2;
+    --color-linhas-produtoPares:#ffffff92;
+    --color-texto-produto:#000000;
 }
 
 *{
@@ -211,7 +219,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_fornecedores a.active {
+.barra-lateral .navegacao .fixe_estoque a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -360,6 +368,7 @@ main.min_main {
 
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
+    gap: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-main);
@@ -386,8 +395,7 @@ main.min_main {
 }
 
 .search_txt::placeholder {
-    font-weight: bold;
-    color: #0a0a0a;
+    color: #0a0a0abe;
     opacity: 1;
 }
 
@@ -503,6 +511,58 @@ button {
 .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
     width: 5rem;
 }
+
+/*--------------------------------------TABELAS*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+tbody td {
+    border: black;
+    color: var(--color-texto-produto);
+    height: 1.7rem;
+}
+
+/* Aplicar borda esquerda em todas as células, exceto a primeira */
+tbody td:not(:first-child) {
+    border-left: 2px solid #7b7b7b;
+    box-shadow: -2px 0 3px rgba(0, 0, 0, 0.112), 2px 0 3px rgba(0, 0, 0, 0.112);
+}
+
+/* Manter os cantos arredondados apenas nos cantos especificados */
+tbody tr td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+tbody tr td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+/* Alternância de cores para linhas pares e ímpares */
+tr:nth-child(even) {
+    background-color: var(--color-linhas-produtoPares); /* Cor de fundo para linhas pares */
+}
+tr:nth-child(odd) {
+    background-color: var(--color-linhas-produtoImpares); /* Cor de fundo para linhas ímpares */
+}
+
+/* Titulo */
+thead th {
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: var(--color-main);
+    border: none;
+  }
+
+
 /*--------------------------------------Responsivo*/
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
@@ -623,5 +683,18 @@ button {
     }
     .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
         width: 8rem;
+    }
+}
+
+@media (max-width: 768px){
+    thead th {
+        font-size: 1rem;
+        border: none;
+    }
+}
+@media (min-width: 800px) and (max-width: 899px) {
+    thead th {
+        font-size: 1.2rem;
+        border: none;
     }
 }
