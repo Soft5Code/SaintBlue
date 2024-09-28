@@ -51,15 +51,16 @@ dialog::-webkit-scrollbar {
 }
 
 .close-button {
-    border: none;
-    background: none;
-    font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
-    color: #000000; /* Escolha a cor que desejar */
-    cursor: pointer;
+    box-shadow: none;
+    background: none; /* Remove qualquer fundo */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
     position: absolute; /* Para posicionar no canto */
     top: 1rem; /* Distância do topo */
     right: 1rem; /* Distância da direita */
+    outline: none; /* Remove o contorno ao focar */
+    padding: 0; /* Remove qualquer padding */
 }
+
 
 .form-header {
     font-size: 1rem;
