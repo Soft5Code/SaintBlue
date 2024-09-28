@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Aleo", "Sans-serif";
+}
+
+
+dialog::backdrop {
+background-color: rgb(0 0 0 / .3);
+}
+
+dialog {
+    position: fixed; /* Altera para posição fixa */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para o centro */
+    /* Mantenha os outros estilos existentes */
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 25rem;
+    max-height: 90vh;
+    border: 3px solid #000000; 
+    padding: 2rem;
+    max-width: 90%; /* Para evitar que ultrapasse a tela em dispositivos pequenos */
+    background-color: #ffffff;
+    overflow: auto; /* Permite rolagem quando necessário */
+}
+
+dialog::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari e Opera */
+  }
+
+
+ #dialogbutton {
+    border: none;
+    width: 15rem;
+    height: 3rem;
+    background-color: #2D5D5F;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.93rem;
+    font-weight: 500; /* Corrigido */
+    box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
+    margin: 0 auto; /* Centraliza no contêiner */
+    display: block; /* Para que a margem funcione */
+}
+
+.close-button {
+    border: none;
+    background: none;
+    font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+    color: #000000; /* Escolha a cor que desejar */
+    cursor: pointer;
+    position: absolute; /* Para posicionar no canto */
+    top: 1rem; /* Distância do topo */
+    right: 1rem; /* Distância da direita */
+}
+
+.form-header {
+    font-size: 1rem;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+form input, .form textarea, .form select {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 2.3rem;
+    border: 0.1rem solid #000000;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
+    outline: none;
+    margin-top: 0.5rem; /* Aumenta o espaço entre o rótulo e a caixa de entrada */
+}
+
+.obs textarea{
+    width: 17.5rem;
+    height: 5rem;
+}
+
+textarea {
+    resize: none; /* Impede o redimensionamento */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Para incluir padding e borda na largura total */
+    font-size: 16px; /* Tamanho da fonte */
+    overflow: hidden; /* Esconde as setas */
+}
+
+input[type="number"] {
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha para textarea */
+    resize: none; /* Impede redimensionamento do textarea */
+}
+
+
+.input-group {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os inputs se alinhem em várias linhas */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.input-box {
+    flex: 1 1 calc(50% - 1rem); /* Cada input ocupará 50% da largura, menos o espaçamento */
+    margin-top: -0.5rem;
+}
+
+.produto-preco {
+    display: flex; /* Permite que Produto e Preço fiquem lado a lado */
+    justify-content: space-between; /* Espaço entre eles */
+    width: 100%; /* Para garantir que ocupem a linha inteira */
+}
+
+.produto textarea {
+    width: 11.1rem;
+    height: 4rem; /* Apenas o input dentro da classe produto */
+}
+
+.preço input{
+    width: 7.5rem;
+    height: 2.5rem;
+}
+
+.form input[type="file"] {
+    display: block;
+    border: 5rem solid #000000; /* Manter o mesmo estilo */
+    padding: 1rem; /* Adicionar padding */
+}
+
+.photo-upload {
+    width: 10rem;
+    height: 9rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    cursor: pointer;
+    margin: 0 auto; /* Centraliza o elemento no seu contêiner */
+    margin-top: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem; /* Remova qualquer padding */
+    box-sizing: border-box; /* Inclui border no cálculo */
+    flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+    position: relative;
+    top: -1rem;
+}
+
+
+#product-image {
+    display: none; /* Oculta o campo de upload real */
+}
+
+/* Estilo para a prévia da imagem */
+img {
+    margin-top: 1rem;
+    width: 1rem;
+    border-radius: 8px;
+}
+
+.bi bi-person-bounding-box{
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 320px){
+    .input-group {
+        flex-direction: row; /* Coloca os inputs em duas colunas */
+        flex-wrap: wrap; /* Permite quebrar linha */
+        gap: 1rem; /* Espaçamento entre os inputs */
+        justify-content: space-between; /* Distribui espaço entre os inputs */
+    }
+
+    .input-box {
+        flex: 1 1 calc(50% - 1rem); /* Cada input ocupa 50% da largura */
+        margin-bottom: 1rem; /* Espaçamento entre linhas */
+    }
+
+    .produto-preco {
+        display: flex;
+        justify-content: space-between; /* Mantém produto e preço lado a lado */
+        width: 100%; /* Garante que ocupem a linha inteira */
+    }
+    .produto textarea,
+    .preço input {
+        width: 100%; /* Garante que os inputs ocupem 100% da largura */
+        height: 4rem; /* Altura consistente para todos os inputs */
+    }
+
+    .obs textarea {
+        width: 100%; /* Ajusta a largura da textarea para 100% */
+        height: 10rem; /* Mantém uma altura fixa para a textarea */
+    }
+    
+    #dialogbutton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+}
+
+
+@media (min-width: 360px) and (max-width: 1071px) {
+    dialog {
+        width: 40rem; /* Tamanho do diálogo ajustado */
+        min-height: 35rem; /* Define uma altura mínima para acomodar o conteúdo */
+        padding: 2rem; /* Mantém o padding original */
+    }
+
+    .input-group {
+        flex-direction: row; /* Coloca os inputs em duas colunas */
+        flex-wrap: wrap; /* Permite quebrar linha */
+        gap: 1rem; /* Espaçamento entre os inputs */
+        justify-content: space-between; /* Distribui espaço entre os inputs */
+    }
+
+    .input-box {
+        flex: 1 1 calc(50% - 1rem); /* Cada input ocupa 50% da largura */
+        margin-bottom: 1rem; /* Espaçamento entre linhas */
+    }
+
+    .produto-preco {
+        display: flex;
+        justify-content: space-between; /* Mantém produto e preço lado a lado */
+        width: 100%; /* Garante que ocupem a linha inteira */
+    }
+
+    .produto textarea,
+    .preço input {
+        width: 100%; /* Garante que os inputs ocupem 100% da largura */
+        height: 4rem; /* Altura consistente para todos os inputs */
+    }
+
+    .obs textarea {
+        width: 100%; /* Ajusta a largura da textarea para 100% */
+        height: 10rem; /* Mantém uma altura fixa para a textarea */
+    }
+    
+    #dialogbutton {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+}
+
+
+@media (min-width: 1072px){
+    dialog {
+        width: 60rem; /* Tamanho para telas médias */
+        height: 38rem; /* Deixe a altura automática para acomodar o conteúdo */
+        border: 0.2rem solid #000000d0;
+        border-radius: 1.8rem;
+    }
+
+    .title {
+        white-space: nowrap; /* Impede quebras de linha */
+        font-size: 1rem;
+        display: block;
+        margin-right: 30rem;
+        position: relative;
+        left: 0.5rem;
+    }
+
+    #product-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0; /* Oculta o campo de upload mas mantém a área clicável */
+        cursor: pointer;
+    }
+    
+    .photo-upload {
+        width: 12rem;
+        height: 12rem;
+        border: 0.1rem solid #000000;
+        border-radius: 2rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-right: 46rem;
+        cursor: pointer; /* Indica que é clicável */
+        color: #000000;
+        font-weight: bold;
+        text-align: center; /* Centraliza o texto */
+        padding: 0.2rem; /* Remova qualquer padding */
+        box-sizing: border-box; /* Inclui border no cálculo */
+        flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+        background-color: #ffffff;
+        position: relative;
+        top: 0rem;
+    }
+
+    .photo-upload:hover {
+        background-color: #e0e0e0; /* Efeito ao passar o mouse */
+    }
+    
+
+    .form input[type="file"] {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1rem solid #000000; /* Manter o mesmo estilo */
+    }
+
+    img {
+        margin-top: 1rem;
+        width: 1rem;
+        border-radius: 8px;
+    }
+
+    form input, .form textarea, .form select {
+        display: flex;
+        width: 12rem;
+        height: 2.4rem;
+        border: 0.1rem solid #000000;
+        border-radius: 8px;
+        outline: none;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
+        position: relative;
+        
+    }
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite quebrar linha */
+        margin-left: -0.25rem; /* Ajusta o alinhamento */
+        margin-right: -0.25rem; /* Ajusta o alinhamento */
+        margin: -2rem;
+        position: relative;
+        left: 7.5rem;
+        top: -10.4rem;
+        padding: 0rem 9rem;
+    
+    }
+
+    .input-box {
+        flex: 1 1 calc(33.33% - 1rem); /* Para telas maiores, 33.33% da largura */
+        margin-bottom: -0.5rem; /* Espaçamento entre as linhas */
+
+    }
+
+    .produto {
+        display: block;
+        margin-left: 10.5rem;
+        width: 10rem;
+        position: relative;
+        left: -10.5rem;
+    }
+    
+    .produto textarea {
+        width: 26.4rem;
+        height: 4rem; /* Apenas o input dentro da classe produto */
+    }
+
+    .preço{
+        position: relative;
+        left: 7rem;
+    }
+
+    .preço input{
+        width: 12rem;
+        height: 4rem;
+    }
+
+
+    .fileira{
+        position: relative;
+        top: 0.1rem;
+    }
+   
+    .obs{
+        position: relative;
+        right: 5.5rem;
+        margin-top: -0.5rem;
+    }
+
+    .obs textarea{
+        width: 50rem;
+        height: 10rem;
+    }
+    
+    .close-button {
+        font-size: 2.5rem;
+    }
+
+    #dialogbutton {
+        border: none;
+        width: 15rem;
+        height: 3rem;
+        background-color: #2D5D5F;
+        border: 0.1rem solid #000000d0;
+        border-radius: 30px;
+        cursor: pointer;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 500; /* Corrigido */
+        box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
+        margin: 0 auto; /* Centraliza no contêiner */
+        display: block; /* Para que a margem funcione */
+        position: relative;
+        top: -7rem;
+        left: 19.5rem;
+    }
+}
+
