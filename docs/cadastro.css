@@ -1,305 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'sans-serif';
+    font-family: "Aleo", "Sans-serif";
 }
 
-body {
-    background-image: url(imagensutilizadas/imagensutilizadas1/fotofundo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
 }
 
-.container {
-    background-color: white;
-    width: 500px;
-    height: 85vh;
-    padding: 10px;
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
-    border: 2px solid #2D5D5F;
+.container{
+    background-color: #fff;
     border-radius: 30px;
-    display: flex;
-    flex-direction: column; /* Para permitir rolar o conteúdo se necessário */
-    justify-content: center;
-    align-items: center;
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 25rem;
+    max-width: 100%;
+    min-height: 38rem;
 }
 
-.imglogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    padding-top: 7.5rem;
+.container p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 2rem 0rem;
 }
 
-.imglogo img {
-    width: 80%;
-    height: auto;
-    
+.container span{
+    font-size: 12px;
 }
 
-.form input, .form textarea, .form select {
-    width: 100%;
-    border: 2px solid #2D5D5F;
+.container a{
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button{
+    background-color: #2d979b;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
     border-radius: 8px;
-    outline: none;
-    padding: 10px;
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
-    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.form-header {
-    width: 100%;
-    justify-content: space-between;
-    font-size: 9px;
-    text-align: center;
-    padding: 3rem;
-    position: relative;
-    top: -1.2rem;
-    font-family: 'Staatliches';
+.container button.hidden{
+    background-color: transparent;
+    border-color: #ffffff;
 }
 
-.login-button {
+.container form{
+    background-color: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
 }
 
-.login-button button {
-    width: 100%;
-    margin-top: 2.5rem;
-    background-color: #2D5D5F;
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    color: white;
-    font-size: 0.93rem;
-    font-weight: 500px;
-    position: relative;
-    top: -1.5rem;
+.container input{
+    background-color: #eee;
     border: none;
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, .212);
-}
-
-.login-button button:hover {
-    background-color: #182f30;
-}
-
-.login {
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 10rem;
+    height: 3rem;
+    outline: none;
     position: relative;
-    top: -5rem;
-    text-align: center;
-    font-size: 0.8rem;
+    right: 0rem;
 }
 
-a.fl {
-    color: #007bff;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 
-a.fl:visited {
-    color: #007bff;
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
 }
 
-.imgnumber {
-    position: relative;
-    top: 20.2rem;
-    left: 3rem;
+.llogin{
+    left: 0;
+    width: 50%;
+    z-index: 2;
 }
 
-.form-header h1::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
+.container.active .llogin{
+    transform: translateX(100%);
+}
+
+.cadastro{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .cadastro{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+
+
+.painel-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .painel-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.painel{
     background-color: #2D5D5F;
-    margin: 5px auto;
-    border-radius: 1px;
-}
-
-.input-group {
-    display: flex;
-    padding: 0rem 0;
-    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(to right, #60b3b6, #2d979b);
+    color: #fff;
     position: relative;
-    top: -4rem;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
 }
 
-.input-box {
+.container.active .painel{
+    transform: translateX(50%);
+}
+
+.painel2{
+    position: absolute;
+    width: 50%;
+    height: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    margin-bottom: 0rem;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.painel-esquerda{
+    transform: translateX(-200%);
+}
+
+.container.active .painel-esquerda{
+    transform: translateX(0);
+}
+
+.painel-direita{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .painel-direita{
+    transform: translateX(200%);
+}
+
+.logo1 {
+    position: absolute; /* O logo fica fixo no meio */
+    top: 1rem; /* Ajuste a posição vertical conforme necessário */
+    right: 0rem;
    
 }
 
-.input-box input {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2;
+.logo2 {
+    position: absolute; /* O logo fica fixo no meio */
+    top: 1rem; /* Ajuste a posição vertical conforme necessário */
+    left: -0.9rem;
+    
+   
 }
 
-
-
-@media screen and (max-width: 1440px) {
-    .container {
-        width: 28%;
-        height: 95vh;
-        position: relative; /* Adiciona contexto para o posicionamento, se necessário */
-        overflow: hidden;
-    }
-
-    .imglogo {
-        max-width: 200px; /* Define um tamanho máximo para a imagem */
-        height: auto; /* Mantém a proporção da imagem */
-        padding-top: 3rem; /* Espaço superior, se necessário */
-        display: block; /* Garante que a imagem seja tratada como um bloco */
-        position: relative;
-        left: 2.7rem;
-        width: 100%;
-        height: 150px;
-        padding-top: 1.5rem;
-    }
-      
-    .imgnumber {
-        position: relative;
-        top: 16rem;
-        left :3rem;
-    }
-
-    .login-button button {
-        font-size: 0.85rem;
-        margin-top: 1.9rem;
-    }
-
-    .form-header {
-        padding: 1rem;
-        position: relative;
-        top: -2.5rem;
-    }
-
-    .login {
-        font-size: 0.9rem;
-    }
+@media(min-width: 900px){
+.container{
+    width: 45rem;
+    height: 35rem;
+ 
 }
 
-@media screen and (max-width: 1366px) {
-    body {
-        overflow-y: scroll;
-    }
-    
-    .container {
-        width: 28%;
-        height: 95vh;
-        overflow: hidden; /* Permite rolar o contêiner se necessário */
-    
-    }
-
-    .imglogo {
-        width: 85%;
-        height: auto; /* Mantém a proporção da imagem */
-        display: block; /* Garante que a imagem seja tratada como um bloco */
-        position: relative;
-        left: 2.6rem;
-        height: 150px;
-        padding-top: 4.6rem;
-    }
-    
-    .form input, .form textarea, .form select {
-        width: 100%;
-        border: 2px solid #2D5D5F;
-        border-radius: 8px;
-        outline: none;
-        padding: 0.4rem;
-        box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
-        margin-bottom: 0.2rem;
-    }
-    
-    .input-box {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0rem;
-        position: relative;
-        
-    }
-
-    .input-group {
-        display: flex;
-        padding: 1.5rem 0rem;
-        flex-direction: column;
-        position: relative;
-        top: -4rem;
-        font-size: 0.9rem;
-    }
-      
-    .imgnumber {
-        position: relative;
-        top: 15.2rem;
-        left: 2.5rem;
-    }
-
-    .login-button button {
-        width: 100%;
-        margin-top: 2.1rem;
-        background-color:#2D5D5F;
-        padding: 0.8rem 0.8rem;
-        border-radius: 30px;
-        cursor: pointer;
-        color: white;
-        font-size: 0.93rem;
-        font-weight: 500px;
-        position: relative;
-        top:-1.5rem;
-        border: none;
-        box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
-    }
-
-    .form-header {
-        position: relative;
-        top: 0.3rem;
-        font-size: 0.5rem;
-    }
-
-    .login {
-        position: relative;
-        top:-6.5rem;
-        text-align: center;
-        font-size: 0.8rem;
-    }
-
-    .form label {
-        display: block;
-        position: relative;
-        top: 0.4rem ; /* Ajusta a margem abaixo das labels */
-        font-size: 0.9rem; /* Ajusta o tamanho da fonte das labels */
-    }
+.container input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 15rem;
+    height: 2.5rem;
+    outline: none;
+    position: relative;
+    right: 0rem;
+    top: 1rem;
+}
+.container button{
+    margin-top: 2rem ;
+}
+.container p{
+    font-size: 1.5rem;
 }
 
-
-
-
-@media screen and (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 20px;
+.logo1 {
+    position: absolute; /* O logo fica fixo no meio */
+    top: 1rem; /* Ajuste a posição vertical conforme necessário */
+    right: 5rem;
+   
     }
 
-    .form-header {
-        font-size: 1.1rem;
-    }
+.logo2 {
+    position: absolute; /* O logo fica fixo no meio */
+    top: 1rem; /* Ajuste a posição vertical conforme necessário */
+    left: 4.5rem;  
+}
 
-    .login-button button {
-        font-size: 0.75rem;
-    }
-
-    .login {
-        font-size: 0.7rem;
-    }
 }
