@@ -94,7 +94,6 @@ form input:focus,
 .form textarea:focus, 
 .form select:focus {
     border: 0.2rem solid #2D5D5F; /* Aumenta a espessura e muda a cor da borda ao focar */
-  
 }
 
 .obs textarea{

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="../imagensutilizadas/imagensutilizadas1/favicon.ico" type="image/x-icon">
     <title>Saint Blue/Dashboard</title>
     <link rel="stylesheet" href="../Fornecedores/fornecedores.css">
+    <link rel="stylesheet" href="popupfornecedor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -126,10 +127,100 @@
             <span>Atualizar</span>
             <i class="bi bi-arrow-counterclockwise"></i>
         </button>
+        
         <button class="button_cadastrar">
             <span>Cadastrar</span>
             <i class="bi bi-plus-circle"></i>
         </button>
+
+        <dialog>
+        
+            <button class="close-button" id="close-button">&times;</button>
+    
+            <div class="form">
+                <form action="https://webhook.site/c4228bb2-7f1b-4e11-b52b-d70b5ec55654" method="post" autocomplete="on">               
+                
+                <div class="form-header">
+                    <div class="title">
+                        <h1>CADASTRO DE FORNECEDOR:</h1>
+                    </div>
+                </div> 
+    
+                    <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Logo do Fornecedor</label>
+                    <input type="file" id="product-image" name="product-image" accept="image/*" required>
+    
+                    <div class="input-group">
+                        <div class="input-box">
+                            <div class="fornecedor">
+                                <label for="fornecedor">Fornecedor:</label>
+                                <textarea id="fornecedor" name="fornecedor" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="cnpj">
+                                <label for="cnpj">CNPJ:</label>
+                                <input type="number" id="cnpj" name="cnpj" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                    
+                        <div class="input-box">
+                            <div class="fileira2">
+                                <label for="telefone">Telefone:</label>
+                                <input type="number" id="telefone" name="telefone" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="fileira2">
+                                <label for="email">E-mail:</label>
+                                <textarea id="email" name="email" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="endereco">
+                                <label for="endereco">Endereço:</label>
+                                <textarea id="endereco" name="endereco" required></textarea>
+                            </div>
+                        </div>
+    
+                        <div class="input-box">
+                            <div class="fileira2">
+                                <label for="numero">Numeroº:</label>
+                                <input type="number" id="numero" name="numero" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="fileira2">
+                                <label for="bairro">Bairro:</label>
+                                <textarea id="bairro" name="bairro" required></textarea>
+                            </div>
+                        </div>
+    
+                        <div class="input-box">
+                            <div class="fileira2">
+                                <label for="cep">CEP:</label>
+                                <input type="number" id="cep" name="cep" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                    
+                        <div class="input-box">
+                            <div class="obs">
+                                <label for="obs">Observações:</label>
+                                <textarea id="obs" name="obs" required></textarea>
+                            </div>
+                        </div>    
+            
+            </div>
+    
+                <button id="dialogbutton">CONCLUIR</button>
+    
+        </dialog>
+        
+        <script src="scriptpopupfornecedor.js"></script>
+
         <button class="button_editar">
             <span>Editar</span>
             <i class="bi bi-pencil-square"></i>
