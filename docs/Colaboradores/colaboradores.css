@@ -211,7 +211,7 @@ body{
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_colaboradores a.active {
+.barra-lateral .navegacao .fixe_fornecedores a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -287,12 +287,17 @@ body{
 /*------------------------->Menu de Navegacao = Usuario*/
 
 .barra-lateral .usuario{
+    padding: 0 10px;
+    border-radius: 40px;
+    background-color: #2d5d5f;
     width: 100%;
     display: flex;
 }
 .barra-lateral .usuario img{
+    height: 45px;
+    min-height: 30px;
     width:50px;
-    min-width: 50px;
+    min-width: 30px;
     border-radius: 10px;
 }
 .barra-lateral .usuario .info-usuario{
@@ -327,15 +332,16 @@ main.min_main {
     transition: margin-left 0.5s ease, width 0.5s ease;
 }
 .aba{
-    display: flex;
+    text-align: center;
     justify-content: center;
+    display: flex;
+    padding-right: 20px;
     align-items: center;
     font-size: 2.8rem;
     height: 100%;
     z-index: 2;
 }
-
-.welcome{
+.ola{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -344,7 +350,6 @@ main.min_main {
     position: relative;
     padding: 0.5rem;
     z-index: 1;
-    margin-top: -3rem;
     width: 100%; 
 }
 
@@ -387,7 +392,7 @@ main.min_main {
 }
 
 .search_txt::placeholder {
-    color: #0a0a0abe;
+    color: #0a0a0a;
     opacity: 1;
 }
 
@@ -506,7 +511,7 @@ button {
     width: 5rem;
 }
 /* COMEÇO DO CODIGO */
-.container {
+.container  {
     padding: 0 10px;
     padding-bottom: 5%;
     max-width: 100%;
@@ -525,6 +530,7 @@ button {
     border: 2px solid #ddd; /* Borda do crachá */
     border-radius: 20px; /* Borda arredondada */
     height: 200px;
+    max-height: 100%;
     max-width: 100%;
     background-color: #ebebeb; /* Cor de fundo do crachá */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra */
@@ -602,70 +608,7 @@ button {
       flex-basis: 100%;
     }
 }
-@media (min-width: 768px){
-    
-    /* COMEÇO DO CODIGO */
-    br{
-        display: none;
-    }
-    .container {
-        padding-bottom: 1%;
-        max-height: 100%;
-        max-width: 100%;
-        display: flex;
-        flex-direction: row; /* Exibe os crachás em coluna (um abaixo do outro) */
-        gap: 20px; /* Espaçamento entre os crachás */
-        align-items: center; /* Centraliza os crachás horizontalmente */
-    }
-    .cracha {
-        gap: 20px;
-        max-height: 100%;
-        max-width: 100%; /* Largura máxima do crachá */
-        padding: 10px 10px;
-        margin-top: 10px;
-        display: flex; /* Para colocar as informações e a imagem lado a lado */
-        align-items: center; /* Alinhar verticalmente */
-        border: 2px solid #ddd; /* Borda do crachá */
-        border-radius: 20px; /* Borda arredondada */
-        height: 200px;
-        background-color: #ebebeb; /* Cor de fundo do crachá */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Sombra */
-    }
 
-    .cracha:hover{
-        transform: scale(1.05);
-    }
-
-    /* Informações à esquerda */
-    .cracha .info {
-        flex-direction: column; /* Exibir o conteúdo em uma coluna */
-    }
-
-    /* Tamanho da imagem */
-    .cracha .imagem img {
-        height: 100px;
-        width: 120px; 
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 20px; 
-    }
-
-    .cracha h2 {
-        margin: 5px;
-        font-size: 10px;
-        color: #666;
-        border-bottom: 1px solid #070707; /* Linha abaixo de cada parágrafo */
-        padding-bottom: 5px; /* Espaço entre o texto e a linha */
-        font-family: 'Brush Script MT', cursive;
-    }
-
-    .cracha h2 span {
-        font-family: 'Brush Script MT', cursive;
-        font-weight: bold;
-        font-size: 9px;
-        color: #000;
-    }
-}
 @media (min-width: 900px){
     .buscar {
         display: flex;
