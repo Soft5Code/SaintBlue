@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/docs/login/cadastro.css">
+    <link rel="stylesheet" href="cadastro.css">
     <title>SaintBlue</title>
 </head>
 
@@ -13,31 +13,32 @@
 
     <div class="container" id="container">
         
-        
         <div class="form-container cadastro">
-
-            <form>
+            <form action="https://webhook.site/c4228bb2-7f1b-4e11-b52b-d70b5ec55654" method="post" autocomplete="on"> 
                 <h1>Cadastre-se</h1>
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="Sobrenome">
-                <input type="email" placeholder="E-mail">
-                <input type="number" placeholder="Telefone">
-                <input type="password" placeholder="Senha">
-                <input type="password" placeholder="Confirme sua Senha">
-                <button>Criar conta</button>
+                <input type="text" placeholder="Nome" required>
+                <input type="text" placeholder="Sobrenome" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="number" placeholder="Telefone" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirme sua Senha" required>
+                <button type="submit">Criar conta</button>
             </form>
         </div>
+        
         <div class="form-container llogin">
             <form>
                 <h1>Login</h1>
                 <input type="email" placeholder="E-mail">
                 <input type="password" placeholder="Senha">
-                <button><a href="/docs/Dashboard/dashboard.html">Acessar minha conta</a></button>
+                <a href="/docs/Dashboard/dashboard.html">
+                    <button type="button" id="entrarButton">Entrar</button>
+                </a>
             </form>
         </div>
+        
         <div class="painel-container">
             <div class="painel">
-               
                 <div class="painel2 painel-esquerda">
                     <div class="logo1">
                         <img src="Logo SaintBlue.png" alt="Logo SaintBlue">
