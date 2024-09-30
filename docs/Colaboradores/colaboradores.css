@@ -287,17 +287,12 @@ body{
 /*------------------------->Menu de Navegacao = Usuario*/
 
 .barra-lateral .usuario{
-    padding: 0 10px;
-    border-radius: 40px;
-    background-color: #2d979b;
     width: 100%;
     display: flex;
 }
 .barra-lateral .usuario img{
-    height: 45px;
-    min-height: 30px;
     width:50px;
-    min-width: 30px;
+    min-width: 50px;
     border-radius: 10px;
 }
 .barra-lateral .usuario .info-usuario{
@@ -316,6 +311,7 @@ body{
 .barra-lateral .usuario i{
     font-size: 20px;
 }
+
 
 /*---------------------------------------Main*/
 main{
