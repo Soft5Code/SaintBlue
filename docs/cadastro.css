@@ -23,7 +23,7 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 25rem;
+    width: 23.8rem;
     max-width: 100%;
     min-height: 38rem;
 }
@@ -63,6 +63,10 @@ body{
 .container button.hidden{
     background-color: transparent;
     border-color: #ffffff;
+}
+
+a.container button.hidden:visited {
+    color: #ffffff;
 }
 
 .container form{
