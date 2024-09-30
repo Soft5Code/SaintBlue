@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="login/cadastro.css">
     <title>SaintBlue</title>
 </head>
 
@@ -16,12 +16,12 @@
         <div class="form-container cadastro">
             <form action="https://webhook.site/c4228bb2-7f1b-4e11-b52b-d70b5ec55654" method="post" autocomplete="on"> 
                 <h1>Cadastre-se</h1>
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Sobrenome" required>
-                <input type="email" placeholder="E-mail" required>
-                <input type="number" placeholder="Telefone" required>
-                <input type="password" placeholder="Senha" required>
-                <input type="password" placeholder="Confirme sua Senha" required>
+                <input type="text" name="nome" id="nome" placeholder="Nome" size="25" required minlength="4" maxlength="15" autocomplete="name">
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" size="25" required minlength="4" maxlength="15" autocomplete="additional-name">
+                <input type="email" name="email" id="email" placeholder="E-mail" size="30" required minlength="3" maxlength="30" autocomplete="email">
+                <input type="tel" name="telefone" id="telefone" size="25" placeholder="Numero" required  autocomplete="tel-national">
+                <input type="password" name="senha" id="senha" placeholder="Senha" required minlength="8" maxlength="20" autocomplete="new-password">
+                <input type="password" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme sua senha" required minlength="8" maxlength="20" autocomplete="current-password"> 
                 <button type="submit">Criar conta</button>
             </form>
         </div>
@@ -31,7 +31,7 @@
                 <h1>Login</h1>
                 <input type="email" placeholder="E-mail">
                 <input type="password" placeholder="Senha">
-                <a href="../docs/Dashboard/dashboard.html">
+                <a href="Dashboard/dashboard.html">
                     <button type="button" id="entrarButton">Entrar</button>
                 </a>
             </form>
@@ -41,7 +41,7 @@
             <div class="painel">
                 <div class="painel2 painel-esquerda">
                     <div class="logo1">
-                        <img src="Logo SaintBlue.png" alt="Logo SaintBlue">
+                        <img src="login/Logo SaintBlue.png" alt="Logo SaintBlue">
                     </div>
                     <h1>Bem-vindo(a)</h1>
                     <p>Já possui uma conta?</p>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="painel2 painel-direita">
                     <div class="logo2">
-                        <img src="Logo SaintBlue.png" alt="Logo SaintBlue">
+                        <img src="login/Logo SaintBlue.png" alt="Logo SaintBlue">
                     </div>
                     <h1>Bem-vindo(a)</h1>
                     <p>Já possui uma conta?</p>
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <script src="scriptcadastro.js"></script>
+    <script src="login/scriptcadastro.js"></script>
 </body>
 
 </html>
