@@ -36,7 +36,7 @@ dialog::-webkit-scrollbar {
     border: none;
     width: 15rem;
     height: 3rem;
-    background-color: #2D5D5F;
+    background-color: #2d979b;
     border-radius: 30px;
     cursor: pointer;
     color: white;
@@ -87,7 +87,7 @@ form input:focus,
 .form textarea:focus, 
 .form select:focus {
     outline: none; /* Remove o contorno padrão */
-    border: 0.2rem solid #2D5D5F; /* Borda azul (ou outra cor que você preferir) */
+    border: 0.2rem solid #2d979b; /* Borda azul (ou outra cor que você preferir) */
 
 }
 
@@ -320,7 +320,7 @@ textarea {
         border: none;
         width: 15rem;
         height: 3rem;
-        background-color: #2D5D5F;
+        background-color: #2d979b;
         border: 0.1rem solid #000000d0;
         border-radius: 30px;
         cursor: pointer;

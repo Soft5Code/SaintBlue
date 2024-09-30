@@ -6,10 +6,10 @@
     --color-texto: #000000;
     --color-texto-menu: #000000;
 
-    --color-menu-houver: #2d5d5f;
+    --color-menu-houver: #2d979b;
     --color-menu-houver-texto: #f5f3f3f1;
 
-    --color-main-fundo: #2d5d5f;
+    --color-main-fundo: #2d979b;
     --color-main-fundo-btn: #ffffff;
     --color-main-fundo-texto: #000000;
     
@@ -34,14 +34,14 @@
     --color-texto: #ffffff;
     --color-texto-menu: #c4c4c5;
 
-    --color-menu-houver: #2d5d5f;
+    --color-menu-houver: #2d979b;
     --color-menu-houver-texto: #eeeeee;
 
     --color-main-fundo: #c4c4c5;
-    --color-main-fundo-btn: #2d5d5f;
+    --color-main-fundo-btn: #2d979b;
     --color-main-fundo-texto: #ffffff;
     
-    --color-boton: #2d5d5f;
+    --color-boton: #2d979b;
     --color-boton-texto: #ffffff;
 
     --color-linha: #5a5a5a;
@@ -289,7 +289,7 @@ body{
 .barra-lateral .usuario{
     padding: 0 10px;
     border-radius: 40px;
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     width: 100%;
     display: flex;
 }
@@ -420,7 +420,7 @@ main.min_main {
 
 /*-------------------------------------------MAIN = FILTRO*/
 i#filter{
-    background-color: #2d5d5fe7;
+    background-color: #2d979b;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
     color: white;
     display: flex;

@@ -22,7 +22,7 @@ html {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     padding-inline: 16px;
     position: fixed;
     padding-left: 1rem;
@@ -68,7 +68,7 @@ html {
     transition: all 200ms ease-in;
 }
 .content .nav-list li a:hover{
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     border-bottom: 4px solid #d9d9d9;
     color: #d9d9d9;
 }
@@ -127,14 +127,14 @@ html {
     height: 60px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     border-radius: 10px;
     font-weight: 700;
     margin-top: 6rem;
     transition: all 400ms ease-in;
 }
 .btn button:hover{
-    border: 1px solid #2d5d5f;
+    border: 1px solid #2d979b;
     background-color: transparent;
 }
 .btn{
@@ -155,7 +155,7 @@ html {
     height: 100%;
     padding-right: 1rem;
     padding-bottom: 12rem;
-    color: #2d5d5f;
+    color: #2d979b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,12 +277,12 @@ html {
     text-align: start;
     color: #d9d9d9;
     font-size: 2rem;
-    background-color: #2d5d5f; 
+    background-color: #2d979b; 
 }
 
 .faq .titulo{
     text-align: start;
-    color: #2d5d5f;
+    color: #2d979b;
     font-size: 2rem;
 }
 .faqtext1, .faqtext2, .faqtext3{
@@ -301,7 +301,7 @@ html {
 /* CONTATOS */
 .contatos{
     width: 100%;
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -329,7 +329,7 @@ html {
 
 footer{
     height: 25px;
-    background-color: #2d5d5f;
+    background-color: #2d979b;
     color: #fff;
     font-size: 1.4rem;
     display: flex;
@@ -351,7 +351,7 @@ footer{
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: #2d5d5f;
+        background: #2d979b;
         clip-path:  circle(100px at 90% -15%);
         transition: 1s ease-out;
         flex-direction: column;
