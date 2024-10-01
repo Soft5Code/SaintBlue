@@ -695,13 +695,13 @@ button {
     border-radius: 10px; /
 }
 
-.info.form input[type="file"] {
+.form input[type="file"] {
     display: block;
     border: 5rem solid #000000; /* Manter o mesmo estilo */
     padding: 1rem; /* Adicionar padding */
 }
 
-.info.photo-upload {
+.photo-upload {
     width: 10rem;
     height: 9rem;
     border: 0.1rem solid #000000;
@@ -723,7 +723,7 @@ button {
 }
 
 
-.info#product-image {
+#product-image {
     display: none; /* Oculta o campo de upload real */
 }
 

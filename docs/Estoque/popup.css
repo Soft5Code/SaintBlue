@@ -103,7 +103,7 @@ form input:focus,
 
 textarea {
     resize: none; /* Impede o redimensionamento */
-    padding: 4px; /* Espaçamento interno */
+    padding: 8px; /* Espaçamento interno */
     box-sizing: border-box; /* Para incluir padding e borda na largura total */
     font-size: 16px; /* Tamanho da fonte */
     overflow: hidden; /* Esconde as setas */
