@@ -84,61 +84,44 @@ window.addEventListener("load", () => {
 // Grafico em Dashboard
 
 // Gráfico de barras
+var xValue = ['Monitores', 'Placa Video', 'Processador'];
+
+var yValue = [20, 14, 23];
+
 var trace1 = {
-    x: ['Monitores', 'Placas de Vídeo', 'Processadores'],
-    y: [20, 14, 23],
-    name: 'Agosto',
+    x: xValue,
+    y: yValue,
     type: 'bar',
+    text: yValue.map(String),
+    textposition: 'auto',
+    hoverinfo: 'none',
     marker: {
-        color: '#20B2AA'
+    color: 'rgb(158,202,225)',
+    opacity: 0.6,
+    line: {
+      color: 'rgb(8,48,107)',
+      width: 1.8
     }
+  }
 };
 
-var trace2 = {
-    x: ['Monitores', 'Placas de Vídeo', 'Processadores'],
-    y: [12, 18, 29],
-    name: 'Setembro',
-    type: 'bar',
-    marker: {
-        color: '#556B2F'
-    }
-};
+var data = [trace1];
 
-var dataBar = [trace1, trace2];
-
-var layoutBar = {
-    barmode: 'group',
+var layout = {
+    width: 450, 
+    height: 300,
+    title: 'Vendas de Produto',
+    barmode: 'stack',
     paper_bgcolor: 'rgba(0,0,0,0)',
     plot_bgcolor: 'rgba(0,0,0,0)',
-    margin: {
-        t: 30,
-        b: 30,
-        l: 40,
-        r: 40
+    font: {
+    family: 'Aleo',
+    size: 13,
+    color: '#333'
     },
-    title: {
-        text: 'Vendas de Produtos por Mês',
-        font: {
-            family: 'Aleo',
-            size: 20, // Tamanho da fonte
-            color: '#333' // Cor da fonte
-        },
-        x: 0.43, // Posiciona o título no centro (0 a 1)
-        xanchor: 'center' // Ancoragem do título no centro
-    },
-    width: 450, /* Definir largura menor */
-    height: 300, /* Definir altura menor */
 };
 
-var configBar = { responsive: true };
-Plotly.newPlot('myDiv1', dataBar, layoutBar, configBar);
-
-// Redimensionar os gráficos com base no redimensionamento da janela
-window.onresize = function() {
-    Plotly.Plots.resize(document.getElementById('myDiv1'));
-    Plotly.Plots.resize(document.getElementById('myDiv2'));
-};
-
+Plotly.newPlot('myDiv1', data, layout);
 
 // Gráfico de pizza
 var dataPie = [{
@@ -163,14 +146,14 @@ var layoutPie = {
         text: "Vendas por Produto - Setembro",
         font: {
             family: 'Aleo',
-            size: 20, // Tamanho da fonte
-            color: '#333' // Cor da fonte
+            size: 20,
+            color: '#333'
         },
-        x: 0.5, // Posiciona o título no centro (0 a 1)
-        xanchor: 'center' // Ancoragem do título no centro
+        x: 0.5,
+        xanchor: 'center'
     },
-    width: 400, /* Definir largura menor */
-    height: 300, /* Definir altura menor */
+    width: 400,
+    height: 300,
 };
 
 var configPie = { responsive: true };
@@ -206,17 +189,17 @@ trace1 = {
   var layout = {
     width: 380,
     height: 360,
-    paper_bgcolor: 'rgba(0,0,0,0)', // Fundo do gráfico transparente
-    plot_bgcolor: 'rgba(0,0,0,0)',  // Fundo da área do gráfico transparente
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
     title: {
-        text: 'Em Estoque', // Título do gráfico
+        text: 'Em Estoque',
         font: {
             family: 'Aleo',
             size: 20,
             color: '#333'
         },
-        y: 0.95, // Ajuste a posição vertical do título (valores menores movem para cima)
-        xanchor: 'center' // Ancoragem do título no centro
+        y: 0.95,
+        xanchor: 'center'
     },
 };
   
@@ -241,10 +224,10 @@ var data = [
   var layout = {
     width: 400,
     height: 350,
-    paper_bgcolor: 'rgba(0,0,0,0)', // Fundo do gráfico transparente
-    plot_bgcolor: 'rgba(0,0,0,0)',  // Fundo da área do gráfico transparente
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
     title: {
-        text: 'Venda Mensal', // Você pode adicionar um título se desejar
+        text: 'Venda Mensal',
         font: {
             family: 'Aleo',
             size: 20,

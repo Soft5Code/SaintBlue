@@ -504,10 +504,12 @@ button {
 table {
     border-collapse: collapse;
     width: 100%;
+    table-layout: auto; 
 }
 th, td {
     border: 1px solid black;
     text-align: left;
+    word-wrap: break-word; 
 }
 tbody td {
     border: black;
@@ -516,26 +518,15 @@ tbody td {
 }
 
 /* Ajuste de tamanho para cada Coluna*/
-.codigo{
+.codigo, .quantidade, .valor{
     width: 10%;
 }
 .produto{
     width: 40%;
 }
-.vendedor{
+.vendedor, .data{
     width: 15%;
 }
-.data{
-    width: 15%;
-}
-.quantidade{
-    width: 10%;
-}
-.valor{
-    width: 10%;
-}
-
-
 
 
 /* Linha de separacao entre colunas*/
@@ -704,43 +695,37 @@ thead th {
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     thead th {
         font-size: 1rem;
         border: none;
     }
 
-    table{
+    table {
         width: 100%;
     }
-    .codigo{
+    .codigo, .quantidade, .valor {
         width: 10%;
-        font-size: 12px;
+        font-size: 10px;
     }
-    .produto{
+    .produto {
         width: 40%;
-        font-size: 12px;
+        font-size: 10px;
     }
-    .vendedor{
+    .vendedor, .data{
         width: 15%;
-        font-size: 12px;
-    }
-    .data{
-        width: 15%;
-        font-size: 12px;
-    }
-    .quantidade{
-        width: 10%;
-        font-size: 12px;
-    }
-    .valor{
-        width: 10%;
-        font-size: 12px;
+        font-size: 10px;
     }
 
+    /* Adjust column widths to fit within the viewport */
+    .codigo, .produto, .vendedor, .data, .quantidade, .valor {
+        width: auto !important;
+    }
 }
+
 @media (min-width: 800px) and (max-width: 899px) {
     thead th {
+        width: 100%;
         font-size: 1.2rem;
         border: none;
     }
