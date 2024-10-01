@@ -41,7 +41,7 @@ html {
 }
 .logo {
     display: flex;
-    align-items: center; /* Alinha verticalmente os elementos no centro */
+    align-items: center; 
 }
 
 .logo h3 {  
@@ -165,23 +165,7 @@ html {
     align-items: center;
     justify-content: center;
 }
-.sobre-nos img{
-    width: 300px;
-    height: 500px;
-    margin-top: 10rem;
-    margin-left: 5rem;
-    border: 2px solid rgb(155,155,155);
-    position: relative; /* Permite mover a imagem com relação ao seu posicionamento atual */
-    animation: flutuar 2s ease-in-out infinite alternate; 
-}
-@keyframes flutuar{
-    0%{
-        top: 0; /* Posição inicial no topo */
-    }
-    100%{
-        top: 3.0rem; /* Move a imagem 30px para baixo */
-    }
-}
+
 .main{
     display: flex;
     justify-content: space-between;
@@ -207,28 +191,28 @@ html {
 /* CARDS */
 .usar {
     display: flex;
-    flex-direction: column; /* Garante que os elementos fiquem em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    padding: 30rem 2rem;  /* Padding flexível para telas pequenas */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 30rem 2rem;  
     background-color: #d9d9d9;
-    width: 100%; /* Garante que a seção ocupe 100% da largura */
-    box-sizing: border-box; /* Inclui padding na largura total */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .usar .titulo {
-    text-align: center; /* Centraliza o texto */
+    text-align: center; 
     color: #2d5d5f;
     font-size: 2.5rem;
     text-transform: uppercase;
-    margin-bottom: 2rem; /* Espaçamento entre o título e os cards */
+    margin-bottom: 2rem; 
 }
 
 .cards {
-    display: flex; /* Permite que os cards "quebrem" linha em telas pequenas */
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os cards */
-    gap: 20px; /* Espaço entre os cards */
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .card1 {
@@ -277,7 +261,7 @@ html {
     padding-top: 1rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
-    margin: 0 0 0.5rem 0; /* Adiciona 2rem de margem inferior */
+    margin: 0 0 0.5rem 0; 
     cursor: pointer;
     text-align: start;
     color: #d9d9d9;

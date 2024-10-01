@@ -1,9 +1,0 @@
-##Informaçoes que serao coletadas:
-- 
-##criar o formularios para os campos de dados
--
-##Incluir labels com marcadores para indicar campos obrigatorios
-##Usar placeholders
-##Garantir que ao menos 5 campos estejam definidos
-##Testar envio dos dados conforme especificado no formularios(get)
-##intregar no site

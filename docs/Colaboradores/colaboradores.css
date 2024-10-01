@@ -531,8 +531,8 @@ button {
     margin: 5px;
     font-size: 1rem;
     color: #666;
-    border-bottom: 1px solid #000; /* Linha abaixo de cada parágrafo */
-    padding-bottom: 5px; /* Espaço entre o texto e a linha */
+    border-bottom: 1px solid #000; 
+    padding-bottom: 5px; 
 }
 .cracha .info h2 span {
     font-weight: bold;
@@ -557,8 +557,8 @@ button {
 
 .form input[type="file"] {
     display: block;
-    border: 5rem solid #000000; /* Manter o mesmo estilo */
-    padding: 1rem; /* Adicionar padding */
+    border: 5rem solid #000000; 
+    padding: 1rem; 
 }
 
 .photo-upload {
@@ -567,24 +567,24 @@ button {
     border: 0.1rem solid #000000;
     border-radius: 1.5rem;
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    justify-content: center; 
     cursor: pointer;
-    margin: 0 auto; /* Centraliza o elemento no seu contêiner */
+    margin: 0 auto; 
     margin-top: 1rem;
     color: #000000;
     font-weight: bold;
-    text-align: center; /* Centraliza o texto */
-    padding: 2rem; /* Remova qualquer padding */
-    box-sizing: border-box; /* Inclui border no cálculo */
-    flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+    text-align: center; 
+    padding: 2rem; 
+    box-sizing: border-box; 
+    flex-direction: column; 
     position: relative;
     top: -1rem;
 }
 
 
 #product-image {
-    display: none; /* Oculta o campo de upload real */
+    display: none; 
 }
 
 /* Estilo para a prévia da imagem */
@@ -665,7 +665,7 @@ button {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem; 
     }
     .filtro{
         margin-right: 12rem;
@@ -706,7 +706,7 @@ button {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem; 
     }
     .filtro{
         margin-right: 12rem;

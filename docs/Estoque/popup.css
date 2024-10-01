@@ -199,31 +199,31 @@ img {
 
 @media (min-width: 320px){
     .input-group {
-        flex-direction: row; /* Coloca os inputs em duas colunas */
-        flex-wrap: wrap; /* Permite quebrar linha */
-        gap: 1rem; /* Espaçamento entre os inputs */
-        justify-content: space-between; /* Distribui espaço entre os inputs */
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: space-between; 
     }
 
     .input-box {
-        flex: 1 1 calc(50% - 1rem); /* Cada input ocupa 50% da largura */
-        margin-bottom: 1rem; /* Espaçamento entre linhas */
+        flex: 1 1 calc(50% - 1rem); 
+        margin-bottom: 1rem; 
     }
 
     .produto-preco {
         display: flex;
-        justify-content: space-between; /* Mantém produto e preço lado a lado */
-        width: 100%; /* Garante que ocupem a linha inteira */
+        justify-content: space-between; 
+        width: 100%; 
     }
     .produto textarea,
     .preço input {
-        width: 100%; /* Garante que os inputs ocupem 100% da largura */
-        height: 4rem; /* Altura consistente para todos os inputs */
+        width: 100%; 
+        height: 4rem; 
     }
 
     .obs textarea {
-        width: 100%; /* Ajusta a largura da textarea para 100% */
-        height: 10rem; /* Mantém uma altura fixa para a textarea */
+        width: 100%; 
+        height: 10rem; 
     }
     
     #dialogbutton {
@@ -238,38 +238,38 @@ img {
 
 @media (min-width: 360px) and (max-width: 1071px) {
     dialog {
-        width: 40rem; /* Tamanho do diálogo ajustado */
-        min-height: 35rem; /* Define uma altura mínima para acomodar o conteúdo */
-        padding: 2rem; /* Mantém o padding original */
+        width: 40rem; 
+        min-height: 35rem; 
+        padding: 2rem; 
     }
 
     .input-group {
-        flex-direction: row; /* Coloca os inputs em duas colunas */
-        flex-wrap: wrap; /* Permite quebrar linha */
-        gap: 1rem; /* Espaçamento entre os inputs */
-        justify-content: space-between; /* Distribui espaço entre os inputs */
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: space-between; 
     }
 
     .input-box {
-        flex: 1 1 calc(50% - 1rem); /* Cada input ocupa 50% da largura */
-        margin-bottom: 1rem; /* Espaçamento entre linhas */
+        flex: 1 1 calc(50% - 1rem); 
+        margin-bottom: 1rem; 
     }
 
     .produto-preco {
         display: flex;
-        justify-content: space-between; /* Mantém produto e preço lado a lado */
-        width: 100%; /* Garante que ocupem a linha inteira */
+        justify-content: space-between; 
+        width: 100%; 
     }
 
     .produto textarea,
     .preço input {
-        width: 100%; /* Garante que os inputs ocupem 100% da largura */
-        height: 4rem; /* Altura consistente para todos os inputs */
+        width: 100%; 
+        height: 4rem;
     }
 
     .obs textarea {
-        width: 100%; /* Ajusta a largura da textarea para 100% */
-        height: 10rem; /* Mantém uma altura fixa para a textarea */
+        width: 100%; 
+        height: 10rem; 
     }
     
     #dialogbutton {
@@ -284,14 +284,14 @@ img {
 
 @media (min-width: 1072px){
     dialog {
-        width: 60rem; /* Tamanho para telas médias */
-        height: 38rem; /* Deixe a altura automática para acomodar o conteúdo */
+        width: 60rem; 
+        height: 38rem; 
         border: 0.2rem solid #000000d0;
         border-radius: 1.8rem;
     }
 
     .title {
-        white-space: nowrap; /* Impede quebras de linha */
+        white-space: nowrap; 
         font-size: 1rem;
         display: block;
         margin-right: 30rem;
@@ -305,7 +305,7 @@ img {
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0; /* Oculta o campo de upload mas mantém a área clicável */
+        opacity: 0; 
         cursor: pointer;
     }
     
@@ -317,20 +317,20 @@ img {
         cursor: pointer;
         margin-top: 1rem;
         margin-right: 46rem;
-        cursor: pointer; /* Indica que é clicável */
+        cursor: pointer; 
         color: #000000;
         font-weight: bold;
-        text-align: center; /* Centraliza o texto */
-        padding: 0.2rem; /* Remova qualquer padding */
-        box-sizing: border-box; /* Inclui border no cálculo */
-        flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+        text-align: center; 
+        padding: 0.2rem; 
+        box-sizing: border-box; 
+        flex-direction: column; 
         background-color: #ffffff;
         position: relative;
         top: 0rem;
     }
 
     .photo-upload:hover {
-        background-color: #e0e0e0; /* Efeito ao passar o mouse */
+        background-color: #e0e0e0; 
     }
     
 
@@ -340,7 +340,7 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1rem solid #000000; /* Manter o mesmo estilo */
+        border: 1rem solid #000000; 
     }
 
     img {
@@ -365,9 +365,9 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap; /* Permite quebrar linha */
-        margin-left: -0.25rem; /* Ajusta o alinhamento */
-        margin-right: -0.25rem; /* Ajusta o alinhamento */
+        flex-wrap: wrap;
+        margin-left: -0.25rem; 
+        margin-right: -0.25rem; 
         margin: -2rem;
         position: relative;
         left: 7.5rem;
@@ -377,9 +377,8 @@ img {
     }
 
     .input-box {
-        flex: 1 1 calc(33.33% - 1rem); /* Para telas maiores, 33.33% da largura */
-        margin-bottom: -0.5rem; /* Espaçamento entre as linhas */
-
+        flex: 1 1 calc(33.33% - 1rem); 
+        margin-bottom: -0.5rem; 
     }
 
     .produto {
@@ -392,7 +391,7 @@ img {
     
     .produto textarea {
         width: 26.4rem;
-        height: 4rem; /* Apenas o input dentro da classe produto */
+        height: 4rem; 
     }
 
     .preço{
@@ -436,10 +435,10 @@ img {
         cursor: pointer;
         color: white;
         font-size: 0.9rem;
-        font-weight: 500; /* Corrigido */
+        font-weight: 500; 
         box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
-        margin: 0 auto; /* Centraliza no contêiner */
-        display: block; /* Para que a margem funcione */
+        margin: 0 auto; 
+        display: block; 
         position: relative;
         top: -7rem;
         left: 19.5rem;

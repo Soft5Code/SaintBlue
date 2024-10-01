@@ -156,7 +156,7 @@
 
 /* Estilo no hover do botão */
 .btn button:hover {
-    background-color: #2f5c54; /* Efeito hover */
+    background-color: #2f5c54; 
 }
 
 /* Botão de fechar o pop-up */

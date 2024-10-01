@@ -689,8 +689,8 @@ button {
     height: 230px;
     max-height: 100%;
     max-width: 100%;
-    background-color: #ebebeb; /* Cor de fundo do crachá */
-    box-shadow: 0 4px 16px rgba(2, 203, 253, 0.473); /* Sombra */
+    background-color: #ebebeb; 
+    box-shadow: 0 4px 16px rgba(2, 203, 253, 0.473); 
 }
 
 .cracha:hover{
@@ -702,8 +702,8 @@ button {
     margin: 5px;
     font-size: 1rem;
     color: #666;
-    border-bottom: 1px solid #000; /* Linha abaixo de cada parágrafo */
-    padding-bottom: 5px; /* Espaço entre o texto e a linha */
+    border-bottom: 1px solid #000; 
+    padding-bottom: 5px; 
 }
 .cracha .info h2 span {
     font-weight: bold;
@@ -780,7 +780,7 @@ button {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem; 
     }
     .filtro{
         margin-right: 12rem;
@@ -821,7 +821,7 @@ button {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem; 
     }
     .filtro{
         margin-right: 12rem;

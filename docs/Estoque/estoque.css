@@ -535,10 +535,10 @@ tbody tr td:last-child {
 
 /* Alternância de cores para linhas pares e ímpares */
 tr:nth-child(even) {
-    background-color: var(--color-linhas-produtoPares); /* Cor de fundo para linhas pares */
+    background-color: var(--color-linhas-produtoPares); 
 }
 tr:nth-child(odd) {
-    background-color: var(--color-linhas-produtoImpares); /* Cor de fundo para linhas ímpares */
+    background-color: var(--color-linhas-produtoImpares); 
 }
 
 /* Titulo */
@@ -649,7 +649,7 @@ thead th {
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem; 
     }
     .filtro{
         margin-right: 12rem;

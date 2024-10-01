@@ -85,7 +85,7 @@ body{
     width: 100%;
     display: flex;
     background-color: var(--color-main);
-    transition: background-color 0.3s, color 0.3s; /* Animação suave na mudança de tema */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 @font-face {
