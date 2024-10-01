@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="usuario">
-            <img src="../Dashboard/imagensutilizadas/263457215_5031922253486891_358383527080523036_n.jpg" alt="perfil_usuario">
+            <img src="../Dashboard/imagensutilizadas/263457215_5031922253486891_358383527080523036_n.jpg" alt="Botão de Acesso" class="open-popup-btn" onclick="openPopup()">
             <div class="info-usuario">
                 <div class="nome_telefone">
                     <span class="nome">Richard Gois</span>
@@ -248,7 +248,7 @@
                     <h2>End.: <span>Avenida Santos Dumont, 7199-Aventureiro,Joinville-SC-892226-435</span></h2>
                 </div>
                 <div class="imagem">
-                    <img src="/docs/imagensutilizadas/imagensutilizadas1/nvidia.jfif"alt="Foto do crachá">
+                    <img src="../imagensutilizadas/imagensutilizadas1/nvidia.jpg"alt="Foto do crachá">
                 </div>
             </div>
             <div class="cracha">
@@ -259,7 +259,7 @@
                     <h2>End.: <span>Rua José Antônio da Silva, 7199 - Centro, Salvador-BA-40020-110</span></h2>
                 </div>
                 <div class="imagem">
-                    <img src="/docs/imagensutilizadas/imagensutilizadas1/pichau.logo.png" alt="Foto do crachá">
+                    <img src="../imagensutilizadas/imagensutilizadas1/pichau.logo.jpg" alt="Foto do crachá">
                 </div>
             </div>
             <div class="cracha">
@@ -270,7 +270,7 @@
                     <h2>End.: <span>Avenida Nossa Senhora de Fátima, 7199 - Bela Vista, Recife-PE-50070-020</span></h2>
                 </div>
                 <div class="imagem">
-                    <img src="/docs/imagensutilizadas/imagensutilizadas1/amd.jfif" alt="Foto do crachá">
+                    <img src="../imagensutilizadas/imagensutilizadas1/amd.jpg" alt="Foto do crachá">
                 </div>
             </div>
             
@@ -285,7 +285,7 @@
                     <h2>End.: <span>Rua Doutor Guilherme de Almeida, 7199 - Centro, Natal-RN-59025-100</span></h2>
                 </div>
                 <div class="imagem">
-                    <img src="/docs/imagensutilizadas/imagensutilizadas1/terabyte.jfif"alt="Foto do crachá">
+                    <img src="../imagensutilizadas/imagensutilizadas1/terabyte.jpg"alt="Foto do crachá">
                 </div>
             </div>
             <div class="cracha">
@@ -296,13 +296,52 @@
                     <h2>End.: <span>Rua Carlos Gomes,1321-9°andar- Centro Limeira/SP - CEP - 13480-010</span></h2>
                 </div>
                 <div class="imagem">
-                    <img src="/docs/imagensutilizadas/imagensutilizadas1/download.jfif" alt="Foto do crachá">
+                    <img src="../imagensutilizadas/imagensutilizadas1/download.jpg" alt="Foto do crachá">
                 </div>
             </div>
         </div>  
         </section>
 
-    
+
+     <!-- Pop-up com formato de celular -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent">
+            <!-- Botão para fechar o pop-up -->
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            
+            <!-- Conteúdo do pop-up -->
+            <div class="popup-header">
+                <h2>Perfil</h2>
+            </div>
+            <div class="perfil">
+                
+                <div class="form">
+                    <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Foto do Produto</label>
+                    <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                
+                <div class="informacoes">
+                    <h2>Nome:</h2>
+                    <input type="text" placeholder="Nome">
+                    
+                    <h2>Tel.:</h2>
+                    <input type="text" placeholder="Tel.">
+                    
+                    <h2>E-mail:</h2>
+                    <input type="email" placeholder="email">
+                    
+                    <h2>Endereço:</h2>
+                    <input type="text" placeholder="End.">
+                </div>
+        
+                <div class="btn">
+                    <button class="btn_txt" >Alterar Cadastro</button>
+                </div>
+            </div>
+            <div class="popup-btnSair">
+                <button class="popup-action-btn">Salvar</button>
+            </div>
+        </div>
+    </div>
     </main>
     <script src="../Dashboard/script.js"></script>
 </body>

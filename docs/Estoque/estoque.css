@@ -236,7 +236,6 @@ body{
 
 /*------------------------->Menu de Navegacao = Modo Dark*/
 .barra-lateral .modo_escuro{
-    border: 2px solid green;
     width: 100%;
     margin-bottom: 80px;
     border-radius: 12px;
@@ -296,7 +295,6 @@ body{
 /*------------------------->Menu de Navegacao = Usuario*/
 
 .barra-lateral .usuario{
-    border: 2px solid red;
     width: 100%;
     display: flex;
 }
