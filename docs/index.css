@@ -151,12 +151,12 @@ html {
 
 /* SECAO DO SOBRE NOS */
 .sobre-nos{
+    padding-top: 20rem;
     flex-direction: column;
     background-color: #d9d9d9;
     width: 100%;
     height: 100%;
     padding-right: 1rem;
-    padding-bottom: 12rem;
     color: #2d979b;
     display: flex;
     align-items: center;
@@ -207,7 +207,7 @@ html {
     flex-direction: column; /* Garante que os elementos fiquem em coluna */
     align-items: center; /* Centraliza os itens horizontalmente */
     justify-content: center; /* Centraliza os itens verticalmente */
-    padding: 10rem 2rem;  /* Padding flexível para telas pequenas */
+    padding: 30rem 2rem;  /* Padding flexível para telas pequenas */
     background-color: #d9d9d9;
     width: 100%; /* Garante que a seção ocupe 100% da largura */
     box-sizing: border-box; /* Inclui padding na largura total */
@@ -264,7 +264,7 @@ html {
 /* FAQ */
 .faq{
     background-color: #d9d9d9;
-    padding: 10rem 10%; 
+    padding: 37rem 10%; 
 }
 .interface{
     padding-top: 1rem;

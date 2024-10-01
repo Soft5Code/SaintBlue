@@ -1,7 +1,25 @@
+document.querySelectorAll('.scroll-to').forEach(link => {
+    link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetClass = this.getAttribute('data-target');
+    const targetElement = document.querySelector(targetClass);
+    if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+});
+// ============================================================================
 const hamburguer = document.querySelector(".hamburguer");
 const nav = document.querySelector(".nav");
+const menuItems = nav.querySelectorAll("a"); // Seleciona todos os links dentro do nav
 
 hamburguer.addEventListener("click", () => nav.classList.toggle("active"));
+
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        nav.classList.remove("active"); 
+    });
+});
 //=============================================================================
 const faqtitulo1 = document.getElementById('faqtitulo1');
 const faqtext1 = document.getElementById('faqtext1');

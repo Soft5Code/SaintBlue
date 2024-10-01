@@ -59,7 +59,7 @@
                 <div class="card1">
                     <i class="bi bi-code-square"></i>
                     <h3>Acessibilidade:</h3>
-                    <p>Ferramentas baseadas na web podem ser acessadas de qualquer lugar, facilitando o acompanhamento em tempo real.</p>
+                    <p>Ferramentas baseadas no desenvolvimento web podem ser acessadas de qualquer lugar, facilitando o acompanhamento em tempo real.</p>
                 </div>
                 <div class="card1">
                     <i class="bi bi-code-square"></i>
@@ -118,19 +118,6 @@
         </footer>
     </main>
     <script src="app.js"></script>
-    <script>
-        document.querySelectorAll('.scroll-to').forEach(link => {
-            link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetClass = this.getAttribute('data-target');
-            const targetElement = document.querySelector(targetClass);
-            if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-        });
-
-    </script>
 </body>
 </html>
 
