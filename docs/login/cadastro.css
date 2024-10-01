@@ -224,6 +224,25 @@ input[type=number]::-webkit-outer-spin-button {
    
 }
 
+.painel2 h1 {
+    margin-top: 50px; /* Ajuste o valor conforme necessário */
+}
+
+.container button.hidden2 {
+    background-color: transparent;
+    border-color: #ffffff;
+    padding: 8px 16px; /* Ajuste o preenchimento conforme necessário */
+    font-size: 12px; /* Tamanho da fonte do texto */
+    border-radius: 8px; /* Raio das bordas */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens indesejadas */
+}
+
+.container button.hidden2:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover opcional */
+}
+
 @media(min-width: 900px){
 .container{
     width: 45rem;
