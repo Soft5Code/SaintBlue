@@ -9,9 +9,12 @@
     font-family: "Aleo", serif;
 }
 
+body{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 100%;
+}
 html {
-    width: 100vw;
-    height: 100vh;
     font-size: 62.5%;
     overflow-x: hidden;
 }
@@ -43,12 +46,13 @@ html {
 
 .logo h3 {  
     text-transform: uppercase;
-    color: #000;
+    color: #d9d9d9;
     font-size: 1.5rem;
 }
 .logo img{
-    width: 50px;
-    height: 50px;
+    margin-top: 11px;
+    width: 60px;
+    height: 60px;
 } 
 .nav-list{
     display: flex;
@@ -75,7 +79,7 @@ html {
 .hamburguer{
     border: none;
     background: none;
-    border-top: 3px solid #7e7e7e;
+    border-top: 3px solid #d9d9d9;
     cursor: pointer;
 }
 .hamburguer::before,.hamburguer::after{
@@ -83,7 +87,7 @@ html {
     display: block;
     width: 20px;
     height: 3px;
-    background: #7e7e7e;
+    background: #d9d9d9;
     margin-top: 5px;
     position: relative;
     transition: 0.3s;
@@ -127,6 +131,7 @@ html {
     height: 60px;
     cursor: pointer;
     text-transform: uppercase;
+    color: #fff;
     background-color: #2d979b;
     border-radius: 10px;
     font-weight: 700;
@@ -135,16 +140,13 @@ html {
 }
 .btn button:hover{
     border: 1px solid #2d979b;
-    background-color: transparent;
+    background-color: #2d5d5f;
 }
 .btn{
     gap: 10px;
     width: 380px;
     display: flex;
     justify-content: space-between;
-}
-.btn a{
-    color: #000;
 }
 
 /* SECAO DO SOBRE NOS */
@@ -337,10 +339,42 @@ footer{
     justify-content: center;
 }
 /* MEDIA QUERIES */
+@media (max-width: 450px){
+    .logo h3{
+        display: none;
+    }
+    .first-section h1{
+        margin-top: 100px;
+        font-size: 0.8rem;
+    }
+    .first-section h2{
+        font-size: 1.5rem;
+    }
+    .btn{
+        width: 300px;
+    }
+    .contentsobre p{
+        width: 300px;
+    }
+}   
+
+@media (min-width: 451px) and (max-width: 768px){
+    .btn{
+        width: 420px;
+    }
+    .btn button{
+        width: 200px;
+    }
+    .contentsobre p{
+        color: #397a7c  ;
+        font-size: 1.6rem;
+        width: 450px;
+    }
+    .faqtext1, .faqtext2, .faqtext3 p{
+        font-size: 1.5rem;
+    }
+}
 @media (max-width: 768px) {
-    /* html{
-        font-size: 65%;
-    } */
     .hamburguer{
         z-index: 1;
         display: block;
@@ -393,107 +427,17 @@ footer{
         transform: rotate(-135deg);
         top: -7px;
     }
-    .first-section h1{
-        font-size: 1rem;
-    }
-}
-@media (min-width: 520px) and (max-width: 760px){
-    .first-section h1{
-        font-size: 0.1rem;
-    }
+    
 }
 @media (min-width: 769px){
-    .hamburguer{
-        display: none;
-    }
-    .btn{
-        gap: 30px;
-        width: 600px;
-    }
-    .first-section h1{
-        margin-top: 12rem;
-    }
-}
-@media (min-width: 520px) and (max-width: 850px){
-    .first-section h1{
-        font-size: 1.2rem;
-    }
-    .cards{
-        flex-direction: row;
-    }
-}
-@media (max-width: 400px){
-    .logo h3{
-        display: none;
-    }
-    .first-section h1{
-        margin-top: 100px;
-        font-size: 0.8rem;
-    }
-    .first-section h2{
-        font-size: 1.5rem;
-    }
-    .btn{
-        width: 300px;
-    }
-    .contentsobre p{
-        width: 300px;
-    }
-}   
-
-@media (min-width: 850px){
-    .contentsobre h2{
-        margin-top: 20rem;
-    }
-    .contentsobre p{
-        margin-right: 10px;
-    }
-    
-    .usar .titulo{
-        font-size: 5rem;
-    }
-    .contentsobre h2{
-        font-size: 5rem;
-    }
-    .contentsobre p{
-        margin-left: 0px;
-        font-size: 2rem;
-        width: 600px;
-    }
-    .topo-site h1{
-        font-size: 3rem;
-    }
-    .topo-site h2{
-        font-size: 2rem;
-    }
-    .contatos h3{
-        font-size: 3rem;
-    }
-    .card1 {
-        height: 340px;
-        max-width: 250px;
-        border-radius: 20px;     
-    }
-    footer{
-        height: 30px;
-    }
-    .btn{
-        width: 600px;
-        gap: 40px;
-    }
-    .first-section h1{
-        margin-top: 8rem;
-    }
-    .first-section h2{
-        font-size: 5rem;
-    }
-}
-@media (min-width: 768px) and (max-width: 1060px){
     html{
         font-size: 40%;
     }
+    .hamburguer{
+        display: none;
+    }
     .nav{
-        gap: 40px;
+        gap: 210px;
     }
     .first-section h1{
         font-size: 3rem;
@@ -501,12 +445,22 @@ footer{
     .first-section h2{
         font-size: 4rem;
     }
+    .btn{
+      width: 600px;  
+    }
+    .btn button{
+        width: 300px;
+    }
     .card1 p{
         font-size: 2rem;
     }
+    .card1 h3{
+        font-size: 2rem
+    }
     .contentsobre p{
+        color: #2d5d5f;
         margin-left: 0px;
-        font-size: 2.5rem;
+        font-size: 3rem;
         width: 600px;
     }
     
