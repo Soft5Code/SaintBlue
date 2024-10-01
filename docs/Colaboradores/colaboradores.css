@@ -362,11 +362,13 @@ main.min_main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(49, 49, 49, 0.1);
+    backdrop-filter: blur(2px);
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Fica sobre outros elementos */
+    z-index: 1000;
 }
+
 
 /* Estilos do pop-up no formato de celular */
 .popup-content {
@@ -384,7 +386,7 @@ main.min_main {
 /* Estilos para o cabeçalho do pop-up */
 .popup-header {
     background: var(--color-main-fundo);
-    padding: 15px;
+    padding: 17px;
     border-bottom: 1px solid #ddd;
     text-align: center;
     color: white;
@@ -399,17 +401,31 @@ main.min_main {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.popup-btnSair{
+.popup-btnSair {
     background-color: var(--color-main-fundo);
     justify-content: center;
     align-items: center;
     display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+.btn_txt:hover{
+    color: var(--color-main-texto);
+}
+.popup-action-btn:hover{
+    background-color: rgb(188, 187, 187);
+    color: var(--color-main-texto);
+}
+
 .popup-action-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 13px auto;
     padding: 20px 30px;
 }
 
@@ -447,11 +463,26 @@ main.min_main {
 .btn {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    margin: auto;
+    color: white;
+    border-radius: 10px;
+    font-size: 28px;
 }
 
+/* Estilo do texto dentro do botão */
+.btn_txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+
 .btn button {
-    padding: 10px 20px;
+    padding: 18px 20px;
     background-color: #40706b;
     color: white;
     border: none;
@@ -469,7 +500,7 @@ main.min_main {
 /* Botão de fechar o pop-up */
 .close-popup {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 20px;
     font-size: 24px;
     font-weight: bold;
