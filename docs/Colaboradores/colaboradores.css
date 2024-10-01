@@ -695,6 +695,54 @@ button {
     border-radius: 10px; /
 }
 
+.info.form input[type="file"] {
+    display: block;
+    border: 5rem solid #000000; /* Manter o mesmo estilo */
+    padding: 1rem; /* Adicionar padding */
+}
+
+.info.photo-upload {
+    width: 10rem;
+    height: 9rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    cursor: pointer;
+    margin: 0 auto; /* Centraliza o elemento no seu contêiner */
+    margin-top: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem; /* Remova qualquer padding */
+    box-sizing: border-box; /* Inclui border no cálculo */
+    flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+    position: relative;
+    top: -1rem;
+}
+
+
+.info#product-image {
+    display: none; /* Oculta o campo de upload real */
+}
+
+/* Estilo para a prévia da imagem */
+.info.img {
+    margin-top: 1rem;
+    width: 1rem;
+    border-radius: 8px;
+}
+
+.bi bi-person-bounding-box{
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 
 /*--------------------------------------Responsivo*/
 @media (min-width: 970px){
