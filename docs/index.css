@@ -138,6 +138,9 @@ html {
     margin-top: 6rem;
     transition: all 400ms ease-in;
 }
+.btn a{
+    color: #fff;
+}
 .btn button:hover{
     border: 1px solid #2d979b;
     background-color: #2d5d5f;
