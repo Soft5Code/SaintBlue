@@ -315,7 +315,7 @@ body{
 /*---------------------------------------Main*/
 main{
     margin-left: 250px;
-    padding: 0.6rem;
+    padding: 8px 8px;
     background-color: var(--color-main);
     color: var(--color-main-texto);
     width: calc(100% - 250px);
@@ -331,21 +331,9 @@ main.min_main {
     justify-content: center;
     align-items: center;
     font-size: 2.8rem;
+    margin-top: 50px;
     height: 100%;
     z-index: 2;
-}
-
-.welcome{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: bold; 
-    font-size: 1.5rem;
-    position: relative;
-    padding: 0.5rem;
-    z-index: 1;
-    margin-top: -3rem;
-    width: 100%; 
 }
 
 /*------------------------->Main = Linha*/
@@ -601,6 +589,13 @@ button {
     .main .container {
       flex-basis: 100%;
 }
+}
+@media (max-width: 770px){
+    main.min_main {
+        width: 100%;
+        transition: margin-left 0.5s ease, width 0.5s ease;
+    }
+
 }
 @media (min-width: 900px){
     .buscar {

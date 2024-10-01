@@ -82,24 +82,177 @@ window.addEventListener("load", () => {
 
 
 // Grafico em Dashboard
-var data = [{
+
+// Gráfico de barras
+var trace1 = {
+    x: ['Monitores', 'Placas de Vídeo', 'Processadores'],
+    y: [20, 14, 23],
+    name: 'Agosto',
+    type: 'bar',
+    marker: {
+        color: '#20B2AA'
+    }
+};
+
+var trace2 = {
+    x: ['Monitores', 'Placas de Vídeo', 'Processadores'],
+    y: [12, 18, 29],
+    name: 'Setembro',
+    type: 'bar',
+    marker: {
+        color: '#556B2F'
+    }
+};
+
+var dataBar = [trace1, trace2];
+
+var layoutBar = {
+    barmode: 'group',
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    margin: {
+        t: 30,
+        b: 30,
+        l: 40,
+        r: 40
+    },
+    title: {
+        text: 'Vendas de Produtos por Mês',
+        font: {
+            family: 'Aleo',
+            size: 20, // Tamanho da fonte
+            color: '#333' // Cor da fonte
+        },
+        x: 0.43, // Posiciona o título no centro (0 a 1)
+        xanchor: 'center' // Ancoragem do título no centro
+    },
+    width: 450, /* Definir largura menor */
+    height: 300, /* Definir altura menor */
+};
+
+var configBar = { responsive: true };
+Plotly.newPlot('myDiv1', dataBar, layoutBar, configBar);
+
+// Redimensionar os gráficos com base no redimensionamento da janela
+window.onresize = function() {
+    Plotly.Plots.resize(document.getElementById('myDiv1'));
+    Plotly.Plots.resize(document.getElementById('myDiv2'));
+};
+
+
+// Gráfico de pizza
+var dataPie = [{
     type: "pie",
     values: [2, 3, 4, 4],
     labels: ["RAM", "SSD", "MONITOR 29", "GTX-550"],
     textinfo: "label+percent",
     textposition: "outside",
     automargin: true
-  }]
+}];
+
+var layoutPie = {
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    margin: {
+        t: 30,
+        b: 50,
+        l: 50,
+        r: 50
+    },
+    showlegend: false,
+    title: {
+        text: "Vendas por Produto - Setembro",
+        font: {
+            family: 'Aleo',
+            size: 20, // Tamanho da fonte
+            color: '#333' // Cor da fonte
+        },
+        x: 0.5, // Posiciona o título no centro (0 a 1)
+        xanchor: 'center' // Ancoragem do título no centro
+    },
+    width: 400, /* Definir largura menor */
+    height: 300, /* Definir altura menor */
+};
+
+var configPie = { responsive: true };
+Plotly.newPlot('myDiv2', dataPie, layoutPie, configPie);
+
+
+
+//Grafico Linha
+trace1 = {
+    type: 'scatter',
+    x: ['JAN', 'FEV', 'MAR', 'ABR'],
+    y: [10, 15, 13, 17],
+    mode: 'lines',
+    name: 'GTX-550',
+    line: {
+      color: 'rgb(219, 64, 82)',
+      width: 3
+    }
+  };
+  
+  trace2 = {
+    type: 'scatter',
+    x: ['JAN', 'FEV', 'MAR', 'ABR'],
+    y: [12, 9, 15, 12],
+    mode: 'lines',
+    name: 'SSD',
+    line: {
+      color: 'rgb(55, 128, 191)',
+      width: 3
+    }
+  };
   
   var layout = {
-    height: 350,
-    width: 350,
-    paper_bgcolor: 'rgba(0,0,0,0)', 
-    margin: {"t": 0, "b": 0, "l": 0, "r": 0},
-    showlegend: false
-    }
+    width: 380,
+    height: 360,
+    paper_bgcolor: 'rgba(0,0,0,0)', // Fundo do gráfico transparente
+    plot_bgcolor: 'rgba(0,0,0,0)',  // Fundo da área do gráfico transparente
+    title: {
+        text: 'Em Estoque', // Título do gráfico
+        font: {
+            family: 'Aleo',
+            size: 20,
+            color: '#333'
+        },
+        y: 0.95, // Ajuste a posição vertical do título (valores menores movem para cima)
+        xanchor: 'center' // Ancoragem do título no centro
+    },
+};
   
-  Plotly.newPlot('myDiv', data, layout)
+  var data = [trace1, trace2];
+  
+  Plotly.newPlot('myDiv3', data, layout);
+
+
+//Grafico Speed
+
+var data = [
+    {
+      domain: { x: [0, 1], y: [0, 1] },
+      value: 450,
+      type: "indicator",
+      mode: "gauge+number",
+      delta: { reference: 400 },
+      gauge: { axis: { range: [null, 500] } }
+    }
+  ];
+  
+  var layout = {
+    width: 400,
+    height: 350,
+    paper_bgcolor: 'rgba(0,0,0,0)', // Fundo do gráfico transparente
+    plot_bgcolor: 'rgba(0,0,0,0)',  // Fundo da área do gráfico transparente
+    title: {
+        text: 'Venda Mensal', // Você pode adicionar um título se desejar
+        font: {
+            family: 'Aleo',
+            size: 20,
+            color: '#333'
+        }
+    },
+  };
+  Plotly.newPlot('myDiv4', data, layout);
 
 
 
@@ -125,3 +278,13 @@ var data = [{
     // Lógica para filtrar os dados com base nos filtros selecionados
     // ...
   }
+
+
+  //POP-UP
+function openPopup() {
+    document.getElementById('popupOverlay').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
+}

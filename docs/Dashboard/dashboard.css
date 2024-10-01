@@ -8,6 +8,10 @@
 
     --color-menu-houver: #2d979b;
     --color-menu-houver-texto: #f5f3f3f1;
+
+    --color-main-fundo: #2d979b;
+    --color-main-fundo-btn: #ffffff;
+    --color-main-fundo-texto: #000000;
     
     --color-boton: #000000d7;
     --color-boton-texto: #ffffff;
@@ -22,6 +26,15 @@
 
     --color-main:#eceaea;
     --color-main-texto:#000000;
+
+    --color-main-cardstxt-h2:#000000d7;
+    --color-main-cardstxt-valor:#f5f3f3f1;
+    --color-main-cardsborda:#eceaea;
+
+    --color-linhas-produtoImpares:#a2a2a2b2;
+    --color-linhas-produtoPares:#c2c2c292;
+    --color-texto-produto:#000000;
+
 }
 
 .dark_mode{
@@ -32,6 +45,10 @@
 
     --color-menu-houver: #2d979b;
     --color-menu-houver-texto: #eeeeee;
+
+    --color-main-fundo: #c4c4c5;
+    --color-main-fundo-btn: #2d979b;
+    --color-main-fundo-texto: #ffffff;
     
     --color-boton: #2d979b;
     --color-boton-texto: #ffffff;
@@ -45,7 +62,15 @@
     --color-scroll-hover: #44454a;
 
     --color-main:#2c2d31;
-    --color-main-texto:#ffffff;
+    --color-main-texto:#ffffffb2;
+
+    --color-main-cardstxt-h2:#1c1c1cb9;
+    --color-main-cardstxt-valor:#f5f3f3f1;
+    --color-main-cardsborda:#afafaf;
+
+    --color-linhas-produtoImpares:#ffffffb2;
+    --color-linhas-produtoPares:#ffffff92;
+    --color-texto-produto:#000000;
 }
 
 *{
@@ -60,6 +85,7 @@ body{
     width: 100%;
     display: flex;
     background-color: var(--color-main);
+    transition: background-color 0.3s, color 0.3s; /* Animação suave na mudança de tema */
 }
 
 @font-face {
@@ -310,7 +336,7 @@ body{
 /*---------------------------------------Main*/
 main{
     margin-left: 250px;
-    padding: 2rem;
+    padding: 8px 8px;
     background-color: var(--color-main);
     color: var(--color-main-texto);
     width: calc(100% - 250px);
@@ -326,31 +352,114 @@ main.min_main {
     justify-content: center;
     align-items: center;
     font-size: 2.8rem;
+    margin-top: 50px;
     height: 100%;
     z-index: 2;
-}
-
-.welcome{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: bold; 
-    font-size: 1.5rem;
-    position: relative;
-    padding: 10px;
-    z-index: 1;
-    margin-top: -4rem;
-    width: 100%; 
 }
 
 /*------------------------->Main = Linha*/
 .linha_main{
     width: 100%;
     height: 2px;
-    border-radius: 12px;
-    margin-top: 5px;
-    background-color:
-    var(--color-linha);
+    border-radius: 15px;
+    margin-top: 1px;
+    margin-bottom: 6px;
+    background-color:var(--color-linha);
+}
+
+/*------------------------->Main = CARDS*/
+.cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.caixa {
+    border: 2px solid var(--color-main-cardsborda);
+    border-radius: 15px;
+    padding: 15px;
+    width: calc(33.33% - 60px);
+    min-width: 200px;
+}
+
+.titulo {
+    color: var(--color-main-cardstxt-h2);
+    margin-bottom: 0;
+    font-size: 24px;
+}
+#caixa_venda {
+    background: linear-gradient(to bottom right, #206b6d, #2d979b, #39bfc3);
+}
+#caixa_estoque{
+    background: linear-gradient(to bottom right, #6B8E23, #8da856, #bddb7f);
+}
+#caixa_faturamento{
+    background: linear-gradient(to bottom right, #6a5acd, #00bfff);
+}
+
+.valor {
+    color: var(--color-main-cardstxt-valor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+
+/*------------------------->Main = Dashboard*/
+.grafico_1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+ /* Estilo para cada gráfico */
+.grafico_pizza{
+    flex: 1 1 calc(45% - 20px);
+    justify-content: center;
+    min-width: 250px;
+    max-width: 400px;
+    min-height: 250px;
+    max-height: 350px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: var(--color-txt-dashboard);
+}
+.grafico_barra{
+    flex: 1 1 calc(45% - 20px);
+    min-width: 250px;
+    max-width: 400px;
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+.grafico_2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.grafico_linha{
+    flex: 1 1 calc(45% - 20px); 
+    justify-content: center; 
+    align-items: center; 
+    min-width: 250px;
+    max-width: 400px;
+    min-height: 250px;
+    max-height: 350px;
+    box-sizing: border-box;
+}
+
+.grafico_speed{
+    flex: 1 1 calc(45% - 20px);
+    justify-content: center;
+    min-width: 250px;
+    max-width: 400px;
+    min-height: 250px;
+    max-height: 350px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /*--------------------------------------Responsivo*/
@@ -392,3 +501,136 @@ main.min_main {
       flex-basis: 100%;
     }
   }
+
+  @media (max-width: 770px){
+    main.min_main {
+        width: 100%;
+        transition: margin-left 0.5s ease, width 0.5s ease;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .grafico_pizza {
+        flex: 1 1 100%; 
+        margin: 5px 0; 
+    }
+    .grafico_barra {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+    .grafico_linha {
+        flex: 1 1 100%;
+        margin: 5px 0;
+        width: 400px;
+    }
+    .grafico_speed {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+
+    /*CARDS*/
+    .cards{
+        gap: 10px;
+        width: 22rem;
+        margin: 0 auto;
+    }
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 1200px) {
+    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
+        .grafico_pizza {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+        .grafico_barra {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+        .grafico_linha {
+            flex: 1 1 100%;
+            margin: 5px 0;
+            width: 400px;
+        }
+        .grafico_speed {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+    }
+}
+
+
+/* Estilos para tablets em modo retrato (vertical) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
+        .grafico_pizza {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+        .grafico_barra {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+        .grafico_linha {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+        .grafico_speed {
+            flex: 1 1 100%;
+            margin: 5px 0;
+        }
+    }
+
+    .cards{
+        width: 100%;
+        display: flex;
+    }
+
+
+    /* Container pai com `display: flex` para aplicar `gap` */
+    .grafico_1, .grafico_2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* Estilos para tablets em modo paisagem (horizontal) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Ajustes para todos os gráficos */
+    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
+        width: 400px;
+        height: 400px;
+    }
+
+    .grafico_1, .grafico_2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .cards {
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+}
+
+/* Media Queries para telas menores */
+@media only screen and (max-width: 768px) {
+    .caixa {
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .caixa {
+        width: 100%;
+    }
+    .cards{
+        width: 100%;
+    }
+}
