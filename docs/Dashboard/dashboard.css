@@ -387,13 +387,13 @@ main.min_main {
     font-size: 24px;
 }
 #caixa_venda {
-    background: linear-gradient(to bottom right, #206b6d, #2d979b, #39bfc3);
+    background: linear-gradient(to bottom right, #4EA9FF, #2F6699);
 }
 #caixa_estoque{
-    background: linear-gradient(to bottom right, #6B8E23, #8da856, #bddb7f);
+    background: linear-gradient(to bottom right, #00FF99, #00995C);
 }
 #caixa_faturamento{
-    background: linear-gradient(to bottom right, #6a5acd, #00bfff);
+    background: linear-gradient(to bottom right, #FFCC00, #bb9604);
 }
 
 .valor {
