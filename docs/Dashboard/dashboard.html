@@ -34,36 +34,35 @@
                         <span class="txtNavegacao">Dashboard</span>
                     </a>
                 </li>
-                <br>
+
                 <li>
                     <a href="../Estoque/estoque.html" rel="next" target="_self">
                         <i class="bi bi-boxes"></i>
                         <span class="txtNavegacao">Estoque</span>
                     </a>
                 </li>
-                <br>
+
                 <li>
                     <a href="../Vendas/vendas.html" rel="next" target="_self">
                         <i class="bi bi-graph-up-arrow"></i>
                         <span class="txtNavegacao">Vendas</span>
                     </a>
                 </li>
-                <br>
+
                 <li>
                     <a href="../Fornecedores/fornecedores.html" rel="next" target="_self">
                         <i class="bi bi-person-workspace"></i>
                         <span class="txtNavegacao">Fornecedores</span>
                     </a>
                 </li>
-                <br>
+
                 <li>
                     <a href="../Colaboradores/colaboradores.html" rel="next" target="_self">
                         <i class="bi bi-file-earmark-person"></i>
                         <span class="txtNavegacao">Colaboradores</span>
                     </a>
                 </li>
-                <br>
-                <br>              
+                          
                 <li>
                     <a href="../login.html" rel="next" target="_self">
                         <i class="bi bi-box-arrow-left"></i>
@@ -93,7 +92,8 @@
                 <div class="nome_telefone">
                     <span class="nome">Richard Gois</span>
                 </div>
-                <i class="bi bi-three-dots-vertical"></i>
+                <div>
+                    <i class="bi bi-three-dots-vertical"></i>
                 </div>
             </div>
         </div>
@@ -136,44 +136,44 @@
         </div>
 
         <!-- Pop-up com formato de celular -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content" id="popupContent">
-            <!-- Botão para fechar o pop-up -->
-            <span class="close-popup" onclick="closePopup()">&times;</span>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content" id="popupContent">
+                <!-- Botão para fechar o pop-up -->
+                <span class="close-popup" onclick="closePopup()">&times;</span>
+                
+                <!-- Conteúdo do pop-up -->
+                <div class="popup-header">
+                    <h2>Perfil</h2>
+                </div>
+                <div class="perfil">
+                    
+                    <div class="form">
+                        <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Foto do Produto</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                    
+                    <div class="informacoes">
+                        <h2>Nome:</h2>
+                        <input type="text" placeholder="Nome">
+                        
+                        <h2>Tel.:</h2>
+                        <input type="text" placeholder="Tel.">
+                        
+                        <h2>E-mail:</h2>
+                        <input type="email" placeholder="email">
+                        
+                        <h2>Endereço:</h2>
+                        <input type="text" placeholder="End.">
+                    </div>
             
-            <!-- Conteúdo do pop-up -->
-            <div class="popup-header">
-                <h2>Perfil</h2>
-            </div>
-            <div class="perfil">
-                
-                <div class="form">
-                    <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Foto do Produto</label>
-                    <input type="file" id="product-image" name="product-image" accept="image/*" required>
-                
-                <div class="informacoes">
-                    <h2>Nome:</h2>
-                    <input type="text" placeholder="Nome">
-                    
-                    <h2>Tel.:</h2>
-                    <input type="text" placeholder="Tel.">
-                    
-                    <h2>E-mail:</h2>
-                    <input type="email" placeholder="email">
-                    
-                    <h2>Endereço:</h2>
-                    <input type="text" placeholder="End.">
+                    <div class="btn">
+                        <button class="btn_txt" >Alterar Cadastro</button>
+                    </div>
                 </div>
-        
-                <div class="btn">
-                    <button class="btn_txt" >Alterar Cadastro</button>
+                <div class="popup-btnSair">
+                    <button class="popup-action-btn">Salvar</button>
                 </div>
-            </div>
-            <div class="popup-btnSair">
-                <button class="popup-action-btn">Salvar</button>
             </div>
         </div>
-    </div>
     </main>
     <script src="../Dashboard/script.js"></script>
 </body>
