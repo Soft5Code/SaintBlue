@@ -108,7 +108,7 @@
 
             <div class="buscar">
                 <div class="search_box">
-                    <input class="search_txt" type="text" name="" placeholder="Busca Rápida">
+                    <input class="search_txt" type="text" name="#" placeholder="Busca Rápida">
                     <a class="search_btn" href="#">
                         <i class="bi bi-search"></i> </a>
                 </div>
@@ -142,85 +142,86 @@
 
             <dialog>
             
-                <button class="close-button" id="close-button">&times;</button>
-        
+                    <button class="close-button" id="close-button">&times;</button>
+            
                 <div class="form">
                     <form action="https://webhook.site/ca2c3d16-6e28-4285-8dfc-e24450a3634a" method="post" autocomplete="on">               
                     
-                    <div class="form-header">
-                        <div class="title">
-                            <h1>CADASTRO DE FORNECEDOR:</h1>
-                        </div>
-                    </div> 
+                        <div class="form-header">
+                            <div class="title">
+                                <h1>CADASTRO DE FORNECEDOR:</h1>
+                            </div>
+                        </div> 
+            
+                        <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Logo do Fornecedor</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+            
+                        <div class="input-group">
+                            <div class="input-box">
+                                <div class="fornecedor">
+                                    <label for="fornecedor">Fornecedor:</label>
+                                    <textarea id="fornecedor" name="fornecedor" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="cnpj">
+                                    <label for="cnpj">CNPJ:</label>
+                                    <input type="number" id="cnpj" name="cnpj" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                        
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="telefone">Telefone:</label>
+                                    <input type="number" id="telefone" name="telefone" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="email">E-mail:</label>
+                                    <textarea id="email" name="email" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="endereco">
+                                    <label for="endereco">Endereço:</label>
+                                    <textarea id="endereco" name="endereco" required></textarea>
+                                </div>
+                            </div>
         
-                    <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Logo do Fornecedor</label>
-                    <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="numero">Numeroº:</label>
+                                    <input type="number" id="numero" name="numero" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="bairro">Bairro:</label>
+                                    <textarea id="bairro" name="bairro" required></textarea>
+                                </div>
+                            </div>
         
-                    <div class="input-group">
-                        <div class="input-box">
-                            <div class="fornecedor">
-                                <label for="fornecedor">Fornecedor:</label>
-                                <textarea id="fornecedor" name="fornecedor" required></textarea>
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="cep">CEP:</label>
+                                    <input type="number" id="cep" name="cep" step="0.01" min="0" required>
+                                </div>
                             </div>
-                        </div>
                         
-                        <div class="input-box">
-                            <div class="cnpj">
-                                <label for="cnpj">CNPJ:</label>
-                                <input type="number" id="cnpj" name="cnpj" step="0.01" min="0" required>
-                            </div>
+                            <div class="input-box">
+                                <div class="obs">
+                                    <label for="obs">Observações:</label>
+                                    <textarea id="obs" name="obs" required></textarea>
+                                </div>
+                            </div>    
                         </div>
-                    
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="telefone">Telefone:</label>
-                                <input type="number" id="telefone" name="telefone" step="0.01" min="0" required>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="email">E-mail:</label>
-                                <textarea id="email" name="email" required></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="endereco">
-                                <label for="endereco">Endereço:</label>
-                                <textarea id="endereco" name="endereco" required></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="numero">Numeroº:</label>
-                                <input type="number" id="numero" name="numero" step="0.01" min="0" required>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="bairro">Bairro:</label>
-                                <textarea id="bairro" name="bairro" required></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="cep">CEP:</label>
-                                <input type="number" id="cep" name="cep" step="0.01" min="0" required>
-                            </div>
-                        </div>
-                    
-                        <div class="input-box">
-                            <div class="obs">
-                                <label for="obs">Observações:</label>
-                                <textarea id="obs" name="obs" required></textarea>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
+                    </form> <!-- Fechamento do form -->
+                </div> <!-- Fechamento da div form -->
         
                 <button id="dialogbutton">CONCLUIR</button>
         
@@ -303,7 +304,7 @@
 
 
      <!-- Pop-up com formato de celular -->
-        <div class="popup-overlay" id="popupOverlay">
+     <div class="popup-overlay" id="popupOverlay">
             <div class="popup-content" id="popupContent">
                 <!-- Botão para fechar o pop-up -->
                 <span class="close-popup" onclick="closePopup()">&times;</span>
@@ -313,34 +314,35 @@
                     <h2>Perfil</h2>
                 </div>
                 <div class="perfil">
-                    
                     <div class="form">
                         <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Foto de Perfil</label>
                         <input type="file" id="product-image" name="product-image" accept="image/*" required>
                     
-                    <div class="informacoes">
-                        <h2>Nome:</h2>
-                        <input type="text" placeholder="Nome">
+                        <div class="informacoes">
+                            <h2>Nome:</h2>
+                            <input type="text" placeholder="Nome">
+                            
+                            <h2>Tel.:</h2>
+                            <input type="text" placeholder="Tel.">
+                            
+                            <h2>E-mail:</h2>
+                            <input type="email" placeholder="email">
+                            
+                            <h2>Endereço:</h2>
+                            <input type="text" placeholder="End.">
+                        </div>
                         
-                        <h2>Tel.:</h2>
-                        <input type="text" placeholder="Tel.">
-                        
-                        <h2>E-mail:</h2>
-                        <input type="email" placeholder="email">
-                        
-                        <h2>Endereço:</h2>
-                        <input type="text" placeholder="End.">
-                    </div>
-            
-                    <div class="btn">
-                        <button class="btn_txt" >Alterar Perfil</button>
-                    </div>
+                        <div class="btn">
+                            <button class="btn_txt">Alterar Perfil</button>
+                        </div>
+                    </div> <!-- Fechamento da div form -->
                 </div>
+                
                 <div class="popup-btnSair">
                     <button class="popup-action-btn">Salvar</button>
                 </div>
-            </div>
-        </div>
+            </div> <!-- Fechamento da div popup-content -->
+        </div> <!-- Fechamento da div popup-overlay --> 
     </main>
     <script src="../Dashboard/script.js"></script>
 </body>
