@@ -1,0 +1,20 @@
+# Ignora a pasta do ambiente virtual
+venv/
+
+# Ignora arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Ignora a pasta de instâncias, se você estiver usando Flask
+instance/
+
+# Ignora arquivos de configuração de ambiente
+.env
+
+# Ignora outros arquivos de banco de dados
+*.db
+
+# Ignora arquivos de log
+*.log
+
+.vscode/
