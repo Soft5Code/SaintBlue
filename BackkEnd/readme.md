@@ -3,6 +3,7 @@
 - Para utilizar o flask, devemos baixar o txt "requirements". Nele está todas os pacotes necessários para a utilização do framework
 <br>
 <br>
+
 ## ⏳ Bixando o Requirements
 ````bash
     pip install -r requirements.txt
