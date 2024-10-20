@@ -1,13 +1,22 @@
 <h1 align="center">Como utilizar o FLASK</h1>
 
-- Para utilizar o flask, devemos baixar o txt "requirements". Nele está todas os pacotes necessários para a utilização do framework
+ - Para utilizar o flask, devemos baixar o virtual env e  o txt "requirements" localmente. Assim podemos modificar e upar para o repositório
+
 <br>
 <br>
 
-## ⏳ Bixando o Requirements
+<h1 align="center"> Configurando o seu ambiente local para fazer modificações no repositorio</h1>
+
+## ⏳ Baixar o Virtualenv
+````bash
+    pip install virtualenv
+````
+
+## ⏳ Baixando o Requirements
 ````bash
     pip install -r requirements.txt
 ````
+
 <br>
 <br>
 <h1 align="center"><p>MODELO MVC</p>
