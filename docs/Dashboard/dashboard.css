@@ -230,8 +230,53 @@ body{
     font-size: 22px;
 }
 
+/*------------------------->Menu de Navegacao = SAIR*/
+.barra-lateral .sair{
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.barra-lateral .sair::-webkit-scrollbar{
+    width: 5px;
+}
+.barra-lateral .sair::-webkit-scrollbar-thumb{
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+.barra-lateral .sair::-webkit-scrollbar-thumb:hover{
+    background-color: var(--color-scroll-hover);
+    border-radius: 5px;
+}
+.barra-lateral .sair li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+.barra-lateral .sair a{
+    width: 98%;
+    height: 40px;
+    display: flex;
+    padding-left: 13px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: var(--color-barra-lateral);
+    color: var(--color-texto-menu);
+}
+.barra-lateral .sair a:hover{
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+}
+
+.barra-lateral .sair i{
+    min-width: 40px;
+    font-size: 22px;
+}
+
+
+
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_dashboard a.active {
+.barra-lateral .navegacao .fixe_inicio a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -243,14 +288,13 @@ body{
     width: 100%;
     height: 2px;
     border-radius: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: var(--color-linha);
 }
 
 /*------------------------->Menu de Navegacao = Modo Dark*/
 .barra-lateral .modo_escuro{
     width: 100%;
-    margin-bottom: 80px;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
@@ -266,11 +310,14 @@ body{
     overflow: hidden;
     display: flex;
     align-items: center;
-    color: var(--color-texto-menu);
+    color: var(--color-texto-menu);   
+}
+.barra-lateral .modo_escuro span{
+    margin-left: 15px;
 }
 .barra-lateral .modo_escuro i{
     width: 50px;
-    padding-left: 11px;
+    padding-left: 15px;
     font-size: 22px;
 }
 
