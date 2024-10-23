@@ -1,0 +1,135 @@
+
+/*--------------------------------------Responsivo*/
+@media (min-width: 970px){
+    .container {
+        flex-direction: row;   
+    }
+}
+@media (max-heigth: 660px){
+    .barra-lateral .nome-pagina{
+        margin-bottom: 5px;
+    }
+    .barra-lateral .modo_escuro{
+        margin-bottom: 3px;
+    }
+}   
+@media (max-width: 600px){
+    .barra-lateral{
+        position: fixed;
+        left: -250px;
+    }
+    .max_barra_lateral{
+        left: 0;
+    }
+    .menu{
+        display: flex;
+        background-color: var(--color-boton);
+    }
+    .menu i:nth-child(2){
+        display: none;
+    }
+    main{
+        margin-left: 0;
+        width: 100%;
+    }
+    main.min_main{
+        margin-left: 0;
+    }
+}
+
+/* Media query para telas menores que 768px */
+@media (max-width: 768px) {
+    .main .container {
+      flex-basis: 100%;
+    }
+}
+
+@media (max-width: 770px){
+    main.min_main {
+        width: 100%;
+        transition: margin-left 0.5s ease, width 0.5s ease;
+    }
+}
+@media (min-width: 900px){
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; 
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+        button {
+            border-radius: 12px;
+            font-size: 1.2rem;
+            height: 2rem;
+            padding: 3px;
+        }
+        .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+            width: 8rem;
+        }
+}
+@media (min-width: 800px) and (max-width: 899px) {
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem; 
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    button {
+        border-radius: 12px;
+        font-size: 1.1rem;
+        height: 2rem;
+        padding: 3px;
+    }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        width: 8rem;
+    }
+}

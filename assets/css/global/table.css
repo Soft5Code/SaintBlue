@@ -1,0 +1,61 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto; 
+}
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    word-wrap: break-word; 
+}
+tbody td {
+    border: black;
+    color: var(--color-texto-produto);
+    height: 1.7rem;
+}
+
+/* Ajuste de tamanho para cada Coluna*/
+.codigo, .quantidade, .valor{
+    width: 10%;
+}
+.produto{
+    width: 40%;
+}
+.vendedor, .data{
+    width: 15%;
+}
+
+
+/* Linha de separacao entre colunas*/
+tbody td:not(:first-child) {
+    border-left: 2px solid #7b7b7b;
+    box-shadow: -2px 0 3px rgba(0, 0, 0, 0.112), 2px 0 3px rgba(0, 0, 0, 0.112);
+}
+
+/* Manter os cantos arredondados apenas nos cantos especificados */
+tbody tr td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+tbody tr td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+/* Alternância de cores para linhas pares e ímpares */
+tr:nth-child(even) {
+    background-color: var(--color-linhas-produtoPares); /* Cor de fundo para linhas pares */
+}
+tr:nth-child(odd) {
+    background-color: var(--color-linhas-produtoImpares); /* Cor de fundo para linhas ímpares */
+}
+
+/* Titulo */
+thead th {
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: var(--color-main);
+    border: none;
+  }

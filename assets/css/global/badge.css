@@ -1,0 +1,59 @@
+/* COMEÇO DO CODIGO */
+.container  {
+    padding: 0 10px;
+    padding-bottom: 1%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
+    justify-content: center;
+}
+.cracha {
+    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 10px;
+    display: flex;
+    padding-right:  10px;
+    align-items: center;
+    border: 2px solid #ddd; 
+    border-radius: 20px;
+    height: 230px;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #ebebeb; /* Cor de fundo do crachá */
+    box-shadow: 0 4px 16px rgba(2, 203, 253, 0.473); /* Sombra */
+}
+
+.cracha:hover{
+    transform: scale(1.05);
+}
+
+
+.cracha .info h2 {
+    margin: 5px;
+    font-size: 1rem;
+    color: #666;
+    border-bottom: 1px solid #000; 
+    padding-bottom: 5px; 
+}
+.cracha .info h2 span {
+    font-weight: bold;
+    font-size: 0.5rem;
+    color: #000;
+}
+.cracha .info button{
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 100px;
+    background-color: #54adb0;
+}
+
+/* Tamanho da imagem */
+.cracha .imagem img {
+    margin-bottom: 15px;
+    height: 100px;
+    width: 100px;
+    max-width: 150px;
+    border-radius: 10px; /
+}
