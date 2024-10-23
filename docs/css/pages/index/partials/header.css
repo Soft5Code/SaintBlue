@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    font-family: "Aleo", serif;
+}
+
+body{
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 100%;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+.content{
+    z-index: 1000;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2d979b;
+    padding-inline: 16px;
+    position: fixed;
+    padding-left: 1rem;
+}
+.nav{
+    gap: 200px;
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo h3 {  
+    text-transform: uppercase;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+}
+.logo img{
+    margin-top: 11px;
+    width: 60px;
+    height: 60px;
+} 
+.nav-list{
+    display: flex;
+    gap: 32px;
+}
+.nav-list a{
+    font-size: 1.8rem;
+     color: #7e7e7e;
+     padding-block: 16px;
+}
+.content .nav-list li a{
+    padding: 0 0.1rem 0.1rem 0.1rem;
+    color: #d9d9d9;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 200ms ease-in;
+}
+.content .nav-list li a:hover{
+    background-color: #2d979b;
+    border-bottom: 4px solid #d9d9d9;
+    color: #d9d9d9;
+}
+.hamburguer{
+    border: none;
+    background: none;
+    border-top: 3px solid #d9d9d9;
+    cursor: pointer;
+}
+.hamburguer::before,.hamburguer::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: #d9d9d9;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
