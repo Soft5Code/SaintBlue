@@ -84,6 +84,7 @@
         .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
             width: 8rem;
         }
+        
 }
 @media (min-width: 800px) and (max-width: 899px) {
     .buscar {
