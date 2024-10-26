@@ -155,6 +155,33 @@
     .codigo, .produto, .vendedor, .data, .quantidade, .valor {
         width: auto !important;
     }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        font-size: 1rem;
+    }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        width: 260px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    }
 }
 
 @media (min-width: 800px) and (max-width: 899px) {
