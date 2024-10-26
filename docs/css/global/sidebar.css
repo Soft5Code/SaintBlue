@@ -105,7 +105,7 @@
     color: var(--color-texto-menu);
 }
 .barra-lateral .navegacao a:hover{
-    background: var(--color-menu-houver);
+    background: #4fbfc3;
     color: var(--color-menu-houver-texto);
 }
 
@@ -148,7 +148,7 @@
     color: var(--color-texto-menu);
 }
 .barra-lateral .sair a:hover{
-    background: var(--color-menu-houver);
+    background: #4fbfc3;
     color: var(--color-menu-houver-texto);
 }
 
@@ -161,6 +161,30 @@
 
 /* Estilo quando o botão estiver ativo */
 .barra-lateral .navegacao .fixe_inicio a.active {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.barra-lateral .navegacao .fixe_estoque a.active {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.barra-lateral .navegacao .fixe_vendas a.active {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.barra-lateral .navegacao .fixe_fornecedores a.active {
+    background: var(--color-menu-houver);
+    color: var(--color-menu-houver-texto);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.barra-lateral .navegacao .fixe_colaboradores a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;

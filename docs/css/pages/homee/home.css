@@ -1,516 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
-    --color-barra-lateral: #fffcfc;
-
-    --color-texto: #000000;
-    --color-texto-menu: #000000;
-
-    --color-menu-houver: #2d979b;
-    --color-menu-houver-texto: #f5f3f3f1;
-
-    --color-main-fundo: #2d979b;
-    --color-main-fundo-btn: #ffffff;
-    --color-main-fundo-texto: #000000;
-    
-    --color-boton: #000000d7;
-    --color-boton-texto: #ffffff;
-
-    --color-linha: #b4b4b4;
-
-    --color-switch-base: #8d8d8d;
-    --color-switch-circulo: #f1f1f1;
-
-    --color-scroll: #afafaf;
-    --color-scroll-hover: #868686;
-
-    --color-main:#eceaea;
-    --color-main-texto:#000000;
-
-    --color-main-cardstxt-h2:#000000d7;
-    --color-main-cardstxt-valor:#f5f3f3f1;
-    --color-main-cardsborda:#eceaea;
-
-    --color-linhas-produtoImpares:#a2a2a2b2;
-    --color-linhas-produtoPares:#c2c2c292;
-    --color-texto-produto:#000000;
-
+/*  ==================================  CARDS  =========================  */
+.container{
+    height: 80px;
 }
 
-.dark_mode{
-    --color-barra-lateral: #2c2d31;
-
-    --color-texto: #ffffff;
-    --color-texto-menu: #c4c4c5;
-
-    --color-menu-houver: #2d979b;
-    --color-menu-houver-texto: #eeeeee;
-
-    --color-main-fundo: #c4c4c5;
-    --color-main-fundo-btn: #2d979b;
-    --color-main-fundo-texto: #ffffff;
-    
-    --color-boton: #2d979b;
-    --color-boton-texto: #ffffff;
-
-    --color-linha: #5a5a5a;
-
-    --color-switch-base: #22a636;
-    --color-switch-circulo: #ffffff;
-
-    --color-scroll: #44454a;
-    --color-scroll-hover: #44454a;
-
-    --color-main:#2c2d31;
-    --color-main-texto:#ffffffb2;
-
-    --color-main-cardstxt-h2:#1c1c1cb9;
-    --color-main-cardstxt-valor:#f5f3f3f1;
-    --color-main-cardsborda:#afafaf;
-
-    --color-linhas-produtoImpares:#ffffffb2;
-    --color-linhas-produtoPares:#ffffff92;
-    --color-texto-produto:#000000;
+.container .aba{
+    margin-bottom: 65px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Aleo", serif;
-}
-
-body{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    background-color: var(--color-main);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../FONTS/Aleo/Aleo-Regular.ttf');
-    font-weight: normal;
-}
-
-/*------------------------->Menu*/
-.menu{
-    position: fixed;
-    display: flex;
-    width: 50px;
+.bem_vindo{
     height: 50px;
-    font-size: 30px;
-    display: none;
-    justify-content: center;
+    width: 70%;
+    display: flex;
     align-items: center;
-    border-radius: 50%;
-
-    background-color: #fff;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    color: var(--color-boton-texto);
-    right: 15px;
-    top: 15px;
-    z-index: 100;
+    margin-left: 10px;
 }
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: space-evenly;
+    height: 6.5rem;
+}
 
-/*------------------------->Barra Lateral*/
-.barra-lateral{
-    position: fixed;
+.caixa {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 250px;
-    height: 100%;
-    overflow: hidden;
-    padding: 20px 15px;
-    background-color: var(--color-barra-lateral);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: width 0.5s ease, background-color 0.3s ease,left 0.5s ease;
-    z-index: 50;
-}
-
-.mini_barra_lateral{
-    width: 80px;
-}
-
-.barra-lateral span{
+    justify-content: flex-start;
+    align-items: center;
+    height: 6.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
     width: 100%;
-    white-space: nowrap;
-    font-size: 18px;
-    text-align: left;
-    opacity: 1;
-    transition: opacity 0.6s ease,width 0.5s ease;
-}
-.barra-lateral span.oculto{
-    opacity: 0;
-    width: 0;
 }
 
+.caixa .titulo {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 7px;
+}
 
-/*------------------------->Nome da pagina*/
-.barra-lateral .nome-pagina{
-    width: 100%;
-    height: 45px;
-    color: var(--color-texto);
-    margin-bottom: 40px;
+.caixa .valor {
+    width: 50%;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-left: 4px;
-
+    margin-top: auto;
+    margin-bottom: 14px;
 }
-.barra-lateral .nome-pagina img{
-    min-width: 4rem;
-    height: 4rem;
+
+.caixa:hover {
+    background-color: #89e4e7;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+}
+
+/*  ==================================  ATALHOS  =========================  */
+.atalhos {
     display: flex;
-    margin-left: 0.5rem;
-    margin-top: 0.6rem;
-    cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.caixa_atalho {
+    position: relative;
+    width: 48%;
+    min-height: 180px;
+    margin: 15px 0;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 22px;
+    height: 180px;
+    padding: 0;
+}
+
+.caixa_atalho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.barra-lateral .nome-pagina span{
-    font-size: 25px;
-    margin-left: 5px;
-    opacity: 1;
-    transition: opacity 0.6s ease;
-}
-.barra-lateral .nome-pagina .txt_logo{
-    margin-left: 3.2rem;
-    font-size: 2rem;
-}
-.barra-lateral .nome-pagina span.oculto{
-    opacity: 0;
-}
-
-
-/*------------------------->Menu de Navegacao*/
-.barra-lateral .navegacao{
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.barra-lateral .navegacao::-webkit-scrollbar{
-    width: 5px;
-}
-.barra-lateral .navegacao::-webkit-scrollbar-thumb{
-    background-color: var(--color-scroll);
-    border-radius: 5px;
-}
-.barra-lateral .navegacao::-webkit-scrollbar-thumb:hover{
-    background-color: var(--color-scroll-hover);
-    border-radius: 5px;
-}
-.barra-lateral .navegacao li{
-    list-style: none;
-    display: flex;
-    margin-bottom: 5px;
-}
-.barra-lateral .navegacao a{
-    width: 98%;
-    height: 50px;
-    display: flex;
-    padding-left: 13px;
-    align-items: center;
-    text-decoration: none;
-    border-radius: 12px;
-    background-color: var(--color-barra-lateral);
-    color: var(--color-texto-menu);
-}
-.barra-lateral .navegacao a:hover{
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-}
-
-.barra-lateral .navegacao i{
-    min-width: 40px;
-    font-size: 22px;
-}
-
-/*------------------------->Menu de Navegacao = SAIR*/
-.barra-lateral .sair{
-    height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.barra-lateral .sair::-webkit-scrollbar{
-    width: 5px;
-}
-.barra-lateral .sair::-webkit-scrollbar-thumb{
-    background-color: var(--color-scroll);
-    border-radius: 5px;
-}
-.barra-lateral .sair::-webkit-scrollbar-thumb:hover{
-    background-color: var(--color-scroll-hover);
-    border-radius: 5px;
-}
-.barra-lateral .sair li{
-    list-style: none;
-    display: flex;
-    margin-bottom: 5px;
-}
-.barra-lateral .sair a{
-    width: 98%;
-    height: 40px;
-    display: flex;
-    padding-left: 13px;
-    align-items: center;
-    text-decoration: none;
-    border-radius: 12px;
-    background-color: var(--color-barra-lateral);
-    color: var(--color-texto-menu);
-}
-.barra-lateral .sair a:hover{
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-}
-
-.barra-lateral .sair i{
-    min-width: 40px;
-    font-size: 22px;
-}
-
-
-
-/* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_inicio a.active {
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-
-/*------------------------->Menu de Navegacao = Linha*/
-.barra-lateral .linha{
-    width: 100%;
-    height: 2px;
-    border-radius: 12px;
-    margin-top: 10px;
-    background-color: var(--color-linha);
-}
-
-/*------------------------->Menu de Navegacao = Modo Dark*/
-.barra-lateral .modo_escuro{
-    width: 100%;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 10px;
-    transition: all 0.5s ease-in-out;
-}
-.barra-lateral .modo_escuro * {
-    transition: opacity 0.5s ease-in-out;
-}
-.barra-lateral .modo_escuro .info{
-    width: 150px;
-    height: 45px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    color: var(--color-texto-menu);   
-}
-.barra-lateral .modo_escuro span{
-    margin-left: 15px;
-}
-.barra-lateral .modo_escuro i{
-    width: 50px;
-    padding-left: 15px;
-    font-size: 22px;
-}
-
-/*------------------------->Menu de Navegacao = Switch*/
-.barra-lateral .modo_escuro .switch{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 45px;
-    height: 45px;
-    cursor: pointer;
-}
-.barra-lateral .modo_escuro .base{
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 35px;
-    height: 20px;
-    background-color: var(--color-switch-base);
-    border-radius: 50px;
-}
-.barra-lateral .modo_escuro .circulo{
-    position: absolute;
-    width: 18px;
-    height: 90%;
-    background-color: var(--color-switch-circulo);
-    border-radius: 50%;
-    left: 2px;
-    transition: left 0.5s ease;
-}
-.barra-lateral .modo_escuro .circulo.prendido{
-    left: 15px;
-}
-
-/*------------------------->Menu de Navegacao = Usuario*/
-
-.barra-lateral .usuario{
-    width: 100%;
-    display: flex;
-}
-.barra-lateral .usuario img{
-    width:50px;
-    min-width: 50px;
-    border-radius: 10px;
-}
-.barra-lateral .usuario .info-usuario{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-texto);
-    overflow: hidden;
-}
-.barra-lateral .usuario .nome{
-    font-size: 15px;
-    font-weight: 600;
-    padding-left: 8px;
-}
-.barra-lateral .usuario i{
-    font-size: 20px;
-}
-
-/*---------------------------------------Main*/
-main{
-    margin-left: 250px;
-    padding: 8px 8px;
-    background-color: var(--color-main);
-    color: var(--color-main-texto);
-    width: calc(100% - 250px);
-    transition: margin-left 0.5s ease, width 0.5s ease;
-}
-main.min_main {
-    margin-left: 80px;
-    width: calc(100% - 80px);
-    transition: margin-left 0.5s ease, width 0.5s ease;
-}
-.aba{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.8rem;
-    margin-top: 50px;
-    height: 100%;
     z-index: 2;
 }
 
-/*------------------------->Main = Linha*/
-.linha_main{
-    width: 100%;
-    height: 2px;
-    border-radius: 15px;
-    margin-top: 1px;
-    margin-bottom: 6px;
-    background-color:var(--color-linha);
+.caixa_atalho h2,
+.caixa_atalho .consulta_conteudo {
+    position: relative;
+    z-index: 3;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
 }
 
-/*------------------------->Main = CARDS*/
-.cards{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.caixa {
-    border: 2px solid var(--color-main-cardsborda);
-    border-radius: 15px;
-    padding: 15px;
-    width: calc(33.33% - 60px);
-    min-width: 200px;
+.caixa_atalho .consulta_conteudo{
+    width: 80%;
+    margin-left: 10%;
 }
 
-.titulo {
-    color: var(--color-main-cardstxt-h2);
-    margin-bottom: 0;
-    font-size: 24px;
-}
-#caixa_venda {
-    background: linear-gradient(to bottom right, #4EA9FF, #2F6699);
-}
-#caixa_estoque{
-    background: linear-gradient(to bottom right, #00FF99, #00995C);
-}
-#caixa_faturamento{
-    background: linear-gradient(to bottom right, #FFCC00, #bb9604);
-}
-
-.valor {
-    color: var(--color-main-cardstxt-valor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    margin-top: 10px;
-}
-
-
-/*------------------------->Main = Dashboard*/
-.grafico_1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 10px;
-}
-
- /* Estilo para cada gráfico */
-.grafico_pizza{
-    flex: 1 1 calc(45% - 20px);
-    justify-content: center;
-    min-width: 250px;
-    max-width: 400px;
-    min-height: 250px;
-    max-height: 350px;
-    padding: 10px;
+.caixa_atalho h2 {
+    background-color: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    color: var(--color-txt-dashboard);
-}
-.grafico_barra{
-    flex: 1 1 calc(45% - 20px);
-    min-width: 250px;
-    max-width: 400px;
-    padding: 10px;
-    box-sizing: border-box; 
+    padding-top: 30px;
+    font-size: 2.3rem;
 }
 
-.grafico_2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.caixa_atalho:hover img {
+    filter:brightness(50%);
 }
 
-.grafico_linha{
-    flex: 1 1 calc(45% - 20px); 
-    justify-content: center; 
-    align-items: center; 
-    min-width: 250px;
-    max-width: 400px;
-    min-height: 250px;
-    max-height: 350px;
-    box-sizing: border-box;
+.caixa_atalho:hover .consulta_conteudo {
+    opacity: 1;
 }
 
-.grafico_speed{
-    flex: 1 1 calc(45% - 20px);
-    justify-content: center;
-    min-width: 250px;
-    max-width: 400px;
-    min-height: 250px;
-    max-height: 350px;
-    padding: 10px;
-    box-sizing: border-box;
+.caixa_atalho h2:hover{
+    color: #2d979b;
 }
 
-/*--------------------------------------Responsivo*/
+
+/*  ==================================  RESPONSIVO  =========================  */
+
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        width: 90%;
+        margin: 0 auto;
+    }
+    .caixa .valor {
+        font-size: 1.1rem;
+    }
+    .caixa:hover {
+        background-color: initial;
+        transform: none;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .caixa .valor {
+        font-size: 1.8rem;
+    }
+    .caixa:hover {
+        background-color: initial;
+        transform: none;
+    }
+}
+
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
         margin-bottom: 5px;
@@ -543,7 +189,6 @@ main.min_main {
     }
 }
 
-/* Media query para telas menores que 768px */
 @media (max-width: 768px) {
     .main .container {
       flex-basis: 100%;
@@ -555,130 +200,47 @@ main.min_main {
         width: 100%;
         transition: margin-left 0.5s ease, width 0.5s ease;
     }
-
 }
 
 
-@media only screen and (max-width: 768px) {
-    .grafico_pizza {
-        flex: 1 1 100%; 
-        margin: 5px 0; 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .caixa_atalho {
+        width: 80%;
+        height: auto;
+        margin: 15px;
     }
-    .grafico_barra {
-        flex: 1 1 100%;
-        margin: 5px 0;
+    .caixa_atalho h2 {
+        font-size: 2rem;
     }
-    .grafico_linha {
-        flex: 1 1 100%;
-        margin: 5px 0;
-        width: 400px;
+    .caixa_atalho .consulta_conteudo {
+        font-size: 1rem;
     }
-    .grafico_speed {
-        flex: 1 1 100%;
-        margin: 5px 0;
+    .caixa_atalho img {
+        filter: brightness(50%);
     }
-
-    /*CARDS*/
-    .cards{
-        gap: 10px;
-        width: 22rem;
-        margin: 0 auto;
+    .caixa_atalho .consulta_conteudo {
+        opacity: 1;
     }
 }
 
-/* Estilos para telas grandes */
-@media (min-width: 1200px) {
-    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
-        .grafico_pizza {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
-        .grafico_barra {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
-        .grafico_linha {
-            flex: 1 1 100%;
-            margin: 5px 0;
-            width: 400px;
-        }
-        .grafico_speed {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
+@media screen and (max-width: 768px) {
+    .caixa_atalho {
+        width: 80%;
+        padding-top: 0;
     }
-}
-
-
-/* Estilos para tablets em modo retrato (vertical) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
-        .grafico_pizza {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
-        .grafico_barra {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
-        .grafico_linha {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
-        .grafico_speed {
-            flex: 1 1 100%;
-            margin: 5px 0;
-        }
+    .atalhos {
+        margin-top: 230px;
     }
-
-    .cards{
-        width: 100%;
-        display: flex;
+    .caixa_atalho h2 {
+        font-size: 1.4rem;
     }
-
-
-    /* Container pai com `display: flex` para aplicar `gap` */
-    .grafico_1, .grafico_2 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+    .caixa_atalho .consulta_conteudo{
+        font-size: 0.8rem;
     }
-}
-
-/* Estilos para tablets em modo paisagem (horizontal) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Ajustes para todos os gráficos */
-    #myDiv1, #myDiv2, #myDiv3, #myDiv4  {
-        width: 400px;
-        height: 400px;
+    .caixa_atalho img {
+        filter: brightness(50%);
     }
-
-    .grafico_1, .grafico_2 {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .cards {
-        margin: 10px 0;
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 10px;
-    }
-}
-
-/* Media Queries para telas menores */
-@media only screen and (max-width: 768px) {
-    .caixa {
-        width: calc(50% - 20px);
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .caixa {
-        width: 100%;
-    }
-    .cards{
-        width: 100%;
+    .caixa_atalho .consulta_conteudo {
+        opacity: 1;
     }
 }

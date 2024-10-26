@@ -14,7 +14,7 @@ main{
     width: calc(100% - 250px);
     transition: margin-left 0.5s ease, width 0.5s ease;
 }
-/*------------------------->Menu*/
+/*------------------------->Menu = Mini Menu*/
 .menu{
     position: fixed;
     display: flex;
@@ -57,13 +57,23 @@ main.min_main {
     background-color:var(--color-linha);
 }
 
+
+
+
+
+
+
+
+
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
+    border: 2px solid green;
     gap: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-main);
     height: 40px;
+    width: 95%;
     border-radius: 10px;
     margin-top: 8px;
     align-items: center;
@@ -72,13 +82,12 @@ main.min_main {
 }
 
 .search_box{
+    border: 2px solid yellow;
     background: linear-gradient(to right, #66d2d6, #449194, #2d5d5f);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
     color: var(--color-main);
     border-radius: 30px;
     height: 35px;
-    width: 75%;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,15 +122,15 @@ main.min_main {
 }
 /*-------------------------------------------------------------------------------------------------------------------------------*//*-------------------------------------------MAIN = BOTOES FIXOS*/
 .atualiza_export {
-    max-width: 100%;
+    border: 2px solid red;
     gap: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--color-main-fundo);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     height: 40px;
     border-radius: 10px;
-    align-items: center;
     padding: 0 10px;
 }
 
