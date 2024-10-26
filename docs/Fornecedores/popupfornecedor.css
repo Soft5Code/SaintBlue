@@ -25,7 +25,8 @@ dialog {
     padding: 2rem;
     max-width: 90%;
     background-color: #ffffff;
-    overflow: auto;
+    overflow-y: auto; /* Permite rolagem apenas no eixo vertical */
+    overflow-x: hidden; /* Desativa rolagem no eixo horizontal */
 }
 
 dialog::-webkit-scrollbar {

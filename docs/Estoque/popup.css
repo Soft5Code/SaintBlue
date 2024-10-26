@@ -27,7 +27,8 @@ dialog {
     padding: 2rem;
     max-width: 90%; /* Para evitar que ultrapasse a tela em dispositivos pequenos */
     background-color: #ffffff;
-    overflow: auto; /* Permite rolagem quando necessário */
+    overflow-y: auto; /* Permite rolagem apenas no eixo vertical */
+    overflow-x: hidden; /* Desativa rolagem no eixo horizontal */
 }
 
 dialog::-webkit-scrollbar {
@@ -65,6 +66,7 @@ dialog::-webkit-scrollbar {
 .form-header {
     font-size: 1rem;
     text-align: center;
+    display: flex;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
