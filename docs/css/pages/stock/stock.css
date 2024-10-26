@@ -191,3 +191,454 @@
         border: none;
     }
 }
+
+/* POPUP */
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Aleo", "Sans-serif";
+}
+
+
+dialog::backdrop {
+background-color: rgb(0 0 0 / .3);
+}
+
+dialog {
+    position: fixed; /* Altera para posição fixa */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para o centro */
+    /* Mantenha os outros estilos existentes */
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    width: 25rem;
+    max-height: 90vh;
+    border: 3px solid #000000; 
+    padding: 2rem;
+    max-width: 90%; /* Para evitar que ultrapasse a tela em dispositivos pequenos */
+    background-color: #ffffff;
+    overflow-y: auto; /* Permite rolagem apenas no eixo vertical */
+    overflow-x: hidden; /* Desativa rolagem no eixo horizontal */
+}
+
+dialog::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari e Opera */
+  }
+
+
+ #dialogbutton {
+    border: none;
+    width: 15rem;
+    height: 3rem;
+    background-color: #2d979b;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.93rem;
+    font-weight: 500; /* Corrigido */
+    box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
+    margin: 0 auto; /* Centraliza no contêiner */
+    display: block; /* Para que a margem funcione */
+}
+
+.close-button {
+    box-shadow: none;
+    background: none; /* Remove qualquer fundo */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    position: absolute; /* Para posicionar no canto */
+    top: 1rem; /* Distância do topo */
+    right: 1rem; /* Distância da direita */
+    outline: none; /* Remove o contorno ao focar */
+    padding: 0; /* Remove qualquer padding */
+}
+
+
+.form-header {
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+form input, 
+.form textarea, 
+.form select {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 2.3rem; /* Altura padrão */
+    border: 0.1rem solid #000000; /* Borda normal */
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
+    margin-top: 0.5rem; /* Espaço entre rótulo e caixa */
+    transition: border 0; /* Suaviza a transição da borda */
+}
+
+/* Estilo para o foco nos inputs */
+form input:focus, 
+.form textarea:focus, 
+.form select:focus {
+    border: 0.2rem solid  #2d979b; /* Aumenta a espessura e muda a cor da borda ao focar */
+}
+
+.obs textarea{
+    width: 17.5rem;
+    height: 5rem;
+}
+
+textarea {
+    resize: none; /* Impede o redimensionamento */
+    padding: 8px; /* Espaçamento interno */
+    box-sizing: border-box; /* Para incluir padding e borda na largura total */
+    font-size: 16px; /* Tamanho da fonte */
+    overflow: hidden; /* Esconde as setas */
+    
+}
+
+input[type="number"] {
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha para textarea */
+    resize: none; /* Impede redimensionamento do textarea */
+}
+
+
+.input-group {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os inputs se alinhem em várias linhas */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.input-box {
+    flex: 1 1 calc(50% - 1rem); /* Cada input ocupará 50% da largura, menos o espaçamento */
+    margin-top: -0.5rem;
+}
+
+.produto-preco {
+    display: flex; /* Permite que Produto e Preço fiquem lado a lado */
+    justify-content: space-between; /* Espaço entre eles */
+    width: 100%; /* Para garantir que ocupem a linha inteira */
+}
+
+.produto textarea {
+    width: 11.1rem;
+    height: 4rem; /* Apenas o input dentro da classe produto */
+}
+
+.preço input{
+    width: 7.5rem;
+    height: 2.5rem;
+}
+
+.form input[type="file"] {
+    display: block;
+    border: 5rem solid #000000; /* Manter o mesmo estilo */
+    padding: 1rem; /* Adicionar padding */
+}
+
+.photo-upload1 {
+    width: 10rem;
+    height: 9rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    cursor: pointer;
+    margin: 0 auto; /* Centraliza o elemento no seu contêiner */
+    margin-top: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem; /* Remova qualquer padding */
+    box-sizing: border-box; /* Inclui border no cálculo */
+    flex-direction: column; /* Altera para coluna para empilhar ícone e texto */
+    position: relative;
+    top: -1rem;
+}
+
+
+#product-image1 {
+    display: none; /* Oculta o campo de upload real */
+}
+
+/* Estilo para a prévia da imagem */
+img {
+    margin-top: 1rem;
+    width: 1rem;
+    border-radius: 8px;
+}
+
+.bi bi-person-bounding-box{
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 320px){
+    .input-group {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: space-between; 
+    }
+
+    .input-box {
+        flex: 1 1 calc(50% - 1rem); 
+        margin-bottom: 1rem; 
+    }
+
+    .produto-preco {
+        display: flex;
+        justify-content: space-between; 
+        width: 100%; 
+    }
+    .produto textarea,
+    .preço input {
+        width: 100%; 
+        height: 4rem; 
+    }
+
+    .obs textarea {
+        width: 100%; 
+        height: 10rem; 
+    }
+    
+    #dialogbutton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+}
+
+
+@media (min-width: 360px) and (max-width: 1071px) {
+    dialog {
+        width: 40rem; 
+        min-height: 35rem; 
+        padding: 2rem; 
+    }
+
+    .input-group {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: space-between; 
+    }
+
+    .input-box {
+        flex: 1 1 calc(50% - 1rem); 
+        margin-bottom: 1rem; 
+    }
+
+    .produto-preco {
+        display: flex;
+        justify-content: space-between; 
+        width: 100%; 
+    }
+
+    .produto textarea,
+    .preço input {
+        width: 100%; 
+        height: 4rem;
+    }
+
+    .obs textarea {
+        width: 100%; 
+        height: 10rem; 
+    }
+    
+    #dialogbutton {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+}
+
+
+@media (min-width: 1072px){
+    dialog {
+        width: 60rem; 
+        height: 38rem; 
+        border: 0.2rem solid #000000d0;
+        border-radius: 1.8rem;
+    }
+
+    .title {
+        white-space: nowrap; 
+        font-size: 1rem;
+        display: block;
+        margin-right: 30rem;
+        position: relative;
+        left: 0.5rem;
+    }
+
+    #product-image1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0; 
+        cursor: pointer;
+    }
+    
+    .photo-upload1 {
+        width: 12rem;
+        height: 12rem;
+        border: 0.1rem solid #000000;
+        border-radius: 2rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-right: 46rem;
+        cursor: pointer; 
+        color: #000000;
+        font-weight: bold;
+        text-align: center; 
+        padding: 0.2rem; 
+        box-sizing: border-box; 
+        flex-direction: column; 
+        background-color: #ffffff;
+        position: relative;
+        top: 0rem;
+    }
+
+    .photo-upload1:hover {
+        background-color: #e0e0e0; 
+    }
+    
+
+    .form input[type="file"] {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1rem solid #000000; 
+    }
+
+    img {
+        margin-top: 1rem;
+        width: 1rem;
+        border-radius: 8px;
+    }
+
+    form input, .form textarea, .form select {
+        display: flex;
+        width: 12rem;
+        height: 2.4rem;
+        border: 0.1rem solid #000000;
+        border-radius: 8px;
+        outline: none;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, .212);
+        position: relative;
+        
+    }
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: -0.25rem; 
+        margin-right: -0.25rem; 
+        margin: -2rem;
+        position: relative;
+        left: 7.5rem;
+        top: -10.4rem;
+        padding: 0rem 9rem;
+    
+    }
+
+    .input-box {
+        flex: 1 1 calc(33.33% - 1rem); 
+        margin-bottom: -0.5rem; 
+    }
+
+    .produto {
+        display: block;
+        margin-left: 10.5rem;
+        width: 10rem;
+        position: relative;
+        left: -10.5rem;
+    }
+    
+    .produto textarea {
+        width: 26.4rem;
+        height: 4rem; 
+    }
+
+    .preço{
+        position: relative;
+        left: 7rem;
+    }
+
+    .preço input{
+        width: 12rem;
+        height: 4rem;
+    }
+
+
+    .fileira{
+        position: relative;
+        top: 0.1rem;
+    }
+   
+    .obs{
+        position: relative;
+        right: 5.5rem;
+        margin-top: -0.5rem;
+    }
+
+    .obs textarea{
+        width: 50rem;
+        height: 10rem;
+    }
+    
+    .close-button {
+        font-size: 2.5rem;
+    }
+
+    #dialogbutton {
+        border: none;
+        width: 15rem;
+        height: 3rem;
+        background-color:  #2d979b;
+        border: 0.1rem solid #000000d0;
+        border-radius: 30px;
+        cursor: pointer;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 500; 
+        box-shadow: 3px 7px 10px rgba(0, 0, 0, .212);
+        margin: 0 auto; 
+        display: block; 
+        position: relative;
+        top: -7rem;
+        left: 19.5rem;
+    }
+}

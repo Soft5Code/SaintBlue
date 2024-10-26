@@ -139,22 +139,21 @@
             </button>
             
             <dialog>
-            
                 <button class="close-button" id="close-button">&times;</button>
-        
                 <div class="form">
                     <form action="https://webhook.site/ca2c3d16-6e28-4285-8dfc-e24450a3634a" method="post" autocomplete="on">               
-                    
                         <div class="form-header">
                             <div class="title">
                                 <h1>CADASTRO DE PRODUTOS:</h1>
                             </div>
                         </div> 
+                        
+                        <label class="photo-upload1" for="product-image1">
+                            <i class="bi bi-person-bounding-box"></i>Foto do Produto
+                        </label>
+                        <input type="file" id="product-image1" name="product-image1" accept="image/*" required>
             
-            
-                        <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Foto do Produto</label>
-                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
-
+                        
                         <div class="input-group">
                             <div class="input-box">
                                 <div class="produto">
@@ -169,7 +168,7 @@
                                     <input type="number" id="preço" name="preço" step="0.01" min="0" required>
                                 </div>
                             </div>
-                        
+            
                             <div class="input-box">
                                 <div class="fileira">
                                     <label for="marca">Marca:</label>
@@ -223,13 +222,18 @@
                 </div>
                 <button id="dialogbutton">CONCLUIR</button> 
             </dialog>
-            <script src="scriptpopupestoque.js"></script>
-
             
-            <button class="button_editar">
-                <span>Editar</span>
-                <i class="bi bi-pencil-square"></i>
-            </button>
+            <!-- Exemplo de lista de produtos com botão de edição -->
+            <div id="product-list">
+                <div class="product-item" data-produto="Produto A" data-preco="100" data-marca="Marca A" data-cor="Vermelho" data-codigo="001" data-quantidade="10" data-condicao="Novo" data-peso="1.5" data-obs="Observação A">
+                    <button class="button_editar">
+                        <span>Editar</span>
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </div>
+                <!-- Outros produtos podem ser adicionados aqui -->
+            </div>
+            <script src="../JS/pages/stock/stock.js"></script>
             
             <button class="button_excluir">
                 <span>Excluir</span>
