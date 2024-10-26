@@ -4,7 +4,7 @@ const modal = document.querySelector("dialog");
 const buttonConcluir = document.getElementById("dialogbutton");
 const closeButton = document.getElementById("close-button");
 const form = modal.querySelector("form");
-const imageInput = document.getElementById("product-image");
+const imageInput = document.getElementById("product-image1");
 const imagePreview = document.getElementById("image-preview");
 const formTitle = document.querySelector(".form-header .title h1");
 

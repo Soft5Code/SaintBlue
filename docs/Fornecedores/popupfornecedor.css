@@ -100,7 +100,7 @@ textarea {
 }
 
 .obs textarea {
-    width: 20.6;
+    width: 20.6rem;
     height: 6rem; 
 }
 
@@ -310,7 +310,7 @@ textarea {
 
     .obs textarea{
         width: 45rem;
-        height: 7.5rem;
+        height: 6.5rem;
     }
     
     .close-button {
@@ -332,7 +332,7 @@ textarea {
         margin: 0 auto; 
         display: block; 
         position: relative;
-        top: -9.2rem;
+        top: -8.7rem;
         left: 19.5rem;
     }
 }

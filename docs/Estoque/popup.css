@@ -157,7 +157,7 @@ input[type="number"] {
     padding: 1rem; /* Adicionar padding */
 }
 
-.photo-upload {
+.photo-upload1 {
     width: 10rem;
     height: 9rem;
     border: 0.1rem solid #000000;
@@ -179,7 +179,7 @@ input[type="number"] {
 }
 
 
-#product-image {
+#product-image1 {
     display: none; /* Oculta o campo de upload real */
 }
 
@@ -301,7 +301,7 @@ img {
         left: 0.5rem;
     }
 
-    #product-image {
+    #product-image1 {
         position: absolute;
         top: 0;
         left: 0;
@@ -311,7 +311,7 @@ img {
         cursor: pointer;
     }
     
-    .photo-upload {
+    .photo-upload1 {
         width: 12rem;
         height: 12rem;
         border: 0.1rem solid #000000;
@@ -331,7 +331,7 @@ img {
         top: 0rem;
     }
 
-    .photo-upload:hover {
+    .photo-upload1:hover {
         background-color: #e0e0e0; 
     }
     
