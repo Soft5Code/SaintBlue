@@ -169,3 +169,63 @@
     cursor: pointer;
     color: #333;
 }
+.photo-upload {
+    width: 10rem;
+    height: 9rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 1rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; 
+    padding: 2rem; 
+    box-sizing: border-box; 
+    flex-direction: column;
+    position: relative;
+    top: -1rem;
+}
+
+#product-image {
+    display: none; 
+}
+@media (min-width: 1072px){
+    .perfil{
+        padding: 5px;
+    }
+    .perfil .photo-upload{
+        margin-left: 75px;
+    }
+    .photo-upload {
+        width: 12rem;
+        height: 12rem;
+        border: 0.1rem solid #000000;
+        border-radius: 2rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-right: 44rem;
+        cursor: pointer; 
+        color: #000000;
+        font-weight: bold;
+        text-align: center; 
+        padding: 0.2rem; 
+        box-sizing: border-box; 
+        flex-direction: column; 
+        background-color: #ffffff;
+        position: relative;
+        top: 0rem;
+    }
+
+    .photo-upload:hover {
+        background-color: #e0e0e0; 
+    }
+}
+@media (max-width: 1072px){
+    .perfil .photo-upload{
+        background-color: #fff; 
+    }
+}
