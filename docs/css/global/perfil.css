@@ -145,7 +145,7 @@
 
 .btn button {
     padding: 18px 20px;
-    background-color: #40706b;
+    background-color: var(--color-menu-houver);
     color: white;
     border: none;
     border-radius: 20px;
@@ -156,7 +156,7 @@
 
 /* Estilo no hover do botão */
 .btn button:hover {
-    background-color: #2f5c54; 
+    background-color: var(--color-menu-houver); 
 }
 
 /* Botão de fechar o pop-up */

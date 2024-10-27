@@ -1,23 +1,22 @@
 ### 📌 RESOLVENDO OS PROBLEMAS 
 <br> 
-
---------------------------------------------------------------
-### REMOÇÃO DO DASHBOARD -> No LUGAR UMA PAGINA INICIAL -> <span style="color: pink;">RICHARD</span> [x]
-### ORGANIZAÇÃO DO CSS -> <span style="color: red;">DANIEL</span> [x]
-### RESOLVER AS PICAS DO JS * -> <span style="color: pink;">RICHARD</span>
-### REINCLUIR O BOTAO DE EDITAR NAS PAGES -> <span style="color: blue;">PEDRO</span> [x]
-### OLHAR O POPUP -> <span style="color: blue;">PEDRO</span> 
-### ID DUPLICADA -> DUPLICT IMAGE, ACESSOHOME E os BOTOES DO LOGIN -> <span style="color: blue;">PEDRO</span>
-### RESOLVER O PROBLEMA DO BOTAO DE SAIR -> <span style="color: pink;">RICHARD</span> [x]
-### MEXER NO POPUP DO PERFIL -> <span style="color: blue;">PEDRO</span> [x] 
-### RESOLVER PROBLEMAS FORN/COLAB -> <span style="color: red;">DANIEL</span> [x]
-### FAZER BOTAO EDITAR
-### ARRUMAR BOTAO CADASTRAR DO COLABORADORES
-### RESPONSIVIDADE DA PAGINA VENDAS (700px - 900px)
-### REMOÇÃO OU MUDANÇA DO FILTRO EM COLABORADORES/FORNECEDORES
-### RESPONSIVIDADE DO PERFIL EM TELAS GRANDES [x]
-### PERFIL E POPUP POSSUI A MESMA CLASSE(MUDAR PLZ) [x]
-
-
 -------------------------------------------------------------
 
+### -> <span style="color: red;">DANIEL</span>
+### 1- CARDS FORNECEDORES = (EDITAR E EXCLUIR) ARRUMAR
+### 2- BARRA ATUALIZAR = TODAS AS TELAS
+### 3- BOTAO FILTRO = FORNECEDORES E COLABORADORES
+
+<br> 
+-------------------------------------------------------------
+
+### -> <span style="color: blue;">PEDRO</span>
+### 1- BOTAO PERFIL = ARRUMAR O SALVAR, POP-UP
+### 2- POP-UP PARA TELAS MENORES
+
+<br> 
+-------------------------------------------------------------
+
+### -> <span style="color: pink;">RICHARD</span>
+### 1- LINHA  MAIN = VERIFICAR PORQUE TA SUBINDO E DESCENDO
+### 2- BUSCA RAPIDA EM TODAS AS TELAS BUGADA
