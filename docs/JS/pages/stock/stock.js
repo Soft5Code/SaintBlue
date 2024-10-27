@@ -88,19 +88,19 @@ imageInput.onchange = function (event) {
     }
 }
 
-// Exemplo: botão para abrir o modal no modo de edição
+// Configura o evento de clique para cada botão de edição
 document.querySelectorAll(".button_editar").forEach(button => {
     button.onclick = () => {
         const productData = {
-            produto: "Produto Exemplo",
-            preço: 99.99,
-            marca: "Marca Exemplo",
-            cor: "Cor Exemplo",
-            codigo: "123ABC",
-            quantidade: 10,
-            condição: "Novo",
-            peso: 1.2,
-            obs: "Observação Exemplo"
+            produto: button.getAttribute("data-produto"),
+            preço: button.getAttribute("data-preço"),
+            marca: button.getAttribute("data-marca"),
+            cor: button.getAttribute("data-cor"),
+            codigo: button.getAttribute("data-codigo"),
+            quantidade: button.getAttribute("data-quantidade"),
+            condição: button.getAttribute("data-condição"),
+            peso: button.getAttribute("data-peso"),
+            obs: button.getAttribute("data-obs")
         };
         abrirModalParaEdicao(productData);
     };

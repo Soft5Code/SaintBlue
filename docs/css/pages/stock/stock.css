@@ -1,3 +1,17 @@
+.button_editar{
+    background:none;
+    box-shadow: none;
+    width: 3.5rem;
+    height: 2.8rem;
+    position: relative;
+    left: -0.5rem;
+}
+
+.button_editar i {
+    font-size: 1.4rem; /* ajuste o valor conforme necessário */
+}
+
+
 @media (max-heigth: 660px){
     .barra-lateral .nome-pagina{
         margin-bottom: 5px;
@@ -84,7 +98,19 @@
         .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
             width: 8rem;
         }
-        
+
+        .button_editar{
+            background:none;
+            box-shadow: none;
+            width: 3.5rem;
+            height: 2.8rem;
+            position: relative;
+            left: 0.3rem;
+        }
+
+        .button_editar i {
+            font-size: 1.8rem; /* ajuste o valor conforme necessário */
+        }
 }
 @media (min-width: 800px) and (max-width: 899px) {
     .buscar {
