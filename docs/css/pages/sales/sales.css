@@ -34,8 +34,8 @@
     main.min_main {
         width: 100%;
         transition: margin-left 0.5s ease, width 0.5s ease;
+        overflow-x: hidden;
     }
-
 }
 
 /* Media query para telas menores que 768px */
@@ -83,7 +83,15 @@
         }
         .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
             width: 8rem;
-        }
+        } 
+    thead th {
+        font-size: 1rem;
+        border: none;
+    }
+
+    table {
+        width: 100%;
+    }
 }
 @media (min-width: 800px) and (max-width: 899px) {
     .buscar {
@@ -95,7 +103,7 @@
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem;
     }
     .filtro{
         margin-right: 12rem;
@@ -139,27 +147,77 @@
     }
     .codigo, .quantidade, .valor {
         width: 10%;
-        font-size: 10px;
+        font-size: 8px;
     }
     .produto {
         width: 40%;
-        font-size: 10px;
+        font-size: 8px;
     }
     .vendedor, .data{
         width: 15%;
-        font-size: 10px;
+        font-size: 8px;
     }
 
-    /* Adjust column widths to fit within the viewport */
     .codigo, .produto, .vendedor, .data, .quantidade, .valor {
         width: auto !important;
     }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        font-size: 1rem;
+    }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        width: 260px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    }
 }
 
-@media (min-width: 800px)and (max-width: 899px) {
+@media (min-width: 769px)and (max-width: 984px) {
     thead th {
         width: 100%;
         font-size: 1.2rem;
         border: none;
+    }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        width: 260px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
     }
 }
