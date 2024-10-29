@@ -42,6 +42,30 @@
     .main .container {
       flex-basis: 100%;
     }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        width: 260px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    }
 }
 
 @media (max-width: 770px){
@@ -50,7 +74,7 @@
         transition: margin-left 0.5s ease, width 0.5s ease;
     }
 }
-@media (min-width: 900px){
+@media (width: 900px){
     .buscar {
         display: flex;
         height: 50px;
@@ -101,7 +125,7 @@
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; 
+        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
     }
     .filtro{
         margin-right: 12rem;
@@ -109,7 +133,7 @@
 
     .search_btn{
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin-right: 1rem;/* teste */
     }
     .search_txt{
     font-size: 1.3rem;
@@ -129,10 +153,113 @@
         height: 2rem;
         padding: 3px;
     }
-    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+    .button_atuliza, .button_excluir {
         width: 8rem;
     }
 }
+
+@media (min-width: 900px){
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    }
+
+    .atualiza_export{
+        height: 50px;
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+        button {
+            border-radius: 12px;
+            font-size: 1.2rem;
+            height: 2rem;
+            padding: 3px;
+        }
+        .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+            width: 8rem;
+        }
+
+        .button_editar{
+            background:none;
+            box-shadow: none;
+            width: 3.5rem;
+            height: 2.8rem;
+            position: relative;
+            left: 0.3rem;
+        }
+
+        .button_editar i {
+            font-size: 1.8rem;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+    thead th {
+        width: 100%;
+        font-size: 1.2rem;
+        border: none;
+    }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+    }
+}
+
+@media (min-width: 768px){
+    .search_btn{
+        font-size: 1.5rem; 
+        margin-right: 1rem;
+        }
+    .search_txt{
+        font-size: 1.3rem;
+        margin-left: 1.5rem;
+    }
+    .search_box {
+        height: 40px;
+        width: 280px;
+        margin-left: 12rem;
+    }
+}
+
 
 /* POPUP */
 

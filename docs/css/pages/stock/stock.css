@@ -19,6 +19,7 @@
     .barra-lateral .modo_escuro{
         margin-bottom: 3px;
     }
+    
 }   
 @media (max-width: 600px){
     .barra-lateral{
@@ -49,7 +50,7 @@
         width: 100%;
         transition: margin-left 0.5s ease, width 0.5s ease;
     }
-
+    
 }
 
 /* Media query para telas menores que 768px */
@@ -57,6 +58,7 @@
     .main .container {
       flex-basis: 100%;
     }
+        
 }
 @media (min-width: 900px){
     .buscar {
@@ -109,7 +111,7 @@
         }
 
         .button_editar i {
-            font-size: 1.8rem; /* ajuste o valor conforme necessário */
+            font-size: 1.8rem;
         }
 }
 @media (min-width: 800px) and (max-width: 899px) {
@@ -122,7 +124,7 @@
 
     .search_box {
         height: 40px;
-        margin-left: 12rem; /* Adiciona margem para separar da área do filtro */
+        margin-left: 12rem;
     }
     .filtro{
         margin-right: 12rem;
@@ -210,11 +212,34 @@
     }
 }
 
-@media (min-width: 800px) and (max-width: 899px) {
+@media (min-width: 768px) and (max-width: 899px) {
     thead th {
         width: 100%;
         font-size: 1.2rem;
         border: none;
+    }
+    .buscar {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_box {
+        height: 40px;
+        margin-left: 12rem;
+    }
+    .filtro{
+        margin-right: 12rem;
+    }
+
+    .search_btn{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    }
+    .search_txt{
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
     }
 }
 
@@ -456,7 +481,8 @@ img {
         justify-content: center;
         align-items: center;
         text-align: center;
-}
+    }
+    
 }
 
 
@@ -502,7 +528,8 @@ img {
         justify-content: center;
         align-items: center;
         text-align: center;
-}
+    }
+    
 }
 
 
@@ -666,5 +693,20 @@ img {
         position: relative;
         top: -7rem;
         left: 19.5rem;
+    }   
+}
+@media (min-width: 768px){
+    .search_btn{
+        font-size: 1.5rem; 
+        margin-right: 1rem;
+        }
+    .search_txt{
+        font-size: 1.3rem;
+        margin-left: 1.5rem;
+    }
+    .search_box {
+        height: 40px;
+        width: 280px;
+        margin-left: 12rem;
     }
 }

@@ -60,18 +60,13 @@ main.min_main {
 
 
 
-
-
-
-
-
-
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
     gap: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     background-color: var(--color-main);
     height: 40px;
     border-radius: 10px;
@@ -103,6 +98,7 @@ main.min_main {
     height: 30px;
     border-radius: 50%;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
 }
