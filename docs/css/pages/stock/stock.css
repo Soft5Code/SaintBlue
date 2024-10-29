@@ -1,14 +1,20 @@
+
+.container{
+    margin-bottom: 15px;
+    height: 110px;
+}
+
 .button_editar{
     background:none;
     box-shadow: none;
     width: 3.5rem;
-    height: 2.8rem;
+    height: 2.6rem;
     position: relative;
     left: -0.5rem;
 }
 
 .button_editar i {
-    font-size: 1.4rem; /* ajuste o valor conforme necessário */
+    font-size: 1.3rem;
 }
 
 

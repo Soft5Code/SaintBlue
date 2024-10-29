@@ -19,4 +19,4 @@
 
 ### -> <span style="color: pink;">RICHARD</span>
 ### 1- LINHA  MAIN = VERIFICAR PORQUE TA SUBINDO E DESCENDO
-### 2- BUSCA RAPIDA EM TODAS AS TELAS BUGADA
+### 2- BUSCA RAPIDA EM TODAS AS TELAS BUGADA  <span style="color: green;">[X]</span>

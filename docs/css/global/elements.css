@@ -59,7 +59,6 @@ main.min_main {
 }
 
 
-
 /*-------------------------------------------MAIN = BUSCA RAPIDA*/
 .buscar{
     gap: 10px;
@@ -84,7 +83,6 @@ main.min_main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -192px 0;
 }
 
 .search_txt::placeholder {
