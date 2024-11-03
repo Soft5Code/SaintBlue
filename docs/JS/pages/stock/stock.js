@@ -6,6 +6,7 @@ const form = modal.querySelector("form");
 const imageInput = document.getElementById("product-image1");
 const imagePreview = document.getElementById("image-preview");
 const formTitle = document.querySelector(".form-header .title h1");
+const content = document.getElementById("dropdownContent");
 
 let isEditMode = false;
 
@@ -105,3 +106,21 @@ document.querySelectorAll(".button_editar").forEach(button => {
         abrirModalParaEdicao(productData);
     };
 });
+
+function toggleDropdown() {
+    const content = document.querySelector(".dropdown-content");
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
+  // Fecha o dropdown se o usuário clicar fora dele
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.style.display === "block") {
+          openDropdown.style.display = "none";
+        }
+      }
+    }
+  }

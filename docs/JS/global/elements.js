@@ -221,3 +221,22 @@ function openPopup() {
 function closePopup() {
     document.getElementById('popupOverlay').style.display = 'none';
 }
+
+//---------------------------------Botao acoes-----------------------------------------------------------
+function toggleDropdown() {
+    const content = document.querySelector(".dropdown-content");
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
+  // Fecha o dropdown se o usuário clicar fora dele
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (let i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.style.display === "block") {
+          openDropdown.style.display = "none";
+        }
+      }
+    }
+  }

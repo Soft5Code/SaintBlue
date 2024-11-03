@@ -5,16 +5,14 @@
 }
 
 .button_editar{
-    background:none;
-    box-shadow: none;
-    width: 3.5rem;
-    height: 2.6rem;
-    position: relative;
-    left: -0.5rem;
-}
-
+    font-size: 1rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+ }
 .button_editar i {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 

@@ -1,6 +1,6 @@
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 90rem;
     table-layout: auto; 
 }
 th, td {
@@ -17,7 +17,7 @@ tbody td {
 /* Ajuste de tamanho para cada Coluna*/
 .codigo, .quantidade, .valor{
     width: 10%;
-}
+}a
 .produto{
     width: 40%;
 }
@@ -58,4 +58,50 @@ thead th {
     text-align: center;
     background-color: var(--color-main);
     border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 12px;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-btn::after {
+    content: "▼"; /* Seta para baixo */
+    font-size: 10px;
+    margin-left: 8px;
+  }
+
+  /* Estilos do conteúdo do dropdown */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
   }
