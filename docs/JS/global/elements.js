@@ -223,20 +223,43 @@ function closePopup() {
 }
 
 //---------------------------------Botao acoes-----------------------------------------------------------
-function toggleDropdown() {
-    const content = document.querySelector(".dropdown-content");
-    content.style.display = content.style.display === "block" ? "none" : "block";
-  }
+function toggleDropdown(event) {
+    event.stopPropagation(); // Impede o clique de fechar imediatamente o dropdown
+    const dropdownContent = event.currentTarget.nextElementSibling;
 
-  // Fecha o dropdown se o usuário clicar fora dele
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-btn')) {
-      const dropdowns = document.getElementsByClassName("dropdown-content");
-      for (let i = 0; i < dropdowns.length; i++) {
-        const openDropdown = dropdowns[i];
-        if (openDropdown.style.display === "block") {
-          openDropdown.style.display = "none";
+    // Fecha qualquer dropdown aberto anteriormente
+    document.querySelectorAll(".dropdown-content").forEach((content) => {
+        if (content !== dropdownContent) {
+            content.style.display = "none";
         }
-      }
+    });
+
+    // Alterna a visibilidade do dropdown atual
+    if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+    } else {
+        dropdownContent.style.display = "block";
     }
-  }
+}
+
+// Fecha o dropdown se clicar fora dele
+document.addEventListener("click", (event) => {
+    document.querySelectorAll(".dropdown-content").forEach((content) => {
+        content.style.display = "none";
+    });
+});
+
+function editarProduto(button) {
+    const id = button.getAttribute('data-id');
+    const nome = button.getAttribute('data-nome');
+    const fornecedor = button.getAttribute('data-fornecedor');
+    const qtd = button.getAttribute('data-qtd');
+    // Lógica para abrir o modal de edição com as informações do produto
+    console.log(`Editar produto: ID=${id}, Nome=${nome}, Fornecedor=${fornecedor}, QTD=${qtd}`);
+}
+
+function excluirProduto(button) {
+    const id = button.getAttribute('data-id');
+    // Lógica para excluir o produto
+    console.log(`Excluir produto com ID=${id}`);
+}

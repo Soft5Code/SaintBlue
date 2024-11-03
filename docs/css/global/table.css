@@ -1,107 +1,158 @@
+
+.table-container {
+  width: 100%; /* Ocupa 100% da largura do contêiner pai */
+}
+
 table {
-    border-collapse: collapse;
-    width: 90rem;
-    table-layout: auto; 
+  width: 100%; /* Ocupe 100% da largura disponível */
+  border-collapse: collapse;
+  margin-top: 1rem;
+  table-layout: auto;
 }
+
 th, td {
-    border: 1px solid black;
-    text-align: left;
-    word-wrap: break-word; 
-}
-tbody td {
-    border: black;
-    color: var(--color-texto-produto);
-    height: 1.7rem;
+  border: 0.2rem solid #ddd;
+  padding: 0.5rem;
+  font-size: 1.2rem; /* Aumentando o tamanho da fonte dos produtos e títulos */
+  text-align: left;
 }
 
-/* Ajuste de tamanho para cada Coluna*/
-.codigo, .quantidade, .valor{
-    width: 10%;
-}a
-.produto{
-    width: 40%;
-}
-.vendedor, .data{
-    width: 15%;
+th {
+  background-color: #4CAF50;
+  color: white;
 }
 
-
-/* Linha de separacao entre colunas*/
-tbody td:not(:first-child) {
-    border-left: 2px solid #7b7b7b;
-    box-shadow: -2px 0 3px rgba(0, 0, 0, 0.112), 2px 0 3px rgba(0, 0, 0, 0.112);
-}
-
-/* Manter os cantos arredondados apenas nos cantos especificados */
-tbody tr td:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-tbody tr td:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-
-/* Alternância de cores para linhas pares e ímpares */
 tr:nth-child(even) {
-    background-color: var(--color-linhas-produtoPares); /* Cor de fundo para linhas pares */
-}
-tr:nth-child(odd) {
-    background-color: var(--color-linhas-produtoImpares); /* Cor de fundo para linhas ímpares */
+  background-color: #f2f2f2;
 }
 
-/* Titulo */
-thead th {
-    padding: 10px;
-    font-size: 1.4rem;
-    text-align: center;
-    background-color: var(--color-main);
-    border: none;
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Estilos do dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0rem 0.7rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 5.8rem;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  padding: 0.6rem 0rem;
+}
+
+.dropdown-btn::after {
+  content: "▼";
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+.button_editar, .button_excluir {
+  display: flex;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+.button_editar i, .button_excluir i {
+  font-size: 1rem;
+}
+
+.dropdown-content a, .dropdown-content button {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-content a:hover, .dropdown-content button:hover {
+  background-color: #ddd;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .table-container {
+    overflow-x: auto; /* Permite o scroll horizontal se necessário */
   }
 
+  table {
+    width: 100%; /* Garante que a tabela ocupe 100% da largura do container */
+    table-layout: fixed; /* Faz com que as colunas tenham larguras fixas */
+  }
+
+  th, td {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte para melhor ajuste */
+    padding: 0.4rem; /* Ajusta o padding para mais espaço */
+  }
+
+  .dropdown-content {
+    width: auto; /* Ajusta a largura do dropdown para caber seu conteúdo */
+  }
+  
   .dropdown {
     position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.5rem 12px;
-    font-size: 0.8rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
     display: flex;
-    align-items: center;
+    
+  }
+}
+
+@media (min-width: 769px) {
+  th {
+    font-size: 1.4rem;  
+    text-align: center;
   }
 
-  .dropdown-btn::after {
-    content: "▼"; /* Seta para baixo */
-    font-size: 10px;
-    margin-left: 8px;
+  td {
+    font-size: 1.3rem; /* Ajuste o tamanho conforme necessário */
+    text-align: center;
+}
+  
+  .dropdown-btn {
+      display: block;
+      margin: 0 auto;
   }
 
-  /* Estilos do conteúdo do dropdown */
+  /* Estilos para o dropdown */
+  .dropdown {
+      position: relative;
+      display: flex;
+  }
+
+  /* Abre o dropdown como um menu fixo para evitar scroll na tabela */
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 4px;
+      display: none;
+      position: fixed; /* Altera para fixo */
+      background-color: #f9f9f9;
+      min-width: 5.8rem;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      border-radius: 4px;
+      padding: 0.6rem 0rem;
   }
 
-  .dropdown-content a {
-    color: black;
-    padding: 8px 12px;
-    text-decoration: none;
-    display: block;
-    font-size: 12px;
+  .dropdown-content.show {
+      display: block;
   }
 
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
+
+}

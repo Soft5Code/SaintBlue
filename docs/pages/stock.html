@@ -242,107 +242,173 @@
         </div>
         
         <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>CODIGO</th>
-                    <th>PRODUTO</th>
-                    <th>FORNECEDOR</th>
-                    <th>QTD</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="linha_1">
-                    <td></td>
-                    <td>Vibrador ulta mega blaster</td>
-                    <td>Elisa Sanchez LTDA</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="dropdown-btn" onclick="toggleDropdown()">Menu</button>
-                            <div class="dropdown-content">
-                                <button class="button_editar">
-                                    Editar
-                                    <i class="bi bi-pencil-square fs-2"></i>
-                                </button>
-                              <a href="#">Excluir</a>
+        <div class="table-container">
+            <table class="table-auto mt-4">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">Produto</th>
+                        <th class="px-4 py-2">Fornecedor</th>
+                        <th class="px-4 py-2">QTD</th>
+                        <th class="px-4 py-2">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="px-4 py-2">001</td>
+                        <td class="px-4 py-2">Produto A</td>
+                        <td class="px-4 py-2">Fornecedor X</td>
+                        <td class="px-4 py-2">100</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="001" data-nome="Produto A" data-fornecedor="Fornecedor X" data-qtd="100" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="001" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
                             </div>
-                          </div>
-                          69
-                    </td>
-                </tr>
-                <tr class="linha_2">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_3">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_4">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_5">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_6">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_7">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_8">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_9">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_10">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="linha_11">
-                    <td>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">002</td>
+                        <td class="px-4 py-2">Produto B</td>
+                        <td class="px-4 py-2">Fornecedor Y</td>
+                        <td class="px-4 py-2">50</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="002" data-nome="Produto B" data-fornecedor="Fornecedor Y" data-qtd="50" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="002" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">003</td>
+                        <td class="px-4 py-2">Produto C</td>
+                        <td class="px-4 py-2">Fornecedor Z</td>
+                        <td class="px-4 py-2">200</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="003" data-nome="Produto C" data-fornecedor="Fornecedor Z" data-qtd="200" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="003" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">004</td>
+                        <td class="px-4 py-2">Produto D</td>
+                        <td class="px-4 py-2">Fornecedor W</td>
+                        <td class="px-4 py-2">150</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="004" data-nome="Produto D" data-fornecedor="Fornecedor W" data-qtd="150" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="004" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">005</td>
+                        <td class="px-4 py-2">Produto E</td>
+                        <td class="px-4 py-2">Fornecedor V</td>
+                        <td class="px-4 py-2">300</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="005" data-nome="Produto E" data-fornecedor="Fornecedor V" data-qtd="300" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="005" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">006</td>
+                        <td class="px-4 py-2">Produto F</td>
+                        <td class="px-4 py-2">Fornecedor U</td>
+                        <td class="px-4 py-2">75</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="006" data-nome="Produto F" data-fornecedor="Fornecedor U" data-qtd="75" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="006" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">007</td>
+                        <td class="px-4 py-2">Produto G</td>
+                        <td class="px-4 py-2">Fornecedor T</td>
+                        <td class="px-4 py-2">90</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="007" data-nome="Produto G" data-fornecedor="Fornecedor T" data-qtd="90" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="007" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-2">008</td>
+                        <td class="px-4 py-2">Produto H</td>
+                        <td class="px-4 py-2">Fornecedor S</td>
+                        <td class="px-4 py-2">60</td>
+                        <td class="px-4 py-2">
+                            <div class="dropdown">
+                                <button class="dropdown-btn" onclick="toggleDropdown(event)">Menu</button>
+                                <div class="dropdown-content">
+                                    <button class="button_editar" data-id="008" data-nome="Produto H" data-fornecedor="Fornecedor S" data-qtd="60" onclick="editarProduto(this)">Editar
+                                        <i class="bi bi-pencil-square fs-2"></i>
+                                    </button>
+                                    <button class="button_excluir" data-id="008" onclick="excluirProduto(this)">Excluir
+                                        <i class="bi bi-trash3 fs-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     
         <!-- Pop-up com formato de celular -->
         <div class="popup-overlay" id="popupOverlay">
