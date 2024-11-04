@@ -112,28 +112,8 @@
                 <a class="search_btn" href="#">
                     <i class="bi bi-search"></i> </a>
             </div>
-        
-            <div class="filtro">
-                <i id="filter" class="bi bi-funnel-fill" onclick="clickMenu()"></i>
-                <div class="menu_filtro" id="menuFiltro">
-                    <ul>
-                        <li><a href="#" id="codigoOption" onclick="selectOption(this)">Código</a></li>
-                        <li><a href="#" id="produtoOption" onclick="selectOption(this)">Produto</a></li>
-                        <li><a href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</a></li>
-                        <li><a href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="atualiza_export">
-            <button class="button_atuliza">
-                <span>Atualizar</span>
-                <i class="bi bi-arrow-counterclockwise"></i>
-            </button>
-            
-            <button class="button_cadastrar">
-                <span>Cadastrar</span>
+            <button type="button" class="button" id="button_cadastrar">
+                <span class="button__text">Cadastrar</span>
                 <i class="bi bi-plus-circle"></i>
             </button>
             
@@ -222,23 +202,18 @@
                 <button id="dialogbutton">CONCLUIR</button> 
             </dialog>
             
-            <!-- Exemplo de lista de produtos com botão de edição -->
-            <div id="product-list">
-                <div class="product-item" data-produto="Produto A" data-preco="100" data-marca="Marca A" data-cor="Vermelho" data-codigo="001" data-quantidade="10" data-condicao="Novo" data-peso="1.5" data-obs="Observação A">
-                    <!--
-                    <button class="button_editar">
-                        <i class="bi bi-pencil-square"></i>
-                    </button>
-                    -->
+            <div class="filtro">
+                <i id="filter" class="bi bi-funnel-fill" onclick="clickMenu()"></i>
+                <div class="menu_filtro" id="menuFiltro">
+                    <ul>
+                        <li><a href="#" id="codigoOption" onclick="selectOption(this)">Código</a></li>
+                        <li><a href="#" id="produtoOption" onclick="selectOption(this)">Produto</a></li>
+                        <li><a href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</a></li>
+                        <li><a href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</a></li>
+                    </ul>
                 </div>
-                <!-- Outros produtos podem ser adicionados aqui -->
             </div>
-            
-            
-            <button class="button_excluir">
-                <span>Excluir</span>
-                <i class="bi bi-trash3"></i>
-            </button>
+        </div>
         </div>
         
         <br>

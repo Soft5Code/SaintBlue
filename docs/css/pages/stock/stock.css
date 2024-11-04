@@ -1,9 +1,205 @@
-
 .container{
     margin-bottom: 15px;
     height: 110px;
 }
+.buscar{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    background-color: var(--color-main);
+    height: 45px;
+    border-radius: 10px;
+    margin: 0px;
+}
 
+.search_box {
+    background: linear-gradient(to right, #66d2d6, #449194, #2d5d5f);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
+    color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    overflow: hidden; /* Para garantir que elementos não saiam da div */
+}
+
+.search_txt {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 0.7rem;
+    color: #fff;
+    flex: 1;
+  
+    margin: 0;
+}
+
+.search_txt::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.search_btn {
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0; /* Remove margens para que o botão fique colado ao input */
+}
+
+
+i#filter{
+    height: 42.5px;
+    width: 60px;
+}
+
+/*======================== TESTE LIXEIRA =================================
+
+/* From Uiverse.io by vinodjangid07 */ 
+.bin-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 38%;
+    background-color: #449194;
+    cursor: pointer;
+    border: 1px solid #66d2d6;
+    transition-duration: 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .bin-bottom {
+    width: 15px;
+    z-index: 2;
+  }
+  .bin-top {
+    width: 17px;
+    transform-origin: right;
+    transition-duration: 0.3s;
+    z-index: 2;
+  }
+  .bin-button:hover .bin-top {
+    transform: rotate(45deg);
+  }
+  .bin-button:hover {
+    background-color: #2d5d5f;
+  }
+  .bin-button:active {
+    transform: scale(0.9);
+  }
+  .garbage {
+    position: absolute;
+    width: 14px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .bin-button:hover .garbage {
+    animation: throw 0.4s linear;
+  }
+  @keyframes throw {
+    from {
+      transform: translate(-400%, -700%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+  }
+  
+
+/*======================== TESTE ATUALIZAR =================================
+  
+/* From Uiverse.io by andrew-demchenk0 */
+.button {
+    gap: 20px;
+    position: relative;
+    width: 190px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #66d2d6;
+    box-shadow: 2px 3px #66d2d6;
+    background-color: #449194;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.button i{
+    margin-top: 1.65px;
+    font-size: 0.8rem;
+    color: #fff;
+}
+  
+.button, .button__icon, .button__text {
+transition: all 0.3s;
+}
+
+.button .button__text {
+    font-size: 0.8rem;
+    transform: translateX(12px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+position: absolute;
+transform: translateX(105px);
+height: 100%;
+width:  39px;
+background-color: #2d5d5f;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.button .svg {
+width: 20px;
+fill: #66d2d6;
+}
+
+.button:hover {
+background: #449194;
+}
+.button:hover .button__text {
+    color: #FFF;
+}
+
+.button:hover .button__icon {
+width: 148px;
+transform: translateX(0);
+}
+
+.button:active {
+transform: translate(3px, 3px);
+box-shadow: 0px 0px #66d2d6;
+}
+
+.button_editar{
+    background:none;
+    box-shadow: none;
+    width: 3.5rem;
+    height: 2.6rem;
+    position: relative;
+    left: -0.5rem;
+}
+
+.button_editar i {
+    font-size: 1.3rem;
+}
 
 
 @media (max-heigth: 660px){
@@ -38,7 +234,31 @@
         margin-left: 0;
     }
 }
-
+@media (min-width: 1028px){
+    .buscar{
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    i#filter{
+        margin-top: 5px;
+    }
+    .search_box{
+        width: 500px;
+    }
+    .button {
+       gap: 70px;
+       margin-top: 1px;
+    }
+    .search_txt{
+        font-size: 1rem;
+    }
+    .button i{
+        margin-top: 1.65px;
+        font-size: 1rem;
+        color: #fff;
+    }
+}
 @media (max-width: 770px){
     main.min_main {
         width: 100%;
@@ -55,72 +275,30 @@
         
 }
 @media (min-width: 900px){
-    .buscar {
-        display: flex;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
+    button {
+        border-radius: 12px;
+        font-size: 1.2rem;
+        height: 2rem;
+        padding: 3px;
+    }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+        width: 8rem;
     }
 
-    .search_box {
-        height: 40px;
-        margin-left: 12rem;
-    }
-    .filtro{
-        margin-right: 12rem;
-    }
-
-    .search_btn{
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    }
-    .search_txt{
-    font-size: 1.3rem;
-    margin-left: 1.5rem;
+    .button_editar{
+        background:none;
+        box-shadow: none;
+        width: 3.5rem;
+        height: 2.8rem;
+        position: relative;
+        left: 0.3rem;
     }
 
-    .atualiza_export{
-        height: 50px;
-        margin-top: 0.5rem;
-        margin-left: 3rem;
-        margin-right: 3rem;
+    .button_editar i {
+        font-size: 1.8rem;
     }
-        button {
-            border-radius: 12px;
-            font-size: 1.2rem;
-            height: 2rem;
-            padding: 3px;
-        }
-        .button_atuliza, .button_cadastrar {
-            width: 8rem;
-        }
-
 }
 @media (min-width: 800px) and (max-width: 899px) {
-    .buscar {
-        display: flex;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .search_box {
-        height: 40px;
-        margin-left: 12rem;
-    }
-    .filtro{
-        margin-right: 12rem;
-    }
-
-    .search_btn{
-    font-size: 1.5rem;
-    margin-right: 1rem;/* teste */
-    }
-    .search_txt{
-    font-size: 1.3rem;
-    margin-left: 1.5rem;
-    }
-
 
     .atualiza_export{
         height: 50px;
@@ -134,77 +312,60 @@
         height: 2rem;
         padding: 3px;
     }
-    .button_atuliza {
+    .button_atuliza, .button_excluir {
         width: 8rem;
     }
 }
 
 @media (max-width: 768px) {
-    .button_atuliza, .button_cadastrar {
+    thead th {
+        font-size: 1rem;
+        border: none;
+    }
+
+    table {
+        width: 100%;
+    }
+    .codigo, .quantidade, .valor {
+        width: 10%;
+        font-size: 10px;
+    }
+    .produto {
+        width: 40%;
+        font-size: 10px;
+    }
+    .vendedor, .data{
+        width: 15%;
+        font-size: 10px;
+    }
+
+    /* Adjust column widths to fit within the viewport */
+    .codigo, .produto, .vendedor, .data, .quantidade, .valor {
+        width: auto !important;
+    }
+    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
         font-size: 1rem;
     }
-    .buscar {
-        display: flex;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .search_box {
-        height: 40px;
-        width: 260px;
-        margin-left: 12rem;
-    }
-    .filtro{
-        margin-right: 12rem;
-    }
-
-    .search_btn{
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    }
-    .search_txt{
-    font-size: 1.1rem;
-    margin-left: 1.5rem;
-    }
+    
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
-    .buscar {
-        display: flex;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .search_box {
-        height: 40px;
-        margin-left: 12rem;
-    }
-    .filtro{
-        margin-right: 12rem;
-    }
-
-    .search_btn{
-    font-size: 1.3rem;
-    margin-right: 1rem;
-    }
-    .search_txt{
-    font-size: 1.1rem;
-    margin-left: 1.5rem;
+    thead th {
+        width: 100%;
+        font-size: 1.2rem;
+        border: none;
     }
 }
-
 /* POPUP */
 
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Aleo", "Sans-serif";
-}
+} */
 
 
 dialog::backdrop {
@@ -646,19 +807,4 @@ img {
         top: -7rem;
         left: 19.5rem;
     }   
-}
-@media (min-width: 768px){
-    .search_btn{
-        font-size: 1.5rem; 
-        margin-right: 1rem;
-        }
-    .search_txt{
-        font-size: 1.3rem;
-        margin-left: 1.5rem;
-    }
-    .search_box {
-        height: 40px;
-        width: 280px;
-        margin-left: 12rem;
-    }
 }

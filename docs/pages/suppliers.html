@@ -112,32 +112,11 @@
             <div class="search_box">
                 <input class="search_txt" type="text" name="#" placeholder="Busca Rápida">
                 <a class="search_btn" href="#">
-                    <i class="bi bi-search"></i> </a>
+                    <i class="bi bi-search"></i> 
+                </a>
             </div>
-        
-            <div class="filtro">
-                <i id="filter" class="bi bi-funnel-fill" onclick="clickMenu()"></i>
-                <div class="menu_filtro" id="menuFiltro">
-                    <ul>
-                        <li><a href="#" id="codigoOption" onclick="selectOption(this)">Código</a></li>
-                        <li><a href="#" id="produtoOption" onclick="selectOption(this)">Produto</a></li>
-                        <li><a href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</a></li>
-                        <li><a href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="atualiza_export">
-            <button class="button_atuliza">
-                <span>Atualizar</span>
-                <i class="bi bi-arrow-counterclockwise"></i>
-            </button>
-            
-            
-            <button class="button_cadastrar">
-                <span>Cadastrar</span>
+            <button class="button" id="button_cadastrar">
+                <span class="button__text">Cadastrar</span>
                 <i class="bi bi-plus-circle"></i>
             </button>
            
@@ -146,99 +125,100 @@
             
                 <button class="close-button" id="close-button">&times;</button>
         
-            <div class="form">
-                <form action="https://webhook.site/ca2c3d16-6e28-4285-8dfc-e24450a3634a" method="post" autocomplete="on">               
-                
-                    <div class="form-header">
-                        <div class="title">
-                            <h1>CADASTRO DE FORNECEDOR:</h1>
-                        </div>
-                    </div> 
-        
-                    <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Logo do Fornecedor</label>
-                    <input type="file" id="product-image" name="product-image" accept="image/*" required>
-        
-                    <div class="input-group">
-                        <div class="input-box">
-                            <div class="fornecedor">
-                                <label for="fornecedor">Fornecedor:</label>
-                                <textarea id="fornecedor" name="fornecedor" required></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="cnpj">
-                                <label for="cnpj">CNPJ:</label>
-                                <input type="number" id="cnpj" name="cnpj" step="0.01" min="0" required>
-                            </div>
-                        </div>
+                <div class="form">
+                    <form action="https://webhook.site/ca2c3d16-6e28-4285-8dfc-e24450a3634a" method="post" autocomplete="on">               
                     
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="telefone">Telefone:</label>
-                                <input type="number" id="telefone" name="telefone" step="0.01" min="0" required>
+                        <div class="form-header">
+                            <div class="title">
+                                <h1>CADASTRO DE FORNECEDOR:</h1>
                             </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="email">E-mail:</label>
-                                <textarea id="email" name="email" required></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="endereco">
-                                <label for="endereco">Endereço:</label>
-                                <textarea id="endereco" name="endereco" required></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="numero">Numeroº:</label>
-                                <input type="number" id="numero" name="numero" step="0.01" min="0" required>
-                            </div>
-                        </div>
-                        
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="bairro">Bairro:</label>
-                                <textarea id="bairro" name="bairro" required></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="input-box">
-                            <div class="fileira2">
-                                <label for="cep">CEP:</label>
-                                <input type="number" id="cep" name="cep" step="0.01" min="0" required>
-                            </div>
-                        </div>
-                    
-                        <div class="input-box">
-                            <div class="obs">
-                                <label for="obs">Observações:</label>
-                                <textarea id="obs" name="obs" required></textarea>
-                            </div>
-                        </div>    
-                    </div>
-                </form> <!-- Fechamento do form -->
-            </div> <!-- Fechamento da div form -->
-    
-            <button id="dialogbutton">CONCLUIR</button>
-    
-        </dialog>
-        <!--
-        <button class="button_editar" id="editbutton">
-            <span>Editar</span>
-            <i class="bi bi-pencil-square"></i>
-        </button>
-        -->
+                        </div> 
             
-            <button class="button_excluir">
-                <span>Excluir</span>
-                <i class="bi bi-trash3"></i>
-            </button>
+                        <label class="photo-upload" for="product-image"><i class="bi bi-person-bounding-box"></i>Logo do Fornecedor</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+            
+                        <div class="input-group">
+                            <div class="input-box">
+                                <div class="fornecedor">
+                                    <label for="fornecedor">Fornecedor:</label>
+                                    <textarea id="fornecedor" name="fornecedor" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="cnpj">
+                                    <label for="cnpj">CNPJ:</label>
+                                    <input type="number" id="cnpj" name="cnpj" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                        
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="telefone">Telefone:</label>
+                                    <input type="number" id="telefone" name="telefone" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="email">E-mail:</label>
+                                    <textarea id="email" name="email" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="endereco">
+                                    <label for="endereco">Endereço:</label>
+                                    <textarea id="endereco" name="endereco" required></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="numero">Numeroº:</label>
+                                    <input type="number" id="numero" name="numero" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="bairro">Bairro:</label>
+                                    <textarea id="bairro" name="bairro" required></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="input-box">
+                                <div class="fileira2">
+                                    <label for="cep">CEP:</label>
+                                    <input type="number" id="cep" name="cep" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                        
+                            <div class="input-box">
+                                <div class="obs">
+                                    <label for="obs">Observações:</label>
+                                    <textarea id="obs" name="obs" required></textarea>
+                                </div>
+                            </div>    
+                        </div>
+                    </form> <!-- Fechamento do form -->
+                </div> <!-- Fechamento da div form -->
+    
+                <button id="dialogbutton">CONCLUIR</button>
+    
+             </dialog>   
+        
+            <div class="filtro">
+                <i id="filter" class="bi bi-funnel-fill" onclick="clickMenu()"></i>
+                <div class="menu_filtro" id="menuFiltro">
+                    <ul>
+                        <li><a href="#" id="codigoOption" onclick="selectOption(this)">Classificar de A a Z</a></li>
+                        <li><a href="#" id="produtoOption" onclick="selectOption(this)">Classificar de Z a A</a></li>
+                        <!-- <li><a href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</a></li>
+                        <li><a href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</a></li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
      <!-- COMEÇO DO CODIGO -->
         <section class="container">
@@ -248,13 +228,16 @@
                     <h2>Tel.: <span>(*)</span></h2>
                     <h2>E-mail: <span>sac@nvidia.com.br</span></h2>
                     <h2>End.: <span>Avenida Santos Dumont, 7199-Aventureiro,Joinville-SC-892226-435</span></h2>
-                </div>
+                    <div class="btn-hist" onclick="selectFornecedor(this)">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                    </div>
+                </div>            
                 <div class="imagem">
                     <img src="/docs/img/pages/suppliers/nvidia.jpg" alt="Foto do crachá">
                 </div>
-                <button onclick="selectFornecedor(this)">Editar</button>
             </div>
-            <div class="cracha">
+            <!-- <div class="cracha">
                 <div class="info">
                     <h2>Nome: <span>Pichau Informatica</span></h2>
                     <h2>Tel.: <span>(*)</span></h2>
@@ -263,7 +246,7 @@
                 </div>
                 <div class="imagem">
                     <img src="/docs/img/pages/suppliers/pichau.logo.jpg" alt="Foto do crachá">
-                </div>
+                </div> -->
             </div>
             <div class="cracha">
                 <div class="info">
@@ -271,6 +254,10 @@
                     <h2>Tel.: <span>(*)</span></h2>
                     <h2>E-mail: <span>sac@amd.com.br</span></h2>
                     <h2>End.: <span>Avenida Nossa Senhora de Fátima, 7199 - Bela Vista, Recife-PE-50070-020</span></h2>
+                    <div class="btn-hist" onclick="selectFornecedor(this)">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                    </div>
                 </div>
                 <div class="imagem">
                     <img src="/docs/img/pages/suppliers/amd.jpg" alt="Foto do crachá">
@@ -285,6 +272,10 @@
                     <h2>Tel.: <span>(*)</span></h2>
                     <h2>E-mail: <span>sac@terabyte.com.br</span></h2>
                     <h2>End.: <span>Rua Doutor Guilherme de Almeida, 7199 - Centro, Natal-RN-59025-100</span></h2>
+                    <div class="btn-hist" onclick="selectFornecedor(this)">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                    </div>
                 </div>
                 <div class="imagem">
                     <img src="/docs/img/pages/suppliers/terabyte.jpg" alt="Foto do crachá">
@@ -296,6 +287,10 @@
                     <h2>Tel.: <span>(*)</span></h2>
                     <h2>E-mail: <span>faleconosco@kabum.com.br</span></h2>
                     <h2>End.: <span>Rua Carlos Gomes,1321-9°andar- Centro Limeira/SP - CEP - 13480-010</span></h2>
+                    <div class="btn-hist" onclick="selectFornecedor(this)">
+                        <button>Editar</button>
+                        <button>Excluir</button>
+                    </div>
                 </div>
                 <div class="imagem">
                     <img src="/docs/img/pages/suppliers/download.jpg" alt="Foto do crachá">

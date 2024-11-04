@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
 //---------------------------------------------------------------------------------------
 //--------------------------POPUP--------------------------------------------------------
 // Seleção dos elementos
-const buttonCadastrar = document.querySelector(".button_cadastrar");
+const buttonCadastrar = document.querySelector("#button_cadastrar");
 const modal = document.querySelector("dialog");
 const buttonConcluir = document.getElementById("dialogbutton");
 const closeButton = document.getElementById("close-button");

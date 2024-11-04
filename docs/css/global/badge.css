@@ -48,12 +48,25 @@
     margin-left: 100px;
     background-color: #54adb0;
 }
+.cracha .info{
+    width: 250px;
+}
 
 /* Tamanho da imagem */
 .cracha .imagem img {
     margin-bottom: 15px;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     max-width: 150px;
     border-radius: 10px; /
+}
+.btn-hist button {
+    width: 80px; /* Defina a largura desejada aqui */
+    height: 20px; /* Caso queira ajustar a altura também */
+    background-color: #54adb0; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
 }
