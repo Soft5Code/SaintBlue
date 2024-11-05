@@ -188,18 +188,6 @@ transform: translate(3px, 3px);
 box-shadow: 0px 0px #66d2d6;
 }
 
-.button_editar{
-    background:none;
-    box-shadow: none;
-    width: 3.5rem;
-    height: 2.6rem;
-    position: relative;
-    left: -0.5rem;
-}
-
-.button_editar i {
-    font-size: 1.3rem;
-}
 
 
 @media (max-heigth: 660px){
@@ -281,23 +269,12 @@ box-shadow: 0px 0px #66d2d6;
         height: 2rem;
         padding: 3px;
     }
-    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+    .button_atuliza, .button_cadastrar{
         width: 8rem;
     }
 
-    .button_editar{
-        background:none;
-        box-shadow: none;
-        width: 3.5rem;
-        height: 2.8rem;
-        position: relative;
-        left: 0.3rem;
     }
 
-    .button_editar i {
-        font-size: 1.8rem;
-    }
-}
 @media (min-width: 800px) and (max-width: 899px) {
 
     .atualiza_export{
@@ -330,10 +307,7 @@ box-shadow: 0px 0px #66d2d6;
         width: 10%;
         font-size: 10px;
     }
-    .produto {
-        width: 40%;
-        font-size: 10px;
-    }
+
     .vendedor, .data{
         width: 15%;
         font-size: 10px;
@@ -343,7 +317,7 @@ box-shadow: 0px 0px #66d2d6;
     .codigo, .produto, .vendedor, .data, .quantidade, .valor {
         width: auto !important;
     }
-    .button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+    .button_atuliza, .button_cadastrar{
         font-size: 1rem;
     }
     
@@ -808,3 +782,4 @@ img {
         left: 19.5rem;
     }   
 }
+
