@@ -17,7 +17,7 @@ function Inicio() {
     const closePopUp = () => setIsPopUpOpen(false);
 
     return (
-        <div className="main">
+        <main>
             <div className="bem_vindo">
                 <p>Olá Richard Castro. Seja bem-vindo(a) !</p>
             </div>
@@ -93,7 +93,7 @@ function Inicio() {
                 setEndereco={setEndereco}
             />
             */}
-        </div>
+        </main>
     );
 }
 

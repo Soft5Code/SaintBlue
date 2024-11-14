@@ -1,12 +1,1 @@
 /*---------------------------------------Main--------------------------------------------------------------------------------*/
-
-.main{
-    margin-left: 250px;
-    padding: 8px 8px;
-    background-color: var(--color-main);
-    color: var(--color-main-texto);
-    width: calc(100vh - 250px);
-    height: 100vh;
-    transition: margin-left 0.5s ease, width 0.5s ease;
-}
-

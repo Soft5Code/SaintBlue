@@ -7,14 +7,18 @@ body{
     background-color: var(--color-main);
     transition: background-color 0.3s, color 0.3s;
 }
-.main{
+
+main{
+    border: 2px solid red;
     margin-left: 250px;
     padding: 8px 8px;
     background-color: var(--color-main);
     color: var(--color-main-texto);
     width: calc(100% - 250px);
+    height: 100%;
     transition: margin-left 0.5s ease, width 0.5s ease;
 }
+
 /*------------------------->Menu = Mini Menu*/
 .menu{
     position: fixed;
@@ -112,33 +116,4 @@ body{
     flex: 1;
     margin-right: 10px;
 }
-/*-------------------------------------------------------------------------------------------------------------------------------*//*-------------------------------------------MAIN = BOTOES FIXOS*/
-.atualiza_export {
-    gap: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--color-main-fundo);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    height: 40px;
-    border-radius: 10px;
-    padding: 0 10px;
-}
-
-button {
-    border-radius: 8px;
-    background-color: var(--color-main-fundo-btn);
-    color: var(--color-main-fundo-texto);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    border: none;
-    text-align: center;
-    font-size: 0.7rem;
-    font-weight: bold;
-    height: 1.5rem;
-    padding: 3px;
-    cursor: pointer;
-}
-
-.button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
-    width: 9rem;
-}
+/*-------------------------------------------------------------------------------------------------------------------------------*/
