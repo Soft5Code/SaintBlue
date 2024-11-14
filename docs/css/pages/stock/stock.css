@@ -234,7 +234,7 @@ box-shadow: 0px 0px #66d2d6;
         margin-left: 0;
     }
 }
-@media (min-width: 1028px){
+@media (min-width: 768px){
     .buscar{
         gap: 50px;
         justify-content: center;
@@ -244,11 +244,12 @@ box-shadow: 0px 0px #66d2d6;
         margin-top: 5px;
     }
     .search_box{
-        width: 500px;
+        width: 900px;
     }
     .button {
-       gap: 70px;
-       margin-top: 1px;
+        width: 200px;
+        gap: 70px;
+        margin-top: 1px;
     }
     .search_txt{
         font-size: 1rem;
