@@ -1,0 +1,246 @@
+
+/*  ==================================  CARDS  =========================  */
+
+.container{
+    margin-bottom: 15px;
+    height: 91px;
+}
+
+.container .bem_vindo{
+    height: 250px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.cards {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    height: 6.5rem;
+    width: 95%;
+    margin-left: 25px;
+}
+
+.caixa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    width: 90%;
+}
+
+.caixa .titulo {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.caixa .valor {
+    width: 50%;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 14px;
+}
+
+.caixa:hover {
+    background-color: #89e4e7;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+}
+
+/*  ==================================  ATALHOS  =========================  */
+.atalhos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.caixa_atalho {
+    position: relative;
+    width: 46%;
+    min-height: 175px;
+    margin: 15px 0;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 22px;
+    height: 180px;
+    padding: 0;
+}
+
+.caixa_atalho img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.caixa_atalho h2,
+.caixa_atalho .consulta_conteudo {
+    position: relative;
+    z-index: 3;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.caixa_atalho .consulta_conteudo{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.caixa_atalho h2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding-top: 30px;
+    font-size: 2.3rem;
+}
+
+.caixa_atalho:hover img {
+    filter:brightness(50%);
+}
+
+.caixa_atalho:hover .consulta_conteudo {
+    opacity: 1;
+}
+
+.caixa_atalho h2:hover{
+    color: #2d979b;
+}
+
+
+/*  ==================================  RESPONSIVO  =========================  */
+
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .caixa .valor {
+        font-size: 1.1rem;
+    }
+    .caixa:hover {
+        background-color: initial;
+        transform: none;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .caixa .valor {
+        font-size: 1.8rem;
+    }
+    .caixa:hover {
+        background-color: initial;
+        transform: none;
+    }
+}
+
+@media (max-heigth: 660px){
+    .barra-lateral .nome-pagina{
+        margin-bottom: 5px;
+    }
+    .barra-lateral .modo_escuro{
+        margin-bottom: 3px;
+    }
+}   
+@media (max-width: 600px){
+    .barra-lateral{
+        position: fixed;
+        left: -250px;
+    }
+    .max_barra_lateral{
+        left: 0;
+    }
+    .menu{
+        display: flex;
+        background-color: var(--color-boton);
+    }
+    .menu i:nth-child(2){
+        display: none;
+    }
+    main{
+        margin-left: 0;
+        width: 100%;
+    }
+    main.min_main{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main .container {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 770px){
+    main.min_main {
+        width: 100%;
+        transition: margin-left 0.5s ease, width 0.5s ease;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .caixa_atalho {
+        width: 80%;
+        height: auto;
+        margin: 15px;
+    }
+    .caixa_atalho h2 {
+        font-size: 2rem;
+    }
+    .caixa_atalho .consulta_conteudo {
+        font-size: 1rem;
+    }
+    .caixa_atalho img {
+        filter: brightness(50%);
+    }
+    .caixa_atalho .consulta_conteudo {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .caixa_atalho {
+        width: 80%;
+        padding-top: 0;
+    }
+    .atalhos {
+        margin-top: 230px;
+    }
+    .caixa_atalho h2 {
+        font-size: 1.4rem;
+    }
+    .caixa_atalho .consulta_conteudo{
+        font-size: 0.8rem;
+    }
+    .caixa_atalho img {
+        filter: brightness(50%);
+    }
+    .caixa_atalho .consulta_conteudo {
+        opacity: 1;
+    }
+}

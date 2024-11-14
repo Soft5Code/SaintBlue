@@ -1,0 +1,63 @@
+:root{
+    --color-barra-lateral: #fffcfc;
+
+    --color-texto: #000000;
+    --color-texto-menu: #000000;
+
+    --color-menu-houver: #2d979b;
+    --color-menu-houver-texto: #f5f3f3f1;
+
+    --color-main-fundo: #2d979b;
+    --color-main-fundo-btn: #ffffff;
+    --color-main-fundo-texto: #000000;
+    
+    --color-boton: #000000d7;
+    --color-boton-texto: #ffffff;
+
+    --color-linha: #b4b4b4;
+
+    --color-switch-base: #8d8d8d;
+    --color-switch-circulo: #f1f1f1;
+
+    --color-scroll: #afafaf;
+    --color-scroll-hover: #868686;
+
+    --color-main:#eceaea;
+    --color-main-texto:#000000;
+
+    --color-linhas-produtoImpares:#a2a2a2b2;
+    --color-linhas-produtoPares:#c2c2c292;
+    --color-texto-produto:#000000;
+}
+
+.dark_mode{
+    --color-barra-lateral: #2c2d31;
+
+    --color-texto: #ffffff;
+    --color-texto-menu: #c4c4c5;
+
+    --color-menu-houver: #2d979b;
+    --color-menu-houver-texto: #eeeeee;
+
+    --color-main-fundo: #c4c4c5;
+    --color-main-fundo-btn: #2d979b;
+    --color-main-fundo-texto: #ffffff;
+    
+    --color-boton: #2d979b;
+    --color-boton-texto: #ffffff;
+
+    --color-linha: #5a5a5a;
+
+    --color-switch-base: #22a636;
+    --color-switch-circulo: #ffffff;
+
+    --color-scroll: #44454a;
+    --color-scroll-hover: #44454a;
+
+    --color-main:#2c2d31;
+    --color-main-texto:#ffffff;
+
+    --color-linhas-produtoImpares:#ffffffb2;
+    --color-linhas-produtoPares:#ffffff92;
+    --color-texto-produto:#000000;
+}
