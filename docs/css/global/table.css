@@ -38,7 +38,7 @@ tr:hover {
 .dropdown-btn {
   background-color: #4CAF50;
   color: white;
-  padding: 0rem 0.7rem;
+  padding: 0rem 0.4rem;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -48,7 +48,7 @@ tr:hover {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  width: 5.8rem;
+  width: 5.7rem;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 4px;
@@ -62,13 +62,23 @@ tr:hover {
 }
 
 .button_editar, .button_excluir {
-  display: flex;
-  font-size: 0.9rem;
+  position: relative;
+  font-size: 1rem;
   box-shadow: none;
+  margin-bottom: 0.5rem;
+  
 }
 
-.button_editar i, .button_excluir i {
+.button_editar i {
   font-size: 1rem;
+  
+}
+
+.button_excluir i{
+  font-size: 1rem;
+  position: relative;
+  left: 3.5rem;
+  top: -1rem;
 }
 
 .dropdown-content a, .dropdown-content button {
@@ -92,21 +102,21 @@ tr:hover {
 
 @media (min-width: 768px) {
   .table-container {
-    overflow-x: auto; /* Permite o scroll horizontal se necessário */
+    overflow-x: auto; 
   }
 
   table {
-    width: 100%; /* Garante que a tabela ocupe 100% da largura do container */
-    table-layout: fixed; /* Faz com que as colunas tenham larguras fixas */
+    width: 100%; 
+    table-layout: fixed; 
   }
 
   th, td {
-    font-size: 0.9rem; /* Reduz o tamanho da fonte para melhor ajuste */
-    padding: 0.4rem; /* Ajusta o padding para mais espaço */
+    font-size: 0.9rem; 
+    padding: 0.4rem; 
   }
 
   .dropdown-content {
-    width: auto; /* Ajusta a largura do dropdown para caber seu conteúdo */
+    width: auto; 
   }
   
   .dropdown {
@@ -123,7 +133,7 @@ tr:hover {
   }
 
   td {
-    font-size: 1.3rem; /* Ajuste o tamanho conforme necessário */
+    font-size: 1.3rem; 
     text-align: center;
 }
   
@@ -132,16 +142,16 @@ tr:hover {
       margin: 0 auto;
   }
 
-  /* Estilos para o dropdown */
+ 
   .dropdown {
       position: relative;
       display: flex;
   }
 
-  /* Abre o dropdown como um menu fixo para evitar scroll na tabela */
+  
   .dropdown-content {
       display: none;
-      position: fixed; /* Altera para fixo */
+      position: fixed; 
       background-color: #f9f9f9;
       min-width: 5.8rem;
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
