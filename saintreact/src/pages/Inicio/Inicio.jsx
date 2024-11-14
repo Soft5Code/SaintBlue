@@ -1,21 +1,6 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
-
-// import Popup from './index.js'; // Mantenha o componente Popup comentado para desativá-lo
-import './index.css'; // Importe o arquivo CSS de forma correta
 
 function Inicio() {
-    // Estados e funções para o pop-up, mantendo-os ativos para evitar erros
-    const [photo, setPhoto] = useState(null);
-    const [nome, setNome] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [email, setEmail] = useState('');
-    const [endereco, setEndereco] = useState('');
-    const [isPopUpOpen, setIsPopUpOpen] = useState(false); 
-
-    const openPopUp = () => setIsPopUpOpen(true);
-    const closePopUp = () => setIsPopUpOpen(false);
-
     return (
         <main>
             <div className="bem_vindo">
@@ -71,28 +56,6 @@ function Inicio() {
                     </p>
                 </div>
             </div>
-
-            {/* Botão para abrir o pop-up, mantido comentado para desativar */}
-            {/* <button onClick={openPopUp}>Alterar Perfil</button> */}
-
-            {/* Renderização do Popup também comentada */}
-            {/*
-            <Popup
-                isOpen={isPopUpOpen}
-                onClose={closePopUp}
-                onSubmit={closePopUp}
-                photo={photo}
-                setPhoto={setPhoto}
-                nome={nome}
-                setNome={setNome}
-                telefone={telefone}
-                setTelefone={setTelefone}
-                email={email}
-                setEmail={setEmail}
-                endereco={endereco}
-                setEndereco={setEndereco}
-            />
-            */}
         </main>
     );
 }

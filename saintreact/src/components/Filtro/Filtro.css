@@ -1,14 +1,15 @@
 .container{
     margin-bottom: 15px;
-    height: 110px;
+    height: 100%;
 }
 .buscar{
+    border: 2px solid green;
     display: flex;
     justify-content: start;
     align-items: start;
     position: relative;
     background-color: var(--color-main);
-    height: 45px;
+    height: 100%;
     border-radius: 10px;
     margin: 0px;
 }

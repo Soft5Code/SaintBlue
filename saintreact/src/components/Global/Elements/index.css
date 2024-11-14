@@ -9,7 +9,6 @@ body{
 }
 
 main{
-    border: 2px solid red;
     margin-left: 250px;
     padding: 8px 8px;
     background-color: var(--color-main);

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './Popup.css';
+
 function Popup({ isOpen, onClose, onSubmit, photo, setPhoto, nome, setNome, telefone, setTelefone, email, setEmail, endereco, setEndereco }) {
     const handleFileChange = (event) => {
         setPhoto(event.target.files[0]); // Atualiza a foto de perfil

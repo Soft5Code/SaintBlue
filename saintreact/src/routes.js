@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Inicio from './pages/Inicio';
-import Estoque from './pages/Estoque';
-import Fornecedores from './pages/Fornecedores';
-import Colaboradores from './pages/Colaboradores';
-import Erro from './pages/Erro';
+import Inicio from './pages/Inicio/Inicio';
+import Estoque from './pages/Estoque/Estoque';
+import Fornecedores from './pages/Fornecedores/Fornecedores';
+import Colaboradores from './pages/Colaboradores/Colaboradores';
+import Erro from './pages/Erro/Erro';
 
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function RoutesApp(){
     return(

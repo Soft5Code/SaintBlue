@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Filtro from "../../components/Filtro/Filtro";
-import './index.css';
+import './Estoque.css';
 
 function Estoque() {
     return (

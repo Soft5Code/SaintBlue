@@ -1,8 +1,51 @@
 import { Link } from "react-router-dom";
-import './index.css';
+import React, { useState } from 'react';
 
-function Sidebar(){
-    return(
+import './Sidebar.css';
+import Popup from '../../components/Popup/Popup';
+
+function Sidebar() {
+    const [photo, setPhoto] = useState(null);
+    const [nome, setNome] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [email, setEmail] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false); 
+
+    const openPopUp = () => setIsPopUpOpen(true);
+    const closePopUp = () => setIsPopUpOpen(false);
+
+
+    const handleSubmit = async () => {
+        const data = {
+            photo,
+            nome,
+            telefone,
+            email,
+            endereco,
+        };
+
+        try {
+            const response = await fetch('API_URL_AQUI', { // URL da API para substituir depois
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                console.log("Dados salvos com sucesso");
+                closePopUp();
+            } else {
+                console.error("Erro ao salvar os dados");
+            }
+        } catch (error) {
+            console.error("Erro de conexão com o servidor", error);
+        }
+    };
+
+    return (
         <div>
             <div className="menu">
                 <i className="bi bi-list"></i>
@@ -25,7 +68,7 @@ function Sidebar(){
                         </li>
 
                         <li>
-                            <Link to="/estoque" rel="next"  target="_self">
+                            <Link to="/estoque" rel="next" target="_self">
                                 <i className="bi bi-boxes"></i>
                                 <span className="txtNavegacao">Estoque</span>
                             </Link>
@@ -54,8 +97,7 @@ function Sidebar(){
                     </div>
                     <div className="switch">
                         <div className="base">
-                            <div className="circulo">
-                            </div>
+                            <div className="circulo"></div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +112,29 @@ function Sidebar(){
                     </ul>
                 </div>    
                 <div className="usuario">
-                    <img src="/263457215_5031922253486891_358383527080523036_n.jpg" alt="Botão de Acesso" className="open-popup-btn" onclick="openPopup()"/>
+                    <img 
+                        src="/263457215_5031922253486891_358383527080523036_n.jpg" 
+                        alt="Botão de Acesso" 
+                        className="open-popup-btn" 
+                        onClick={openPopUp}
+                    />
+                    {isPopUpOpen && (
+                        <Popup
+                            isOpen={isPopUpOpen}
+                            onClose={closePopUp}
+                            onSubmit={handleSubmit}
+                            photo={photo}
+                            setPhoto={setPhoto}
+                            nome={nome}
+                            setNome={setNome}
+                            telefone={telefone}
+                            setTelefone={setTelefone}
+                            email={email}
+                            setEmail={setEmail}
+                            endereco={endereco}
+                            setEndereco={setEndereco}
+                        />
+                    )}
                     <div className="info-usuario">
                         <div className="nome_telefone">
                             <span className="nome">Richard Gois</span>
@@ -82,7 +146,7 @@ function Sidebar(){
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Sidebar;
