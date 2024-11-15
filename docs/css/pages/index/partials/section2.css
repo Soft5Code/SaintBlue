@@ -1,0 +1,54 @@
+.first-section{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+}
+.first-section .topo-site{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.first-section h1{
+    padding: 0 10px;
+    color: #7e7e7e;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    margin-right: 4px;
+}
+.first-section h2{
+    color: #2d5d5f;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.btn {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 6rem;
+    transition: all 400ms ease-in;
+}
+.btn a{
+    background-color: #2d979b;
+}
+.btn a:hover{
+    border: 1px solid #2d979b;
+    background-color: #2d5d5f;
+}

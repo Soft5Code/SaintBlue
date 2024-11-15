@@ -1,0 +1,144 @@
+/*---------------------------------------Main--------------------------------------------------------------------------------*/
+body{
+    font-family: "Aleo", "Sans-serif";
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: var(--color-main);
+    transition: background-color 0.3s, color 0.3s;
+}
+main{
+    margin-left: 250px;
+    padding: 8px 8px;
+    background-color: var(--color-main);
+    color: var(--color-main-texto);
+    width: calc(100% - 250px);
+    transition: margin-left 0.5s ease, width 0.5s ease;
+}
+/*------------------------->Menu = Mini Menu*/
+.menu{
+    position: fixed;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-boton);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-boton-texto);
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+main.min_main {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+    transition: margin-left 0.5s ease, width 0.5s ease;
+}
+.aba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    margin-top: 50px;
+    height: 100%;
+    z-index: 2;
+}
+
+/*------------------------->Main = Linha*/
+.linha_main{
+    width: 100%;
+    height: 2px;
+    border-radius: 15px;
+    margin-top: 1px;
+    margin-bottom: 6px;
+    background-color:var(--color-linha);
+}
+
+
+/*-------------------------------------------MAIN = BUSCA RAPIDA*/
+.buscar{
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-main);
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 0 48px;
+}
+
+.search_box{
+    background: linear-gradient(to right, #66d2d6, #449194, #2d5d5f);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
+    color: var(--color-main);
+    border-radius: 30px;
+    height: 35px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_txt::placeholder {
+    color: #0a0a0abe;
+    opacity: 1;
+}
+
+.search_btn{
+    color: rgb(43, 41, 41);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_txt{
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    transition: 0.5s;
+    line-height: 30px;
+    color: var(--color-main-texto);
+    flex: 1;
+    margin-right: 10px;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------*//*-------------------------------------------MAIN = BOTOES FIXOS*/
+.atualiza_export {
+    gap: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-main-fundo);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+button {
+    border-radius: 8px;
+    background-color: var(--color-main-fundo-btn);
+    color: var(--color-main-fundo-texto);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 1.5rem;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.button_atuliza, .button_cadastrar, .button_editar, .button_excluir {
+    width: 9rem;
+}
