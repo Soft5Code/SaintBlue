@@ -1,95 +1,86 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
-
-import './Sidebar.css';
-import Popup from '../../components/Popup/Popup';
+import Popup from "../../components/Popup/Popup"; // Certifique-se de que o componente Popup está correto
+import "./Sidebar.css";
 
 function Sidebar() {
     const [photo, setPhoto] = useState(null);
-    const [nome, setNome] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [email, setEmail] = useState('');
-    const [endereco, setEndereco] = useState('');
-    const [isPopUpOpen, setIsPopUpOpen] = useState(false); 
+    const [nome, setNome] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [email, setEmail] = useState("");
+    const [endereco, setEndereco] = useState("");
+    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Estado para controlar a visibilidade da sidebar
 
+    // Função para abrir o pop-up
     const openPopUp = () => setIsPopUpOpen(true);
+
+    // Função para fechar o pop-up
     const closePopUp = () => setIsPopUpOpen(false);
 
+    // Função para alternar a visibilidade da sidebar
+    const toggleSidebar = () => {
+        setIsSidebarOpen((prevState) => !prevState);
+    };
 
-    const handleSubmit = async () => {
-        const data = {
-            photo,
-            nome,
-            telefone,
-            email,
-            endereco,
-        };
-
-        try {
-            const response = await fetch('API_URL_AQUI', { // URL da API para substituir depois
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                console.log("Dados salvos com sucesso");
-                closePopUp();
-            } else {
-                console.error("Erro ao salvar os dados");
-            }
-        } catch (error) {
-            console.error("Erro de conexão com o servidor", error);
-        }
+    // Função para submeter o formulário no pop-up
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Ações de submissão do formulário, se necessário
     };
 
     return (
+        
+        
         <div>
-            <div className="menu">
-                <i className="bi bi-list"></i>
-                <i className="bi bi-x-lg"></i>
+            {/* Botão para alternar a sidebar */}
+            <button className="toggle-sidebar-btn" onClick={toggleSidebar}>
+                {isSidebarOpen ? "⟨" : "⟩"} {/* Alterna o ícone de abertura/fechamento */}
+            </button>
+
+            <div class="menu">
+                <i class="bi bi-list"></i>
+                <i class="bi bi-x-lg"></i>
             </div>
-            <div className="barra-lateral">
-                <div>
-                    <div className="nome-pagina">
-                        <img src="/saint_500.png" alt="Menu_Toggle" id="menu_icon"/>
-                        <span className="txt_logo">SaintBlue</span>
-                    </div>
+
+            {/* Sidebar */}
+            <div className={`barra-lateral ${isSidebarOpen ? "" : "mini_barra_lateral"}`}>
+                <div className="nome-pagina">
+                    <img src="/saint_500.png" alt="Menu_Toggle" id="menu_icon" />
+                    <span className="txt_logo">SaintBlue</span>
                 </div>
+
+                {/* Navegação */}
                 <nav className="navegacao">
                     <ul>
                         <li>
-                            <Link to="/" rel="next" target="_self" className="active">
+                            <Link to="/" className="active">
                                 <i className="bi bi-house-door"></i>
                                 <span className="txtNavegacao">Inicio</span>
                             </Link>
                         </li>
-
                         <li>
-                            <Link to="/estoque" rel="next" target="_self">
+                            <Link to="/estoque" className="active">
                                 <i className="bi bi-boxes"></i>
                                 <span className="txtNavegacao">Estoque</span>
                             </Link>
                         </li>
-
                         <li>
-                            <Link to="/fornecedores" rel="next" target="_self">
+                            <Link to="/fornecedores" className="active">
                                 <i className="bi bi-person-workspace"></i>
                                 <span className="txtNavegacao">Fornecedores</span>
                             </Link>
                         </li>
-
                         <li>
-                            <Link to="/colaboradores" rel="next" target="_self">
+                            <Link to="/colaboradores" className="active">
                                 <i className="bi bi-file-earmark-person"></i>
                                 <span className="txtNavegacao">Colaboradores</span>
                             </Link>
-                        </li>               
+                        </li>
                     </ul>
                 </nav>
-                <hr className="line"/>
+
+                {/* Modo escuro */}
                 <div className="modo_escuro">
                     <div className="info">
                         <i className="bi bi-moon"></i>
@@ -101,50 +92,49 @@ function Sidebar() {
                         </div>
                     </div>
                 </div>
+
+                {/* Menu de sair */}
                 <div className="sair">
                     <ul>
                         <li>
-                            <Link to="#" rel="next" target="_self">
+                            <Link to="#" className="active">
                                 <i className="bi bi-box-arrow-left"></i>
                                 <span className="btnSair">Sair</span>
                             </Link>
                         </li>
                     </ul>
-                </div>    
+                </div>
+
+                {/* Informação do usuário */}
                 <div className="usuario">
-                    <img 
-                        src="/263457215_5031922253486891_358383527080523036_n.jpg" 
-                        alt="Botão de Acesso" 
-                        className="open-popup-btn" 
+                    <img
+                        src="/263457215_5031922253486891_358383527080523036_n.jpg"
+                        alt="Botão de Acesso"
+                        className="open-popup-btn"
                         onClick={openPopUp}
                     />
-                    {isPopUpOpen && (
-                        <Popup
-                            isOpen={isPopUpOpen}
-                            onClose={closePopUp}
-                            onSubmit={handleSubmit}
-                            photo={photo}
-                            setPhoto={setPhoto}
-                            nome={nome}
-                            setNome={setNome}
-                            telefone={telefone}
-                            setTelefone={setTelefone}
-                            email={email}
-                            setEmail={setEmail}
-                            endereco={endereco}
-                            setEndereco={setEndereco}
-                        />
-                    )}
                     <div className="info-usuario">
                         <div className="nome_telefone">
                             <span className="nome">Richard Gois</span>
                         </div>
                         <div>
-                            <i className="bi bi-three-dots-vertical"></i>
+                            <i className="bi bi-three-dots"></i>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Pop-up */}
+            <Popup
+                isOpen={isPopUpOpen}
+                onClose={closePopUp}
+                photo={photo}
+                nome={nome}
+                telefone={telefone}
+                email={email}
+                endereco={endereco}
+                onSubmit={handleSubmit}
+            />
         </div>
     );
 }

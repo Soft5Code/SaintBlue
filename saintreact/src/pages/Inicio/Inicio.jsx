@@ -6,7 +6,7 @@ function Inicio() {
             <div className="bem_vindo">
                 <p>Olá Richard Castro. Seja bem-vindo(a) !</p>
             </div>
-            <div className="container">
+            <div className="container1">
                 <h1 className="aba">Inicio</h1>
             </div>
             <div>
