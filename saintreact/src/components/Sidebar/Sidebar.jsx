@@ -96,7 +96,7 @@ function Sidebar() {
                 <div className="sair">
                     <ul>
                         <li>
-                            <Link to="#" className="active">
+                            <Link to="./Login" className="active">
                                 <i className="bi bi-box-arrow-left"></i>
                                 <span className="btnSair">Sair</span>
                             </Link>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Estoque.css';
+import styles from './Estoque.module.css';
 
 const Estoque = () => {
   const [products, setProducts] = useState([
@@ -15,26 +15,23 @@ const Estoque = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [activeDropdown, setActiveDropdown] = useState(null); // Controla qual dropdown está aberto
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Função para abrir o modal de edição
   const handleEdit = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
-    setActiveDropdown(null); // Fecha o dropdown após editar
+    setActiveDropdown(null);
   };
 
-  // Função para deletar produto
   const handleDelete = (productId) => {
     if (window.confirm('Tem certeza que deseja excluir este produto?')) {
       setProducts(products.filter((product) => product.id !== productId));
     }
-    setActiveDropdown(null); // Fecha o dropdown após excluir
+    setActiveDropdown(null);
   };
 
-  // Função para alternar a visibilidade do dropdown
   const toggleDropdown = (productId) => {
-    setActiveDropdown(activeDropdown === productId ? null : productId); // Toggle (abre/fecha) o dropdown
+    setActiveDropdown(activeDropdown === productId ? null : productId);
   };
 
   const closeModal = () => {
@@ -43,15 +40,19 @@ const Estoque = () => {
   };
 
   return (
-    <div className="table-container">
-      <div className="actions-bar">
-        <input type="text" placeholder="Busca Rápida" className="search-input" />
-        <button className="button primary">Cadastrar</button>
-        <button className="button filter">
+    <div className={styles.tableContainer}>
+      <div className={styles.actionsBar}>
+        <input
+          type="text"
+          placeholder="Busca Rápida"
+          className={styles.searchInput}
+        />
+        <button className={styles.buttonPrimary}>Cadastrar</button>
+        <button className={styles.buttonFilter}>
           <i className="bi bi-funnel-fill"></i>
         </button>
       </div>
-      <table className="product-table">
+      <table className={styles.productTable}>
         <thead>
           <tr>
             <th>ID</th>
@@ -69,24 +70,28 @@ const Estoque = () => {
               <td>{product.supplier}</td>
               <td>{product.quantity}</td>
               <td>
-                <div className="dropdown">
+                <div
+                  className={`${styles.dropdown} ${
+                    activeDropdown === product.id ? styles.open : ''
+                  }`}
+                >
                   <button
-                    className="dropdown-button"
-                    onClick={() => toggleDropdown(product.id)} // Chama a função para abrir/fechar o dropdown
+                    className={styles.dropdownButton}
+                    onClick={() => toggleDropdown(product.id)}
                   >
                     Menu ▼
                   </button>
                   {activeDropdown === product.id && (
-                    <div className="dropdown-content">
+                    <div className={styles.dropdownContent}>
                       <button
                         onClick={() => handleEdit(product)}
-                        className="dropdown-item"
+                        className={styles.dropdownItem}
                       >
                         Editar ✎
                       </button>
                       <button
                         onClick={() => handleDelete(product.id)}
-                        className="dropdown-item danger"
+                        className={`${styles.dropdownItem} ${styles.danger}`}
                       >
                         Excluir 🗑️
                       </button>
@@ -99,10 +104,9 @@ const Estoque = () => {
         </tbody>
       </table>
 
-      {/* Modal de edição */}
       {isModalOpen && selectedProduct && (
-        <div className="modal-backdrop">
-          <div className="modal">
+        <div className={styles.modalBackdrop}>
+          <div className={styles.modal}>
             <h2>Editar Produto</h2>
             <form>
               <div>
@@ -148,17 +152,17 @@ const Estoque = () => {
                   }
                 />
               </div>
-              <div className="modal-actions">
+              <div className={styles.modalActions}>
                 <button
                   type="button"
-                  className="button"
+                  className={styles.button}
                   onClick={closeModal}
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
-                  className="button primary"
+                  className={styles.buttonPrimary}
                   onClick={(e) => {
                     e.preventDefault();
                     console.log('Produto atualizado:', selectedProduct);

@@ -1,0 +1,251 @@
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+
+}
+
+.dropdownButton {
+    width: 4rem;
+    background-color: #2d979b;
+    color: white;
+    border: none;
+    padding: 1rem 0.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdownButton:hover {
+    background-color: #247376;
+}
+
+.dropdownContent {
+    display: none; /* Inicialmente o dropdown está escondido */
+    position: absolute;
+    background-color: #fff;
+    border: 0rem solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.3rem;
+    min-width: 120px;
+}
+
+.dropdownContent .dropdownItem {
+    padding: 0.5rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.7rem;
+    color: #333;
+    border-radius: 5px;
+}
+
+.dropdownContent .dropdownItem:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdownContent .dropdownItem.danger {
+    color: #e74c3c;
+}
+
+.dropdownContent .dropdownItem.danger:hover {
+    background-color: #f8d7da;
+}
+
+/* Exibir o dropdown quando uma classe for adicionada via JavaScript */
+.dropdown.open .dropdownContent {
+    display: block; /* O dropdown aparecerá quando a classe "open" for adicionada */
+}
+
+/* Tabela */
+.productTable {
+    width: 100%; /* A tabela ocupa toda a largura disponível */
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0; /* Removido o deslocamento */
+}
+
+.productTable thead th {
+    background-color: #2d979b;
+    width: 20rem;
+    font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
+    padding: 0.5rem 0.3rem; /* Espaçamento menor */
+    text-align: left;
+    border: 0rem solid #ddd;
+}
+
+.productTable tbody td {
+    font-size: 0.7rem; /* Reduz a fonte dos dados */
+    padding: 0.3rem; /* Menor espaçamento interno */
+    text-align: left;
+}
+
+/* Botões no dropdown também devem ser ajustados */
+.dropdownButton {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+}
+
+.dropdownContent .dropdownItem {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+}
+
+
+.productTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.productTable tbody tr:hover {
+    background-color: #d9f5f6; /* Cor de destaque ao passar o mouse */
+}
+
+
+
+
+/* Ações */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.actions button {
+    background-color: #2d979b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #247376;
+}
+
+/* Modal */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.modal form div {
+    margin-bottom: 10px;
+}
+
+.modal form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalActions .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.modalActions .buttonPrimary {
+    background-color: #2d979b;
+    color: white;
+    border: none;
+}
+
+.modalActions .buttonPrimary:hover {
+    background-color: #247376;
+}
+
+.modalActions .buttonCancel {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.modalActions .buttonCancel:hover {
+    background-color: #e0e0e0;
+}
+
+/* Responsividade para telas maiores (acima de 768px) */
+
+@media (min-width: 1080px) {
+    
+    .tableContainer{
+        width: 100%;
+        height: 100%;
+        margin-left: 25rem;
+        border: 2px solid red;
+
+    }
+
+    .productTable thead th {
+        background-color: #2d979b;
+        width: 10rem;
+        height: 1rem;
+        font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
+        padding: 0.5rem 0.3rem; /* Espaçamento menor */
+        text-align: left;
+        border: 0rem solid #ddd;
+    }
+
+    .productTable tbody td {
+        font-size: 1.1rem; /* Reduz a fonte dos dados */
+        padding: 0.3rem; /* Menor espaçamento interno */
+        text-align: left;
+    }
+
+    .productTable {
+        width: 60rem; /* A tabela ocupa toda a largura disponível */
+        height: 50rem;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        left: 0; /* Removido o deslocamento */
+    }
+
+    .dropdownButton {
+        width: 5rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
+    
+    .dropdownContent .dropdownItem {
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+}
