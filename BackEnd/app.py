@@ -215,11 +215,11 @@ def editar_produto(codigo):
         cursor = conn.cursor()
         query = """
             UPDATE estoque
-            SET nome = %s, preco = %s, marca = %s, cor = %s, quantidade = %s, condicao = %s, peso = %s, observacoes = %s
+            SET produto = %s, preco = %s, marca = %s, cor = %s, quantidade = %s, condicao = %s, peso = %s, observacoes = %s
             WHERE codigo = %s
         """
         cursor.execute(query, (
-            dados.get('nome'),
+            dados.get('produto'),
             dados.get('preco'),
             dados.get('marca'),
             dados.get('cor'),
@@ -248,14 +248,14 @@ def listar_produtos():
             return jsonify({"error": "Não foi possível conectar ao banco de dados"}), 500
 
         cursor = conn.cursor()
-        cursor.execute("SELECT nome, preco, marca, cor, codigo, quantidade, condicao, peso, observacoes FROM estoque")
+        cursor.execute("SELECT produto, preco, marca, cor, codigo, quantidade, condicao, peso, observacoes FROM estoque")
         produtos = cursor.fetchall()
         cursor.close()
         conn.close()
 
         produtos_lista = [
             {
-                'nome': produto[0],
+                'produto': produto[0],
                 'preco': produto[1],
                 'marca': produto[2],
                 'cor': produto[3],
@@ -272,3 +272,4 @@ def listar_produtos():
 
 if __name__ == '__main__':
     app.run(debug=True)
+nome 
