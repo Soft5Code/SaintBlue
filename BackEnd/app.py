@@ -1,12 +1,14 @@
-# Importa as classes e funções necessárias do Flask
 from flask import Flask, request, jsonify
-# Importa a biblioteca psycopg2 para conexão com o banco de dados PostgreSQL
 import psycopg2
-# Importa as configurações do banco de dados do arquivo config.py
+import jwt
+import datetime
 from config import DATABASE
 
 # Cria a aplicação Flask
 app = Flask(__name__)
+
+# Definir a chave secreta para codificar e decodificar o JWT
+app.config['SECRET_KEY'] = 'sua_chave_secreta'
 
 # Função para estabelecer a conexão com o banco de dados
 def get_db_connection():
@@ -23,7 +25,22 @@ def get_db_connection():
         print("Erro ao conectar ao banco de dados:", e)
         return None  # Retorna None em caso de erro
 
-# Define a rota /new_user, que aceita requisições HTTP do tipo POST
+# Função para gerar um token JWT
+def gerar_token(email):
+    try:
+        # Cria o payload com o e-mail e a expiração do token (1 hora)
+        payload = {
+            'email': email,
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+        }
+        # Gera o token JWT
+        token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
+        return token
+    except Exception as e:
+        print(f"Erro ao gerar token: {e}")
+        return None
+
+# Rota para cadastrar um novo usuário
 @app.route('/new_user', methods=['POST'])
 def new_user():
     if not request.is_json:
@@ -59,8 +76,8 @@ def new_user():
         return jsonify({"message": "Usuário adicionado com sucesso"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
-# Nova rota para verificação de login
+
+# Rota de login
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -83,11 +100,55 @@ def login():
         conn.close()
 
         if user:
-            return jsonify({"message": "Login bem-sucedido"}), 200
+            # Gerar o token JWT
+            token = gerar_token(email)
+            return jsonify({"message": "Login bem-sucedido", "token": token}), 200
         else:
             return jsonify({"error": "Credenciais inválidas"}), 401
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+# Rota de perfil
+@app.route('/perfil', methods=['GET'])
+def perfil():
+    token = request.headers.get('Authorization')
+
+    if not token:
+        return jsonify({"error": "Token não fornecido"}), 401
+
+    try:
+        # Remover o prefixo "Bearer " do token
+        token = token.split(" ")[1]
+
+        # Decodificar o token JWT
+        payload = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        email = payload['email']
+
+        # Buscar os dados do usuário no banco de dados
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        query = "SELECT nome, sobrenome, email, numero FROM usuarios WHERE email = %s"
+        cursor.execute(query, (email,))
+        user = cursor.fetchone()
+
+        cursor.close()
+        conn.close()
+
+        if user:
+            usuario_data = {
+                "nome": user[0],
+                "sobrenome": user[1],
+                "email": user[2],
+                "numero": user[3]
+            }
+            return jsonify({"perfil": usuario_data}), 200
+        else:
+            return jsonify({"error": "Usuário não encontrado"}), 404
+
+    except jwt.ExpiredSignatureError:
+        return jsonify({"error": "Token expirado"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"error": "Token inválido"}), 401
 
 # Rota para cadastrar um produto no estoque
 @app.route('/estoque/cadastrar', methods=['POST'])
