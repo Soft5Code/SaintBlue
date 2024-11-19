@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { CSSTransition } from "react-transition-group";
+import "./modalTransitions.css";
 import './Popup.css';
 
 function Popup({ isOpen, onClose, onSubmit, photo, setPhoto, nome, setNome, telefone, setTelefone, email, setEmail, endereco, setEndereco }) {
@@ -23,6 +24,13 @@ function Popup({ isOpen, onClose, onSubmit, photo, setPhoto, nome, setNome, tele
     if (!isOpen) return null; // Não renderiza o pop-up se não estiver aberto
 
     return (
+        <CSSTransition
+        in={isOpen} // Controla a exibição
+        timeout={3000} // Duração da transição
+        classNames="modal" // Prefixo para classes de transição
+        unmountOnExit // Remove o modal do DOM quando fechado
+        >
+
         <div className="popup-overlay">
             <div className="popup-content">
                 {/* Botão para fechar o pop-up */}
@@ -89,6 +97,7 @@ function Popup({ isOpen, onClose, onSubmit, photo, setPhoto, nome, setNome, tele
                 </div> {/* Fechamento da div perfil */}
             </div> {/* Fechamento da div popup-content */}
         </div>
+        </CSSTransition>
     );
 }
 

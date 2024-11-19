@@ -40,7 +40,7 @@ const Estoque = () => {
   };
 
   return (
-    <div className={styles.tableContainer}>
+    <main className={styles.main}>
       <div className={styles.actionsBar}>
         <input
           type="text"
@@ -81,6 +81,7 @@ const Estoque = () => {
                   >
                     Menu ▼
                   </button>
+                  
                   {activeDropdown === product.id && (
                     <div className={styles.dropdownContent}>
                       <button
@@ -176,7 +177,7 @@ const Estoque = () => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 

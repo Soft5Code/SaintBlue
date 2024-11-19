@@ -1,7 +1,7 @@
-/* Dropdown Menu */
+/* ================== MENU  ACAO ============= ======== */
 .dropdown {
     position: relative;
-
+    width: 5.5rem;
 }
 
 .dropdownButton {
@@ -39,6 +39,8 @@
     font-size: 0.7rem;
     color: #333;
     border-radius: 5px;
+    font-size: 0.7rem;
+    padding: 0.2rem;
 }
 
 .dropdownContent .dropdownItem:hover {
@@ -58,56 +60,13 @@
     display: block; /* O dropdown aparecerá quando a classe "open" for adicionada */
 }
 
-/* Tabela */
-.productTable {
-    width: 100%; /* A tabela ocupa toda a largura disponível */
-    border-collapse: collapse;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    left: 0; /* Removido o deslocamento */
-}
-
-.productTable thead th {
-    background-color: #2d979b;
-    width: 20rem;
-    font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
-    padding: 0.5rem 0.3rem; /* Espaçamento menor */
-    text-align: left;
-    border: 0rem solid #ddd;
-}
-
-.productTable tbody td {
-    font-size: 0.7rem; /* Reduz a fonte dos dados */
-    padding: 0.3rem; /* Menor espaçamento interno */
-    text-align: left;
-}
-
 /* Botões no dropdown também devem ser ajustados */
 .dropdownButton {
     font-size: 0.7rem;
     padding: 0.3rem;
 }
 
-.dropdownContent .dropdownItem {
-    font-size: 0.7rem;
-    padding: 0.2rem;
-}
-
-
-.productTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.productTable tbody tr:hover {
-    background-color: #d9f5f6; /* Cor de destaque ao passar o mouse */
-}
-
-
-
-
-/* Ações */
+/* ======================= ACOES ============= ======== */
 .actions {
     display: flex;
     gap: 10px;
@@ -129,7 +88,9 @@
     background-color: #247376;
 }
 
-/* Modal */
+
+
+/* ======================= POPUP EDITAR ============= ======== */
 .modalBackdrop {
     position: fixed;
     top: 0;
@@ -198,54 +159,178 @@
     background-color: #e0e0e0;
 }
 
-/* Responsividade para telas maiores (acima de 768px) */
 
-@media (min-width: 1080px) {
-    
-    .tableContainer{
+
+
+/* ======================= GERAL ============= ======== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    overflow-y: auto; /* Habilita a rolagem vertical */
+    overflow-x: hidden; /* Desabilita a rolagem horizontal */
+    width: calc(100vw - 250px); /* Subtrai a largura da sidebar */
+    height: 100vh; /* Garante que o main ocupe toda a altura da viewport */
+    margin: 0; /* Remove margens desnecessárias */
+    padding: 1rem; /* Apenas espaçamento interno para conteúdo */
+    margin-left: 250px; /* Reserva espaço para a sidebar */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+.productTable thead th {
+    background-color: #2d979b;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+    text-align: left;
+    border: 0rem solid #ddd;
+    white-space: nowrap; /* Impede quebra de linha no cabeçalho */
+}
+
+.productTable tbody td {
+    font-size: 1rem; /* Reduz a fonte dos dados */
+    padding: 0.3rem; /* Menor espaçamento interno */
+    text-align: left;
+}
+
+.productTable {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0; /* Removido o deslocamento */
+}
+
+.dropdownButton {
+    width: 5rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+}
+
+.dropdownContent .dropdownItem {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+}
+
+.productTable tbody td, 
+.productTable thead th {
+    transition: all 0.3s ease-in-out; /* Anima qualquer mudança de propriedade */
+}
+
+
+/* ======================= TABELA ============= ======== */
+.productTable {
+    width: 100%; /* A tabela ocupa toda a largura disponível */
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0; /* Removido o deslocamento */
+}
+
+.productTable thead th {
+    background-color: #2d979b;
+    width: 100%;
+    font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
+    padding: 0.7rem 0.3rem; /* Espaçamento menor */
+    text-align: left;
+    border: 0rem solid #ddd;
+    border-radius: 8px 8px 0 0;
+}
+
+.productTable tbody td {
+    font-size: 0.7rem; /* Reduz a fonte dos dados */
+    padding: 0.5rem; /* Menor espaçamento interno */
+    line-height: 1;
+    text-align: left;
+}
+
+.productTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.productTable tbody tr:hover {
+    background-color: #d9f5f6; /* Cor de destaque ao passar o mouse */
+}
+
+.productTable thead th:first-child {
+    width: 15%; /* Ajusta apenas a primeira coluna */
+}
+.productTable thead th:nth-child(2) {
+    width: 25%; /* Ajusta a segunda coluna */
+}
+.productTable thead th:nth-child(3) {
+    width: 20%; /* Ajusta a segunda coluna */
+}
+.productTable thead th:nth-child(4) {
+    width: 15%; /* Ajusta a segunda coluna */
+}
+.productTable thead th:nth-child(5) {
+    width: 25%; /* Ajusta a segunda coluna */
+}
+
+
+
+/* ======================= TABELA - Responsividade ============= ======== */
+
+/* Para telas pequenas, como celulares (max-width: 768px) */
+@media (max-width: 768px) {
+    .main {
         width: 100%;
-        height: 100%;
-        margin-left: 25rem;
-        border: 2px solid red;
-
+        margin-left: 0;
     }
-
-    .productTable thead th {
-        background-color: #2d979b;
-        width: 10rem;
-        height: 1rem;
-        font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
-        padding: 0.5rem 0.3rem; /* Espaçamento menor */
-        text-align: left;
-        border: 0rem solid #ddd;
+    .productTable thead th{
+        font-size: 10px;
+        padding: 0.5rem;
     }
-
     .productTable tbody td {
-        font-size: 1.1rem; /* Reduz a fonte dos dados */
-        padding: 0.3rem; /* Menor espaçamento interno */
-        text-align: left;
+        font-size: 9px;
     }
-
-    .productTable {
-        width: 60rem; /* A tabela ocupa toda a largura disponível */
-        height: 50rem;
-        border-collapse: collapse;
-        margin-top: 1rem;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        left: 0; /* Removido o deslocamento */
+    .dropdown {
+        width: 4rem;
     }
-
     .dropdownButton {
-        width: 5rem;
-        height: 2rem;
-        font-size: 0.9rem;
-        padding: 0.3rem;
+        width: 4rem;
+        font-size: 10px;
     }
-    
-    .dropdownContent .dropdownItem {
-        font-size: 0.7rem;
-        padding: 0.2rem;
+    .productTable thead th:first-child {
+        width: 11%; /* Ajusta apenas a primeira coluna */
+    }
+    .productTable thead th:nth-child(2) {
+        width: 27%; /* Ajusta a segunda coluna */
+    }
+    .productTable thead th:nth-child(3) {
+        width: 22%; /* Ajusta a segunda coluna */
+    }
+    .productTable thead th:nth-child(4) {
+        width: 15%; /* Ajusta a segunda coluna */
+    }
+    .productTable thead th:nth-child(5) {
+        width: 25%; /* Ajusta a segunda coluna */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main {
+        width: 100%;
+        margin-left: 0;
+    }
+    .productTable thead th{
+        font-size: 18px;
+        padding: 0.5rem;
+    }
+    .productTable tbody td {
+        font-size: 14px;
     }
 }
