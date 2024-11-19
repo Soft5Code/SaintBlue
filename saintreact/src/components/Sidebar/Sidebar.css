@@ -376,3 +376,9 @@
         display: none;
     }
 }
+
+@media (min-width: 1024px) {
+    .toggle-sidebar-btn {
+        display: none;
+    }
+}

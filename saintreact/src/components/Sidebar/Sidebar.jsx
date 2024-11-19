@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Popup from "../../components/Popup/Popup"; // Certifique-se de que o componente Popup está correto
+import Popup from "../../components/Popup/Popup";
 import "./Sidebar.css";
 
 function Sidebar() {
@@ -10,7 +10,8 @@ function Sidebar() {
     const [email, setEmail] = useState("");
     const [endereco, setEndereco] = useState("");
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Estado para controlar a visibilidade da sidebar
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    // Estado para controlar a visibilidade da sidebar
 
     // Função para abrir o pop-up
     const openPopUp = () => setIsPopUpOpen(true);
@@ -30,8 +31,6 @@ function Sidebar() {
     };
 
     return (
-        
-        
         <div>
             {/* Botão para alternar a sidebar */}
             <button className="toggle-sidebar-btn" onClick={toggleSidebar}>
