@@ -1,4 +1,4 @@
-.popup-overlay {
+.popupOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     backdrop-filter: blur(5px);
 }
 
-.popup-content {
+.popupContent {
     width: 350px;
     height: 650px;
     background: white;
@@ -24,7 +24,7 @@
     flex-direction: column;
 }
 
-.close-popup {
+.closePopup {
     padding: 5px;
     top: 15px;
     right: 15px;
@@ -40,7 +40,7 @@
     position: absolute;
     }
 
-.popup-header {
+.popupHeader {
     text-align: center;
 }
 
@@ -50,7 +50,7 @@
     gap: 15px;
 }
 
-input {
+.input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -69,7 +69,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-.open-popup-btn {
+.openPopupBtn {
     width: 150px;
     height: auto;
     cursor: pointer;
@@ -77,11 +77,11 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
-.open-popup-btn:hover {
+.openPopupBtn:hover {
     transform: scale(1.1);
 }
 
-.popup-header {
+.popupHeader {
     background: var(--color-main-fundo);
     padding: 17px;
     border-bottom: 1px solid #ddd;
@@ -90,6 +90,7 @@ button:hover {
 }
 
 .perfil {
+    border: 2px solid red;
     background-color: #eee;
     padding: 20px; 
     width: 100%;
@@ -97,17 +98,17 @@ button:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn_txt:hover{
+.btnTxt:hover{
     color: var(--color-main-texto);
     transform: scale(1.1);
 }
-.popup-action-btn:hover{
+.popupActionBtn:hover{
     background-color: rgb(188, 187, 187);
     color: var(--color-main-texto);
     transform: scale(1.1);
 }
 
-.popup-action-btn {
+.popupActionBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +116,7 @@ button:hover {
     padding: 20px 30px;
 }
 
-.alterar-foto {
+.alterarFoto {
     text-align: center;
     font-size: 18px;
     color: #40706b;
@@ -128,7 +129,8 @@ button:hover {
     margin-bottom: 8px;
 }
 
-.informacoes input {
+.informacoes .input {
+    border: 2px solid red;
     width: 100%;
     margin-bottom: 10px;
     border: none;
@@ -137,12 +139,13 @@ button:hover {
     font-size: 14px;
     color: #333;
 }
-.informacoes input:focus{
+.informacoes .input:focus{
     border: none;
     transition: border 0;
 }
 
 .btn {
+    border: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +157,7 @@ button:hover {
     font-size: 28px;
 }
 
-.btn_txt {
+.btnTxt {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,7 +181,7 @@ button:hover {
 }
 
 /* Botão de fechar o pop-up */
-.photo-upload {
+.photoUpload {
     width: 10rem;
     height: 9rem;
     border: 0.1rem solid #000000;
@@ -199,17 +202,17 @@ button:hover {
     top: -1rem;
 }
 
-#product-image {
+#productImage {
     display: none; 
 }
 @media (min-width: 1072px){
     .perfil{
         padding: 5px;
     }
-    .perfil .photo-upload{
+    .perfil .photoUpload{
         margin-left: 75px;
     }
-    .photo-upload {
+    .photoUpload {
         width: 12rem;
         height: 12rem;
         border: 0.1rem solid #000000;
@@ -229,24 +232,24 @@ button:hover {
         top: 0rem;
     }
 
-    .photo-upload:hover {
+    .photoUpload:hover {
         background-color: #e0e0e0; 
     }
 }
 @media (max-width: 1072px){
-    .perfil .photo-upload{
+    .perfil .photoUpload{
         background-color: #fff; 
     }
 }
 
 /* Estilos para o pop-up em dispositivos tablet */
 @media (min-width: 768px) and (max-width: 1072px) {
-    .popup-content {
+    .popupContent {
         width: 480px;
         height: 780px;
     }
 
-    .popup-header {
+    .popupHeader {
         padding: 20px;
         font-size: 22px;
     }
@@ -267,13 +270,13 @@ button:hover {
         height: 70px; 
     }
 
-    .photo-upload {
+    .photoUpload {
         width: 12rem;
         height: 12rem;
         margin-top: 1rem;
     }
 
-    .informacoes input {
+    .informacoes .input {
         font-size: 16px;
     }
     
@@ -281,12 +284,12 @@ button:hover {
 
 
 @media (max-width: 768px) {
-    .popup-content {
+    .popupContent {
         width: 330px;
         height: 600px;
     }
 
-    .popup-header {
+    .popupHeader {
         padding: 15px;
         font-size: 18px;
     }
@@ -307,17 +310,17 @@ button:hover {
         height: 50px;
     }
 
-    .photo-upload {
+    .photoUpload {
         width: 8rem;
         height: 8rem;
         margin-top: 1rem;
     }
 
-    .informacoes input {
+    .informacoes .input {
         font-size: 14px;
     }
 
-    .close-popup {
+    .closePopup {
         top: 10px;
         right: 18px;
         font-size: 30px;

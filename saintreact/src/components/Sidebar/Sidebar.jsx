@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // Importação correta
+import { Link, useLocation } from "react-router-dom";
 import Popup from "../../components/Popup/Popup";
 
-import "./Sidebar.css";
+import styles from '../Sidebar/Sidebar.module.css';
 import Switch from "./Switch";
 
 function Sidebar() {
@@ -87,7 +87,7 @@ function Sidebar() {
 
     return (
         <div>
-            <button className="toggle-sidebar-btn" onClick={toggleSidebar}>
+            <button className={styles.toggleSidebarBtn} onClick={toggleSidebar}>
                 {isSidebarOpen ? (
                     <i className="bi bi-x"></i>
                 ) : (
@@ -95,74 +95,74 @@ function Sidebar() {
                 )}
             </button>
 
-            <div className={`barra-lateral ${isSidebarOpen ? "" : "mini_barra_lateral"}`}>
-                <div className="nome-pagina">
+            <div className={`${styles.barraLateral} ${isSidebarOpen ? "" : styles.miniBarraLateral}`}>
+                <div className={styles.nomePagina}>
                     <img src="/saint_500.png" alt="Menu_Toggle" id="menu_icon" />
-                    <span className="txt_logo">SaintBlue</span>
+                    <span className={styles.txtLogo}>SaintBlue</span>
                 </div>
 
                 {/* Navegação */}
-                <nav className="navegacao">
+                <nav className={styles.navegacao}>
                     <ul>
                         <li>
                             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
                                 <i className="bi bi-house-door"></i>
-                                <span className="txtNavegacao">Inicio</span>
+                                <span className={styles.txtNavegacao}>Inicio</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/estoque" className={location.pathname === '/estoque' ? 'active' : ''}>
                                 <i className="bi bi-boxes"></i>
-                                <span className="txtNavegacao">Estoque</span>
+                                <span className={styles.txtNavegacao}>Estoque</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/fornecedores" className={location.pathname === '/fornecedores' ? 'active' : ''}>
                                 <i className="bi bi-person-workspace"></i>
-                                <span className="txtNavegacao">Fornecedores</span>
+                                <span className={styles.txtNavegacao}>Fornecedores</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/colaboradores" className={location.pathname === '/colaboradores' ? 'active' : ''}>
                                 <i className="bi bi-file-earmark-person"></i>
-                                <span className="txtNavegacao">Colaboradores</span>
+                                <span className={styles.txtNavegacao}>Colaboradores</span>
                             </Link>
                         </li>
                     </ul>
                 </nav>
 
                 {/* Modo escuro */}
-                <div className="modo_escuro">
-                    <div className="info">
+                <div className={styles.modoEscuro}>
+                    <div className={styles.info}>
                         <i className={`bi ${isDarkMode ? 'bi-moon' : 'bi-sun'}`}></i>
-                        <span className="infoTxt">Dark Mode</span>
+                        <span className={styles.infoTxt}>Dark Mode</span>
                     </div>
                     <Switch isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 </div>
 
                 {/* Menu de sair */}
-                <div className="sair">
+                <div className={styles.sair}>
                     <ul>
                         <li>
-                            <Link to="./Login" className="active">
+                            <Link to="./Login" className={styles.active}>
                                 <i className="bi bi-box-arrow-left"></i>
-                                <span className="btnSair">Sair</span>
+                                <span className={styles.btnSair}>Sair</span>
                             </Link>
                         </li>
                     </ul>
                 </div>
 
                 {/* Informação do usuário */}
-                <div className="usuario">
+                <div className={styles.usuario}>
                     <img
                         src={usuario.foto}
                         alt="Foto do Usuário"
-                        className="open-popup-btn"
+                        className={styles.openPopupBtn}
                         onClick={openPopUp}
                     />
-                    <div className="info-usuario">
-                        <div className="nome_telefone">
-                            <span className="nome">{usuario.nome}</span>
+                    <div className={styles.infoUsuario}>
+                        <div className={styles.nomeTelefone}>
+                            <span className={styles.nome}>{usuario.nome}</span>
                         </div>
                         <div>
                             <i className="bi bi-three-dots"></i>

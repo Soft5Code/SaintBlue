@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { CSSTransition } from "react-transition-group";
+
 import "./modalTransitions.css";
-import './Popup.css';
+import styles from './Popup.module.css';
 
 function Popup({
     isOpen,
@@ -79,23 +80,23 @@ function Popup({
             classNames="modal"
             unmountOnExit // Remove o modal do DOM quando fechado
         >
-            <div className="popup-overlay">
-                <div className="popup-content">
+            <div className={styles.popupOverlay}>
+                <div className={styles.popupContent}>
                     {/* Botão para fechar o pop-up */}
-                    <span className="close-popup" onClick={onClose}>
+                    <span className={styles.closePopup} onClick={onClose}>
                         &times;
                     </span>
 
                     {/* Conteúdo do pop-up */}
-                    <div className="popup-header">
+                    <div className={styles.popupHeader}>
                         <h2>Perfil</h2>
                     </div>
-                    <div className="perfil">
-                        <div className="form">
-                            <label className="photo-upload" htmlFor="product-image">
+                    <div className={styles.perfil}>
+                        <div className={styles.form}>
+                            <label className={styles.photoUpload} htmlFor="product-image">
                                 <i className="bi bi-person-bounding-box"></i> Foto de Perfil
                             </label>
-                            <input
+                            <input className={styles.popupInput}
                                 type="file"
                                 id="product-image"
                                 name="product-image"
@@ -103,9 +104,9 @@ function Popup({
                                 onChange={handleFileChange}
                             />
 
-                            <div className="informacoes">
+                            <div className={styles.informacoes}>
                                 <h2>Nome:</h2>
-                                <input
+                                <input className={styles.popupInput}
                                     type="text"
                                     placeholder="Nome"
                                     value={nome}
@@ -113,7 +114,7 @@ function Popup({
                                 />
 
                                 <h2>Tel.:</h2>
-                                <input
+                                <input className={styles.popupInput}
                                     type="text"
                                     placeholder="Tel."
                                     value={telefone}
@@ -121,7 +122,7 @@ function Popup({
                                 />
 
                                 <h2>E-mail:</h2>
-                                <input
+                                <input className={styles.popupInput}
                                     type="email"
                                     placeholder="E-mail"
                                     value={email}
@@ -129,7 +130,7 @@ function Popup({
                                 />
 
                                 <h2>Endereço:</h2>
-                                <input
+                                <input className={styles.popupInput}
                                     type="text"
                                     placeholder="End."
                                     value={endereco}
@@ -137,8 +138,8 @@ function Popup({
                                 />
                             </div>
 
-                            <div className="btn">
-                                <button className="btn_txt" onClick={handleSubmit}>
+                            <div className={styles.btn}>
+                                <button className={styles.btnTxt} onClick={handleSubmit}>
                                     Alterar Perfil
                                 </button>
                             </div>

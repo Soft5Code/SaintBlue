@@ -1,5 +1,5 @@
 /* Sidebar */
-.barra-lateral {
+.barraLateral {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -17,16 +17,16 @@
 }
 
 /* Quando a sidebar está minimizada */
-.barra-lateral.mini_barra_lateral {
+.barraLateral.miniBarraLateral {
     transform: translateX(-100%);
 }
 
 /* Escondendo a sidebar */
-.barra-lateral.hidden {
+.barraLateral.hidden {
     transform: translateX(-100%);
 }
 
-.barra-lateral span {
+.barraLateral span {
     width: 100%;
     white-space: nowrap;
     font-size: 18px;
@@ -35,13 +35,13 @@
     transition: opacity 0.6s ease, width 0.5s ease;
 }
 
-.barra-lateral span.oculto {
+.barraLateral span.oculto {
     opacity: 0;
     width: 0;
 }
 
 /* Nome da página */
-.barra-lateral .nome-pagina {
+.barraLateral .nomePagina {
     width: 100%;
     height: 45px;
     color: var(--color-texto);
@@ -52,7 +52,7 @@
     padding-left: 4px;
 }
 
-.barra-lateral .nome-pagina img {
+.barraLateral .nomePagina img {
     min-width: 4rem;
     height: 4rem;
     display: flex;
@@ -64,36 +64,36 @@
     left: 0;
 }
 
-.barra-lateral .nome-pagina span {
+.barraLateral .nomePagina span {
     font-size: 25px;
     margin-left: 5px;
     opacity: 1;
     transition: opacity 0.6s ease;
 }
 
-.barra-lateral .nome-pagina .txt_logo {
+.barraLateral .nomePagina .txtLogo {
     margin-left: 3.2rem;
     font-size: 2rem;
 }
 
-.barra-lateral .nome-pagina span.oculto {
+.barraLateral .nomePagina span.oculto {
     opacity: 0;
 }
 
 /* Menu de Navegação */
-.barra-lateral .navegacao {
+.barraLateral .navegacao {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.barra-lateral .navegacao li {
+.barraLateral .navegacao li {
     list-style: none;
     display: flex;
     margin-bottom: 5px;
 }
 
-.barra-lateral .navegacao a {
+.barraLateral .navegacao a {
     width: 98%;
     height: 50px;
     display: flex;
@@ -105,30 +105,30 @@
     color: var(--color-texto-menu);
 }
 
-.barra-lateral .navegacao a:hover {
+.barraLateral .navegacao a:hover {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
 }
 
-.barra-lateral .navegacao i {
+.barraLateral .navegacao i {
     min-width: 40px;
     font-size: 22px;
 }
 
 /* Menu de Navegação = SAIR */
-.barra-lateral .sair {
+.barraLateral .sair {
     height: 100px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.barra-lateral .sair li {
+.barraLateral .sair li {
     list-style: none;
     display: flex;
     margin-bottom: 5px;
 }
 
-.barra-lateral .sair a {
+.barraLateral .sair a {
     width: 98%;
     height: 40px;
     display: flex;
@@ -140,25 +140,25 @@
     color: var(--color-texto-menu);
 }
 
-.barra-lateral .sair a:hover {
+.barraLateral .sair a:hover {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
 }
 
-.barra-lateral .sair i {
+.barraLateral .sair i {
     min-width: 40px;
     font-size: 22px;
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao a.active {
+.barraLateral .navegacao a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Menu de Navegação = Linha */
-.barra-lateral .linha {
+.barraLateral .linha {
     width: 100%;
     height: 2px;
     border-radius: 12px;
@@ -167,7 +167,7 @@
 }
 
 /* Menu de Navegação = Modo Dark */
-.barra-lateral .modo_escuro {
+.barraLateral .modoEscuro {
     width: 100%;
     border-radius: 12px;
     display: flex;
@@ -176,11 +176,11 @@
     transition: all 0.5s ease-in-out;
 }
 
-.barra-lateral .modo_escuro * {
+.barraLateral .modoEscuro * {
     transition: opacity 0.5s ease-in-out;
 }
 
-.barra-lateral .modo_escuro .info {
+.barraLateral .modoEscuro .info {
     width: 150px;
     height: 45px;
     overflow: hidden;
@@ -189,13 +189,13 @@
     color: var(--color-texto-menu);
 }
 
-.barra-lateral .modo_escuro .infoTxt{
+.barraLateral .modoEscuro .infoTxt{
     font-size: 1rem;
     margin-left: 5px;
     padding-left: 7px;
 }
 
-.barra-lateral .modo_escuro i {
+.barraLateral .modoEscuro i {
     transition: opacity 0.1s ease-in-out;
     width: 50px;
     padding-left: 15px;
@@ -203,7 +203,7 @@
 }
 
 /* Menu de Navegação = Switch */
-.barra-lateral .modo_escuro .switch {
+.barraLateral .modoEscuro .switch {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,7 +212,7 @@
     cursor: pointer;
 }
 
-.barra-lateral .modo_escuro .base {
+.barraLateral .modoEscuro .base {
     position: relative;
     display: flex;
     align-items: center;
@@ -222,7 +222,7 @@
     border-radius: 50px;
 }
 
-.barra-lateral .modo_escuro .circulo {
+.barraLateral .modoEscuro .circulo {
     position: absolute;
     width: 18px;
     height: 90%;
@@ -232,24 +232,24 @@
     transition: left 0.5s ease;
 }
 
-.barra-lateral .modo_escuro .circulo.prendido {
+.barraLateral .modoEscuro .circulo.prendido {
     left: 15px;
 }
 
 
 /* Menu de Navegação = Usuario */
-.barra-lateral .usuario {
+.barraLateral .usuario {
     width: 100%;
     display: flex;
 }
 
-.barra-lateral .usuario img {
+.barraLateral .usuario img {
     width: 50px;
     min-width: 50px;
     border-radius: 10px;
 }
 
-.barra-lateral .usuario .info-usuario {
+.barraLateral .usuario .infoUsuario {
     width: 100%;
     display: flex;
     align-items: center;
@@ -258,17 +258,17 @@
     overflow: hidden;
 }
 
-.barra-lateral .usuario .nome {
+.barraLateral .usuario .nome {
     font-size: 15px;
     font-weight: 600;
     padding-left: 8px;
 }
 
-.barra-lateral .usuario i {
+.barraLateral .usuario i {
     font-size: 20px;
 }
 
-.toggle-sidebar-btn {
+.toggleSidebarBtn {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -289,54 +289,17 @@
     transition: background-color 0.5s ease, transform 0.5s;
 }
 
-.toggle-sidebar-btn:hover {
+.toggleSidebarBtn:hover {
     background-color: var(--color-main-fundo);
     color: rgb(45, 44, 44);
     transform: scale(1.1);
 }
 
-.toggle-sidebar-btn i {
+.toggleSidebarBtn i {
     font-size: 28px;
     font-weight: 900;
 }
 
-
-/* Estilo do Pop-up */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-barra-lateral);
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    z-index: 9990;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.popup.show {
-    display: block;
-    opacity: 1;
-}
-
-.popup .popup-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popup .popup-header {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.popup .popup-message {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
 
 @media (max-width: 600px){
 
@@ -350,7 +313,7 @@
 }
 
 @media (min-width: 1024px) {
-    .toggle-sidebar-btn {
+    .toggleSidebarBtn {
         display: none;
     }
 }
