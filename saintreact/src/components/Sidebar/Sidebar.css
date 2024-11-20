@@ -151,31 +151,7 @@
 }
 
 /* Estilo quando o botão estiver ativo */
-.barra-lateral .navegacao .fixe_inicio a.active {
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.barra-lateral .navegacao .fixe_estoque a.active {
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.barra-lateral .navegacao .fixe_vendas a.active {
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.barra-lateral .navegacao .fixe_fornecedores a.active {
-    background: var(--color-menu-houver);
-    color: var(--color-menu-houver-texto);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.barra-lateral .navegacao .fixe_colaboradores a.active {
+.barra-lateral .navegacao a.active {
     background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
     transition: background 0.3s ease, color 0.3s ease;
@@ -213,7 +189,14 @@
     color: var(--color-texto-menu);
 }
 
+.barra-lateral .modo_escuro .infoTxt{
+    font-size: 1rem;
+    margin-left: 5px;
+    padding-left: 7px;
+}
+
 .barra-lateral .modo_escuro i {
+    transition: opacity 0.1s ease-in-out;
     width: 50px;
     padding-left: 15px;
     font-size: 22px;
@@ -252,64 +235,6 @@
 .barra-lateral .modo_escuro .circulo.prendido {
     left: 15px;
 }
-
-
-/* Base do switch */
-.barra-lateral .modo_escuro .base {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50px;
-    height: 25px;
-    background-color: var(--color-switch-base);
-    border-radius: 50px;
-    padding: 0 4px;
-    overflow: hidden;
-}
-/* Ícones de sol e lua */
-.barra-lateral .modo_escuro .base i {
-    position: absolute;
-    font-size: 14px;
-    color: var(--color-texto-menu);
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-/* Sol: Posicionado à esquerda */
-.barra-lateral .modo_escuro .base .sol {
-    left: 15px;
-    opacity: 1;
-    color: rgb(250, 250, 30);
-}
-
-/* Lua: Posicionada à direita */
-.barra-lateral .modo_escuro .base .lua {
-    right: 10px;
-    opacity: 0;
-    color: rgb(19, 19, 167);
-}
-/* Alternando a opacidade no modo escuro */
-.barra-lateral .modo_escuro .base .circulo.ativo ~ .sol {
-    opacity: 0;
-}
-.barra-lateral .modo_escuro .base .circulo.ativo ~ .lua {
-    opacity: 1; 
-}
-/* Círculo (bolinha redonda e animada) */
-.barra-lateral .modo_escuro .circulo {
-    position: absolute;
-    width: 22px; 
-    height: 22px;
-    background-color: var(--color-switch-circulo);
-    border-radius: 50%;
-    left: 2px;
-    transition: left 0.5s ease;
-    z-index: 2;
-}
-.barra-lateral .modo_escuro .circulo.ativo {
-    left: calc(100% - 24px);
-}
-
 
 
 /* Menu de Navegação = Usuario */

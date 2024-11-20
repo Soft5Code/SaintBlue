@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Importação correta
 import Popup from "../../components/Popup/Popup";
+
 import "./Sidebar.css";
+import Switch from "./Switch";
 
 function Sidebar() {
     const [usuario, setUsuario] = useState({ nome: "", foto: "" });
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isDarkMode, setIsDarkMode] = useState(false);
+
+    // Hook useLocation para obter a localização atual da URL
+    const location = useLocation(); // Agora você está usando o useLocation aqui no componente
 
     // Função para abrir o pop-up
     const openPopUp = () => setIsPopUpOpen(true);
@@ -100,25 +105,25 @@ function Sidebar() {
                 <nav className="navegacao">
                     <ul>
                         <li>
-                            <Link to="/" className="active">
+                            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
                                 <i className="bi bi-house-door"></i>
                                 <span className="txtNavegacao">Inicio</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/estoque" className="active">
+                            <Link to="/estoque" className={location.pathname === '/estoque' ? 'active' : ''}>
                                 <i className="bi bi-boxes"></i>
                                 <span className="txtNavegacao">Estoque</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/fornecedores" className="active">
+                            <Link to="/fornecedores" className={location.pathname === '/fornecedores' ? 'active' : ''}>
                                 <i className="bi bi-person-workspace"></i>
                                 <span className="txtNavegacao">Fornecedores</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/colaboradores" className="active">
+                            <Link to="/colaboradores" className={location.pathname === '/colaboradores' ? 'active' : ''}>
                                 <i className="bi bi-file-earmark-person"></i>
                                 <span className="txtNavegacao">Colaboradores</span>
                             </Link>
@@ -130,15 +135,9 @@ function Sidebar() {
                 <div className="modo_escuro">
                     <div className="info">
                         <i className={`bi ${isDarkMode ? 'bi-moon' : 'bi-sun'}`}></i>
-                        <span>Dark Theme</span>
+                        <span className="infoTxt">Dark Mode</span>
                     </div>
-                    <div className="switch" onClick={toggleDarkMode}>
-                        <div className="base">
-                            <i className={`bi bi-sun-fill sol ${!isDarkMode ? "ativo" : ""}`} />
-                            <div className={`circulo ${isDarkMode ? "ativo" : ""}`}></div>
-                            <i className={`bi bi-moon-stars-fill lua ${isDarkMode ? "ativo" : ""}`} />
-                        </div>
-                    </div>
+                    <Switch isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 </div>
 
                 {/* Menu de sair */}
