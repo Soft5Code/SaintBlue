@@ -1,0 +1,16 @@
+/* Transições de entrada e saída para o popup-overlay (Backdrop) */
+.modal-enter {
+  opacity: 0;
+}
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
