@@ -1,0 +1,235 @@
+
+.buscar{
+    border: 2px solid green;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    background-color: var(--color-main);
+    height: 100%;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.searchBox {
+    background: linear-gradient(to right, #66d2d6, #449194, #2d5d5f);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.156);
+    color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    overflow: hidden; /* Para garantir que elementos não saiam da div */
+}
+
+.searchTxt {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 0.7rem;
+    color: #fff;
+    flex: 1;
+  
+    margin: 0;
+}
+
+.searchTxt::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.searchBtn {
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0; /* Remove margens para que o botão fique colado ao input */
+}
+
+i#filter{
+    height: 42.5px;
+    width: 60px;
+}
+
+/*======================== TESTE LIXEIRA =================================
+
+/* From Uiverse.io by vinodjangid07 */ 
+.binButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 38%;
+    background-color: #449194;
+    cursor: pointer;
+    border: 1px solid #66d2d6;
+    transition-duration: 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .binBottom {
+    width: 15px;
+    z-index: 2;
+  }
+  .binTop {
+    width: 17px;
+    transform-origin: right;
+    transition-duration: 0.3s;
+    z-index: 2;
+  }
+  .binButton:hover .binTop {
+    transform: rotate(45deg);
+  }
+  .binButton:hover {
+    background-color: #2d5d5f;
+  }
+  .binButton:active {
+    transform: scale(0.9);
+  }
+  .garbage {
+    position: absolute;
+    width: 14px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .binButton:hover .garbage {
+    animation: throw 0.4s linear;
+  }
+  @keyframes throw {
+    from {
+      transform: translate(-400%, -700%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+  }
+  
+
+/*======================== TESTE CADASTRAR =================================
+  
+/* From Uiverse.io by andrew-demchenk0 */
+.button {
+    gap: 20px;
+    position: relative;
+    width: 190px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #66d2d6;
+    box-shadow: 2px 3px #66d2d6;
+    background-color: #449194;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.button i{
+    margin-top: 1.65px;
+    font-size: 0.8rem;
+    color: #fff;
+}
+  
+.button, .button__icon, .button__text {
+transition: all 0.3s;
+}
+
+.button .button__text {
+    font-size: 0.8rem;
+    transform: translateX(12px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(105px);
+    height: 100%;
+    width:  39px;
+    background-color: #2d5d5f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+width: 20px;
+fill: #66d2d6;
+}
+
+.button:hover {
+background: #449194;
+}
+.button:hover .button__text {
+    color: #FFF;
+}
+
+.button:hover .button__icon {
+width: 148px;
+transform: translateX(0);
+}
+
+.button:active {
+transform: translate(3px, 3px);
+box-shadow: 0px 0px #66d2d6;
+}
+
+
+/*======================== RESPONSIVE ================================= */
+
+@media (min-width: 1028px){
+    .buscar{
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    i#filter{
+        margin-top: 5px;
+    }
+    .searchBox{
+        width: 500px;
+    }
+    .button {
+       gap: 70px;
+       margin-top: 1px;
+    }
+    .searchTxt{
+        font-size: 1rem;
+    }
+    .button i{
+        margin-top: 1.65px;
+        font-size: 1rem;
+        color: #fff;
+    }
+}
+
+/* Media query para telas menores que 768px */
+
+@media (min-width: 900px){
+    .button {
+        border-radius: 12px;
+        font-size: 1.2rem;
+        height: 2rem;
+        padding: 3px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 899px) {
+    .button {
+        border-radius: 12px;
+        font-size: 1.1rem;
+        height: 2rem;
+        padding: 3px;
+    }
+}
