@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 250px; /* Largura da sidebar quando visível */
+    width: 250px;
     height: 100vh;
     left: 0;
     overflow: hidden;
@@ -13,20 +13,17 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease, width 0.5s ease;
     z-index: 50;
-    transform: translateX(0); /* Inicialmente visível */
+    transform: translateX(0);
 }
 
 /* Quando a sidebar está minimizada */
 .barra-lateral.mini_barra_lateral {
-    transform: translateX(-100%); /* Movendo a sidebar para fora da tela */
+    transform: translateX(-100%);
 }
-
-/* Restante do CSS não precisa de alteração */
-
 
 /* Escondendo a sidebar */
 .barra-lateral.hidden {
-    transform: translateX(-100%); /* Movendo a sidebar para fora da tela */
+    transform: translateX(-100%);
 }
 
 .barra-lateral span {
@@ -109,7 +106,7 @@
 }
 
 .barra-lateral .navegacao a:hover {
-    background: #4fbfc3;
+    background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
 }
 
@@ -144,7 +141,7 @@
 }
 
 .barra-lateral .sair a:hover {
-    background: #4fbfc3;
+    background: var(--color-menu-houver);
     color: var(--color-menu-houver-texto);
 }
 
@@ -256,6 +253,65 @@
     left: 15px;
 }
 
+
+/* Base do switch */
+.barra-lateral .modo_escuro .base {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    height: 25px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+    padding: 0 4px;
+    overflow: hidden;
+}
+/* Ícones de sol e lua */
+.barra-lateral .modo_escuro .base i {
+    position: absolute;
+    font-size: 14px;
+    color: var(--color-texto-menu);
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+/* Sol: Posicionado à esquerda */
+.barra-lateral .modo_escuro .base .sol {
+    left: 15px;
+    opacity: 1;
+    color: rgb(250, 250, 30);
+}
+
+/* Lua: Posicionada à direita */
+.barra-lateral .modo_escuro .base .lua {
+    right: 10px;
+    opacity: 0;
+    color: rgb(19, 19, 167);
+}
+/* Alternando a opacidade no modo escuro */
+.barra-lateral .modo_escuro .base .circulo.ativo ~ .sol {
+    opacity: 0;
+}
+.barra-lateral .modo_escuro .base .circulo.ativo ~ .lua {
+    opacity: 1; 
+}
+/* Círculo (bolinha redonda e animada) */
+.barra-lateral .modo_escuro .circulo {
+    position: absolute;
+    width: 22px; 
+    height: 22px;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+    z-index: 2;
+}
+.barra-lateral .modo_escuro .circulo.ativo {
+    left: calc(100% - 24px);
+}
+
+
+
 /* Menu de Navegação = Usuario */
 .barra-lateral .usuario {
     width: 100%;
@@ -287,34 +343,38 @@
     font-size: 20px;
 }
 
-/* Estilos do botão de mostrar/ocultar a sidebar no canto direito */
 .toggle-sidebar-btn {
     position: fixed;
     top: 20px;
-    right: 20px; /* Alterado para posicionar no canto direito */
+    right: 20px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-menu-houver);
+    color: rgb(45, 44, 44);
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease, transform 0.5s;
 }
 
 .toggle-sidebar-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--color-main-fundo);
+    color: rgb(45, 44, 44);
+    transform: scale(1.1);
 }
 
 .toggle-sidebar-btn i {
-    font-size: 20px;
+    font-size: 28px;
+    font-weight: 900;
 }
+
 
 /* Estilo do Pop-up */
 .popup {
@@ -322,12 +382,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: var(--color-barra-lateral);
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    z-index: 9999;
-    display: none; /* Inicialmente oculto */
+    z-index: 9990;
+    display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -351,20 +411,6 @@
 .popup .popup-message {
     font-size: 16px;
     margin-bottom: 20px;
-}
-
-.popup .popup-close-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.popup .popup-close-btn:hover {
-    background-color: #0056b3;
 }
 
 @media (max-width: 600px){

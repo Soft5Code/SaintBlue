@@ -4,7 +4,7 @@
     --color-texto: #000000;
     --color-texto-menu: #000000;
 
-    --color-menu-houver: #2d979b;
+    --color-menu-houver: #4fbfc3;
     --color-menu-houver-texto: #f5f3f3f1;
 
     --color-main-fundo: #2d979b;
@@ -30,7 +30,7 @@
     --color-texto-produto:#000000;
 }
 
-.dark_mode{
+.dark-mode{
     --color-barra-lateral: #2c2d31;
 
     --color-texto: #ffffff;

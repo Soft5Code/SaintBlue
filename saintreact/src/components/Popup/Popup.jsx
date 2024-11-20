@@ -3,100 +3,149 @@ import { CSSTransition } from "react-transition-group";
 import "./modalTransitions.css";
 import './Popup.css';
 
-function Popup({ isOpen, onClose, onSubmit, photo, setPhoto, nome, setNome, telefone, setTelefone, email, setEmail, endereco, setEndereco }) {
+function Popup({
+    isOpen,
+    onClose,
+    onSubmit,
+    photo,
+    setPhoto,
+    nome,
+    setNome,
+    telefone,
+    setTelefone,
+    email,
+    setEmail,
+    endereco,
+    setEndereco,
+}) {
     const handleFileChange = (event) => {
-        setPhoto(event.target.files[0]); // Atualiza a foto de perfil
+        const file = event.target.files[0];
+        setPhoto(file); // Atualiza a foto de perfil no estado
     };
 
-    const handleSubmit = () => {
-        // Aqui você pode fazer algo como enviar os dados para um servidor
-        console.log({
-            nome,
-            telefone,
-            email,
-            endereco,
-            photo
-        });
-        alert('Perfil alterado com sucesso!');
-        onSubmit(); // Chama o onSubmit para fechar o pop-up ou outras ações.
+    const handleSubmit = async () => {
+        try {
+            // Criação do objeto FormData para enviar os dados incluindo a foto
+            const formData = new FormData();
+            if (photo) formData.append("photo", photo);
+            formData.append("nome", nome);
+            formData.append("telefone", telefone);
+            formData.append("email", email);
+            formData.append("endereco", endereco);
+
+            const response = await fetch("http://seu-backend.com/usuario", {
+                method: "PUT", // Atualiza os dados
+                body: formData, // Envia o FormData
+            });
+
+            if (!response.ok) throw new Error("Erro ao atualizar os dados do usuário");
+
+            alert("Perfil atualizado com sucesso!");
+            onSubmit(); // Fecha o popup ou executa ações adicionais
+        } catch (error) {
+            console.error("Erro ao atualizar o perfil:", error);
+            alert("Houve um erro ao atualizar o perfil.");
+        }
     };
 
-    if (!isOpen) return null; // Não renderiza o pop-up se não estiver aberto
+    // Requisição para buscar os dados do usuário ao abrir o popup
+    const fetchUserDetails = async () => {
+        try {
+            const response = await fetch("http://seu-backend.com/usuario");
+            if (!response.ok) throw new Error("Erro ao buscar os dados do usuário");
+
+            const data = await response.json();
+            setNome(data.nome || "");
+            setTelefone(data.telefone || "");
+            setEmail(data.email || "");
+            setEndereco(data.endereco || "");
+            setPhoto(null); 
+        } catch (error) {
+            console.error("Erro ao buscar os dados do usuário:", error);
+        }
+    };
+
+    // Carrega os dados do usuário quando o popup abre
+    React.useEffect(() => {
+        if (isOpen) fetchUserDetails();
+    }, [isOpen]);
+
+    if (!isOpen) return null;
 
     return (
         <CSSTransition
-        in={isOpen} // Controla a exibição
-        timeout={3000} // Duração da transição
-        classNames="modal" // Prefixo para classes de transição
-        unmountOnExit // Remove o modal do DOM quando fechado
+            in={isOpen}
+            timeout={300}
+            classNames="modal"
+            unmountOnExit // Remove o modal do DOM quando fechado
         >
+            <div className="popup-overlay">
+                <div className="popup-content">
+                    {/* Botão para fechar o pop-up */}
+                    <span className="close-popup" onClick={onClose}>
+                        &times;
+                    </span>
 
-        <div className="popup-overlay">
-            <div className="popup-content">
-                {/* Botão para fechar o pop-up */}
-                <span className="close-popup" onClick={onClose}>&times;</span>
-
-                {/* Conteúdo do pop-up */}
-                <div className="popup-header">
-                    <h2>Perfil</h2>
-                </div>
-                <div className="perfil">
-                    <div className="form">
-                        <label className="photo-upload" htmlFor="product-image">
-                            <i className="bi bi-person-bounding-box"></i> Foto de Perfil
-                        </label>
-                        <input
-                            type="file"
-                            id="product-image"
-                            name="product-image"
-                            accept="image/*"
-                            required
-                            onChange={handleFileChange}
-                        />
-
-                        <div className="informacoes">
-                            <h2>Nome:</h2>
+                    {/* Conteúdo do pop-up */}
+                    <div className="popup-header">
+                        <h2>Perfil</h2>
+                    </div>
+                    <div className="perfil">
+                        <div className="form">
+                            <label className="photo-upload" htmlFor="product-image">
+                                <i className="bi bi-person-bounding-box"></i> Foto de Perfil
+                            </label>
                             <input
-                                type="text"
-                                placeholder="Nome"
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
+                                type="file"
+                                id="product-image"
+                                name="product-image"
+                                accept="image/*"
+                                onChange={handleFileChange}
                             />
 
-                            <h2>Tel.:</h2>
-                            <input
-                                type="text"
-                                placeholder="Tel."
-                                value={telefone}
-                                onChange={(e) => setTelefone(e.target.value)}
-                            />
+                            <div className="informacoes">
+                                <h2>Nome:</h2>
+                                <input
+                                    type="text"
+                                    placeholder="Nome"
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                />
 
-                            <h2>E-mail:</h2>
-                            <input
-                                type="email"
-                                placeholder="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+                                <h2>Tel.:</h2>
+                                <input
+                                    type="text"
+                                    placeholder="Tel."
+                                    value={telefone}
+                                    onChange={(e) => setTelefone(e.target.value)}
+                                />
 
-                            <h2>Endereço:</h2>
-                            <input
-                                type="text"
-                                placeholder="End."
-                                value={endereco}
-                                onChange={(e) => setEndereco(e.target.value)}
-                            />
-                        </div>
+                                <h2>E-mail:</h2>
+                                <input
+                                    type="email"
+                                    placeholder="E-mail"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
 
-                        <div className="btn">
-                            <button className="btn_txt" onClick={handleSubmit}>
-                                Alterar Perfil
-                            </button>
-                        </div>
-                    </div> {/* Fechamento da div form */}
-                </div> {/* Fechamento da div perfil */}
-            </div> {/* Fechamento da div popup-content */}
-        </div>
+                                <h2>Endereço:</h2>
+                                <input
+                                    type="text"
+                                    placeholder="End."
+                                    value={endereco}
+                                    onChange={(e) => setEndereco(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="btn">
+                                <button className="btn_txt" onClick={handleSubmit}>
+                                    Alterar Perfil
+                                </button>
+                            </div>
+                        </div> {/* Fechamento da div form */}
+                    </div> {/* Fechamento da div perfil */}
+                </div> {/* Fechamento da div popup-content */}
+            </div>
         </CSSTransition>
     );
 }
