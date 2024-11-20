@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Estoque.module.css';
-import Swal from 'sweetalert2'; // Importando SweetAlert2
+import Swal from 'sweetalert2'; // Importando SweetAlert2 teste
 
 const Estoque = () => {
   const [products, setProducts] = useState([
