@@ -1,21 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Aleo", serif !important;
-}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-.body {
+.bodyLand {
   max-width: 100%;
   overflow-x: hidden;
   
 }
 
-.body {
+.bodyLand {
   background-color: #f6f6f6;
 }
 .navBarHome{

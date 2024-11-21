@@ -10,7 +10,7 @@ import Carousel from "../../components/Home/Carousel";
 
 
 function Land() {
-    return <div className={styles.body}>
+    return <div className={styles.bodyLand}>
         <Home/>
         <About />
         <Work />
