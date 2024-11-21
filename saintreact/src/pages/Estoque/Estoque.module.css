@@ -332,7 +332,7 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
 .pageTitle {
   text-align: center;
   font-size: 2rem;
-  margin-top: 3rem;
+  padding-top: 3rem;
   color: #2d979b;
 }
 
@@ -387,10 +387,16 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
 
 
 /* Responsividade para telas maiores (acima de 768px) */
-@media (min-width: 1366px) {
+@media (min-width: 1025px) {
   .tableContainer {
-      margin-left: 16.7rem;
-      
+    margin-left: 18rem;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    height: 100vh;
+    width: 100%;
+
   }
 
   .productTable thead th {
@@ -410,8 +416,8 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
   }
 
   .productTable {
-      width: 67rem; /* A tabela ocupa toda a largura disponível */
-      height: 50rem;
+    height: 100vh;
+    width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
       margin-left: auto;

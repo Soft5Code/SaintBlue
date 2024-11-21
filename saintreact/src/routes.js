@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useState, useEffect } from "react";
 
+import Loading from "./pages/Loading/Loading";
 import Land from "./pages/LandPaging/Land";
 import Login from "./components/Login/login";
 import Inicio from "./pages/Inicio/Inicio";
@@ -10,13 +12,13 @@ import Colaboradores from "./pages/Colaboradores/Colaboradores";
 import Erro from "./pages/Erro/Erro";
 
 import Sidebar from "./components/Sidebar/Sidebar";
-import "./transitions.css"; // Arquivo de estilos para as transições
+import "./transitions.css";
 
-// Componente para renderizar a sidebar condicionalmente
+
+
 function Layout({ children }) {
   const location = useLocation();
-  // Rotas onde a Sidebar NÃO deve aparecer
-  const hideSidebarRoutes = ["/login", "/Login", '/']; // Adicione outras rotas aqui
+  const hideSidebarRoutes = ["/login", "/Login", "/"];
   const showSidebar = !hideSidebarRoutes.includes(location.pathname);
 
   return (
@@ -28,29 +30,57 @@ function Layout({ children }) {
 }
 
 function RoutesApp() {
-  const location = useLocation(); // Captura a localização atual para animações
+  const location = useLocation(); 
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasNavigated, setHasNavigated] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+    const startNavigation = Date.now();
+
+    
+    timeout = setTimeout(() => {
+      if (!hasNavigated) {
+        setIsLoading(true); 
+      }
+    }, 500); 
+
+    const finishLoading = () => {
+      clearTimeout(timeout);
+      setIsLoading(false);
+      setHasNavigated(true);
+    };
+
+    
+    return () => {
+      finishLoading();
+    };
+  }, [location.pathname, hasNavigated]);
 
   return (
-    <TransitionGroup>
-      <CSSTransition
-        key={location.key} // Garante animação em cada rota única
-        timeout={300} // Duração da transição
-        classNames="fade" // Prefixo para classes de transição
-      >
-        <div className="page-container">
-          <Routes location={location}>
-            <Route path="/" element={<Land />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/inicio" element={<Inicio />} />
-            <Route path="/estoque" element={<Estoque />} />
-            <Route path="/fornecedores" element={<Fornecedores />} />
-            <Route path="/colaboradores" element={<Colaboradores />} />
-            
-            <Route path="*" element={<Erro />} />
-          </Routes>
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
+    <>
+      {isLoading && <Loading />}
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          timeout={300}
+          classNames="fade"
+        >
+          <div className="page-container">
+            <Routes location={location}>
+              <Route path="/" element={<Land />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/inicio" element={<Inicio />} />
+              <Route path="/estoque" element={<Estoque />} />
+              <Route path="/fornecedores" element={<Fornecedores />} />
+              <Route path="/colaboradores" element={<Colaboradores />} />
+
+              <Route path="*" element={<Erro />} />
+            </Routes>
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
   );
 }
 

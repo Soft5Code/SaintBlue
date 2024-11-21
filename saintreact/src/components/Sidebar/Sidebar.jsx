@@ -102,7 +102,7 @@ function Sidebar() {
                 </div>
 
                 {/* Navegação */}
-                <nav className={styles.navegacao}>
+                <aside className={styles.navegacao}>
                     <ul>
                         <li>
                             <Link to="/inicio" className={location.pathname === '/' ? 'active' : ''}>
@@ -129,7 +129,7 @@ function Sidebar() {
                             </Link>
                         </li>
                     </ul>
-                </nav>
+                </aside>
 
                 {/* Modo escuro */}
                 <div className={styles.modoEscuro}>
