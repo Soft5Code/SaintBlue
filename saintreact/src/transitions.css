@@ -1,13 +1,13 @@
 /* Transições de entrada e saída */
 .fade-enter {
     opacity: 0;
-    transform: scale(0.95); /* Redução leve ao entrar */
+    transform: scale(1.05); /* Redução leve ao entrar */
   }
   
   .fade-enter-active {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition: opacity 800ms ease-in, transform 800ms ease-in;
   }
   
   .fade-exit {
@@ -18,7 +18,7 @@
   .fade-exit-active {
     opacity: 0;
     transform: scale(0.95); /* Redução leve ao sair */
-    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
   }
   
   /* Estilo base para as páginas */
