@@ -52,7 +52,7 @@ function Sidebar() {
                 const data = await response.json();
                 setUsuario({
                     nome: data.nome || "Usuário",
-                    foto: data.foto ||  "/saint_500.png",
+                    foto: data.foto || "http://localhost:3000/saint_500.png", // Verifica se a string não é vazia
                 });
             } catch (error) {
                 console.error("Erro ao buscar usuário:", error);
