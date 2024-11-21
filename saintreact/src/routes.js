@@ -14,7 +14,9 @@ import "./transitions.css"; // Arquivo de estilos para as transições
 // Componente para renderizar a sidebar condicionalmente
 function Layout({ children }) {
   const location = useLocation();
-  const showSidebar = location.pathname !== "/login";
+  // Rotas onde a Sidebar NÃO deve aparecer
+  const hideSidebarRoutes = ["/login", "/Login"]; // Adicione outras rotas aqui
+  const showSidebar = !hideSidebarRoutes.includes(location.pathname);
 
   return (
     <>
@@ -31,7 +33,7 @@ function RoutesApp() {
     <TransitionGroup>
       <CSSTransition
         key={location.key} // Garante animação em cada rota única
-        timeout={500} // Duração da transição
+        timeout={300} // Duração da transição
         classNames="fade" // Prefixo para classes de transição
       >
         <div className="page-container">

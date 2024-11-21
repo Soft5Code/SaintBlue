@@ -96,7 +96,7 @@ function Popup({
                             <label className={styles.photoUpload} htmlFor="product-image">
                                 <i className="bi bi-person-bounding-box"></i> Foto de Perfil
                             </label>
-                            <input className={styles.popupInput}
+                            <input className={styles.popupInputFt}
                                 type="file"
                                 id="product-image"
                                 name="product-image"
@@ -105,7 +105,7 @@ function Popup({
                             />
 
                             <div className={styles.informacoes}>
-                                <h2>Nome:</h2>
+                                <h2 className={styles.infoH2}>Nome:</h2>
                                 <input className={styles.popupInput}
                                     type="text"
                                     placeholder="Nome"
@@ -113,7 +113,7 @@ function Popup({
                                     onChange={(e) => setNome(e.target.value)}
                                 />
 
-                                <h2>Tel.:</h2>
+                                <h2 className={styles.infoH2}>Tel.:</h2>
                                 <input className={styles.popupInput}
                                     type="text"
                                     placeholder="Tel."
@@ -121,7 +121,7 @@ function Popup({
                                     onChange={(e) => setTelefone(e.target.value)}
                                 />
 
-                                <h2>E-mail:</h2>
+                                <h2 className={styles.infoH2}>E-mail:</h2>
                                 <input className={styles.popupInput}
                                     type="email"
                                     placeholder="E-mail"
@@ -129,7 +129,7 @@ function Popup({
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
 
-                                <h2>Endereço:</h2>
+                                <h2 className={styles.infoH2}>Endereço:</h2>
                                 <input className={styles.popupInput}
                                     type="text"
                                     placeholder="End."
