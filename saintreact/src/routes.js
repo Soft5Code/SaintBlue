@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+import Land from "./pages/LandPaging/Land";
 import Login from "./components/Login/login";
 import Inicio from "./pages/Inicio/Inicio";
 import Estoque from "./pages/Estoque/Estoque";
@@ -15,7 +16,7 @@ import "./transitions.css"; // Arquivo de estilos para as transições
 function Layout({ children }) {
   const location = useLocation();
   // Rotas onde a Sidebar NÃO deve aparecer
-  const hideSidebarRoutes = ["/login", "/Login"]; // Adicione outras rotas aqui
+  const hideSidebarRoutes = ["/login", "/Login", '/']; // Adicione outras rotas aqui
   const showSidebar = !hideSidebarRoutes.includes(location.pathname);
 
   return (
@@ -38,8 +39,9 @@ function RoutesApp() {
       >
         <div className="page-container">
           <Routes location={location}>
+            <Route path="/" element={<Land />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Inicio />} />
+            <Route path="/inicio" element={<Inicio />} />
             <Route path="/estoque" element={<Estoque />} />
             <Route path="/fornecedores" element={<Fornecedores />} />
             <Route path="/colaboradores" element={<Colaboradores />} />

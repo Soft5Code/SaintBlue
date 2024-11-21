@@ -105,7 +105,7 @@ function Sidebar() {
                 <nav className={styles.navegacao}>
                     <ul>
                         <li>
-                            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+                            <Link to="/inicio" className={location.pathname === '/' ? 'active' : ''}>
                                 <i className="bi bi-house-door"></i>
                                 <span className={styles.txtNavegacao}>Inicio</span>
                             </Link>

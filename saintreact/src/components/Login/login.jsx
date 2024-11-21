@@ -49,7 +49,7 @@ function Login() {
                         <h1>Login</h1>
                         <input type="email" placeholder="E-mail" />
                         <input type="password" placeholder="Senha" />
-                        <Link to="/">
+                        <Link to="/inicio">
                             <button type="button" id="entrarButton">Entrar</button>
                         </Link>
                     </form>
@@ -64,7 +64,7 @@ function Login() {
                             <h1>Bem-vindo(a)</h1>
                             <p>Já possui uma conta?</p>
                             <button className="hidden" onClick={handleLoginClick}>Fazer login</button>
-                            <Link to="">
+                            <Link to="/">
                                 <button className="hidden2" id="acessohome">Home</button>
                             </Link>
                         </div>
@@ -75,7 +75,7 @@ function Login() {
                             <h1>Bem-vindo(a)</h1>
                             <p>Já possui uma conta?</p>
                             <button className="hidden" onClick={handleRegisterClick}>Criar conta</button>
-                            <Link to="">
+                            <Link to="/">
                                 <button className="hidden2" id="acessohome2">Home</button>
                             </Link>
                         </div>

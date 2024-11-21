@@ -1,0 +1,758 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Aleo", serif !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.body {
+  max-width: 100%;
+  overflow-x: hidden;
+  
+}
+
+.body {
+  background-color: #f6f6f6;
+}
+.navBarHome{
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;       /* Alinha o menu ao topo */
+  left: 0;      /* Alinha o menu à esquerda */
+  width: 100%;  /* Faz com que o menu ocupe a largura completa da tela */
+  z-index: 1;   /* Garante que o menu fique acima de outros elementos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.02); 
+}
+.navLogoContainer{
+  margin-top: 0.5rem;
+  width: 13rem;
+  margin-right: 5rem;
+  max-width: 140px;
+}
+.navbarMenuContainer {
+  display: flex;
+}
+.navBarLinksContainer {
+  display: none;
+}
+.navBarLinksContainer a {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.navBarLinksContainer a:hover{
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #2d979b;
+}
+.navButton{
+  text-align: center;
+  width: 10rem;
+  font-weight: bold;
+  border: 1px solid #2d5d5f;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  opacity: 1;
+  transition: 0.3s;
+}
+.navButton:hover{
+  background-color: #2d979b;
+}
+.primaryButton{
+  padding: 0.9rem 1.75rem;
+  background-color: #2d979b;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  width: 150px;
+}
+.navbar-cart-icon {
+  font-size: 1.15rem;
+}
+.primaryButton:hover {
+  background-color: #2d5d5f;
+}
+/* .MuiDrawer{
+  background-color: #fff;
+} */
+.navbarMenuContainer svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
+.homeBannerContainer {
+  padding: 0;
+  margin: 0;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.homeBannerImageContainer {
+  display: none;
+}
+
+
+.carousel-banner-container {
+  max-width: 600px;
+  flex: 0.9;
+  margin-left: 0rem;
+  margin-right: 1rem;
+  overflow: hidden; /* Garante que a imagem não saia do container */
+  border-radius: 45%;
+}
+
+.homeImageSection {
+  padding: 1rem;
+  margin-top: 2rem;
+  max-width: 700px;
+  flex: 1;
+  overflow: hidden; /* Garante que a imagem não saia do container */
+  border-radius: 10%;
+}
+.homeTextSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.primaryHeading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #000;
+  /* line-height: 5rem; */
+  max-width: 600px;
+  text-align: center;
+  max-width: 90%;
+}
+.primaryText {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 500px;
+  color: #000;
+  margin: 1.5rem 0rem;
+  text-align: center;
+  max-width: 80%;
+}
+.secondaryButton {
+  padding: 1rem 2.5rem;
+  background-color: #2d979b;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondaryButtonNav{
+  margin-top: 1rem;
+  margin-left: 3rem;
+  padding: 1rem 2.5rem;
+  background-color: #2d979b;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 2rem;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondaryButtonNav:hover {
+  background-color: #2d5d5f;
+}
+.secondary-button-footer{
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  background-color: #2d979b;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 2.5rem;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondaryButton svg {
+  margin-left: 0.75rem;
+  font-size: 1.5rem;
+}
+.secondaryButton:hover {
+  background-color: #2d5d5f;
+}
+.aboutSectionContainer {
+  padding: 0;
+  margin: 0;
+  margin-top: 5rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aboutBackgroundImageContainer {
+  display: none;
+}
+.aboutSectionImageContainer {
+  max-width: 600px;
+  flex: 0.9;
+  margin-left: 0rem;
+  margin-right: 1rem;
+  overflow: hidden; /* Garante que a imagem não saia do container */
+  border-radius: 45%;
+}
+
+.aboutSectionTextContainer {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.primarySubHeading {
+  font-weight: 700;
+  color: #2d979b;
+  font-size: 1.15rem;
+}
+.aboutButtonsContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.watchVideoButton {
+  margin-left: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #484848;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.watchVideoButton svg {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+.contactPageWrapper h1 {
+  max-width: 900px !important;
+}
+.contactPageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 6rem 0rem;
+}
+.contactFormContainer {
+  gap: 1rem;
+  height: 9rem;
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
+}
+.contactFormContainer input {
+  border-radius: 1rem;
+  flex: 1;
+  height: 100%;
+  width: 80%;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 1rem !important;
+  padding: 0rem 1rem !important;
+  margin-bottom: 0.8rem !important;
+}
+.footerWrappper {
+  padding: 0 10rem;
+  margin:  5rem -8rem;
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo-container {
+  max-width: 500px;
+}
+.footerIcons {
+  margin-top: 2.5rem;
+}
+.footerIcons svg {
+  font-size: 1.5rem;
+  margin-right: 1.25rem;
+  color: #585858;
+}
+/* .footer-section-one {
+  border: 2px solid blue;
+} */
+.footerSectionTwo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.footerSectionColumns {
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  margin: 1rem 0rem;
+}
+.footerSectionColumns span {
+  margin: 0.25rem 0rem;
+  font-weight: 600;
+  color: #4c4c4c;
+  cursor: pointer;
+}
+.testimonialSectionBottom {
+  background-color: #fff;
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;      /* Define uma largura fixa */
+  height: 450px;     /* Define uma altura fixa */
+  border-radius: 2rem;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;  /* Oculta o conteúdo que ultrapassar o limite do container */
+}
+.testimonialResponsive{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.testimonialSectionBottom {
+  margin: 2rem auto;
+}
+.testimonialSectionBottom p {
+  font-weight: 700;
+  color: #000;
+  max-width: 500px;
+  font-size: 1rem;
+  margin: 2rem 0rem;
+}
+.testimonialSectionBottom h2{
+  color: #000;
+}
+.testimonialsStarsContainer svg {
+  margin: 0rem 0.25rem;
+  font-size: 1.5rem;
+  color: #fe9e0d;
+}
+.testimonialSectionBottom h2 {
+  margin-top: 1rem !important;
+}
+.workSectionWrapper {
+  margin-top: 5rem !important;
+}
+.workSectionTop p {
+  text-align: center;
+  max-width: 600px !important;
+}
+.workSectionTop h1 {
+  max-width: 700px !important;
+}
+.workSectionTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.workSectionInfo {
+  width: 900px;
+  max-height: 350px;
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  color: #505050;
+  margin:  1rem;
+}
+.workSectionInfo h2 {
+  color: #000;
+  margin: 0.5rem 0rem;
+}
+.workSectionBottom {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.workSectionInfo img{
+  margin-left: 13rem;
+  width: 50px;
+} 
+.workSectionInfo p {
+  color: #000;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.accordion{
+  padding: 1rem;
+  width: 100%;
+}
+.itemA{
+  gap: 1rem;
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+}
+.titleA{
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inner{
+display: flex;
+}
+.itemC{
+height: 600px;
+min-width: 250px;
+padding: 14px;
+}
+.itemC img{
+width: 100%;
+height: 80%;
+border-radius: 1.2rem;
+pointer-events: none;
+}
+.textC {
+position: absolute;
+top: 70%; /* Centraliza verticalmente */
+left: 50%; /* Centraliza horizontalmente */
+transform: translate(-50%, -50%); /* Alinha no centro */
+color: white; /* Ajuste a cor do texto conforme necessário */
+text-align: center; /* Fundo semi-transparente */
+padding: 10px; /* Ajuste conforme necessário */
+border-radius: 5px;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+.textC h2{
+font-size: 1rem;
+color: #000;
+}
+.textC a{
+color: #000;
+}
+.textC span{
+font-size: 0.8rem;
+color: #2d5d5f;
+}
+.carousel{
+width: 100%;
+cursor: grab;
+overflow: hidden;
+}
+.appC{
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@media (min-width: 501px) and (max-width:840px){
+  /*Work*/
+  .workSectionWrapper{
+  margin-top: 15rem;
+}
+.workSectionTop p {
+  text-align: center;
+  max-width: 600px !important;
+}
+.workSectionTop h1 {
+  max-width: 700px !important;
+}
+.workSectionTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.workSectionInfo {
+  width: 290px;
+  min-height: 350px;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+}
+.workSectionInfo h2 {
+  color: #000;
+  margin: 1rem 0rem;
+}
+.workSectionBottom {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.workSectionInfo p {
+  color: #000;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.workSectionInfo img{
+  margin-left: 0;
+  width: 100px;
+}
+}
+@media (min-width: 840px){
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+  padding: 0 2rem;
+}
+.navbarMenuContainer {
+  display: none;
+}
+.navlogoContainer{
+  margin-top: 0rem;
+}
+.navBarLinksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBarLinksContainer a {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  backdrop-filter: 0;
+}
+
+/*Home*/
+.homeBannerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.homeBannerImageContainer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  max-width: 700px;
+}
+/*About*/
+.aboutSectionContainer {
+  padding: 5rem;
+  margin: 0;
+  margin-top: 7rem !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.aboutBackgroundImageContainer {
+  display: flex;
+  position: absolute;
+  left: -150px;
+  z-index: -2;
+}
+/*Work*/
+.workSectionWrapper {
+  margin-top: 15rem;
+}
+.workSectionTop p {
+  text-align: center;
+  max-width: 600px !important;
+}
+.workSectionTop h1 {
+  max-width: 700px !important;
+}
+.workSectionTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.workSectionInfo {
+  width: 290px;
+  min-height: 350px;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+}
+.workSectionInfo h2 {
+  color: #000;
+  margin: 1rem 0rem;
+}
+.workSectionBottom {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.workSectionInfo p {
+  color: #000;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.workSectionInfo img{
+  margin-left: 0;
+  width: 100px;
+}
+/*Contact*/
+.contactFormContainer input{
+  width: 50%;
+}
+/*Footer*/
+.footerWrappper {
+  padding: 0 10rem;
+  margin: 6rem 0rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10rem;
+}
+.footer-logo-container {
+  max-width: 200px;
+}
+.footerIcons {
+  display: none;
+}
+.footerIcons svg {
+  font-size: 1.5rem;
+  margin-right: 1.25rem;
+  color: #585858;
+}
+.footerSectionTwo {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.footerSectionColumns {
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+}
+}
+
+@media (min-width: 741px) and (max-width: 940px) {
+nav{
+  padding: 0 3rem;
+}
+.navBarLinksContainer a{
+  font-size: 0.5rem;
+}
+.primaryButton{
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 400;
+  width: 50px;
+}
+.aboutSectionTextContainer p, h1{
+  font-size: 1rem;
+}
+
+}
+@media (min-width: 941px) and (max-width: 1200px) {
+nav{
+  padding: 0 3rem;
+}
+.navBarLinksContainer a{
+  font-size: 0.6rem;
+}
+.primaryButton{
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 400;
+  width: 100px;
+}
+.aboutSectionTextContainer p, h1{
+  font-size: 1rem;
+}
+
+}

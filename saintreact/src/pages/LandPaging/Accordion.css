@@ -1,0 +1,11 @@
+.content {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #2d979b;
+    display: none; /* Esconde a resposta por padrão */
+  }
+
+.content.show {
+  margin-top: 1rem;
+    display: block; /* Mostra a resposta quando a classe  'show' é aplicada */
+}
