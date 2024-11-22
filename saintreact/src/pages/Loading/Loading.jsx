@@ -2,7 +2,7 @@ import styles from './Loading.module.css';
 
 function Loading() {
   return (
-    <div className={styles['loading-overlay']}>
+    <div className={styles.loadingOverlay}>
       <p>Carregando...</p>
     </div>
   );
