@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import Popup from "../../components/Popup/Popup";
 
 import styles from '../Sidebar/Sidebar.module.css';
@@ -105,31 +107,52 @@ function Sidebar() {
                 <aside className={styles.navegacao}>
                     <ul>
                         <li>
-                            <Link to="/inicio" className={location.pathname === '/' ? 'active' : ''}>
+                            <NavLink
+                                to="/inicio"
+                                className={({ isActive }) => 
+                                    `${styles.txtNavegacao} ${isActive ? styles.active : ''}`
+                                }
+                            >
                                 <i className="bi bi-house-door"></i>
-                                <span className={styles.txtNavegacao}>Inicio</span>
-                            </Link>
+                                <span>Inicio</span>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/estoque" className={location.pathname === '/estoque' ? 'active' : ''}>
+                            <NavLink
+                                to="/estoque"
+                                className={({ isActive }) => 
+                                    `${styles.txtNavegacao} ${isActive ? styles.active : ''}`
+                                }
+                            >
                                 <i className="bi bi-boxes"></i>
-                                <span className={styles.txtNavegacao}>Estoque</span>
-                            </Link>
+                                <span>Estoque</span>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/fornecedores" className={location.pathname === '/fornecedores' ? 'active' : ''}>
+                            <NavLink
+                                to="/fornecedores"
+                                className={({ isActive }) => 
+                                    `${styles.txtNavegacao} ${isActive ? styles.active : ''}`
+                                }
+                            >
                                 <i className="bi bi-person-workspace"></i>
-                                <span className={styles.txtNavegacao}>Fornecedores</span>
-                            </Link>
+                                <span>Fornecedores</span>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/colaboradores" className={location.pathname === '/colaboradores' ? 'active' : ''}>
+                            <NavLink
+                                to="/colaboradores"
+                                className={({ isActive }) => 
+                                    `${styles.txtNavegacao} ${isActive ? styles.active : ''}`
+                                }
+                            >
                                 <i className="bi bi-file-earmark-person"></i>
-                                <span className={styles.txtNavegacao}>Colaboradores</span>
-                            </Link>
+                                <span>Colaboradores</span>
+                            </NavLink>
                         </li>
                     </ul>
                 </aside>
+
 
                 {/* Modo escuro */}
                 <div className={styles.modoEscuro}>

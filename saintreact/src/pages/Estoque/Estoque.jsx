@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Estoque.module.css';
+
+import Cubo from "../Fornecedores/Cubo";
 import Swal from 'sweetalert2'; // Importando SweetAlert2
 
 const Estoque = () => {
@@ -154,7 +156,10 @@ const Estoque = () => {
 
   return (
     <div className={styles.tableContainer}>
-      <h1 className={styles.pageTitle}>Gestão de Estoque</h1>
+      <div className={styles.Title}>
+        <Cubo/>
+        <h1 className={styles.pageTitle}>Gestão de Estoque</h1>
+      </div>
       <div className={styles.actionsBar}>
         <div className={styles.searchSection}>
           <input

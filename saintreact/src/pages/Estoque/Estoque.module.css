@@ -327,6 +327,14 @@ color: white; /* Cor do texto branca */
 border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
 }
 
+.Title{
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens */
+  gap: 1.5rem; /* Espaçamento entre o cubo e o título */
+  padding-top: 2rem;
+  align-items: baseline;
+  flex-shrink: 0;
+}
 
 .pageTitle {
   text-align: center;

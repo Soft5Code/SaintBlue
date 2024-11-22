@@ -1,0 +1,134 @@
+/* Estilo geral */
+.carousel {
+  position: relative;
+  width: 100%; /* Largura total para responsividade */
+  max-width: 1000px; /* Limite máximo em telas grandes */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  border-bottom: 4px solid #4fbfc3; 
+  height: 200px;
+}
+
+/* Slides internos */
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%; /* Largura total do contêiner */
+  height: 100%; /* Altura total do contêiner */
+  object-fit: cover;
+}
+
+.carousel-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 10px; /* Distância do topo */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+  color: white;
+  padding: 8px 15px; /* Ajuste do padding */
+  border-radius: 15px; /* Bordas arredondadas */
+  font-size: 1.2rem;
+  text-align: center;
+  width: auto; /* Ajusta o tamanho conforme o texto */
+  max-width: 90%; /* Impede que o texto ocupe toda a largura */
+}
+
+
+/* Botões de navegação */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.184);
+  color: rgba(255, 255, 255, 0.693);
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Indicadores abaixo do carrossel */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px; /* Espaço entre a imagem e os indicadores */
+  position: absolute;
+  bottom: 0; /* Garantir que os indicadores fiquem abaixo da imagem */
+  left: 0;
+  width: 100%;
+  padding: 10px 0; /* Espaçamento superior e inferior dos indicadores */
+  
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  margin-bottom: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: black;
+}
+
+/* Legenda "Atalhos" */
+.carousel-caption {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/* Responsividade */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .carousel {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .carousel {
+    width: 70%;
+  }
+}

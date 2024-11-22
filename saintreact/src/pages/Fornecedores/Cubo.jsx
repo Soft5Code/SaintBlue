@@ -18,49 +18,51 @@ const Loader = () => {
 
 const StyledWrapper = styled.div`
   .spinner {
-    width: 70.4px;
-    height: 70.4px;
-    --clr: rgb(247, 197, 159);
-    --clr-alpha: rgb(247, 197, 159,.1);
-    animation: spinner 1.6s infinite ease;
-    transform-style: preserve-3d;
-  }
+  width: 2rem; /* Igual ao font-size do título */
+  height: 2rem; /* Igual ao font-size do título */
+  --clr: #4fbfc3;
+  --clr-alpha: rgba(247, 197, 159, 0.1);
+  animation: spinner 1.6s infinite ease;
+  transform-style: preserve-3d;
+  flex-shrink: 0; /* Impede que o cubo seja comprimido */
+  margin-top: 2rem; /* Ajuste fino para alinhar ao h1 */
+  margin-left: 1rem;
+}
 
   .spinner > div {
-    background-color: var(--clr-alpha);
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    border: 3.5px solid var(--clr);
-  }
+  background-color: var(--clr-alpha);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 0.2rem solid var(--clr); /* Ajustado para o novo tamanho */
+}
 
   .spinner div:nth-of-type(1) {
-    transform: translateZ(-35.2px) rotateY(180deg);
-  }
+  transform: translateZ(-1rem) rotateY(180deg);
+}
 
   .spinner div:nth-of-type(2) {
-    transform: rotateY(-270deg) translateX(50%);
-    transform-origin: top right;
-  }
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
 
-  .spinner div:nth-of-type(3) {
-    transform: rotateY(270deg) translateX(-50%);
-    transform-origin: center left;
-  }
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
 
-  .spinner div:nth-of-type(4) {
-    transform: rotateX(90deg) translateY(-50%);
-    transform-origin: top center;
-  }
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
 
-  .spinner div:nth-of-type(5) {
-    transform: rotateX(-90deg) translateY(50%);
-    transform-origin: bottom center;
-  }
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
 
-  .spinner div:nth-of-type(6) {
-    transform: translateZ(35.2px);
-  }
+.spinner div:nth-of-type(6) {
+  transform: translateZ(1rem);
 
   @keyframes spinner {
     0% {
