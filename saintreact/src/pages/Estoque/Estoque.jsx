@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Estoque.module.css';
-import Swal from 'sweetalert2'; // Importando SweetAlert2 teste
+import Swal from 'sweetalert2'; // Importando SweetAlert2
 
 const Estoque = () => {
   const [products, setProducts] = useState([
@@ -58,7 +58,6 @@ const Estoque = () => {
       [productId]: !prev[productId],
     }));
   };
-
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -95,7 +94,6 @@ const Estoque = () => {
     setNewProduct({ id: '', name: '', supplier: '', quantity: 0, price: 0, brand: '', weight: 0, condition: '', color: '', notes: '' });
     closeModal();
 
-    // Exibindo o alerta de sucesso
     Swal.fire({
       title: 'Produto Adicionado!',
       text: 'O produto foi adicionado com sucesso.',
@@ -106,6 +104,7 @@ const Estoque = () => {
   const handleFilterSelect = (filter) => {
     setSelectedFilter(filter);
     handleSort(filter);
+    setFilterDropdownOpen(false); // Fecha o menu de filtro ao selecionar
   };
 
   const handleDeleteProduct = (productId) => {
@@ -133,6 +132,25 @@ const Estoque = () => {
       closeModal();
     });
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(`.${styles.menuFiltro}`) && !event.target.closest(`.${styles.buttonFilter}`)) {
+        setFilterDropdownOpen(false);
+      }
+      if (!event.target.closest(`.${styles.dropdown}`)) {
+        setProductDropdowns({});
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+
 
   return (
     <div className={styles.tableContainer}>
@@ -184,7 +202,7 @@ const Estoque = () => {
                       className={`${styles.filterOption} ${selectedFilter === 'QTD Cresc' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('QTD Cresc')}
                     >
-                      Crescente
+                      Cresc.
                     </a>
                   </li>
                   <li>
@@ -193,7 +211,7 @@ const Estoque = () => {
                       className={`${styles.filterOption} ${selectedFilter === 'QTD Desc' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('QTD Desc')}
                     >
-                      Decrescente
+                      Decresc.
                     </a>
                   </li>
                 </ul>
@@ -219,46 +237,47 @@ const Estoque = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredProducts.map((product) => (
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.supplier}</td>
-              <td>{product.quantity}</td>
-              <td>
-                <div
-                  className={`${styles.dropdown} ${productDropdowns[product.id] ? styles.open : ''}`}
-                >
-                  <button
-                    className={styles.dropdownButton}
-                    onClick={() => toggleProductDropdown(product.id)}
+            {filteredProducts.map((product) => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.name}</td>
+                <td>{product.supplier}</td>
+                <td>{product.quantity}</td>
+                <td>
+                  <div
+                    className={`${styles.dropdown} ${productDropdowns[product.id] ? styles.open : ''}`}
                   >
-                    Menu ▼
-                  </button>
-                  {productDropdowns[product.id] && (
-                    <div className={styles.dropdownContent}>
-                      <button
-                        onClick={() => {
-                          setSelectedProduct(product);
-                          setIsModalOpen(true);
-                        }}
-                        className={styles.dropdownItem}
-                      >
-                        Editar ✎
-                      </button>
-                      <button
-                        onClick={() => handleDeleteProduct(product.id)}
-                        className={`${styles.dropdownItem} ${styles.danger}`}
-                      >
-                        Excluir 🗑️
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                    <button
+                      className={styles.dropdownButton}
+                      onClick={() => toggleProductDropdown(product.id)}
+                    >
+                      Menu ▼
+                    </button>
+                    {productDropdowns[product.id] && (
+                      <div className={styles.dropdownContent}>
+                        <button
+                          onClick={() => {
+                            setSelectedProduct(product);
+                            setIsModalOpen(true);
+                          }}
+                          className={styles.dropdownItem}
+                        >
+                          Editar ✎
+                        </button>
+                        <button
+                          onClick={() => handleDeleteProduct(product.id)}
+                          className={`${styles.dropdownItem} ${styles.danger}`}
+                        >
+                          Excluir 🗑️
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+
       </table>
 
       {isModalOpen && selectedProduct && (
