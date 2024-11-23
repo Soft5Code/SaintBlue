@@ -7,6 +7,8 @@ import Inicio from "./pages/Inicio/Inicio";
 import Estoque from "./pages/Estoque/Estoque";
 import Fornecedores from "./pages/Fornecedores/Fornecedores";
 import Colaboradores from "./pages/Colaboradores/Colaboradores";
+import  UpdateProduto  from "./pages/UpdateProduto/UpdateProduto";
+import  CreateProduto  from "./pages/CreateProduto/CreateProduto";
 import Erro from "./pages/Erro/Erro";
 
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -39,6 +41,9 @@ function RoutesApp() {
             <Route path="/estoque" element={<Estoque />} />
             <Route path="/fornecedores" element={<Fornecedores />} />
             <Route path="/colaboradores" element={<Colaboradores />} />
+            <Route path='/createProduct' element={<CreateProduto/>}/>
+            <Route path='/updateProduct/:codigo' element={<UpdateProduto/>}/>       
+
             <Route path="*" element={<Erro />} />
           </Routes>
         </div>

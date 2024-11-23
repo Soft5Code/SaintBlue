@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Estoque.module.css';
-
+import api from '../../services/api';
 import Cubo from "../Fornecedores/Cubo";
 import Swal from 'sweetalert2'; // Importando SweetAlert2
+import { useNavigate } from 'react-router-dom';
 
 const Estoque = () => {
   const [products, setProducts] = useState([
@@ -17,6 +18,38 @@ const Estoque = () => {
     { id: '009', name: 'Produto I', supplier: 'Fornecedor R', quantity: 60, price: 15, brand: 'Marca I', weight: 1.7, condition: 'Novo', color: 'Laranja', notes: 'Observações I' },
     { id: '010', name: 'Produto J', supplier: 'Fornecedor Q', quantity: 90, price: 28, brand: 'Marca J', weight: 2.8, condition: 'Novo', color: 'Azul Claro', notes: 'Observações J' },
   ]);
+  /////////////////////////////////////////////API/////////////////////////////////////////////////////////
+  const [produtos, setProdutos] = useState([])
+  const navigate = useNavigate()
+  const getProdutos = async() => {
+    try{
+        const response = await api.get('listar');
+
+        const data = response.data
+
+        setProdutos(data)
+    } catch(error){
+        console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getProdutos()
+  }, [])
+
+  async function handleDeleteProduct(codigo) {  
+    try {
+      setProdutos((prevProdutos) => prevProdutos.filter((produto) => produto.codigo !== codigo));
+      await api.delete(`deletar/${codigo}`);
+      console.log(`Produto com Código ${codigo} deletado com sucesso.`);
+    } catch (error) {
+      console.log(`Erro ao deletar produto com Código ${codigo}:`, error);
+    }
+  }
+
+
+
+ /////////////////////////////////////////////API/////////////////////////////////////////////////////////
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -119,21 +152,7 @@ const Estoque = () => {
     });
   };
 
-  const handleDeleteProduct = (productId) => {
-    Swal.fire({
-      title: 'Tem certeza?',
-      text: "Você não poderá reverter essa ação!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Sim, excluir!',
-      cancelButtonText: 'Cancelar',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setProducts(products.filter((product) => product.id !== productId));
-        Swal.fire('Excluído!', 'O produto foi excluído.', 'success');
-      }
-    });
-  };
+  
 
   return (
     <div className={styles.tableContainer}>
@@ -218,46 +237,52 @@ const Estoque = () => {
           <tr>
             <th>ID</th>
             <th>Produto</th>
-            <th>Fornecedor</th>
-            <th>QTD</th>
+            <th>Condicao</th>
+            <th>Cor</th>
+            <th>Marca</th>
+            <th>Observacoes</th>
+            <th>Peso</th>
+            <th>Preco</th>
+            <th>QT</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-          {filteredProducts.map((product) => (
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.supplier}</td>
-              <td>{product.quantity}</td>
-              <td>
-                <div className={`${styles.dropdown} ${productDropdowns[product.id] ? styles.open : ''}`}>
+            {produtos.map((produtos) => (
+              <tr key={produtos.id}>
+                <td>{produtos.codigo}</td>
+                <td>{produtos.produto}</td>
+                <td>{produtos.condicao}</td>
+                <td>{produtos.cor}</td>
+                <td>{produtos.marca}</td>
+                <td>{produtos.observacoes}</td>
+                <td>{produtos.peso}</td>
+                <td>{produtos.preco}</td>
+                <td>{produtos.quantidade}</td>
+                <td>
+                <div className={`${styles.dropdown} ${productDropdowns[produtos.id] ? styles.open : ''}`}>
                   <button
                     className={styles.dropdownButton}
-                    onClick={() => toggleProductDropdown(product.id)}
+                    onClick={() => toggleProductDropdown(produtos.id)}
                   >
                     Menu ▼
                   </button>
-                  {productDropdowns[product.id] && (
+                  {productDropdowns[produtos.id] && (
                     <div className={styles.dropdownContent}>
                       <button
-                        onClick={() => handleViewProduct(product)}
+                        onClick={() => handleViewProduct(produtos)}
                         className={styles.dropdownItem}
                       >
                         Visualizar 👁️
                       </button>
                       <button
-                        onClick={() => handleEditProduct(product)}
+                        onClick={() => navigate(`/updateProduct/${produtos.codigo}`)}
                         className={styles.dropdownItem}
-                      >
-                        Editar ✎
-                      </button>
+                      >Editar ✎</button> 
                       <button
-                        onClick={() => handleDeleteProduct(product.id)}
+                        onClick={() => handleDeleteProduct(produtos.codigo)}
                         className={`${styles.dropdownItem} ${styles.danger}`}
-                      >
-                        Excluir ❌
-                      </button>
+                      >Excluir ❌</button>    
                     </div>
                   )}
                 </div>
