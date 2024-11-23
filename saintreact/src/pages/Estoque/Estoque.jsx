@@ -86,11 +86,15 @@ const Estoque = () => {
     // setSortOrder(criteria);
   };
 
-  handleSort()
-  const toggleFilterDropdown = () => {
-    setFilterDropdownOpen((prev) => !prev);
-  };
+  // useEffect(() => {
+  //   if (selectedFilter) handleSort(selectedFilter);
+  // }, [selectedFilter]);
+  // const toggleFilterDropdown = () => {
+  //   setFilterDropdownOpen((prev) => !prev);
+  // };
 
+  console.log(handleSort)
+  
   const toggleProductDropdown = (productId) => {
     setProductDropdowns((prev) => ({
       ...prev,
@@ -103,9 +107,10 @@ const Estoque = () => {
   };
 
   const handleFilterSelect = (filter) => {
-    setSelectedFilter(filter);
-    setFilterDropdownOpen(false); // Fecha o dropdown após a seleção
-  };
+  setSelectedFilter(filter); // Isso automaticamente disparará o useEffect para ordenar
+  setFilterDropdownOpen(false); // Fecha o dropdown
+};
+
 
   const handleEditProduct = (product) => {
     setSelectedProduct(product);
@@ -176,7 +181,7 @@ const Estoque = () => {
           <button
             className={styles.buttonFilter}
             id="filter"
-            onClick={toggleFilterDropdown}
+            // onClick={toggleFilterDropdown}
           >
             <i className="bi bi-funnel-fill"></i> Filtro
           </button>

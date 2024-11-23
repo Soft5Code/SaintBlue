@@ -64,7 +64,7 @@ function Login() {
                             <h1>Bem-vindo(a)</h1>
                             <p>Já possui uma conta?</p>
                             <button className="hidden" onClick={handleLoginClick}>Fazer login</button>
-                            <Link to="/">
+                            <Link to="/SaintBlue">
                                 <button className="hidden2" id="acessohome">Home</button>
                             </Link>
                         </div>
