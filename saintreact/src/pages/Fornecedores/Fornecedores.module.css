@@ -17,9 +17,76 @@
     display: flex;
 }
 
+/*  ==================================  CARDS  =========================  */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 20px auto;
+    justify-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.caixa .valor {
+    font-size: 1.8rem;
+    margin-top: 12px;
+}
+
+.caixa:hover {
+    background-color: #89e4e7;
+    color: rgb(69, 72, 72);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+    filter: brightness(1.1);
+}
+
+.caixa .titulo {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.caixa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    width: 90%;
+}
 
 
 
+.video {
+    position: relative;
+    overflow: hidden;
+    margin: 5px auto; /* Cria uma distância entre o carrossel e o vídeo */
+    width: 90%; /* Ajusta a largura para 90% do contêiner */
+    height: auto; /* Mantém a altura automática */
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    border-radius: 15px; /* Borda arredondada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra ao redor do vídeo */
+  }
+  
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .videoTitle {
+    margin: 3rem auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px; /* Espaço entre o título e o vídeo */
+  }
 
 @media (min-width: 1024px){
     .geral {
@@ -39,6 +106,54 @@
         justify-content: center;
         align-items: center;
     }
+
+    .cards {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        height: 6.5rem;
+        width: 95%;
+        margin-left: 25px;
+    }
+    
+    .caixa {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 6rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        width: 90%;
+    }
+    
+    .caixa .titulo {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 7px;
+    }
+    
+    .caixa .valor {
+        width: 50%;
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+        margin-bottom: 14px;
+    }
+    
+    .caixa:hover {
+        background-color: #89e4e7;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: translateY(-15px);
+        filter: brightness(1.1);
+    }
+    .video {
+        padding-bottom: 40%; /* Proporção ainda menor */
+        max-width: 800px; /* Limite de largura */
+      }
 }
 
 
@@ -52,5 +167,8 @@
         margin-left: 0;
         padding: 10px;
     }
-    
+    .video {
+        padding-bottom: 50%; /* Proporção reduzida */
+        max-width: 600px; /* Limite de largura */
+      }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './Fornecedores.module.css';
 import Carregador from "./Carregador";
+import Contact from "./Contact";
 import './Carousel.css';
 
 const Fornecedores = () => {
@@ -46,6 +47,21 @@ const Fornecedores = () => {
         </div>
       </div>
 
+      <div className={styles.cards}>
+        <div className={styles.caixa} id="caixa_faturamento">
+          <h2 className={styles.titulo}>Faturamento 2024</h2>
+          <p className={styles.valor}>R$ 10.000</p>
+        </div>
+        <div className={styles.caixa} id="caixa_venda">
+          <h2 className={styles.titulo}>Vendas Hoje</h2>
+          <p className={styles.valor}>R$ 5.000</p>
+        </div>
+        <div className={styles.caixa} id="caixa_estoque">
+          <h2 className={styles.titulo}>Produtos em Estoque</h2>
+          <p className={styles.valor}>120 unid</p>
+        </div>
+      </div>
+
       {/* Carrossel */}
       <div className="carousel">
         <div
@@ -84,6 +100,27 @@ const Fornecedores = () => {
       <div className="carousel-caption">
         <p>Atalhos</p>
       </div>
+      
+      {/* Título acima do vídeo */}
+      <h2 className={styles.videoTitle}>Dicas de Gestão de Vendas e Estoque</h2>
+
+      {/* Vídeo do YouTube */}
+      <div className={styles.video}>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/_aQf-tKNrTs?autoplay=1&mute=1&loop=1&playlist=_aQf-tKNrTs"
+          title="YouTube Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <Contact/>
     </main>
   );
 };
