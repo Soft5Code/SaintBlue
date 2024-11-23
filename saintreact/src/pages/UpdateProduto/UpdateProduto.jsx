@@ -31,3 +31,5 @@ export function UpdateProduto() {
     </div>
   );
 }
+
+export default UpdateProduto

@@ -37,3 +37,5 @@ export function CreateProduto() {
 
     )
 }
+
+export default CreateProduto

@@ -225,9 +225,9 @@ const Estoque = () => {
           )}
         </div>
         <div className={styles.addSection}>
-          <button className={styles.buttonPrimary} onClick={() => setIsAddModalOpen(true)}>
-            Cadastrar
-          </button>
+          <button className={styles.buttonPrimary} onClick={() => navigate('/createProduct')}>Cadastrar</button>
+            
+          
         </div>
       </div>
 
