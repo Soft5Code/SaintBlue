@@ -14,7 +14,7 @@ import "./transitions.css";
 
 function Layout({ children }) {
   const location = useLocation();
-  const hideSidebarRoutes = ["/login", "/"];
+  const hideSidebarRoutes = ["/login", "/SaintBlue"];
   const showSidebar = !hideSidebarRoutes.includes(location.pathname.toLowerCase());
 
   return (
