@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Estoque.module.css';
 import api from '../../services/api';
-import Cubo from "../Fornecedores/Cubo";
+import Cubo from "../Inicio/Cubo";
 import Swal from 'sweetalert2'; // Importando SweetAlert2
 import { useNavigate } from 'react-router-dom';
 

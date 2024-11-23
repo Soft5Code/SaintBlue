@@ -115,7 +115,7 @@
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
-  color: #555;
+  color: #236566;
 }
 
 
@@ -124,6 +124,9 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .carousel {
     width: 80%;
+  }
+  .carousel-caption {
+    font-size: 1.5rem;
   }
 }
 

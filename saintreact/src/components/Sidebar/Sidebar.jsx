@@ -128,6 +128,7 @@ function Sidebar() {
                                 <span>Estoque</span>
                             </NavLink>
                         </li>
+                        {/*
                         <li>
                             <NavLink
                                 to="/fornecedores"
@@ -150,6 +151,7 @@ function Sidebar() {
                                 <span>Colaboradores</span>
                             </NavLink>
                         </li>
+                        */}
                     </ul>
                 </aside>
 

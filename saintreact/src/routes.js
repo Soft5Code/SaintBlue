@@ -5,8 +5,6 @@ import Land from "./pages/LandPaging/Land";
 import Login from "./components/Login/login";
 import Inicio from "./pages/Inicio/Inicio";
 import Estoque from "./pages/Estoque/Estoque";
-import Fornecedores from "./pages/Fornecedores/Fornecedores";
-import Colaboradores from "./pages/Colaboradores/Colaboradores";
 import  UpdateProduto  from "./pages/UpdateProduto/UpdateProduto";
 import  CreateProduto  from "./pages/CreateProduto/CreateProduto";
 import Erro from "./pages/Erro/Erro";
@@ -39,8 +37,6 @@ function RoutesApp() {
             <Route path="/login" element={<Login />} />
             <Route path="/inicio" element={<Inicio />} />
             <Route path="/estoque" element={<Estoque />} />
-            <Route path="/fornecedores" element={<Fornecedores />} />
-            <Route path="/colaboradores" element={<Colaboradores />} />
             <Route path='/createProduct' element={<CreateProduto/>}/>
             <Route path='/updateProduct/:codigo' element={<UpdateProduto/>}/>       
 

@@ -105,6 +105,29 @@ const StyledWrapper = styled.div`
     left: auto;
     right: 15%;
     animation-delay: .3s;
-  }`;
+  }
+
+  
+  @media screen and (min-width: 768px) and (max-width: 1024px){
+    .wrapper {
+      width: 150px;
+      height: 50px;
+      position: relative;
+      transform: translate(40px, 40px);
+    }
+    .circle {
+    width: 25px;
+    height: 25px;
+    }
+  }
+  @media (min-width: 1024px){
+  .wrapper {
+      width: 150px;
+      height: 50px;
+      position: relative;
+      transform: translate(60px, 60px);
+    }
+  }
+  `;
 
 export default Loader;
