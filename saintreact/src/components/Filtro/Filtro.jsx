@@ -9,8 +9,8 @@ function Filtro() {
         <div class="buscar">
             <div class="search_box">
                 <input class="search_txt" type="text" name="#" placeholder="Busca Rápida"/>
-                <a class="search_btn" href="#">
-                    <i class="bi bi-search"></i> </a>
+                <Link class="search_btn" href="#">
+                    <i class="bi bi-search"></i> </Link>
             </div>
             <button type="button" class="button" id="button_cadastrar">
                 <span class="button__text">Cadastrar</span>
@@ -155,10 +155,10 @@ function Filtro() {
                 <i id="filter" class="bi bi-funnel-fill" onclick="clickMenu()"></i>
                 <div class="menu_filtro" id="menuFiltro">
                     <ul>
-                        <li><a href="#" id="codigoOption" onclick="selectOption(this)">Código</a></li>
-                        <li><a href="#" id="produtoOption" onclick="selectOption(this)">Produto</a></li>
-                        <li><a href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</a></li>
-                        <li><a href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</a></li>
+                        <li><Link href="#" id="codigoOption" onclick="selectOption(this)">Código</Link></li>
+                        <li><Link href="#" id="produtoOption" onclick="selectOption(this)">Produto</Link></li>
+                        <li><Link href="#" id="fornecedorOption" onclick="selectOption(this)">Fornecedor</Link></li>
+                        <li><Link href="#" id="quantidadeOption" onclick="selectOption(this)">Quantidade</Link></li>
                     </ul>
                 </div>
             </div>

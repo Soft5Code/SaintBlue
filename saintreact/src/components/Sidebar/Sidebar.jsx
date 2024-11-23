@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 import Popup from "../../components/Popup/Popup";
@@ -13,8 +13,7 @@ function Sidebar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // Hook useLocation para obter a localização atual da URL
-    const location = useLocation(); // Agora você está usando o useLocation aqui no componente
+   
 
     // Função para abrir o pop-up
     const openPopUp = () => setIsPopUpOpen(true);

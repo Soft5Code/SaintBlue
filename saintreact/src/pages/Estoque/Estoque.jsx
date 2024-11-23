@@ -4,6 +4,7 @@ import api from '../../services/api';
 import Cubo from "../Inicio/Cubo";
 import Swal from 'sweetalert2'; // Importando SweetAlert2
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Estoque = () => {
   const [products, setProducts] = useState([
@@ -57,7 +58,7 @@ const Estoque = () => {
   const [newProduct, setNewProduct] = useState({ id: '', name: '', supplier: '', quantity: 0, price: 0, brand: '', weight: 0, condition: '', color: '', notes: '' });
   const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
   const [productDropdowns, setProductDropdowns] = useState({});
-  const [sortOrder, setSortOrder] = useState('');
+  // const [sortOrder, setSortOrder] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('');
   
@@ -82,9 +83,10 @@ const Estoque = () => {
         sortedProducts = [...products];
     }
     setProducts(sortedProducts);
-    setSortOrder(criteria);
+    // setSortOrder(criteria);
   };
 
+  handleSort()
   const toggleFilterDropdown = () => {
     setFilterDropdownOpen((prev) => !prev);
   };
@@ -110,10 +112,10 @@ const Estoque = () => {
     setIsModalOpen(true); // Abre o modal de edição
   };
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // const filteredProducts = products.filter((product) =>
+  //   product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //   product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   const closeModal = () => {
     setSelectedProduct(null);
@@ -184,40 +186,39 @@ const Estoque = () => {
               <div className={styles.filtro}>
                 <ul>
                   <li>
-                    <a
-                      href="#"
+                    <Link
                       className={`${styles.filterOption} ${selectedFilter === 'A-Z' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('A-Z')}
                     >
                       A-Z
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      
                       className={`${styles.filterOption} ${selectedFilter === 'Z-A' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('Z-A')}
                     >
                       Z-A
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      
                       className={`${styles.filterOption} ${selectedFilter === 'QTD Cresc' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('QTD Cresc')}
                     >
                       Cresc.
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      
                       className={`${styles.filterOption} ${selectedFilter === 'QTD Desc' ? styles.selected : ''}`}
                       onClick={() => handleFilterSelect('QTD Desc')}
                     >
                       Decresc.
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

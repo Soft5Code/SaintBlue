@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CSSTransition } from "react-transition-group";
 
 import "./modalTransitions.css";
@@ -69,7 +69,7 @@ function Popup({
     // Carrega os dados do usuário quando o popup abre
     React.useEffect(() => {
         if (isOpen) fetchUserDetails();
-    }, [isOpen]);
+    }, );
 
     if (!isOpen) return null;
 
