@@ -30,16 +30,16 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-        working-directory: ./SaintBlue
+        working-directory: ./saintreact
         
       - name: Build project
         run: npm run build
-        working-directory: ./SaintBlue
+        working-directory: ./saintreact
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./SaintBlue/build
+          path: ./saintreact/build
           
   deploy:
     environment:
