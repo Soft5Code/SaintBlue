@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Estoque.module.css';
 
 import Cubo from "../Fornecedores/Cubo";
@@ -27,6 +27,8 @@ const Estoque = () => {
   const [sortOrder, setSortOrder] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('');
+  
+  const filterRef = useRef(null); // Definindo o filtroRef aqui
 
   const handleSort = (criteria) => {
     let sortedProducts;
@@ -60,29 +62,25 @@ const Estoque = () => {
       [productId]: !prev[productId],
     }));
   };
+
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredProducts = products
-    .filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .sort((a, b) => {
-      switch (sortOrder) {
-        case 'A-Z':
-          return a.name.localeCompare(b.name);
-        case 'Z-A':
-          return b.name.localeCompare(a.name);
-        case 'QTD Cresc':
-          return a.quantity - b.quantity;
-        case 'QTD Desc':
-          return b.quantity - a.quantity;
-        default:
-          return 0;
-      }
-    });
+  const handleFilterSelect = (filter) => {
+    setSelectedFilter(filter);
+    setFilterDropdownOpen(false); // Fecha o dropdown após a seleção
+  };
+
+  const handleEditProduct = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true); // Abre o modal de edição
+  };
+
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const closeModal = () => {
     setSelectedProduct(null);
@@ -103,10 +101,22 @@ const Estoque = () => {
     });
   };
 
-  const handleFilterSelect = (filter) => {
-    setSelectedFilter(filter);
-    handleSort(filter);
-    setFilterDropdownOpen(false); // Fecha o menu de filtro ao selecionar
+  const handleViewProduct = (product) => {
+    Swal.fire({
+      title: 'Detalhes do Produto',
+      html: `
+        <p><strong>Nome:</strong> ${product.name}</p>
+        <p><strong>Fornecedor:</strong> ${product.supplier}</p>
+        <p><strong>Quantidade:</strong> ${product.quantity}</p>
+        <p><strong>Preço:</strong> R$ ${product.price}</p>
+        <p><strong>Marca:</strong> ${product.brand}</p>
+        <p><strong>Peso:</strong> ${product.weight} kg</p>
+        <p><strong>Condição:</strong> ${product.condition}</p>
+        <p><strong>Cor:</strong> ${product.color}</p>
+        <p><strong>Observações:</strong> ${product.notes}</p>
+      `,
+      icon: 'info',
+    });
   };
 
   const handleDeleteProduct = (productId) => {
@@ -125,39 +135,10 @@ const Estoque = () => {
     });
   };
 
-  const handleEditProduct = () => {
-    Swal.fire({
-      title: 'Produto editado!',
-      text: 'As alterações foram salvas com sucesso.',
-      icon: 'success',
-    }).then(() => {
-      closeModal();
-    });
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(`.${styles.menuFiltro}`) && !event.target.closest(`.${styles.buttonFilter}`)) {
-        setFilterDropdownOpen(false);
-      }
-      if (!event.target.closest(`.${styles.dropdown}`)) {
-        setProductDropdowns({});
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
-
-
   return (
     <div className={styles.tableContainer}>
       <div className={styles.Title}>
-        <Cubo/>
+        <Cubo />
         <h1 className={styles.pageTitle}>Gestão de Estoque</h1>
       </div>
       <div className={styles.actionsBar}>
@@ -170,7 +151,7 @@ const Estoque = () => {
             onChange={handleSearch}
           />
         </div>
-        <div className={styles.filterSection}>
+        <div className={styles.filterSection} ref={filterRef}>
           <button
             className={styles.buttonFilter}
             id="filter"
@@ -231,6 +212,7 @@ const Estoque = () => {
         </div>
       </div>
 
+      {/* Tabela de produtos */}
       <table className={styles.productTable}>
         <thead>
           <tr>
@@ -242,47 +224,47 @@ const Estoque = () => {
           </tr>
         </thead>
         <tbody>
-            {filteredProducts.map((product) => (
-              <tr key={product.id}>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>{product.supplier}</td>
-                <td>{product.quantity}</td>
-                <td>
-                  <div
-                    className={`${styles.dropdown} ${productDropdowns[product.id] ? styles.open : ''}`}
+          {filteredProducts.map((product) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.name}</td>
+              <td>{product.supplier}</td>
+              <td>{product.quantity}</td>
+              <td>
+                <div className={`${styles.dropdown} ${productDropdowns[product.id] ? styles.open : ''}`}>
+                  <button
+                    className={styles.dropdownButton}
+                    onClick={() => toggleProductDropdown(product.id)}
                   >
-                    <button
-                      className={styles.dropdownButton}
-                      onClick={() => toggleProductDropdown(product.id)}
-                    >
-                      Menu ▼
-                    </button>
-                    {productDropdowns[product.id] && (
-                      <div className={styles.dropdownContent}>
-                        <button
-                          onClick={() => {
-                            setSelectedProduct(product);
-                            setIsModalOpen(true);
-                          }}
-                          className={styles.dropdownItem}
-                        >
-                          Editar ✎
-                        </button>
-                        <button
-                          onClick={() => handleDeleteProduct(product.id)}
-                          className={`${styles.dropdownItem} ${styles.danger}`}
-                        >
-                          Excluir 🗑️
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-
+                    Menu ▼
+                  </button>
+                  {productDropdowns[product.id] && (
+                    <div className={styles.dropdownContent}>
+                      <button
+                        onClick={() => handleViewProduct(product)}
+                        className={styles.dropdownItem}
+                      >
+                        Visualizar 👁️
+                      </button>
+                      <button
+                        onClick={() => handleEditProduct(product)}
+                        className={styles.dropdownItem}
+                      >
+                        Editar ✎
+                      </button>
+                      <button
+                        onClick={() => handleDeleteProduct(product.id)}
+                        className={`${styles.dropdownItem} ${styles.danger}`}
+                      >
+                        Excluir ❌
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
 
       {isModalOpen && selectedProduct && (
