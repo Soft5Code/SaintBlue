@@ -254,12 +254,12 @@ const Estoque = () => {
           </tr>
         </thead>
         <tbody>
-  {filteredProducts.map((product) => (
-    <tr key={product.id}>
-      <td>{product.id}</td>
-      <td>{product.name}</td>
-      <td>{product.supplier}</td>
-      <td>{product.quantity}</td>
+  {produtos.map((produtos) => (
+    <tr key={produtos.id}>
+      <td>{produtos.codigo}</td>
+      <td>{produtos.produto}</td>
+      <td>{produtos.marca}</td>
+      <td>{produtos.quantidade}</td>
       <td>
         <div className={styles.iconContainer}>
           <button
