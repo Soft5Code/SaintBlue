@@ -25,7 +25,7 @@ const Estoque = () => {
   const navigate = useNavigate()
   const getProdutos = async() => {
     try{
-        const response = await api.get('listar');
+        const response = await api.get('/api/listar');
 
         const data = response.data
 
