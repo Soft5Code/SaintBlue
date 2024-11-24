@@ -137,6 +137,23 @@
 }
 
 
+.Title{
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens /
+  gap: 1.5rem; / Espaçamento entre o cubo e o título */
+  padding-top: 2rem;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 3rem;
+  color: #2d979b;
+  margin-left: 1.5rem; 
+}
+
 
 .filtro {
   position: relative;
@@ -199,7 +216,6 @@
     padding-right: 1rem;
     height: 100vh;
     width: 100%;
-
   }
 
   .productTable thead th {
@@ -313,6 +329,8 @@
       position: relative;
       left: 0; /* Removido o deslocamento */
   }
+
+
 
   .menuFiltro {
     margin-top: 4.5px;
