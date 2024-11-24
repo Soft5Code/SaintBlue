@@ -14,7 +14,7 @@ import "./transitions.css";
 
 function Layout({ children }) {
   const location = useLocation();
-  const hideSidebarRoutes = ["/login", "/SaintBlue"];
+  const hideSidebarRoutes = ["/login", "/"];
   const showSidebar = !hideSidebarRoutes.includes(location.pathname.toLowerCase());
 
   return (
@@ -33,7 +33,7 @@ function RoutesApp() {
       <CSSTransition key={location.key} timeout={300} classNames="fade">
         <div className="page-container">
           <Routes location={location}>
-            <Route path="/SaintBlue" element={<Land />} />
+            <Route path="/" element={<Land />} />
             <Route path="/login" element={<Login />} />
             <Route path="/inicio" element={<Inicio />} />
             <Route path="/estoque" element={<Estoque />} />
