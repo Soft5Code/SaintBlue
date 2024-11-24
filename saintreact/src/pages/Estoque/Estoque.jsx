@@ -261,7 +261,7 @@ const Estoque = () => {
           <tr>
             <th>ID</th>
             <th>Produto</th>
-            <th>Fornecedor</th>
+            <th>Marca</th>
             <th>QTD</th>
             <th>Ações</th>
           </tr>
