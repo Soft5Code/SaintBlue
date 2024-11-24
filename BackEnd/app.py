@@ -273,6 +273,49 @@ def listar_produtos():
         return jsonify(produtos_lista)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+@app.route('/estoque/produto/<string:codigo>', methods=['GET'])
+def buscar_produto(codigo):
+    try:
+        # Conexão com o banco de dados
+        conn = get_db_connection()
+        if conn is None:
+            return jsonify({"error": "Não foi possível conectar ao banco de dados"}), 500
+
+        cursor = conn.cursor()
+
+        # Consulta SQL para buscar o produto pelo código
+        query = """
+            SELECT produto, preco, marca, cor, codigo, quantidade, condicao, peso, observacoes
+            FROM estoque
+            WHERE codigo = %s
+        """
+        cursor.execute(query, (codigo,))
+        produto = cursor.fetchone()
+
+        # Fechar a conexão com o banco
+        cursor.close()
+        conn.close()
+
+        # Se o produto não for encontrado
+        if not produto:
+            return jsonify({"error": "Produto não encontrado"}), 404
+
+        # Retornar os dados do produto como JSON
+        produto_data = {
+            "produto": produto[0],
+            "preco": produto[1],
+            "marca": produto[2],
+            "cor": produto[3],
+            "codigo": produto[4],
+            "quantidade": produto[5],
+            "condicao": produto[6],
+            "peso": produto[7],
+            "observacoes": produto[8]
+        }
+        return jsonify({"produto": produto_data}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
