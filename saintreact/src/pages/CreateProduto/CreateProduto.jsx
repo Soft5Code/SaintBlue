@@ -1,41 +1,51 @@
+import Swal from 'sweetalert2';
 import { Form } from "../../components/Form/form";
 import { useNavigate } from "react-router-dom";
 import api from '../../services/api';
 
-
-
 export function CreateProduto() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function handleCreateProduct(data) {
-    try {
-        // Espera pela resposta da API
-        const response = await api.post('cadastrar', data);
+        try {
+            // Envia os dados para a API
+            const response = await api.post('cadastrar', data);
 
-        // Verifica se a resposta foi bem-sucedida (status 200)
-        if (response.status === 200) {
-            alert('Criado com sucesso');
-            navigate('/estoque');  // Redireciona para a página de estoque
-        } else {
-            // Caso a resposta da API não seja bem-sucedida
-            alert('Erro ao criar o produto. Tente novamente.');
+            // Debug da resposta da API
+            console.log('Resposta da API:', response);
+
+            // Verifica se o status é 201
+            if (response.status === 201) {
+                // Exibe o alerta de sucesso
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Produto criado com sucesso!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    navigate('/estoque'); // Redireciona após fechar o alerta
+                });
+            } else {
+                // Exibe um alerta genérico de erro
+                Swal.fire({
+                    title: 'Erro',
+                    text: response.data?.message || 'Erro ao criar o produto. Tente novamente.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao criar produto:', error);
+            
         }
-
-    } catch (error) {
-        console.error('Erro ao criar produto:', error);
-        // Exibe uma mensagem genérica de erro
-        alert('Não foi possível criar o produto. Tente novamente.');
     }
-}
 
     return (
-
         <div>
             <Form title={'Cadastrar Produto'} textButton={'Cadastrar'} onAction={handleCreateProduct} />
         </div>
-
-    )
+    );
 }
 
-export default CreateProduto
+export default CreateProduto;

@@ -39,15 +39,45 @@ const Estoque = () => {
     getProdutos()
   }, [])
 
-  async function handleDeleteProduct(codigo) {  
-    try {
-      setProdutos((prevProdutos) => prevProdutos.filter((produto) => produto.codigo !== codigo));
-      await api.delete(`deletar/${codigo}`);
-      console.log(`Produto com Código ${codigo} deletado com sucesso.`);
-    } catch (error) {
-      console.log(`Erro ao deletar produto com Código ${codigo}:`, error);
-    }
-  }
+  async function handleDeleteProduct(codigo) {
+    // Exibe um alerta de confirmação
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: 'Essa ação não pode ser desfeita!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sim, deletar!',
+        cancelButtonText: 'Cancelar',
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            try {
+                // Remove localmente o produto antes de chamar a API
+                setProdutos((prevProdutos) => prevProdutos.filter((produto) => produto.codigo !== codigo));
+
+                // Chama a API para deletar
+                await api.delete(`deletar/${codigo}`);
+
+                // Exibe alerta de sucesso
+                Swal.fire({
+                    title: 'Deletado!',
+                    text: `Produto com Código ${codigo} foi deletado com sucesso.`,
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                });
+            } catch (error) {
+                console.error(`Erro ao deletar produto com Código ${codigo}:`, error);
+
+                // Exibe alerta de erro
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Não foi possível deletar o produto. Tente novamente.',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                });
+            }
+        }
+    });
+}
 
   /////////////////////////////////////////////API/////////////////////////////////////////////////////////
 
