@@ -5,21 +5,22 @@ img {
 }
 
 .bodyLand {
-  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
-  
 }
 
 .bodyLand {
   background-color: #f6f6f6;
 }
+
+
 .navBarHome{
   padding: 0 2rem;
   position: fixed;
-  top: 0;       /* Alinha o menu ao topo */
-  left: 0;      /* Alinha o menu à esquerda */
-  width: 100%;  /* Faz com que o menu ocupe a largura completa da tela */
-  z-index: 1;   /* Garante que o menu fique acima de outros elementos */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +83,15 @@ img {
   transition: 0.2s;
   width: 150px;
 }
+
+.primaryButton,
+.secondaryButton {
+  width: auto;
+  max-width: 90%;
+  padding: 0.8rem 1.2rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
 .navbar-cart-icon {
   font-size: 1.15rem;
 }
@@ -97,13 +107,14 @@ img {
 
 }
 .homeBannerContainer {
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
   margin-top: 5rem;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .homeBannerImageContainer {
   display: none;
@@ -115,8 +126,14 @@ img {
   flex: 0.9;
   margin-left: 0rem;
   margin-right: 1rem;
-  overflow: hidden; /* Garante que a imagem não saia do container */
+  overflow: hidden;
   border-radius: 45%;
+}
+
+.homeImageSection,
+.aboutSectionImageContainer {
+  max-width: 100%;
+  height: auto; 
 }
 
 .homeImageSection {
@@ -124,7 +141,7 @@ img {
   margin-top: 2rem;
   max-width: 700px;
   flex: 1;
-  overflow: hidden; /* Garante que a imagem não saia do container */
+  overflow: hidden;
   border-radius: 10%;
 }
 .homeTextSection {
@@ -214,7 +231,8 @@ img {
   background-color: #2d5d5f;
 }
 .aboutSectionContainer {
-  padding: 0;
+  padding: 2rem 1rem;
+  flex-wrap: wrap; 
   margin: 0;
   margin-top: 5rem !important;
   display: flex;
@@ -230,7 +248,7 @@ img {
   flex: 0.9;
   margin-left: 0rem;
   margin-right: 1rem;
-  overflow: hidden; /* Garante que a imagem não saia do container */
+  overflow: hidden;
   border-radius: 45%;
 }
 
@@ -324,9 +342,7 @@ img {
   margin-right: 1.25rem;
   color: #585858;
 }
-/* .footer-section-one {
-  border: 2px solid blue;
-} */
+
 .footerSectionTwo {
   flex: 1;
   display: flex;
@@ -352,12 +368,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 350px;      /* Define uma largura fixa */
-  height: 450px;     /* Define uma altura fixa */
+  width: 350px;
+  height: 450px;
   border-radius: 2rem;
   flex-direction: column;
   text-align: center;
-  overflow: hidden;  /* Oculta o conteúdo que ultrapassar o limite do container */
+  overflow: hidden;
 }
 .testimonialResponsive{
   display: flex;
@@ -471,12 +487,12 @@ pointer-events: none;
 }
 .textC {
 position: absolute;
-top: 70%; /* Centraliza verticalmente */
-left: 50%; /* Centraliza horizontalmente */
-transform: translate(-50%, -50%); /* Alinha no centro */
-color: white; /* Ajuste a cor do texto conforme necessário */
-text-align: center; /* Fundo semi-transparente */
-padding: 10px; /* Ajuste conforme necessário */
+top: 70%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+text-align: center;
+padding: 10px;
 border-radius: 5px;
 display: flex;
 justify-content: space-between;
@@ -561,6 +577,7 @@ justify-content: center;
   margin-left: 0;
   width: 100px;
 }
+
 }
 @media (min-width: 840px){
 nav{
@@ -582,10 +599,10 @@ nav{
   justify-content: center;
 }
 .navBarLinksContainer a {
-  margin-right: 3rem;
+  margin-right: 1rem;
   text-decoration: none;
   color: black;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   font-weight: 600;
   background: none;
   backdrop-filter: 0;
