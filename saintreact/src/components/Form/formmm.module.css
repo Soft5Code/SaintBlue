@@ -97,6 +97,10 @@
     top: 0;
 }
 
+.title{
+    color: #1d5c5f;
+}
+
 /* Responsividade para telas maiores */
 @media (min-width: 568px) {
     .formmm {
@@ -153,6 +157,42 @@
     }
 }
 
+@media  (min-width: 768px){
+    .formmm {
+        margin-left: 13rem;
+        position: relative;
+        top: -2rem;
+        right: 1rem;
+
+    }
+
+}
+    
+@media (min-width: 900px) {
+    .formmm {
+        padding: 0 1rem;
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* Divide o formulário em 2 colunas */
+        gap: 1.5rem;  /* Aumenta o espaço entre as colunas do formulário */
+        max-width: 800px;  /* Limita a largura máxima */
+        width: 100%;  /* Garante que ocupe 100% da largura disponível até o limite */
+        box-sizing: border-box;  /* Garante que padding não aumente a largura total */
+        margin-bottom: 2rem;  /* Adiciona espaço entre o formulário e o botão */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        position: relative;
+        left: 17.2rem;
+    }
+
+
+}
+
+
+
+
 @media (min-width: 1366px) {
     .formmm {
         padding: 0 1rem;
@@ -169,33 +209,24 @@
         justify-content: center;
         justify-items: center;
         position: relative;
-        left: 8rem;
+        left: 21rem;
     }
 
 
 }
 
 
-@media (min-width: 1440px) {
-    .formmm {
-        padding: 0 1rem;
-        padding-top: 4rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);  /* Divide o formulário em 2 colunas */
-        gap: 1.5rem;  /* Aumenta o espaço entre as colunas do formulário */
-        max-width: 800px;  /* Limita a largura máxima */
-        width: 100%;  /* Garante que ocupe 100% da largura disponível até o limite */
-        box-sizing: border-box;  /* Garante que padding não aumente a largura total */
-        margin-bottom: 2rem;  /* Adiciona espaço entre o formulário e o botão */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-        position: relative;
-        left: 6rem;
+@media (min-width: 1440px){
+    .formmm{
+    position: relative;
+    left: 22rem;
+
+
+
     }
 
-
 }
+
+
 
 

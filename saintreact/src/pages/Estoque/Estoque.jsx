@@ -39,45 +39,45 @@ const Estoque = () => {
     getProdutos()
   }, [])
 
-  async function handleDeleteProduct(codigo) {
-    // Exibe um alerta de confirmação
-    Swal.fire({
-        title: 'Tem certeza?',
-        text: 'Essa ação não pode ser desfeita!',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Sim, deletar!',
-        cancelButtonText: 'Cancelar',
-    }).then(async (result) => {
-        if (result.isConfirmed) {
-            try {
-                // Remove localmente o produto antes de chamar a API
-                setProdutos((prevProdutos) => prevProdutos.filter((produto) => produto.codigo !== codigo));
+    async function handleDeleteProduct(codigo) {
+        // Exibe um alerta de confirmação
+        Swal.fire({
+            title: 'Tem certeza?',
+            text: 'Essa ação não pode ser desfeita!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim, deletar!',
+            cancelButtonText: 'Cancelar',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    // Remove localmente o produto antes de chamar a API
+                    setProdutos((prevProdutos) => prevProdutos.filter((produto) => produto.codigo !== codigo));
 
-                // Chama a API para deletar
-                await api.delete(`deletar/${codigo}`);
+                    // Chama a API para deletar
+                    await api.delete(`deletar/${codigo}`);
 
-                // Exibe alerta de sucesso
-                Swal.fire({
-                    title: 'Deletado!',
-                    text: `Produto com Código ${codigo} foi deletado com sucesso.`,
-                    icon: 'success',
-                    confirmButtonText: 'OK',
-                });
-            } catch (error) {
-                console.error(`Erro ao deletar produto com Código ${codigo}:`, error);
+                    // Exibe alerta de sucesso
+                    Swal.fire({
+                        title: 'Deletado!',
+                        text: `Produto com Código ${codigo} foi deletado com sucesso.`,
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                    });
+                } catch (error) {
+                    console.error(`Erro ao deletar produto com Código ${codigo}:`, error);
 
-                // Exibe alerta de erro
-                Swal.fire({
-                    title: 'Erro!',
-                    text: 'Não foi possível deletar o produto. Tente novamente.',
-                    icon: 'error',
-                    confirmButtonText: 'OK',
-                });
+                    // Exibe alerta de erro
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Não foi possível deletar o produto. Tente novamente.',
+                        icon: 'error',
+                        confirmButtonText: 'OK',
+                    });
+                }
             }
-        }
-    });
-}
+        });
+    }
 
   /////////////////////////////////////////////API/////////////////////////////////////////////////////////
 
@@ -185,17 +185,7 @@ const Estoque = () => {
     });
   };
 
-  // Fechar o filtro ao clicar fora
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (filterRef.current && !filterRef.current.contains(event.target)) {
-        setFilterDropdownOpen(false);
-      }
-    };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
   
 
   return (
@@ -215,14 +205,7 @@ const Estoque = () => {
           />
         </div>
         <div className={styles.filterSection} ref={filterRef}>
-  <button
-    className={styles.buttonFilter}
-    id="filter"
-    onClick={toggleFilterDropdown}
-  >
-    <i className="bi bi-funnel-fill"></i> Filtro
-  </button>
-
+  
   {filterDropdownOpen && (
     <div className={styles.menuFiltro}>
       <div className={styles.filtro}>
