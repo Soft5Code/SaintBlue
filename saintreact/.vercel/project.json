@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_vykY9bDfucdXv4tXbDOvj62iicFb",
+  "orgId": "team_hHX0QLMYhaCyyqpN8KRN3tf9",
+  "settings": {
+    "createdAt": 1732417552113,
+    "framework": "create-react-app",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": "saintreact",
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}
