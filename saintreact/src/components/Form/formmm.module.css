@@ -1,52 +1,87 @@
+
+/* Centraliza o formulário dentro de um container */
 .formmm {
     padding: 0 1rem;
-    padding-top: 3rem;
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Divide o formulário em 2 colunas */
+    gap: 1.5rem;  /* Aumenta o espaço entre as colunas do formulário */
+    max-width: 800px;  /* Limita a largura máxima */
+    width: 100%;  /* Garante que ocupe 100% da largura disponível até o limite */
+    box-sizing: border-box;  /* Garante que padding não aumente a largura total */
+    margin-bottom: 2rem;  /* Adiciona espaço entre o formulário e o botão */
     display: flex;
-    justify-content: center;
     align-items: center;
-   
+    justify-content: center;
+    justify-items: center;
 }
-.field {
-    margin-bottom: 0.5rem;
+
+.inputf {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas */
+    gap: 1rem;  /* Aumenta o espaçamento entre os inputs na mesma linha */
+    width: 100%;
+    position: relative;
+    
+    
+}
+
+.inputf input {
+    width: 100%;
+    height: 2rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    text-align: left;
+    margin-top: 0.5rem; /* Adiciona um pouco de espaço entre o título e o input */
+    position: relative;
+    right: 2rem;
+    top: -0.7rem;
+}
+
+.inputf label {
+    margin-bottom: 0.5rem;  /* Adiciona espaço entre o título e o input */
+    display: block; /* Garante que o título fique acima do input */
+}
+
+.inputobs {
+    grid-column: span 2;  /* O campo de Observações ocupará ambas as colunas */
+    width: 100%;
+    position: relative;
+    top: 0; /* Remove o "top" grande para evitar o deslocamento para baixo */
+    margin-top: 0rem; /* Adiciona um pouco de espaço entre o campo de observações e os outros campos */
 }
 
 .formmm textarea {
-    border-radius: 1rem;
-    margin-top: 0.5rem;
+    border-radius: 0.5rem;
     padding: 1rem 0.5rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
-}
-
-.formmm input {
-    text-align: center;
-    border-radius: 0rem;
-    padding: 1rem 0.5rem;
-    margin-top: 0.5rem;
-    width: 100%; 
-    height: 2rem;
+    height: 4rem;
+    border: 1px solid black;
+    resize: none;
 }
 
 .formmm h2 {
     text-align: center;
-    grid-column: span 2;  /* Faz o título ocupar ambas as colunas */
+    grid-column: span 2;  /* Faz o título ocupar as 2 colunas */
+    margin-bottom: 2rem; /* Espaçamento abaixo do título */
+    font-size: 2rem;
 }
 
+/* Estilo do botão */
 .button {
-    gap: 1rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    width: 100%;  /* Garante que o botão ocupe toda a largura disponível */
+    
 }
 
 .button button {
     cursor: pointer;
     border-radius: 40px;
     padding: 0.5rem 1rem;
-    justify-content: center;
-    margin-top: 1rem;
     background-color: #2d979b;
-    align-items: center;
     width: 150px;
     transition: 0.3s;
 }
@@ -55,12 +90,112 @@
     background-color: #1d5c5f;
 }
 
+.produto,
+.preco {
+    width: 100%;
+    position: relative;
+    top: 0;
+}
 
-@media (min-width: 1024px) {
+/* Responsividade para telas maiores */
+@media (min-width: 568px) {
     .formmm {
+        width: 100%; /* Limita o máximo de largura do formulário */
         margin-left: 20rem;
-        width: 100%; 
-        max-width: 700px; /* Limita o máximo de largura do formulário */
+        position: relative;
+        top: -2rem;
+
+    }
+
+    .inputf {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas */
+        gap: 1rem;  /* Aumenta o espaçamento entre os inputs na mesma linha */
+        width: 100%;
+        position: relative;
+        
+        
+    }
+    
+    .inputf input {
+        width: 100%;
+        height: 2rem;
+        padding: 1.5rem 0.7rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        text-align: left;
+        position: relative;
+        right: 5rem;
+        top: -0.7rem;
+    }
+    
+    .inputf label {
+        margin-bottom: 0.5rem;  /* Adiciona espaço entre o título e o input */
+        display: block; /* Garante que o título fique acima do input */
+    }
+    
+    .inputobs {
+        grid-column: span 2;  /* O campo de Observações ocupará ambas as colunas */
+        width: 100%;
+        position: relative;
+        top: 0; /* Remove o "top" grande para evitar o deslocamento para baixo */
+        margin-top: 0rem; /* Adiciona um pouco de espaço entre o campo de observações e os outros campos */
+    }
+    
+    .formmm textarea {
+        border-radius: 0.5rem;
+        padding: 1rem 0.5rem;
+        text-align: left;
+        width: 100%;
+        height: 4rem;
+        border: 1px solid black;
+        resize: none;
     }
 }
-/*  */
+
+@media (min-width: 1366px) {
+    .formmm {
+        padding: 0 1rem;
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* Divide o formulário em 2 colunas */
+        gap: 1.5rem;  /* Aumenta o espaço entre as colunas do formulário */
+        max-width: 800px;  /* Limita a largura máxima */
+        width: 100%;  /* Garante que ocupe 100% da largura disponível até o limite */
+        box-sizing: border-box;  /* Garante que padding não aumente a largura total */
+        margin-bottom: 2rem;  /* Adiciona espaço entre o formulário e o botão */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        position: relative;
+        left: 8rem;
+    }
+
+
+}
+
+
+@media (min-width: 1440px) {
+    .formmm {
+        padding: 0 1rem;
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* Divide o formulário em 2 colunas */
+        gap: 1.5rem;  /* Aumenta o espaço entre as colunas do formulário */
+        max-width: 800px;  /* Limita a largura máxima */
+        width: 100%;  /* Garante que ocupe 100% da largura disponível até o limite */
+        box-sizing: border-box;  /* Garante que padding não aumente a largura total */
+        margin-bottom: 2rem;  /* Adiciona espaço entre o formulário e o botão */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        position: relative;
+        left: 6rem;
+    }
+
+
+}
+
+

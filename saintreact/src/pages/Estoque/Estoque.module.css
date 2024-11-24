@@ -1,66 +1,28 @@
-/* Menu dropdown */
-.dropdown {
-  position: relative;  /* Posiciona o dropdown de forma relativa ao botão */
-  display: inline-block;  /* Garante que o dropdown não expanda o layout */
-  padding-right: 10px;  /* Ajuste para evitar que o conteúdo fique apertado */
+/* Alinhar os ícones lado a lado usando flex */
+.iconContainer {
+  display: flex;  /* Exibe os ícones lado a lado */
+  gap: 0.2rem;     /* Diminui o espaçamento entre os ícones */
+  justify-content: flex-start;  /* Alinhamento à esquerda (opcional) */
+  align-items: center;  /* Alinhamento vertical no centro */
 }
 
-.dropdownButton {
-  background-color: #2d979b;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: background-color 0.3s ease;
+/* Estilo dos ícones */
+.dropdownItem {
+  font-size: 1rem;  /* Tamanho dos ícones */
+  color: #000;      /* Cor dos ícones */
+  padding: 0.1rem;     /* Diminui o padding ao redor dos ícones */
+  cursor: pointer;  /* Cursor de ponteiro */
 }
 
-.dropdownButton:hover {
-  background-color: #247376;
+/* Estilo ao passar o mouse sobre os ícones */
+.dropdownItem:hover {
+  color: #247376;   /* Cor ao passar o mouse */
 }
 
-/* Menu de conteúdo do dropdown */
-.dropdownContent {
-  display: none;  /* Inicialmente escondido */
-  position: absolute;
-  top: 100%;  /* Fica logo abaixo do botão */
-  left: 0;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  min-width: 120px;
-  padding: 0.3rem;
-  opacity: 1;  /* Mantém a opacidade sempre visível */
-}
-
-/* Quando a classe "open" for adicionada, o dropdown será exibido */
-.dropdown.open .dropdownContent {
-  display: block;  /* Exibe o dropdown */
-}
-
-/* Estilos dos itens do dropdown */
-.dropdownContent .dropdownItem {
-  padding: 0.5rem;
-  cursor: pointer;
-  font-size: 0.7rem;
-  color: #333;
-  border-radius: 5px;
-}
-
-.dropdownContent .dropdownItem:hover {
-  background-color: #f2f2f2;
-}
-
-.dropdownContent .dropdownItem.danger {
+/* Estilo para o ícone de excluir (se necessário) */
+.dropdownItem.danger {
   color: #e74c3c;
 }
-
-.dropdownContent .dropdownItem.danger:hover {
-  background-color: #f8d7da;
-}
-
 
 /* Tabela */
 .productTable {
@@ -175,173 +137,6 @@
 }
 
 
-/* Modal */
-/* Backdrop para o modal (fundo escurecido) */
-.modalBackdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
-  display: flex;
-  justify-content: center; /* Centraliza o modal na tela */
-  align-items: center; /* Centraliza o modal na tela */
-  z-index: 1000; /* Coloca o backdrop sobre outros conteúdos */
-  
-}
-
-/* Estilo do modal */
-/* Estilo do Modal */
-/* Modal */
-.modal {
-width: 20rem;
-height: 35rem;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: white;
-padding: 2rem;
-border-radius: 8px;
-border: 1px solid black;
-box-shadow: 4px 8px rgba(0, 0, 0, 0.2);
-z-index: 9999;
-max-width: 90%;
-overflow-y: auto;  /* Permite rolagem vertical */
-}
-
-/* Estilo de fundo do modal (overlay) */
-.modal-overlay {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: rgba(0, 0, 0, 0.5);
-z-index: 9998;
-}
-
-/* Estilo para o botão de fechar */
-button.close-button {
-position: absolute;
-top: 10px;
-right: 10px;
-font-size: 20px;
-background: none;
-border: none;
-cursor: pointer;
-}
-
-
-.modal input,
-.modal textarea {
-border: 0.1rem solid #247376; /* Bordas azuis */
-padding: 0.75rem;
-font-size: 14px;
-border-radius: 4px;
-width: 100%;
-box-sizing: border-box;
-margin-bottom: 1rem;
-}
-
-/* Estilo específico para o campo de observações */
-textarea.observations {
-height: 6rem; /* Tamanho maior para observações */
-resize: none; /* Desabilita o redimensionamento */
-box-sizing: border-box; /* Garantir que o padding não afete o tamanho */
-}
-
-/* Estilo do título do modal */
-.modal h2 {
-margin-bottom: 20px;
-font-size: 1.5rem;
-}
-
-/* Estilo dos campos dentro do formulário */
-.modal form div {
-margin-bottom: 10px;
-}
-
-/* Estilo dos botões de ação no modal */
-/* Estilo do modal */
-.modalActions {
-display: flex;
-justify-content: space-between;
-}
-
-.modalActions button {
-padding: 10px 20px;
-font-size: 1rem;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-}
-
-/* Botão de Cadastrar */
-.modalActions button:first-child {
-background-color: #2d979b; /* Cor de fundo do botão Cadastrar */
-color: white;
-border: none;
-}
-
-.modalActions button:first-child:hover {
-background-color: #247376; /* Cor de fundo no hover para Cadastrar */
-}
-
-/* Botão de Cancelar */
-.modalActions button:last-child {
-background-color: #f0f0f0; /* Cor de fundo do botão Cancelar */
-color: #333;
-border: 1px solid #ddd;
-}
-
-.modalActions button:last-child:hover {
-background-color: #247376; /* Cor de fundo no hover para Cancelar */
-}
-
-/* Estilo para os botões Editar e Excluir */
-.modalActions button.editButton,
-.modalActions button.deleteButton {
-padding: 10px 20px;
-font-size: 1rem;
-border-radius: 5px;
-background-color: white; /* Cor de fundo branco */
-color: #333; /* Cor do texto */
-border: 1px solid #ddd; /* Borda cinza clara */
-cursor: pointer;
-transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição */
-}
-
-/* Efeito hover para Editar */
-.modalActions button.editButton:hover {
-background-color: #2d979b; /* Cor de fundo ciano */
-color: white; /* Cor do texto branca */
-border: 1px solid #247376; /* Cor da borda ao passar o mouse */
-}
-
-/* Efeito hover para Excluir */
-.modalActions button.deleteButton:hover {
-background-color: #e74c3c; /* Cor de fundo vermelho */
-color: white; /* Cor do texto branca */
-border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
-}
-
-.Title{
-  display: flex;
-  align-items: center; /* Alinha verticalmente os itens */
-  gap: 1.5rem; /* Espaçamento entre o cubo e o título */
-  padding-top: 2rem;
-  align-items: baseline;
-  flex-shrink: 0;
-}
-
-.pageTitle {
-  text-align: center;
-  font-size: 2rem;
-  padding-top: 3rem;
-  color: #2d979b;
-}
 
 .filtro {
   position: relative;
@@ -353,8 +148,8 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
 .menuFiltro {
   margin-top: 4.5px;
   position: absolute;
-  top: 9.4rem;
-  left: 13.4rem;
+  top: 11.3rem;
+  left: 13.5rem;
   display: block;
   background: rgb(255, 255, 255);
   border: 1px solid #ddd;
@@ -432,13 +227,13 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
       left: 0; /* Removido o deslocamento */
   }
 
-  .dropdownButton {
-      width: 5rem;
-      height: 2rem;
-      font-size: 0.9rem;
-      padding: 0.3rem;
+  /* Estilo dos ícones */
+  .dropdownItem {
+    font-size: 1.6rem;  /* Tamanho dos ícones */
+    color: #000;      /* Cor dos ícones */
+    padding: 0.1rem;     /* Diminui o padding ao redor dos ícones */
+    cursor: pointer;  /* Cursor de ponteiro */
   }
-
   .dropdownContent .dropdownItem {
       font-size: 0.7rem;
       padding: 0.2rem;
@@ -458,50 +253,6 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
     width: 5rem;
   }
 
-  .modalBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
-    display: flex;
-    justify-content: center; /* Centraliza o modal na tela */
-    align-items: center; /* Centraliza o modal na tela */
-    z-index: 1000; /* Coloca o backdrop sobre outros conteúdos */
-    
-  }
-
-  /* Estilo do modal */
-  /* Estilo do Modal */
-  /* Modal */
-  .modal {
-  width: 36rem;
-  height: 38rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid black;
-  box-shadow: 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  max-width: 90%;
-  overflow-y: auto;  /* Permite rolagem vertical */
-  }
-
-  /* Estilo de fundo do modal (overlay) */
-  .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9998;
-  }
 
   /* Estilo para o botão de fechar */
   button.close-button {
@@ -514,18 +265,6 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
   cursor: pointer;
   }
 
-
-  .modal input,
-  .modal textarea {
-  border: 0.1rem solid #247376; /* Bordas azuis */
-  padding: 0.75rem;
-  font-size: 14px;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  }
-
   /* Estilo específico para o campo de observações */
   textarea.observations {
   height: 6rem; /* Tamanho maior para observações */
@@ -534,80 +273,59 @@ border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
   }
 
   /* Estilo do título do modal */
-  .modal h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  }
-
-  /* Estilo dos campos dentro do formulário */
-  .modal form div {
-  margin-bottom: 10px;
-  }
-
-  /* Estilo dos botões de ação no modal */
-  /* Estilo do modal */
-  .modalActions {
-  display: flex;
-  justify-content: space-between;
-  }
-
-  .modalActions button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  }
-
-  /* Botão de Cadastrar */
-  .modalActions button:first-child {
-  background-color: #2d979b; /* Cor de fundo do botão Cadastrar */
-  color: white;
-  border: none;
-  }
-
-  .modalActions button:first-child:hover {
-  background-color: #247376; /* Cor de fundo no hover para Cadastrar */
-  }
-
-  /* Botão de Cancelar */
-  .modalActions button:last-child {
-  background-color: #f0f0f0; /* Cor de fundo do botão Cancelar */
-  color: #333;
-  border: 1px solid #ddd;
-  }
-
-  .modalActions button:last-child:hover {
-  background-color: #247376; /* Cor de fundo no hover para Cancelar */
-  }
-
-  /* Estilo para os botões Editar e Excluir */
-  .modalActions button.editButton,
-  .modalActions button.deleteButton {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: white; /* Cor de fundo branco */
-  color: #333; /* Cor do texto */
-  border: 1px solid #ddd; /* Borda cinza clara */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição */
-  }
-
-  /* Efeito hover para Editar */
-  .modalActions button.editButton:hover {
-  background-color: #2d979b; /* Cor de fundo ciano */
-  color: white; /* Cor do texto branca */
-  border: 1px solid #247376; /* Cor da borda ao passar o mouse */
-  }
-
-  /* Efeito hover para Excluir */
-  .modalActions button.deleteButton:hover {
-  background-color: #e74c3c; /* Cor de fundo vermelho */
-  color: white; /* Cor do texto branca */
-  border: 1px solid #c0392b; /* Cor da borda ao passar o mouse */
-  }
-
-
+ 
 
 }
+
+@media (min-width: 1440px) {
+  .tableContainer {
+    margin-left: 17rem;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    height: 100vh;
+    width: 100%;
+
+  }
+
+  .productTable thead th {
+      background-color: #2d979b;
+      width: 10.8rem;
+      height: 1rem;
+      font-size: 0.8rem; /* Reduz a fonte dos cabeçalhos */
+      padding: 0.5rem 0.3rem; /* Espaçamento menor */
+      text-align: left;
+      border: 0rem solid #ddd;
+  }
+
+  .productTable tbody td {
+      font-size: 1.1rem; /* Reduz a fonte dos dados */
+      padding: 0.3rem; /* Menor espaçamento interno */
+      text-align: left;
+  }
+
+  .productTable {
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      left: 0; /* Removido o deslocamento */
+  }
+
+  .menuFiltro {
+    margin-top: 4.5px;
+    position: absolute;
+    top: 8.3rem;
+    left: 53.5rem;
+    display: block;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+
+  }

@@ -9,28 +9,56 @@ export function Form({title, textButton, onAction}) {
    
 
     return (
-            <div className={styles.formmm} >
-            <form onSubmit={handleSubmit(onAction)} >
-                <h2>{title}</h2>
-                    <input placeholder="codigo" {...register('codigo')}/>
+        <div className={styles.formmm}>
+    <form onSubmit={handleSubmit(onAction)}>
+        
+        <h2>{title}</h2>
        
-    
-                    <input placeholder="Condicao" {...register('condicao')}/>
-                
+        
+        <div className={styles.inputf}>
+            <h3>Código:</h3>
+            <input {...register('codigo')} />
+        </div>
 
-                    <input placeholder="Cor" {...register('cor')}/>
+        <div className={styles.inputf}>
+            <h3>Condicao:</h3>
+            <input {...register('condicao')} />
+        </div>
 
-                    <input placeholder="Marca" {...register('marca')}/>
+        <div className={styles.inputf}>
+            <h3>Cor:</h3>
+            <input  {...register('cor')} />
+        </div>
 
-                    <textarea placeholder="Observacoes" {...register('observacoes')}/>
-                    
-                    <input placeholder="Peso" {...register('peso')}/>
+        <div className={styles.inputf}>
+            <h3>Marca:</h3>
+            <input  {...register('marca')} />
+        </div>
 
-                    <input placeholder="Preco" {...register('preco')}/>
+        <div className={styles.inputf}>
+            <h3>Peso:</h3>
+            <input  {...register('peso')} />
+        </div>
 
-                    <input placeholder="Quantidade" {...register('quantidade')}/>
+        <div className={styles.inputf}>
+            <h3>Preço:</h3>
+            <input  {...register('preco')} />
+        </div>
 
-                    <input placeholder="Produto" {...register('produto')}/>
+        <div className={styles.inputf}>
+            <h3>Quantidade:</h3>
+            <input  {...register('quantidade')} />
+        </div>
+
+        <div className={styles.inputf}>
+            <h3>Produto:</h3>
+            <input  {...register('produto')} />
+        </div>
+
+        <div className={styles.inputobs}>
+            <h3>Observações:</h3>
+            <textarea  {...register('observacoes')} />
+        </div>
 
                    
                     <div className={styles.button}>

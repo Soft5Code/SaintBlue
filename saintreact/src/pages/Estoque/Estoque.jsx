@@ -5,6 +5,7 @@ import Cubo from "../Inicio/Cubo";
 import Swal from 'sweetalert2'; // Importando SweetAlert2
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { FaEye, FaEdit, FaTrashAlt } from 'react-icons/fa';  // Importando os ícones
 
 const Estoque = () => {
   const [products, setProducts] = useState([
@@ -48,9 +49,7 @@ const Estoque = () => {
     }
   }
 
-
-
- /////////////////////////////////////////////API/////////////////////////////////////////////////////////
+  /////////////////////////////////////////////API/////////////////////////////////////////////////////////
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -58,7 +57,7 @@ const Estoque = () => {
   const [newProduct, setNewProduct] = useState({ id: '', name: '', supplier: '', quantity: 0, price: 0, brand: '', weight: 0, condition: '', color: '', notes: '' });
   const [filterDropdownOpen, setFilterDropdownOpen] = useState(false);
   const [productDropdowns, setProductDropdowns] = useState({});
-  // const [sortOrder, setSortOrder] = useState('');
+   const [sortOrder, setSortOrder] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('');
   
@@ -83,18 +82,17 @@ const Estoque = () => {
         sortedProducts = [...products];
     }
     setProducts(sortedProducts);
-    // setSortOrder(criteria);
+     setSortOrder(criteria);
   };
 
-  // useEffect(() => {
-  //   if (selectedFilter) handleSort(selectedFilter);
-  // }, [selectedFilter]);
-  // const toggleFilterDropdown = () => {
-  //   setFilterDropdownOpen((prev) => !prev);
-  // };
+   useEffect(() => {
+     if (selectedFilter) handleSort(selectedFilter);
+   }, [selectedFilter]);
 
-  console.log(handleSort)
-  
+  const toggleFilterDropdown = () => {
+    setFilterDropdownOpen((prev) => !prev);
+  };
+
   const toggleProductDropdown = (productId) => {
     setProductDropdowns((prev) => ({
       ...prev,
@@ -111,16 +109,15 @@ const Estoque = () => {
   setFilterDropdownOpen(false); // Fecha o dropdown
 };
 
-
   const handleEditProduct = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true); // Abre o modal de edição
   };
 
-  // const filteredProducts = products.filter((product) =>
-  //   product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //   product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.supplier.toLowerCase().includes(searchTerm.toLowerCase())
+   );
 
   const closeModal = () => {
     setSelectedProduct(null);
@@ -144,8 +141,7 @@ const Estoque = () => {
   const handleViewProduct = (product) => {
     Swal.fire({
       title: 'Detalhes do Produto',
-      html: `
-        <p><strong>Nome:</strong> ${product.name}</p>
+      html: `        <p><strong>Nome:</strong> ${product.name}</p>
         <p><strong>Fornecedor:</strong> ${product.supplier}</p>
         <p><strong>Quantidade:</strong> ${product.quantity}</p>
         <p><strong>Preço:</strong> R$ ${product.price}</p>
@@ -159,6 +155,17 @@ const Estoque = () => {
     });
   };
 
+  // Fechar o filtro ao clicar fora
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (filterRef.current && !filterRef.current.contains(event.target)) {
+        setFilterDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   
 
   return (
@@ -178,58 +185,56 @@ const Estoque = () => {
           />
         </div>
         <div className={styles.filterSection} ref={filterRef}>
-          <button
-            className={styles.buttonFilter}
-            id="filter"
-            // onClick={toggleFilterDropdown}
-          >
-            <i className="bi bi-funnel-fill"></i> Filtro
-          </button>
+  <button
+    className={styles.buttonFilter}
+    id="filter"
+    onClick={toggleFilterDropdown}
+  >
+    <i className="bi bi-funnel-fill"></i> Filtro
+  </button>
 
-          {filterDropdownOpen && (
-            <div className={styles.menuFiltro}>
-              <div className={styles.filtro}>
-                <ul>
-                  <li>
-                    <Link
-                      className={`${styles.filterOption} ${selectedFilter === 'A-Z' ? styles.selected : ''}`}
-                      onClick={() => handleFilterSelect('A-Z')}
-                    >
-                      A-Z
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      
-                      className={`${styles.filterOption} ${selectedFilter === 'Z-A' ? styles.selected : ''}`}
-                      onClick={() => handleFilterSelect('Z-A')}
-                    >
-                      Z-A
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      
-                      className={`${styles.filterOption} ${selectedFilter === 'QTD Cresc' ? styles.selected : ''}`}
-                      onClick={() => handleFilterSelect('QTD Cresc')}
-                    >
-                      Cresc.
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      
-                      className={`${styles.filterOption} ${selectedFilter === 'QTD Desc' ? styles.selected : ''}`}
-                      onClick={() => handleFilterSelect('QTD Desc')}
-                    >
-                      Decresc.
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )}
-        </div>
+  {filterDropdownOpen && (
+    <div className={styles.menuFiltro}>
+      <div className={styles.filtro}>
+        <ul>
+          <li>
+            <Link
+              className={`${styles.filterOption} ${selectedFilter === 'A-Z' ? styles.selected : ''}`}
+              onClick={() => handleFilterSelect('A-Z')}
+            >
+              A-Z
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.filterOption} ${selectedFilter === 'Z-A' ? styles.selected : ''}`}
+              onClick={() => handleFilterSelect('Z-A')}
+            >
+              Z-A
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.filterOption} ${selectedFilter === 'QTD Cresc' ? styles.selected : ''}`}
+              onClick={() => handleFilterSelect('QTD Cresc')}
+            >
+              Cresc.
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.filterOption} ${selectedFilter === 'QTD Desc' ? styles.selected : ''}`}
+              onClick={() => handleFilterSelect('QTD Desc')}
+            >
+              Decresc.
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )}
+</div>
+
         <div className={styles.addSection}>
           <button className={styles.buttonPrimary} onClick={() => navigate('/createProduct')}>Cadastrar</button>
             
@@ -243,59 +248,43 @@ const Estoque = () => {
           <tr>
             <th>ID</th>
             <th>Produto</th>
-            <th>Condicao</th>
-            <th>Cor</th>
-            <th>Marca</th>
-            <th>Observacoes</th>
-            <th>Peso</th>
-            <th>Preco</th>
-            <th>QT</th>
+            <th>Fornecedor</th>
+            <th>QTD</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-            {produtos.map((produtos) => (
-              <tr key={produtos.id}>
-                <td>{produtos.codigo}</td>
-                <td>{produtos.produto}</td>
-                <td>{produtos.condicao}</td>
-                <td>{produtos.cor}</td>
-                <td>{produtos.marca}</td>
-                <td>{produtos.observacoes}</td>
-                <td>{produtos.peso}</td>
-                <td>{produtos.preco}</td>
-                <td>{produtos.quantidade}</td>
-                <td>
-                <div className={`${styles.dropdown} ${productDropdowns[produtos.id] ? styles.open : ''}`}>
-                  <button
-                    className={styles.dropdownButton}
-                    onClick={() => toggleProductDropdown(produtos.id)}
-                  >
-                    Menu ▼
-                  </button>
-                  {productDropdowns[produtos.id] && (
-                    <div className={styles.dropdownContent}>
-                      <button
-                        onClick={() => handleViewProduct(produtos)}
-                        className={styles.dropdownItem}
-                      >
-                        Visualizar 👁️
-                      </button>
-                      <button
-                        onClick={() => navigate(`/updateProduct/${produtos.codigo}`)}
-                        className={styles.dropdownItem}
-                      >Editar ✎</button> 
-                      <button
-                        onClick={() => handleDeleteProduct(produtos.codigo)}
-                        className={`${styles.dropdownItem} ${styles.danger}`}
-                      >Excluir ❌</button>    
-                    </div>
-                  )}
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+  {filteredProducts.map((product) => (
+    <tr key={product.id}>
+      <td>{product.id}</td>
+      <td>{product.name}</td>
+      <td>{product.supplier}</td>
+      <td>{product.quantity}</td>
+      <td>
+        <div className={styles.iconContainer}>
+          <button
+            onClick={() => handleViewProduct(produtos)}
+            className={styles.dropdownItem}
+          >
+            <FaEye />
+          </button>
+          <button
+             onClick={() => navigate(`/updateProduct/${produtos.codigo}`)}
+            className={styles.dropdownItem}
+          >
+            <FaEdit />
+          </button>
+          <button
+            onClick={() => handleDeleteProduct(produtos.codigo)}
+            className={`${styles.dropdownItem} ${styles.danger}`}
+          >
+            <FaTrashAlt />
+          </button>
+        </div>
+      </td>
+    </tr>
+  ))}
+</tbody>
       </table>
 
       {isModalOpen && selectedProduct && (
