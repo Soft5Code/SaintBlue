@@ -17,7 +17,7 @@ const Home = () => {
             Seu controle de Estoque favorito
           </h1>
           <p className={styles.primaryText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor recusandae possimus est adipisci voluptatibus nulla neque cum! Rem, ipsam cupiditate totam placeat consequuntur dignissimos quod reiciendis sequi fuga animi libero.
+          Com o Saint Blue, você leva seu controle de estoque a um novo patamar. Nosso sistema intuitivo e eficiente ajuda a monitorar produtos, reduzir erros e economizar tempo. Tudo isso com informações em tempo real para decisões mais rápidas e estratégicas. Seja qual for o tamanho do seu negócio, o Saint Blue é a solução ideal para otimizar sua operação e impulsionar seu crescimento!
           </p>
           <button className={styles.secondaryButton}>
             Use de graça agora

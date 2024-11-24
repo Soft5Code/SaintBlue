@@ -16,19 +16,13 @@ const About = () => {
         <div className={styles.aboutSectionTextContainer}>
             <p className={styles.primarySubHeading}>Sobre</p>
             <h1 className={styles.primaryHeading}>
-                Lorem ipsum dolor sit amet consectetur 
+                Nossa Jornada e Compromisso com a Inovação
             </h1>
             <p className={styles.primaryText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto et quisquam, inventore veniam impedit iure, eos doloremque facere nihil quos? Cupiditate, consequuntur maiores.
+                Somos uma equipe de quatro estudantes apaixonados por tecnologia e inovação, unidos pelo desejo de criar soluções práticas e eficientes para empresas. O Saint Blue nasceu da nossa vontade de ajudar negócios a organizarem seus estoques com mais facilidade e controle, oferecendo ferramentas que cabem na palma da sua mão.
             </p>
             <p className={styles.primaryText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, qui. Quaerat molestiae, sed amet modi recusandae a veritatis illo officia cupiditate dignissimos! Error quasi, aspernatur minima itaque praesentium vel impedit?
-                <div className={styles.aboutButtonsContainer}>
-                    <button className={styles.secondaryButton}>Learn More
-                    <BsFillPlayCircleFill/>
-                    </button>
-                    <button className={styles.watchVideoButton}></button>
-                </div>
+                Nosso sistema é totalmente customizável para atender às necessidades de qualquer empresa, independentemente do porte ou setor. Utilizamos as tecnologias mais avançadas do mercado para garantir um serviço ágil, moderno e seguro, sempre pensando em oferecer a melhor experiência para nossos usuários.
             </p>
         </div>
     </div>

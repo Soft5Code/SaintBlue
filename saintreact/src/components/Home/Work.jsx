@@ -7,17 +7,17 @@ const Work = () => {
         {
             image:Luz,
             title:'Eficiencia',
-            text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto '
+            text:'O Saint Blue torna o gerenciamento de estoque mais rápido e preciso, ajudando sua empresa a economizar tempo e reduzir erros. '
         },
         {
             image: Luz,
             title:'Simplicidade',
-            text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto '
+            text:'Com uma interface fácil de usar, o Saint Blue permite que qualquer pessoa, independentemente de experiência, gerencie o estoque de forma eficaz. '
         },
         {
             image:Luz,
             title:'Perfil',
-            text:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto  '
+            text:'A plataforma é totalmente personalizável para atender às necessidades específicas de cada empresa, garantindo um controle de estoque único e sob medida. '
         },
     ]
   return (
@@ -26,7 +26,7 @@ const Work = () => {
                 <p className={styles.primarySubHeading}>Funcionalidades</p>
                 <h1 className={styles.primaryHeading}>Como funciona?</h1>
                 <p className={styles.primaryText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto 
+                Com uma plataforma intuitiva e personalizada, você consegue organizar entradas, saídas e visualizar relatórios detalhados, tudo na palma da sua mão.
                 </p>
         </div>
         <div className={styles.workSectionBottom}>

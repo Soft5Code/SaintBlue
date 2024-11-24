@@ -1,31 +1,34 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import image1 from '../../assets/pexels-ron.jpg'
-import image2 from '../../assets/jurica.jpg'
-import image3 from '../../assets/aiony.jpg'
+import image1 from '../../assets/daniel.jpg'
+import image2 from '../../assets/gabriel.jpeg'
+import image3 from '../../assets/pedro.jpeg'
+import image4 from '../../assets/richard.jpg'
 import { GitHub } from "@mui/icons-material"
 import { FiArrowRight } from 'react-icons/fi';
 import styles from '../../pages/LandPaging/Land.module.css';
+
+
 
 const Carousel = () => {
     const images = [
         {
             image: image1,
-            text: 'daniel Vitor',
-            function: 'Função: FRONT-END',
+            text: 'Daniel Vitor',
+            function: 'Função: FULL-STACK',
             icon:  <GitHub/>
         },
         {
             image: image2,
-            text: 'Gabriel'
+            text: 'Gabriel Flausino'
         },
         {
             image: image3,
             text: 'Pedro Henrique'
         },
         {
-            image: image3,
-            text: 'Pedro Henrique'
+            image: image4,
+            text: 'Richard Castro'
         },
     ]
 
