@@ -1,16 +1,16 @@
-import { GitHub } from "@mui/icons-material"
-import { Instagram } from '@mui/icons-material'
+import { GitHub } from "@mui/icons-material";
+import { Instagram } from '@mui/icons-material';
 import styles from '../../pages/LandPaging/Land.module.css';
 
 const Footer = () => {
   return (
     <div className={styles.footerWrappper}>
         <div className='footer-section-one'>
-            {/* <div className='footer-logo-container'>
-                <img src={Logo} alt="" />
-            </div> */}
             <div className={styles.footerIcons}>
-                <GitHub/>
+                {/* GitHub icon com link para o perfil */}
+                <a href="https://github.com/SaintBlueSB" target="_blank" rel="noopener noreferrer">
+                  <GitHub />
+                </a>
                 <Instagram />
             </div>
         </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

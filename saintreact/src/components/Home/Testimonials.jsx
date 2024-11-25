@@ -1,5 +1,7 @@
 
-import ProfilePic from '../../assets/john-doe-image.png';
+import ProfilePicjohn from '../../assets/john-doe-image.png';
+import ProfilePiclucas from '../../assets/lucas1.png';
+import ProfilePiceduardo from '../../assets/eduardo1.png';
 import { AiFillStar } from 'react-icons/ai';
 import styles from '../../pages/LandPaging/Land.module.css';
 
@@ -17,7 +19,7 @@ const Testimonials = () => {
         </div>
         <div className={styles.testimonialResponsive}>
             <div className={styles.testimonialSectionBottom}>
-                    <img src={ProfilePic} alt="" />
+                    <img src={ProfilePicjohn} alt="" />
                     <p>
                         "A SaintBlue melhorou muito nosso gerenciamento de estoque. A plataforma é fácil de usar e aumentou nossa eficiência. O suporte é sempre rápido e atencioso. Recomendamos!"
                     </p>
@@ -31,7 +33,7 @@ const Testimonials = () => {
                     <h2>Jhon Doe</h2>
             </div>
             <div className={styles.testimonialSectionBottom}>
-                    <img src={ProfilePic} alt="" />
+                    <img src={ProfilePiclucas} alt="" />
                     <p>
                         "O sistema da SaintBlue é simples e eficaz. Agora temos mais controle sobre nosso estoque e o atendimento ao cliente é excelente. Ajudou a aumentar nossa produtividade."
                     </p>
@@ -43,7 +45,7 @@ const Testimonials = () => {
                     <h2>Eduardo Pereira</h2>
             </div>
             <div className={styles.testimonialSectionBottom}>
-                    <img src={ProfilePic} alt="" />
+                    <img src={ProfilePiceduardo} alt="" />
                     <p>
                         "Estamos muito satisfeitos com a SaintBlue. O sistema é confiável e facilita a gestão do estoque. A equipe de suporte é sempre prestativa e resolutiva."
                     </p>
