@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src= "./docs/img_utilizadas/s.png" />
+    <img src= "./saintreact/public/s.png" />
     <p>SAINT BLUE</p>
     <p> Venha controlar seu estoque 🎯</p>
 </h1>
