@@ -176,23 +176,7 @@ function Sidebar() {
                     </ul>
                 </div>
 
-                {/* Informação do usuário */}
-                <div className={styles.usuario}>
-                    <img
-                        src={usuario.foto}
-                        alt="Foto do Usuário"
-                        className={styles.openPopupBtn}
-                        onClick={openPopUp}
-                    />
-                    <div className={styles.infoUsuario}>
-                        <div className={styles.nomeTelefone}>
-                            <span className={styles.nome}>{usuario.nome}</span>
-                        </div>
-                        <div>
-                            <i className="bi bi-three-dots"></i>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
             {/* Pop-up */}
