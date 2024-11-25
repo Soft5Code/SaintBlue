@@ -16,49 +16,49 @@ export function Form({title, textButton, onAction}) {
        
         
         <div className={styles.inputf}>
-            <h3>Código:</h3>
-            <input {...register('codigo')} />
-        </div>
+    <label htmlFor="codigo">Código:</label>
+    <input id="codigo" {...register('codigo')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Condicao:</h3>
-            <input {...register('condicao')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="condicao">Condição:</label>
+    <input id="condicao" {...register('condicao')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Cor:</h3>
-            <input  {...register('cor')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="cor">Cor:</label>
+    <input id="cor" {...register('cor')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Marca:</h3>
-            <input  {...register('marca')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="marca">Marca:</label>
+    <input id="marca" {...register('marca')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Peso:</h3>
-            <input  {...register('peso')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="peso">Peso:</label>
+    <input id="peso" {...register('peso')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Preço:</h3>
-            <input  {...register('preco')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="preco">Preço:</label>
+    <input id="preco" {...register('preco')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Quantidade:</h3>
-            <input  {...register('quantidade')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="quantidade">Quantidade:</label>
+    <input id="quantidade" {...register('quantidade')} required />
+</div>
 
-        <div className={styles.inputf}>
-            <h3>Produto:</h3>
-            <input  {...register('produto')} />
-        </div>
+<div className={styles.inputf}>
+    <label htmlFor="produto">Produto:</label>
+    <input id="produto" {...register('produto')} required />
+</div>
 
-        <div className={styles.inputobs}>
-            <h3>Observações:</h3>
-            <textarea  {...register('observacoes')} />
-        </div>
+<div className={styles.inputobs}>
+    <label htmlFor="observacoes">Observações:</label>
+    <textarea id="observacoes" {...register('observacoes')} required></textarea>
+</div>
 
                    
                     <div className={styles.button}>

@@ -130,9 +130,30 @@ const Estoque = () => {
     }));
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = async (e) => {
+    const searchValue = e.target.value;
+    setSearchTerm(searchValue);
+  
+    if (searchValue.trim() === "") {
+      // Se o campo de busca estiver vazio, exibe todos os produtos.
+      getProdutos();
+      return;
+    }
+  
+    try {
+      // Chama a API para filtrar os produtos
+      const response = await api.get(`listar?search=${searchValue}`);
+      setProdutos(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Ocorreu um erro ao buscar os produtos.',
+        icon: 'error',
+      });
+    }
   };
+  
 
   const handleFilterSelect = (filter) => {
   setSelectedFilter(filter); // Isso automaticamente disparará o useEffect para ordenar
@@ -261,7 +282,7 @@ const Estoque = () => {
           <tr>
             <th>ID</th>
             <th>Produto</th>
-            <th>Fornecedor</th>
+            <th>Marca</th>
             <th>QTD</th>
             <th>Ações</th>
           </tr>

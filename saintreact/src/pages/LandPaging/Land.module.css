@@ -523,6 +523,145 @@ align-items: center;
 justify-content: center;
 }
 
+
+
+.workSectionWrapper {
+  padding: 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.workSectionTop {
+  margin-bottom: 2rem;
+}
+
+.primarySubHeading {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0;
+}
+
+.primaryHeading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.secondaryButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appC {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Estilo da caixa das imagens */
+.itemC {
+  position: relative;
+  padding: 0;
+  width: 200px; /* Largura fixa para uniformidade */
+  height: 400px; /* Altura fixa para criar o retângulo vertical */
+  border-radius: 15px; /* Borda arredondada */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Estilo da imagem */
+.itemC img {
+  width: 100%; /* A imagem vai ocupar 100% da largura da div */
+  height: 100%; /* A imagem vai ocupar 100% da altura da div */
+  object-fit: cover; /* Ajusta a imagem para cobrir completamente a área da div sem distorcer */
+  object-position: center; /* Garante que a imagem seja centralizada na div */
+}
+
+/* Camada de sobreposição (que agora será sempre visível) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Sempre visível */
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Caixa de sombra padrão */
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Texto padrão visível sempre */
+.defaultText {
+  position: absolute;
+  top: 70%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* Cor do texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Borda preta ao redor do texto */
+}
+
+/* Efeito hover */
+.itemC:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Sombra do hover */
+}
+
+/* Conteúdo exibido no hover */
+.hoverContent {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease;
+}
+
+.itemC:hover .overlay {
+  opacity: 1; /* A sobreposição continua visível no hover */
+  background: rgba(0, 0, 0, 0.402); /* Fundo semi-transparente */
+}
+
+.itemC:hover .hoverContent {
+  opacity: 1; /* Exibe o conteúdo adicional no hover */
+}
+
+/* Ícone do GitHub */
+.githubIcon {
+  color: white; /* Cor do ícone */
+  font-size: 24px;
+  margin-top: 10px;
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+.githubIcon:hover {
+  color: #ccc; /* Efeito de hover no ícone */
+}
+
+
+
 @media (min-width: 501px) and (max-width:840px){
   /*Work*/
   .workSectionWrapper{

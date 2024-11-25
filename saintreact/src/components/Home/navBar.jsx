@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="'">FAQ
           {/* { <PhoneRoundedIcon className="navbar-cart-icon" />} */}
         </a>
-        <Link to="/login" className={styles.navButton}>
+        <Link to="/Inicio" className={styles.navButton}>
           Acessar
         </Link> 
       </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
             ))}
           </List>
           <Divider  />
-          <Link to={'/login'}>
+          <Link to={'/inicio'}>
             <button className={styles.secondaryButtonNav}>Acessar</button>
           </Link>
         </Box>
