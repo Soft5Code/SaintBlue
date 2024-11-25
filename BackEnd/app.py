@@ -321,7 +321,7 @@ def buscar_produto(codigo):
 app.run(
     host='0.0.0.0',
     port=5000,
-    ssl_context=('/home/ubuntu/ssl/server.crt', '/home/ubuntu/ssl/server.key'),
+    ssl_context = ('/etc/ssl/server.crt', '/etc/ssl/server.key'),
     debug=True
 )
 
