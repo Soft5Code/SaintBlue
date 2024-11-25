@@ -96,7 +96,7 @@ const Navbar = () => {
             ))}
           </List>
           <Divider  />
-          <Link to={'/login'}>
+          <Link to={'/inicio'}>
             <button className={styles.secondaryButtonNav}>Acessar</button>
           </Link>
         </Box>
