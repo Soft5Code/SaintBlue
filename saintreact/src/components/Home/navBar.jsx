@@ -40,7 +40,7 @@ const Navbar = () => {
     { text: "Inicio", icon: <HomeIcon />, id: "inicio" },
     { text: "Sobre", icon: <InfoIcon />, id: "sobre" },
     { text: "Funcionalidades", icon: <BuildIcon />, id: "funcionalidades" },
-    { text: "Faq", icon: <LiveHelpIcon />, id: "faq" },
+    { text: "FAQ", icon: <LiveHelpIcon />, id: "faq" },
     { text: "Membros", icon: <PeopleIcon />, id: "membros" },
     { text: "Contato", icon: <PhoneRoundedIcon />, id: "contato" },
   ];
