@@ -15,16 +15,16 @@ const Accordion = () => {
 
     const faq = [
         {
-            question: 'Questao 1',
-            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto '
+            question: '1- Como posso gerenciar o estoque de forma mais eficiente?',
+            answer: 'Utilize a plataforma SaintBlue para automatizar processos, controlar entradas e saídas de produtos em tempo real e gerar relatórios detalhados que ajudam na tomada de decisões.'
         },
         {
-            question: 'Questao 2',
-            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto '
+            question: '2- O sistema oferece integração com outros softwares?',
+            answer: 'Sim, o SaintBlue pode ser integrado com outros sistemas de gestão, como ERP e CRM, para otimizar ainda mais o controle de estoque e as operações da sua empresa.'
         },
         {
-            question: 'Questao 3',
-            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus debitis quidem sunt facilis consequatur, iusto '
+            question: '3- É possível personalizar o layout do sistema conforme minhas necessidades?',
+            answer: 'Sim, o SaintBlue oferece opções de personalização para que você possa ajustar o sistema de acordo com as preferências da sua empresa e facilitar o uso diário.'
         },
     ]
 

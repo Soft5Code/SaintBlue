@@ -16,18 +16,15 @@ const Footer = () => {
         </div>
         <div className={styles.footerSectionTwo}>
             <div className={styles.footerSectionColumns}>
-                <span>Quality</span>
                 <span>Help</span>
-                <span>Share</span>
-                <span>Carrers</span>
-                <span>Testimonials</span>
-                <span>Work</span>
+                <span>Sobre</span>
+                <span>Contatos</span>
+                <span>Feedback</span>
+                <span>Funcionalidades</span>
             </div>
             <div className={styles.footerSectionColumns}>
-                <span>244-5555-3333</span>
-                <span>hello@food.com</span>
-                <span>preess@food.com</span>
-                <span>contact@food.com</span>
+                <span>(19)-97117-5279</span>
+                <span>saintbluesb@gmail.com</span>
             </div>
             <div className={styles.footerSectionColumns}>
                 <span>Terms & Conditions</span>
