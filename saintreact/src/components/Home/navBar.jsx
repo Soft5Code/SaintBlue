@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="'">FAQ
           {/* { <PhoneRoundedIcon className="navbar-cart-icon" />} */}
         </a>
-        <Link to="/login" className={styles.navButton}>
+        <Link to="/Inicio" className={styles.navButton}>
           Acessar
         </Link> 
       </div>

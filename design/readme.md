@@ -3,6 +3,21 @@
     <p> Venha conhecer o design do nosso site 🔭</p>
 </h1>
 
+
+<h1 align="center">
+    <p>SAINT BLUE DESIGN</p>
+    <p> Tela de Início
+A tela de landing page apresenta o sistema de gerenciamento de estoque, destacando suas principais funcionalidades e benefícios. Com uma interface intuitiva e moderna, explica como o sistema facilita o controle de produtos, rastreamento de estoque, análise de vendas e relatórios. Também inclui informações sobre como o sistema otimiza a gestão, economiza tempo e melhora a organização. Ideal para atrair novos usuários e demonstrar o valor da solução.🔭</p>
+</h1>
+<img src= "./tela inicio 1.jpg" />
+<img src= "./tela inicio 2.jpg" />
+<img src= "./tela inicio 3.jpg" />
+<img src= "./tela inicio 4.jpg" />
+<img src= "./tela inicio 5.jpg" />
+<img src= "./tela inicio 6.jpg" />
+<img src= "./tela inicio 7.jpg" />
+
+
 <h1 align="center">
     <p>SAINT BLUE DESIGN</p>
     <p> Tela de Início
@@ -32,3 +47,11 @@ Organizada e intuitiva, facilita o acesso a informações essenciais para a gest
 </h1>
 <img src= "./estoque.jpg" />
 
+<h1 align="center">
+<p>SAINT BLUE DESIGN</p>
+<p> Nosso site conta com essa paleta de cores </p>
+<p>
+#2D5D5F - VERDE 
+#FFFFFF - BRANCO
+#000000 - PRETO
+#D9D9D9 - CINZA. </p>
