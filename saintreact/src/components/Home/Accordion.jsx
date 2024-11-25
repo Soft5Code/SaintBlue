@@ -29,7 +29,7 @@ const Accordion = () => {
     ]
 
   return (
-    <div className={styles.workSectionWrapper}>
+    <div className={styles.workSectionWrapper} id="faq">
           <div className={styles.contactPageWrapper}>
                 <p className={styles.primarySubHeading}>FAQ</p>
                 <h1 className={styles.primaryHeading}>Quais são as peguntas frequentes?</h1>

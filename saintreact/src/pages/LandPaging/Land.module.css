@@ -13,6 +13,9 @@ img {
   background-color: #f6f6f6;
 }
 
+:target {
+  scroll-margin-top: 200px; /* Ajuste este valor para o tamanho da sua navbar */
+}
 
 .navBarHome{
   padding: 0 2rem;
@@ -39,12 +42,14 @@ img {
   max-width: 140px;
 }
 .navbarMenuContainer {
+  margin-top: 80px;
   display: flex;
 }
 .navBarLinksContainer {
   display: none;
 }
-.navBarLinksContainer a {
+.navBarLinksContainer a,
+.navBarLinksContainer button {
   margin-right: 3rem;
   text-decoration: none;
   color: black;
@@ -52,12 +57,14 @@ img {
   font-weight: 600;
   transition: 0.3s;
 }
-.navBarLinksContainer a:hover{
+.navBarLinksContainer a:hover,
+.navBarLinksContainer button:hover{
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   background-color: #2d979b;
 }
 .navButton{
+  border: 1px solid red;
   text-align: center;
   width: 10rem;
   font-weight: bold;
@@ -91,6 +98,7 @@ img {
   padding: 0.8rem 1.2rem;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
+
 
 .navbar-cart-icon {
   font-size: 1.15rem;
@@ -513,6 +521,7 @@ color: #2d5d5f;
 width: 100%;
 cursor: grab;
 overflow: hidden;
+scroll-behavior: smooth; 
 }
 .appC{
 width: 100%;
@@ -737,7 +746,8 @@ nav{
   align-items: center;
   justify-content: center;
 }
-.navBarLinksContainer a {
+.navBarLinksContainer a,
+.navBarLinksContainer button {
   margin-right: 1rem;
   text-decoration: none;
   color: black;
@@ -873,7 +883,8 @@ nav{
 nav{
   padding: 0 3rem;
 }
-.navBarLinksContainer a{
+.navBarLinksContainer a,
+.navBarLinksContainer button {
   font-size: 0.5rem;
 }
 .primaryButton{
@@ -892,7 +903,8 @@ nav{
 nav{
   padding: 0 3rem;
 }
-.navBarLinksContainer a{
+.navBarLinksContainer a, 
+.navBarLinksContainer button {
   font-size: 0.6rem;
 }
 .primaryButton{

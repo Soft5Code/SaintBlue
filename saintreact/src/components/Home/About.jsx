@@ -6,7 +6,7 @@ import styles from '../../pages/LandPaging/Land.module.css';
 
 const About = () => {
   return (
-    <div className={styles.aboutSectionContainer}>
+    <div className={styles.aboutSectionContainer} id="sobre">
         <div className={styles.aboutBackgroundImageContainer}>
             <img src={AboutBackground} alt="" />
         </div>

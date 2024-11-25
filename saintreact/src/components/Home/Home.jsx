@@ -13,7 +13,7 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="inicio">
       <Navbar />
       <div className={styles.homeBannerContainer}>
         <div className={styles.homeBannerImageContainer}>

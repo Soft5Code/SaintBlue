@@ -1,10 +1,8 @@
-import s2 from '../../assets/s2.svg'
+import s2 from '../../assets/s2.svg';
 import styles from '../../pages/LandPaging/Land.module.css';
 
-import { Link } from 'react-router-dom'
-import  { useState } from "react";
-// import { BsCart2 } from "react-icons/bs";
-// import { IoPeople } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import PeopleIcon from '@mui/icons-material/People';
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -18,69 +16,66 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import BuildIcon from '@mui/icons-material/Build';
-// import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+
+// Função para rolar suavemente
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
-    {
-      text: "Inicio",
-      icon: <HomeIcon  />,
-    },
-    {
-      text: "Sobre",
-      icon: <InfoIcon />,
-    },
-    {
-      text: "Funcionalidadess",
-      icon: <BuildIcon />,
-    },
-    {
-      text: "Faq",
-      icon: <LiveHelpIcon />,
-    },
-    {
-      text: "Membros",
-      icon: <PeopleIcon  />,
-    },
-    {
-      text: "Contato",
-      icon: < PhoneRoundedIcon  />,
-    },
+    { text: "Inicio", icon: <HomeIcon />, id: "inicio" },
+    { text: "Sobre", icon: <InfoIcon />, id: "sobre" },
+    { text: "Funcionalidades", icon: <BuildIcon />, id: "funcionalidades" },
+    { text: "Faq", icon: <LiveHelpIcon />, id: "faq" },
+    { text: "Membros", icon: <PeopleIcon />, id: "membros" },
+    { text: "Contato", icon: <PhoneRoundedIcon />, id: "contato" },
   ];
 
   return (
     <nav className={styles.navBarHome}>
       <div className={styles.navLogoContainer}>
-        <img src={s2} alt="" /> 
+        <img src={s2} alt="Logo" />
       </div>
       <div className={styles.navBarLinksContainer}>
-        <Link to='/'>Inicio</Link>
-        <Link to='/contact'>Contact</Link>
-        <a href="'">Funcionalidades</a>
-        <a href="'">Membros</a>
-        <a href="'">FAQ
-          {/* { <PhoneRoundedIcon className="navbar-cart-icon" />} */}
-        </a>
+        {menuOptions.slice(0, 5).map(option => (
+          <button key={option.id} onClick={() => scrollToSection(option.id)}>
+            {option.text}
+          </button>
+        ))}
         <Link to="/Inicio" className={styles.navButton}>
           Acessar
-        </Link> 
+        </Link>
       </div>
       <div className={styles.navbarMenuContainer}>
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right"
+      <Drawer
+        open={openMenu}
+        onClose={() => setOpenMenu(false)}
+        anchor="right"
         PaperProps={{
           sx: {
             borderRadius: 0,
             p: 0,
-          }
+          },
         }}
-        >
+      >
         <Box
-          sx={{ width: 250, }}
+          sx={{ width: 250 }}
           role="presentation"
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
@@ -88,15 +83,16 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton onClick={() => scrollToSection(item.id)}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
-          <Divider  />
-          <Link to={'/inicio'}>
+
+          <Divider />
+          <Link to="/inicio">
             <button className={styles.secondaryButtonNav}>Acessar</button>
           </Link>
         </Box>

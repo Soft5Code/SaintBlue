@@ -4,7 +4,7 @@ import styles from '../../pages/LandPaging/Land.module.css';
 
 const Footer = () => {
   return (
-    <div className={styles.footerWrappper}>
+    <div className={styles.footerWrappper} id="contato">
         <div className='footer-section-one'>
             <div className={styles.footerIcons}>
                 {/* GitHub icon com link para o perfil */}

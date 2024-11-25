@@ -45,7 +45,7 @@ const Carousel = () => {
     }, []);
 
     return (
-        <div className={styles.workSectionWrapper}>
+        <div className={styles.workSectionWrapper} id="membros">
             <div className={styles.workSectionTop}>
                 <p className={styles.primarySubHeading}>Devs</p>
                 <h1 className={styles.primaryHeading}>Nossos Excelentes Devs</h1>

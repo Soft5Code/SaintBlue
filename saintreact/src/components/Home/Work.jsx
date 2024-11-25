@@ -21,7 +21,7 @@ const Work = () => {
         },
     ]
   return (
-    <div className={styles.workSectionWrapper}>
+    <div className={styles.workSectionWrapper} id="funcionalidades">
         <div className={styles.workSectionTop}>
                 <p className={styles.primarySubHeading}>Funcionalidades</p>
                 <h1 className={styles.primaryHeading}>Como funciona?</h1>
