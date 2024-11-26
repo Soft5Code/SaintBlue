@@ -1,82 +1,222 @@
-import { Link } from "react-router-dom";
-import React, { useState, useEffect } from 'react'; // Corrigido: importando React e hooks uma vez
-import './login.css';
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "./login.css";
+import Swal from "sweetalert2";
 
 
 function Login() {
-    // UseState para controlar se a classe 'active' está presente
     const [isActive, setIsActive] = useState(false);
+    const navigate = useNavigate();
 
-    // Função para alternar para a página de registro
-    const handleRegisterClick = () => {
-        setIsActive(true);  // Adiciona a classe 'active'
-    };
-
-    // Função para alternar para a página de login
-    const handleLoginClick = () => {
-        setIsActive(false); // Remove a classe 'active'
-    };
+    const handleRegisterClick = () => setIsActive(true);
+    const handleLoginClick = () => setIsActive(false);
 
     useEffect(() => {
-        // Adiciona a classe 'login-page' ao body ao renderizar o componente
-        document.body.classList.add('login-page');
+        document.body.classList.add("login-page");
+        return () => document.body.classList.remove("login-page");
+    }, []);
 
-        // Remove a classe ao desmontar o componente
-        return () => {
-            document.body.classList.remove('login-page');
-        };
-    }, []); // O array vazio [] garante que o efeito só seja executado ao montar e desmontar
+    // Função para lidar com o envio do formulário de cadastro
+    const handleRegisterSubmit = async (e) => {
+        e.preventDefault();
+    
+        const nome = e.target.nome.value;
+        const sobrenome = e.target.sobrenome.value;
+        const email = e.target.email.value;
+        const telefone = e.target.telefone.value;
+        const senha = e.target.senha.value;
+        const confirmSenha = e.target.confirmarsenha.value;
+    
+        if (senha !== confirmSenha) {
+            Swal.fire({
+                icon: "error",
+                title: "Erro",
+                text: "As senhas não coincidem!",
+                confirmButtonColor: "#3085d6",
+            });
+            return;
+        }
+    
+        try {
+            const response = await fetch("https://www.saintblue.com.br:5000/new_user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nome,
+                    sobrenome,
+                    email,
+                    numero: telefone,
+                    senha,
+                }),
+            });
+    
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Sucesso!",
+                    text: "Conta criada com sucesso!",
+                    confirmButtonColor: "#3085d6",
+                }).then(() => {
+                    setIsActive(false); // Alterna para a tela de login
+                });
+            } else {
+                const errorData = await response.json();
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro ao criar conta",
+                    text: errorData.error,
+                    confirmButtonColor: "#d33",
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Erro de conexão",
+                text: error.message,
+                confirmButtonColor: "#d33",
+            });
+        }
+    };
+
+    // Função para lidar com o envio do formulário de login
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+    
+        const email = e.target.email.value;
+        const senha = e.target.senha.value;
+    
+        try {
+            const response = await fetch("https://www.saintblue.com.br:5000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, senha }),
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Token:", data.token); // Você pode salvar o token no localStorage ou em outro lugar
+                localStorage.setItem("token", data.token);
+                navigate("/inicio"); // Redireciona diretamente para a página inicial
+            } else {
+                const errorData = await response.json();
+                Swal.fire({
+                    icon: "error",
+                    title: "Erro ao fazer login",
+                    text: errorData.error,
+                    confirmButtonColor: "#d33",
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Erro de conexão",
+                text: error.message,
+                confirmButtonColor: "#d33",
+            });
+        }
+    };
+    
 
     return (
         <div className="login-container">
-            <div className={`container ${isActive ? 'active' : ''}`} id="container">
-                
+            <div className={`container ${isActive ? "active" : ""}`} id="container">
                 <div className="form-container cadastro">
-                    <form action="https://webhook.site/ca2c3d16-6e28-4285-8dfc-e24450a3634a" method="post">
+                    <form onSubmit={handleRegisterSubmit}>
                         <h1>Cadastre-se</h1>
-                        <input type="text" name="nome" id="nome" placeholder="Nome" size="25" required minLength="4" maxLength="15" />
-                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" size="25" required minLength="4" maxLength="15" />
-                        <input type="email" name="email" id="email" placeholder="E-mail" size="30" required minLength="3" maxLength="30" />
-                        <input type="tel" name="telefone" id="telefone" size="25" placeholder="Numero" required />
-                        <input type="password" name="senha" id="senha" placeholder="Senha" required minLength="8" maxLength="20" />
-                        <input type="password" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme sua senha" required minLength="8" maxLength="20" />
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Nome"
+                            required
+                            minLength="4"
+                            maxLength="15"
+                        />
+                        <input
+                            type="text"
+                            name="sobrenome"
+                            placeholder="Sobrenome"
+                            required
+                            minLength="4"
+                            maxLength="15"
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="E-mail"
+                            required
+                            minLength="3"
+                            maxLength="30"
+                        />
+                        <input
+                            type="tel"
+                            name="telefone"
+                            placeholder="Número"
+                            required
+                        />
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Senha"
+                            required
+                            minLength="8"
+                            maxLength="20"
+                        />
+                        <input
+                            type="password"
+                            name="confirmarsenha"
+                            placeholder="Confirme sua senha"
+                            required
+                            minLength="8"
+                            maxLength="20"
+                        />
                         <button type="submit">Criar conta</button>
                     </form>
                 </div>
-        
+
                 <div className="form-container llogin">
-                    <form>
+                    <form onSubmit={handleLoginSubmit}>
                         <h1>Login</h1>
-                        <input type="email" placeholder="E-mail" />
-                        <input type="password" placeholder="Senha" />
-                        <Link to="/inicio">
-                            <button type="button" id="entrarButton">Entrar</button>
-                        </Link>
+                        <input type="email" name="email" placeholder="E-mail" required />
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Senha"
+                            required
+                        />
+                        <button type="submit">Entrar</button>
                     </form>
                 </div>
-        
+
                 <div className="painel-container">
                     <div className="painel">
                         <div className="painel2 painel-esquerda">
                             <div className="logo1">
-                                <img src="/s.png" alt="Logo SaintBlue" />
+                            <img src="/s.png" alt="Logo SaintBlue" />
                             </div>
                             <h1>Bem-vindo(a)</h1>
                             <p>Já possui uma conta?</p>
-                            <button className="hidden" onClick={handleLoginClick}>Fazer login</button>
+                            <button className="hidden" onClick={handleLoginClick}>
+                                Fazer login
+                            </button>
                             <Link to="/">
-                                <button className="hidden2" id="acessohome">Home</button>
+                                <button className="hidden2">Home</button>
                             </Link>
                         </div>
                         <div className="painel2 painel-direita">
                             <div className="logo2">
-                                <img src="/s.png" alt="Logo SaintBlue" />
+                            <img src="/s.png" alt="Logo SaintBlue" />
                             </div>
                             <h1>Bem-vindo(a)</h1>
-                            <p>Já possui uma conta?</p>
-                            <button className="hidden" onClick={handleRegisterClick}>Criar conta</button>
+                            <p>Não possui uma conta?</p>
+                            <button className="hidden" onClick={handleRegisterClick}>
+                                Criar conta
+                            </button>
                             <Link to="/">
-                                <button className="hidden2" id="acessohome2">Home</button>
+                                <button className="hidden2">Home</button>
                             </Link>
                         </div>
                     </div>

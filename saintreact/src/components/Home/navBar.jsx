@@ -56,7 +56,7 @@ const Navbar = () => {
             {option.text}
           </button>
         ))}
-        <Link to="/Inicio" className={styles.navButton}>
+        <Link to="/login" className={styles.navButton}>
           Acessar
         </Link>
       </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
           </List>
 
           <Divider />
-          <Link to="/inicio">
+          <Link to="/login">
             <button className={styles.secondaryButtonNav}>Acessar</button>
           </Link>
         </Box>
