@@ -9,7 +9,7 @@ const Home = () => {
   const navigate = useNavigate(); // Hook de navegação
 
   const handleRedirect = () => {
-    navigate('/inicio'); // Caminho para a outra página
+    navigate('/login'); // Caminho para a outra página
   }
 
   return (

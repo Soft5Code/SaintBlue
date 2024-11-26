@@ -60,7 +60,7 @@ img {
 .navBarLinksContainer button:hover{
   padding: 0.5rem 1rem;
   border-radius: 1rem;
-  background-color: #007bff;
+  background-color: #45b7bb;
 }
 .navButton{
   border: 1px solid red;
@@ -74,11 +74,11 @@ img {
   transition: 0.3s;
 }
 .navButton:hover{
-  background-color: #007bff;
+  background-color: #2d5d5f;
 }
 .primaryButton{
   padding: 0.9rem 1.75rem;
-  background-color: #2d979b;
+  background-color: #45b7bb;
   color: #fff;
   outline: none;
   border: none;
@@ -196,7 +196,7 @@ img {
   margin-top: 1rem;
   margin-left: 3rem;
   padding: 1rem 2.5rem;
-  background-color: #007bff ;
+  background-color: #2d979b;
   outline: none;
   border: none;
   border-radius: 0.8rem;
@@ -559,7 +559,7 @@ justify-content: center;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: none;
-  background-color: #007bff;
+  background-color: #2d979b;
   color: white;
   border-radius: 5px;
   display: flex;

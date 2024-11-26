@@ -3,6 +3,7 @@ import styles from './Inicio.module.css';
 import Carregador from "./Carregador";
 import Contact from "./Contact";
 import './Carousel.css';
+import { Link } from "react-router-dom";
 
 const Inicio = () => {
   const slides = [
@@ -70,10 +71,10 @@ const Inicio = () => {
         >
           {slides.map((slide, index) => (
             <div className="carousel-item" key={index}>
-              <a href={slide.link} className="carousel-link">
+              <Link href={slide.link} className="carousel-link">
                 <img src={slide.image} alt={`Slide ${index + 1}`} />
                 <div className="carousel-text">{slide.text}</div>
-              </a>
+              </Link>
             </div>
           ))}
         </div>
