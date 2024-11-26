@@ -60,7 +60,7 @@ img {
 .navBarLinksContainer button:hover{
   padding: 0.5rem 1rem;
   border-radius: 1rem;
-  background-color: #2d979b;
+  background-color: #007bff;
 }
 .navButton{
   border: 1px solid red;
@@ -74,7 +74,7 @@ img {
   transition: 0.3s;
 }
 .navButton:hover{
-  background-color: #2d979b;
+  background-color: #007bff;
 }
 .primaryButton{
   padding: 0.9rem 1.75rem;
@@ -103,7 +103,7 @@ img {
   font-size: 1.15rem;
 }
 .primaryButton:hover {
-  background-color: #2d5d5f;
+  background-color: #2d979b;
 }
 /* .MuiDrawer{
   background-color: #fff;
@@ -196,7 +196,7 @@ img {
   margin-top: 1rem;
   margin-left: 3rem;
   padding: 1rem 2.5rem;
-  background-color: #2d979b;
+  background-color: #007bff ;
   outline: none;
   border: none;
   border-radius: 0.8rem;

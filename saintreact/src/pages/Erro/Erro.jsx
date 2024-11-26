@@ -10,8 +10,6 @@ function Erro(){
 
             <Link to="/" className="error">Inicio</Link> <br/>
             <Link to="/estoque" className="error">Estoque</Link> <br/>
-            <Link to="/fornecedores" className="error">Fornecedor</Link> <br/>
-            <Link to="/colaboradores" className="error">Colaboradores</Link>
         </div>
     )
 }

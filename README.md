@@ -4,7 +4,7 @@
     <p> Venha controlar seu estoque 🎯</p>
 </h1>
 
-<h1 align="center"><a href="https://soft5code.github.io/SaintBlue/">👀 Veja o Projeto</a></h1>
+<h1 align="center"><a href="https://saint-blue.vercel.app/">👀 Veja o Projeto</a></h1>
 
 ## 📌 Indice
 - [sobre](#-sobre-)
@@ -34,8 +34,7 @@ O controle de estoque é a gestão dos produtos disponíveis em uma empresa, mon
 
 
 ## 👨‍💻 Desenvolvedores
-- [Daniel (Frontend)](https://github.com/Soft5Code)
-- [Eduardo (Backend)](https://github.com/Yujizzx)
+- [Daniel (FullStack)](https://github.com/danieloliveiira)
 - [Gabriel (Backend)](https://github.com/N4-cloud)
 - [Richard (Frontend)](https://github.com/richardcastrogois)
 - [Pedro (Frontend)](https://github.com/PH-MDT)
@@ -44,7 +43,7 @@ O controle de estoque é a gestão dos produtos disponíveis em uma empresa, mon
 ## ♻ Como Ajudar o projeto
 ````bash
 # Clone o projeto
-$ git clone https://github.com/Soft5Code/SaintBlue.git
+$ git clone https://github.com/SaintBlueSB/SaintBlue.git
 `````
 `````bash
 # Adicione as mudanças
