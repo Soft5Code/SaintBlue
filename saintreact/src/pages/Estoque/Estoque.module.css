@@ -65,8 +65,12 @@
   background-color: #f2f2f2;
 }
 
+.productTable tbody tr:nth-child(odd) {
+  background-color: #d9f5f6;
+}
+
 .productTable tbody tr:hover {
-  background-color: #d9f5f6; /* Cor de destaque ao passar o mouse */
+  background-color: #bce9eb; /* Cor de destaque ao passar o mouse */
 }
 
 /* Ações */
