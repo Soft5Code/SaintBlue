@@ -8,7 +8,7 @@ function Erro(){
 
             <span className="ops_Erro">Encontramos essas páginas aqui:</span> <br/>
 
-            <Link to="/" className="error">Inicio</Link> <br/>
+            <Link to="/inicio" className="error">Inicio</Link> <br/>
             <Link to="/estoque" className="error">Estoque</Link> <br/>
         </div>
     )
